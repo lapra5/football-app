@@ -1,0 +1,6 @@
+npm run dev
+http://localhost:3000
+
+netstat -ano | findstr :3000
+taskkill /PID 13188 /F
+

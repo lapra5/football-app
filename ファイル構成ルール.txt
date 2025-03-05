@@ -1,0 +1,40 @@
+/my-app
+  ├── /src               ← ソースコードの格納
+  │   ├── /components    ← UIコンポーネント（.tsx）
+  │   ├── /pages         ← Next.jsのページ（.tsx）
+  │   ├── /firebase      ← Firebase関連の設定（.ts）
+  │   ├── /utils         ← ユーティリティ関数（.ts）
+  │   ├── /styles        ← CSS, Tailwind, module.css など
+  │   ├── /hooks         ← カスタムフック（.ts）
+  │   ├── /context       ← コンテキストAPI（.tsx）
+  │   ├── /lib           ← API通信や外部ライブラリ設定（.ts）
+  │   ├── /middleware    ← Middleware（認証チェックなど）
+  ├── /public            ← 画像・アイコン・faviconなど
+  ├── /functions         ← Firebase Cloud Functions (必要な場合)
+  ├── .firebaserc        ← Firebase プロジェクト設定
+  ├── firebase.json      ← Firebase 設定ファイル
+  ├── next.config.js     ← Next.js の設定
+  ├── tailwind.config.js ← Tailwind CSS の設定（使う場合）
+  ├── package.json       ← パッケージ管理
+  ├── tsconfig.json      ← TypeScript 設定
+  ├── .eslintrc.js       ← ESLint 設定
+  ├── .gitignore         ← Git 無視リスト
+  ├── README.md          ← プロジェクトの説明
+
+
+
+
+フォルダ	説明
+/src	アプリのメインコードを格納（Next.jsの推奨）
+/src/components	ボタン、フォームなどの UIコンポーネント
+/src/pages	Next.js の ページコンポーネント (index.tsx など)
+/src/firebase	Firebase の初期化、認証処理など (firebase.ts など)
+/src/utils	ユーティリティ関数（例: formatDate.ts）
+/src/hooks	React のカスタムフック（例: useAuth.ts）
+/src/context	コンテキストAPIを利用する場合（例: AuthContext.tsx）
+/src/middleware	APIの認証やリダイレクト制御
+/public	画像やfaviconなど
+/functions	Firebase Cloud Functions (バックエンド処理)
+firebase.json	Firebase Hosting の設定
+.firebaserc	Firebase プロジェクト情報
+next.config.js	Next.js の設定ファイル
