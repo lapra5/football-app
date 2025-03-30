@@ -1,0 +1,7 @@
+cd F:\Python\practice\web_sample\my-app
+
+UID確認　https://console.firebase.google.com/project/sample-dae85/authentication/users?hl=ja　
+
+npm run set-admin IGaPUcJ9sVhkQDdEztAREvDgYJ82 ←　登録
+
+npm run get-user-info IGaPUcJ9sVhkQDdEztAREvDgYJ82　 ←　確認
