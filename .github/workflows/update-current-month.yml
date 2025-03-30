@@ -1,9 +1,11 @@
+# .github/workflows/update-current-month.yml
+
 name: Update Current Month Match (Monthly)
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 0 1 * *'  # 毎月1日の0時（UTC）
-  workflow_dispatch:     # 手動実行も可能
+    - cron: '0 3 1 * *' # 毎月1日 日本時間12:00
 
 jobs:
   update:
@@ -13,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
@@ -21,7 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run updateCurrentMonthMatch
-        run: node ./scripts/updateCurrentMonthMatch.mjs
+      - name: Decode FIREBASE_ADMIN_BASE64 to serviceAccountKey.json
+        run: |
+          echo "$FIREBASE_ADMIN_BASE64" | base64 -d > serviceAccountKey.json
         env:
-          FIREBASE_PRIVATE_KEY_JSON: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON }}
+          FIREBASE_ADMIN_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
+
+      - name: Run updateCurrentMonthMatch script
+        run: node ./scripts/updateCurrentMonthMatch.mjs
