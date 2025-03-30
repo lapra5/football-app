@@ -15,8 +15,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const OUTPUT_PATH = path.join(__dirname, "../src/data/current_month_match.json");
 
-// ✅ Firebase 初期化（.env の FIREBASE_PRIVATE_KEY_JSON を使用）
-const serviceAccount = JSON.parse(process.env.FIREBASE_PRIVATE_KEY_JSON);
+// ✅ Firebase 初期化（Secretsからデコードした serviceAccountKey.json を直接読み込む）
+const serviceAccount = JSON.parse(fs.readFileSync("serviceAccountKey.json", "utf8"));
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
