@@ -10,20 +10,18 @@ import timezone from "dayjs/plugin/timezone.js";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-// ✅ パス設定
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const OUTPUT_PATH = path.join(__dirname, "../src/data/current_month_match.json");
 
-// ✅ Firebase 初期化（Secretsからデコードした serviceAccountKey.json を直接読み込む）
+// ✅ 修正：Secretsから復元した serviceAccountKey.json を直接読み込む
 const serviceAccount = JSON.parse(fs.readFileSync("serviceAccountKey.json", "utf8"));
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-// ✅ 今日の年月を取得（UTC基準）
 const now = dayjs().tz("Asia/Tokyo");
 const year = now.year();
-const month = now.month() + 1; // 0-indexed
+const month = now.month() + 1;
 
 function isSameMonth(dateStr) {
   const d = dayjs(dateStr).tz("Asia/Tokyo");
@@ -41,7 +39,6 @@ async function fetchMatchesThisMonth() {
     if (!data.kickoffTime) return;
     if (!isSameMonth(data.kickoffTime)) return;
 
-    // ✅ Match 型に合わせて整形
     result.push({
       matchId: doc.id,
       league: data.league,
