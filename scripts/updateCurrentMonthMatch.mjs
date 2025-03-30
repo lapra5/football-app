@@ -1,4 +1,5 @@
 // scripts/updateCurrentMonthMatch.mjs
+
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import fs from "fs";
@@ -10,18 +11,20 @@ import timezone from "dayjs/plugin/timezone.js";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
+// ✅ パス設定
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const OUTPUT_PATH = path.join(__dirname, "../src/data/current_month_match.json");
 
-// ✅ 修正：Secretsから復元した serviceAccountKey.json を直接読み込む
+// ✅ Firebase 初期化（serviceAccountKey.json を使用）
 const serviceAccount = JSON.parse(fs.readFileSync("serviceAccountKey.json", "utf8"));
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
+// ✅ 今日の年月を取得（UTC → JST）
 const now = dayjs().tz("Asia/Tokyo");
 const year = now.year();
-const month = now.month() + 1;
+const month = now.month() + 1; // 0-indexed → 1-indexed
 
 function isSameMonth(dateStr) {
   const d = dayjs(dateStr).tz("Asia/Tokyo");
