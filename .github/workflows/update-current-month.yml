@@ -1,0 +1,30 @@
+# .github/workflows/update-current-month.yml
+
+name: Update Current Month Match (Monthly)
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # 毎月1日0時に実行（UTC時間）
+  workflow_dispatch:     # 手動実行も可能にする
+
+jobs:
+  update-current-month:
+    runs-on: ubuntu-latest
+
+    env:
+      FIREBASE_PRIVATE_KEY_JSON: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run updateCurrentMonthMatch script
+        run: node scripts/updateCurrentMonthMatch.mjs
