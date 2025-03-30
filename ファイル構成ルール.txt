@@ -1,40 +1,73 @@
-/my-app
-  ├── /src               ← ソースコードの格納
-  │   ├── /components    ← UIコンポーネント（.tsx）
-  │   ├── /pages         ← Next.jsのページ（.tsx）
-  │   ├── /firebase      ← Firebase関連の設定（.ts）
-  │   ├── /utils         ← ユーティリティ関数（.ts）
-  │   ├── /styles        ← CSS, Tailwind, module.css など
-  │   ├── /hooks         ← カスタムフック（.ts）
-  │   ├── /context       ← コンテキストAPI（.tsx）
-  │   ├── /lib           ← API通信や外部ライブラリ設定（.ts）
-  │   ├── /middleware    ← Middleware（認証チェックなど）
-  ├── /public            ← 画像・アイコン・faviconなど
-  ├── /functions         ← Firebase Cloud Functions (必要な場合)
-  ├── .firebaserc        ← Firebase プロジェクト設定
-  ├── firebase.json      ← Firebase 設定ファイル
-  ├── next.config.js     ← Next.js の設定
-  ├── tailwind.config.js ← Tailwind CSS の設定（使う場合）
-  ├── package.json       ← パッケージ管理
-  ├── tsconfig.json      ← TypeScript 設定
-  ├── .eslintrc.js       ← ESLint 設定
-  ├── .gitignore         ← Git 無視リスト
-  ├── README.md          ← プロジェクトの説明
+📁 プロジェクト構成説明（サッカー日本人選手管理アプリ）
+このプロジェクトは、サッカーの海外リーグに所属する日本人選手の試合・移籍情報を表示・管理する Next.js + Firebase + 外部API を用いたアプリです。管理者は更新ボタンでデータを取得・更新できます。
 
+🔧 ディレクトリ構成と役割
+pgsql
+コピーする
+編集する
+F:.
+├─ app/                    → Next.js App Router の構成ルート
+│  ├─ admin/               → 管理者ページ（ログイン後のダッシュボード）
+│  └─ api/                 → APIルート（データ更新、取得）
+│     ├─ admin/            → 管理者向けAPI（更新ボタン用）
+│     │  ├─ last-updated/         → 最終更新ログ取得API
+│     │  ├─ update-matches/       → 試合日程全体の更新API
+│     │  ├─ update-lineups/       → スタメン情報更新API
+│     │  ├─ update-players/       → 日本人選手移籍情報更新API
+│     │  └─ update-season-data/   → チーム・ロゴ・リーグ一括更新API
+│     ├─ matches/          → 試合情報取得API（Firestore）
+│     └─ team-league-names/→ チーム・リーグ情報JSON取得API
+│
+├─ components/             → Reactコンポーネント群
+│  ├─ AdminDashboard.tsx   → 管理者用UI（ボタン・表示）
+│  ├─ MatchList.tsx        → 試合一覧の表示（日本人・ロゴ・カウントダウンなど）
+│  └─ ui/                  → 再利用可能なUIコンポーネント（Card, Select）
+│
+├─ data/                   → データファイル・スクリプト保存
+│  ├─ team_league_names.json      → チーム情報（日本語名・ロゴ・日本人選手）
+│  ├─ updated_log.json            → 各種データの最終更新時刻ログ
+│  ├─ updatePlayers.mjs           → Yahoo! JAPAN から日本人選手と所属チームを取得するスクリプト
+│  ├─ allInOneAuto.js             → シーズン初期構築用の一括更新スクリプト
+│  └─ transfer_cleanup_log.csv    → updatePlayers 実行時の差分ログ
+│
+├─ firebase/               → Firebase接続関係
+│  ├─ firebase.ts          → 初期化設定
+│  ├─ auth.ts              → 認証処理
+│  └─ admin.ts             → 管理者権限付与用（サーバー用）
+│
+├─ hooks/                  → カスタムHooks
+│  ├─ useAuth.ts           → Firebase認証情報の取得・維持
+│  ├─ useAdminCheck.ts     → 管理者チェック用（未使用も可）
+│  └─ useRefreshClaims.ts  → IDトークンの claim 更新用
+│
+├─ lib/
+│  └─ utils.ts             → 共通ユーティリティ（現在は未使用または保留）
+│
+├─ pages/                  → `pages/api` のみ使用（App Router移行中）
+│  └─ api/
+│     └─ setAdmin.ts       → Firebaseユーザーにadmin claimを付与するAPI
+│
+├─ styles/
+│  └─ globals.css          → TailwindCSS の全体スタイル設定
+│
+├─ types/
+│  └─ match.ts             → Match型定義（試合情報構造）
+│
+└─ utils/
+   └─ updateLog.ts         → 最終更新ログを更新する共通関数
+✅ 管理者ができること（ダッシュボードボタン）
+ボタン名	機能の概要
+全リーグ日程更新	全対象リーグ（プレミア、ラ・リーガ等）の次の試合日程を取得・保存
+CL日程更新	チャンピオンズリーグのみの次試合日程を取得・保存
+スタメン一括更新	表示中の試合で30分前以内・キックオフ済のスタメン情報を取得
+移籍情報更新	日本人選手の移籍情報を Yahoo! から取得し、チームに反映
+シーズン更新	チーム名・ロゴ・リーグ名の英語/日本語・ロゴ画像を一括更新
+📋 備考
+team_league_names.json は日本語チーム名・英語名・日本人選手・ロゴ情報を保持
 
+Firestore の leagues/{leagueId}/matches コレクションに試合データを保存
 
+updated_log.json に各更新APIの最終更新日時を記録し、画面に表示
 
-フォルダ	説明
-/src	アプリのメインコードを格納（Next.jsの推奨）
-/src/components	ボタン、フォームなどの UIコンポーネント
-/src/pages	Next.js の ページコンポーネント (index.tsx など)
-/src/firebase	Firebase の初期化、認証処理など (firebase.ts など)
-/src/utils	ユーティリティ関数（例: formatDate.ts）
-/src/hooks	React のカスタムフック（例: useAuth.ts）
-/src/context	コンテキストAPIを利用する場合（例: AuthContext.tsx）
-/src/middleware	APIの認証やリダイレクト制御
-/public	画像やfaviconなど
-/functions	Firebase Cloud Functions (バックエンド処理)
-firebase.json	Firebase Hosting の設定
-.firebaserc	Firebase プロジェクト情報
-next.config.js	Next.js の設定ファイル
+🔁 新しいチャットでこのプロジェクトを説明する時のテンプレ
+このプロジェクトは Next.js App Router を使ったサッカー情報アプリで、Firebase 認証と Firestore、Yahoo! JAPAN から日本人選手を取得する機能、そして football-data.org や API-FOOTBALL からチーム・ロゴ・日程を取得する仕組みが入ってます。team_league_names.json が全チーム情報の中心で、admin ダッシュボードから更新できます。

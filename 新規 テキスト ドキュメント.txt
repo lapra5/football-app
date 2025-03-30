@@ -4,3 +4,10 @@ http://localhost:3000
 netstat -ano | findstr :3000
 taskkill /PID 13188 /F
 
+引用先検索　Get-ChildItem -Path F:\Python\practice\web_sample\my-app\src -Recurse -File | Select-String "components/LoginForm.tsx" -CaseSensitive
+
+cd F:\Python\practice\web_sample\my-app
+npm run set-admin IGaPUcJ9sVhkQDdEztAREvDgYJ82    管理者登録
+
+
+
