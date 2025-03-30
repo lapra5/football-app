@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run update script
-        run: node scripts/updateCurrentMonthMatch.mjs
+      - name: Run updateCurrentMonthMatch script
+        run: node ./scripts/updateCurrentMonthMatch.mjs
         env:
           FIREBASE_PRIVATE_KEY_JSON: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON }}
