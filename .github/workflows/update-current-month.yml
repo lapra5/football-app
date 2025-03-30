@@ -3,7 +3,7 @@ name: Update Current Month Match (Monthly)
 on:
   schedule:
     - cron: '0 0 1 * *' # 毎月1日の00:00に実行
-  workflow_dispatch: # 手動実行も許可
+  workflow_dispatch: # 手動実行も可能
 
 jobs:
   update:
@@ -20,10 +20,8 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./my-app
 
       - name: Run update script
         run: node scripts/updateCurrentMonthMatch.mjs
-        working-directory: ./my-app
         env:
           FIREBASE_PRIVATE_KEY_JSON: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON }}
