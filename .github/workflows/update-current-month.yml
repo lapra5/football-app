@@ -25,7 +25,7 @@ jobs:
 
       - name: Decode FIREBASE_ADMIN_BASE64 to serviceAccountKey.json
         run: |
-          echo "$FIREBASE_ADMIN_BASE64" | base64 -d > serviceAccountKey.json
+          echo -n "$FIREBASE_ADMIN_BASE64" | base64 --decode > serviceAccountKey.json
         env:
           FIREBASE_ADMIN_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
 
