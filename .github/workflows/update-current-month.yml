@@ -37,3 +37,39 @@ jobs:
           git add src/data/current_month_matches.json
           git commit -m "✅ Auto update current_month_matches.json" || echo "No changes to commit"
           git push origin master
+name: Update Current Month Matches (Daily)
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *' # JST 12:00 毎日
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
+        run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+
+      - name: Run updateCurrentMonthMatch script
+        run: node --no-warnings ./scripts/updateCurrentMonthMatch.mjs
+
+      - name: Commit and push updated JSON
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/current_month_matches.json
+          git commit -m "✅ Auto update current_month_matches.json" || echo "No changes to commit"
+          git push origin master
