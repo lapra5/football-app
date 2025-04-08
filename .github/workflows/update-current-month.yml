@@ -3,7 +3,7 @@ name: Update Current Month Matches (Daily)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *' # JST 12:00 に毎日実行
+    - cron: '0 3 * * *' # JST 12:00 毎日実行
 
 jobs:
   update:
@@ -21,18 +21,20 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # ✅ ここで .env.local を作成（.mjs で dotenv.config が使えるように）
-      - name: Create .env.local file
+      # ✅ .env.local を作成して BASE64 秘密鍵をセット
+      - name: Create .env.local
         run: |
           echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" > .env.local
 
-      - name: Run updateCurrentMonthMatch.mjs
+      # ✅ スクリプトを実行
+      - name: Run updateCurrentMonthMatch script
         run: node ./scripts/updateCurrentMonthMatch.mjs
 
-      - name: Commit and push updated match data
+      # ✅ データを commit & push（必要に応じて）
+      - name: Commit and push updated JSON
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/current_month_matches.json
-          git commit -m "✅ Update current_month_matches.json [bot]" || echo "No changes to commit"
+          git commit -m "✅ Auto update current_month_matches.json" || echo "No changes"
           git push origin master
