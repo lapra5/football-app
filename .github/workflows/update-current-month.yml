@@ -5,7 +5,7 @@ name: Update Current Month Match (Daily)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 4 * * *' # 毎日 日本時間13:00（UTC 4:00）
+    - cron: '0 4 * * *' # 毎日13:00 JST
 
 jobs:
   update:
@@ -26,4 +26,4 @@ jobs:
       - name: Run updateCurrentMonthMatch script
         run: node ./scripts/updateCurrentMonthMatch.mjs
         env:
-          FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
+          FIREBASE_ADMIN_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
