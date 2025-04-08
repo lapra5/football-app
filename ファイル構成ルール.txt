@@ -1,60 +1,114 @@
 📁 プロジェクト構成説明（サッカー日本人選手管理アプリ）
-このプロジェクトは、サッカーの海外リーグに所属する日本人選手の試合・移籍情報を表示・管理する Next.js + Firebase + 外部API を用いたアプリです。管理者は更新ボタンでデータを取得・更新できます。
+このプロジェクトは、サッカーの海外リーグに所属する日本人選手の試合・移籍情報を表示・管理する Next.js + Firebase + 外部API を用いたアプリです。管理者は更新ボタンでデータを取得・更新できます。今後自動更新に移行（ボタンは残す）する予定。
+
+✅ 現状（2025年4月）
+1. type: "module" を package.json に設定済み
+→ これにより Node.js + ESModules がデフォルトで有効に。
+→データ構成は Next.js + App Router + Firebase + tsconfig/module: ESNext + type: "module" なので.mtsを基本とする。現在は.tsや.jsが混在しているので今後見直しをする。
+
+2. .mts 拡張子を一部のスクリプトに導入
+→ scripts/admin-tools/ 以下の CLI スクリプトは .mts に移行済み：
+
+getUserInfo.mts
+
+setAdminClaim.mts
+（どちらも node --loader ts-node/esm で実行）
+
+3. .ts スクリプトのままでは Unknown file extension ".ts" エラーが発生するケースがあった
+→ 特に type: "module" + ts-node 使用時、.ts ファイルを直接実行すると拡張子解釈でエラーになりやすい。
+
+📌 現在の方針
+CLI ツール（管理用スクリプトなど）は .mts に統一する。
+
+UI コンポーネント（React）やアプリ内部の .tsx, .ts は現状維持（.tsx のままで問題なし）。
+
+ts-node を使った実行は .mts + --loader ts-node/esm を標準にする。
 
 🔧 ディレクトリ構成と役割
 pgsql
 コピーする
 編集する
-F:.
-├─ app/                    → Next.js App Router の構成ルート
-│  ├─ admin/               → 管理者ページ（ログイン後のダッシュボード）
-│  └─ api/                 → APIルート（データ更新、取得）
-│     ├─ admin/            → 管理者向けAPI（更新ボタン用）
-│     │  ├─ last-updated/         → 最終更新ログ取得API
-│     │  ├─ update-matches/       → 試合日程全体の更新API
-│     │  ├─ update-lineups/       → スタメン情報更新API
-│     │  ├─ update-players/       → 日本人選手移籍情報更新API
-│     │  └─ update-season-data/   → チーム・ロゴ・リーグ一括更新API
-│     ├─ matches/          → 試合情報取得API（Firestore）
-│     └─ team-league-names/→ チーム・リーグ情報JSON取得API
-│
-├─ components/             → Reactコンポーネント群
-│  ├─ AdminDashboard.tsx   → 管理者用UI（ボタン・表示）
-│  ├─ MatchList.tsx        → 試合一覧の表示（日本人・ロゴ・カウントダウンなど）
-│  └─ ui/                  → 再利用可能なUIコンポーネント（Card, Select）
-│
-├─ data/                   → データファイル・スクリプト保存
-│  ├─ team_league_names.json      → チーム情報（日本語名・ロゴ・日本人選手）
-│  ├─ updated_log.json            → 各種データの最終更新時刻ログ
-│  ├─ updatePlayers.mjs           → Yahoo! JAPAN から日本人選手と所属チームを取得するスクリプト
-│  ├─ allInOneAuto.js             → シーズン初期構築用の一括更新スクリプト
-│  └─ transfer_cleanup_log.csv    → updatePlayers 実行時の差分ログ
-│
-├─ firebase/               → Firebase接続関係
-│  ├─ firebase.ts          → 初期化設定
-│  ├─ auth.ts              → 認証処理
-│  └─ admin.ts             → 管理者権限付与用（サーバー用）
-│
-├─ hooks/                  → カスタムHooks
-│  ├─ useAuth.ts           → Firebase認証情報の取得・維持
-│  ├─ useAdminCheck.ts     → 管理者チェック用（未使用も可）
-│  └─ useRefreshClaims.ts  → IDトークンの claim 更新用
-│
-├─ lib/
-│  └─ utils.ts             → 共通ユーティリティ（現在は未使用または保留）
-│
-├─ pages/                  → `pages/api` のみ使用（App Router移行中）
-│  └─ api/
-│     └─ setAdmin.ts       → Firebaseユーザーにadmin claimを付与するAPI
-│
-├─ styles/
-│  └─ globals.css          → TailwindCSS の全体スタイル設定
-│
-├─ types/
-│  └─ match.ts             → Match型定義（試合情報構造）
-│
-└─ utils/
-   └─ updateLog.ts         → 最終更新ログを更新する共通関数
+F:/Python/practice/web_sample/my-app
+├─ .env.local                   → 環境変数（APIキーやFirebase認証など）を保存。
+├─ .gitignore                   → Git で無視するファイルを定義。
+├─ next.config.mjs              → Next.js の設定ファイル（ESM形式で .mjs）。
+├─ next-env.d.ts                → TypeScript で Next.js を正しく動作させるための定義ファイル。
+├─ package.json                 → プロジェクトの依存・スクリプト・構成管理ファイル。
+├─ package-lock.json            → 依存関係の厳密なバージョン管理。npmで必須
+├─ postcss.config.cjs           → TailwindCSS 含む PostCSS の設定。Tailwind 使用時に必要
+├─ tailwind.config.cjs          → TailwindCSS の設定。必須
+├─ tsconfig.json                → TypeScript の設定ファイル。必須
+├─ .git/                        → Git 管理のメタデータ（バージョン履歴など）
+├─ .github/                     → GitHub Actions など CI/CD 設定やテンプレート配置用
+├─ .next/                       → Next.js のビルドキャッシュ・中間生成物（自動生成）
+├─ chromedriver/                → Puppeteer / Selenium 用の ChromeDriver バイナリ格納用（スクレイピングに利用）
+├─ components/                  → 再利用可能な React コンポーネント群
+├─ dist/                        → ビルド成果物出力先（現状あまり使われていない可能性あり）
+├─ node_modules/                → npm パッケージ群（`npm install` 時に生成される）
+├─ public/                      → 静的ファイル置き場（画像・favicon・robots.txt など）
+├─ scripts/                     → 
+│    ├─ api/                   → 管理者専用のCLIツールを格納するフォルダ。
+│    │  ├─ getUserInfo.ts      → 指定した UID の Firebase ユーザー情報を取得して表示します。管理者かどうかを含めて確認可能です。
+│    │  └─ setAdminClaim.ts    → 指定した Firebase UID に admin: true のカスタムクレームを設定し、管理者権限を付与します。
+│    ├─ transfer_cleanup_log.csv     → updatePlayers.mjs 実行時に出力される、選手の移籍更新ログファイル。
+│    └─ updateCurrentMonthMatch.mjs  → 今月の日本人所属試合だけを抽出して current_month_match.json に保存するメインスクリプト。
+└─ src
+  ├─ app/                    → Next.js App Router の構成ルート
+  │  ├─ page.tsx             → 一般ページ
+  │  ├─ admin/               → 管理者ページ（ログイン後のダッシュボード）
+  │  │   └─ page.tsx        → 管理者ページ
+  │  └─ api/                 → APIルート（データ更新、取得）
+  │     ├─ admin/            → 管理者向けAPI（更新ボタン用）
+  │     │  ├─ last-updated/         → 最終更新ログ取得API
+  │     │  ├─ update-jleague-schedule/   → Jリーグ 日程全体の更新API
+  │     │  ├─ update-matches/       → 試合日程全体の更新API（Jリーグおよびスコットランドリーグ（セルティックのみ）を除く）
+  │     │  ├─ update-lineups/       → スタメン情報更新API
+  │     │  ├─ update-players/       → 日本人選手移籍情報更新API
+  │     │  ├─ update-scotland-schedule/  → 
+  │     │  └─ update-season-data/   → チーム・ロゴ・リーグ一括更新API
+  │     ├─ matches/          → 試合情報取得API（Firestore）
+  │     ├─ current-month-matches/   → 今月の日本人所属試合（current_month_match.json）を返すAPIエンドポイント。試合一覧表示はこれのみで完結。
+  │     └─ team-league-names/→ チーム・リーグ情報JSON取得API
+  │
+  ├─ components/             → Reactコンポーネント群
+  │  ├─ AdminDashboard.tsx   → 管理者用UI（ボタン・表示）
+  │  ├─ MatchList.tsx        → 試合一覧の表示（日本人・ロゴ・カウントダウンなど）
+  │  └─ ui/                  → 再利用可能なUIコンポーネント（Card, Select）
+  │
+  ├─ data/                   → データファイル・スクリプト保存
+  │  ├─ .gitkeep                    → Git 上で 空のディレクトリを保持するためのプレースホルダファイル 
+  │  ├─ current_month_match.json    → 月初に日本人所属試合だけを抽出・保存して画面で利用
+  │  ├─ team_league_names.json      → チーム情報（チームID・チーム日本語名・チーム英語名・日本人選手日本語名・日本人選手英語名・ロゴ）
+  │  ├─ updated_log.json            → 各更新APIの 最終更新日時 を保存し、ダッシュボード上に表示される
+  │  ├─ updatePlayers.mjs           → Yahoo! JAPAN から日本人選手と所属チームを取得するスクリプト ※後述する🔍 英語名の自動取得ロジック参照
+  │  ├─ allInOneAuto.js             → シーズン初期構築用の一括更新スクリプト
+  │  └─ transfer_cleanup_log.csv    → updatePlayers 実行時の差分ログ
+  │     └─ current_past_month_match → 最終更新ログを更新する共通関数
+  │        ├─current_20XX_XX.json
+  │
+  ├─ firebase/               → Firebase接続関係
+  │  ├─ firebase.ts          → 初期化設定
+  │  ├─ auth.ts              → 認証処理
+  │  └─ admin.ts             → 将来 App Router の API Route で Admin SDK を使いたいときに必要。現在未使用でも便利な下準備（現在未使用）
+  │
+  ├─ hooks/                  → カスタムHooks
+  │  ├─ useAuth.ts           → Firebase認証情報の取得・維持
+  │  ├─ useAdminCheck.ts     → 管理者チェック用（未使用も可）
+  │  └─ useRefreshClaims.ts  → IDトークンの claim 更新用
+  │
+  ├─ lib/
+  │  └─ utils.ts             → 共通ユーティリティ（現在は未使用または保留）
+  │
+  ├─ pages/                  → `pages/api` のみ使用（App Router移行中）
+  │
+  ├─ styles/
+  │  └─ globals.css          → TailwindCSS の全体スタイル設定
+  │
+  ├─ types/
+  │  └─ match.ts             → Match型定義（試合情報構造）
+  │
+  └─ utils/
+    └─ updateLog.ts         → 最終更新ログを更新する共通関数
 ✅ 管理者ができること（ダッシュボードボタン）
 ボタン名	機能の概要
 全リーグ日程更新	全対象リーグ（プレミア、ラ・リーガ等）の次の試合日程を取得・保存
@@ -64,10 +118,103 @@ CL日程更新	チャンピオンズリーグのみの次試合日程を取得�
 シーズン更新	チーム名・ロゴ・リーグ名の英語/日本語・ロゴ画像を一括更新
 📋 備考
 team_league_names.json は日本語チーム名・英語名・日本人選手・ロゴ情報を保持
-
 Firestore の leagues/{leagueId}/matches コレクションに試合データを保存
-
 updated_log.json に各更新APIの最終更新日時を記録し、画面に表示
+
+✅ 日本人選手の英語名補完処理（2025年4月対応）
+・updatePlayers.mjs では Wikipedia / FootballDatabase で取得できない場合、手動補完が必要
+・取得失敗ログは transfer_cleanup_log.csv に記録される
+・チーム名マッチングでは normalizeName による特例変換（例：メンヘングラードバッハ対応）を導入
+
+🔍 英語名の自動取得ロジック（updatePlayers.mjs 内）
+日本人選手の英語名（englishplayers）は以下の順で取得・補完を試みます：
+
+1.Wikipedia（日本語→英語版）
+langlinks API で英語タイトルを取得（例：冨安 健洋 → Takehiro Tomiyasu）
+
+2.FootballDatabase.eu
+
+・検索一覧ページ内から最初の結果を抽出（a[href*="/players/"]）
+
+・または、プレイヤー詳細ページに直接リダイレクトされた場合は、
+　<h1>名 <span class="lastname">姓</span> の形式から英語名を構成
+
+3.WorldFootball.net（失敗時のフォールバックとして実装予定）
+
+・https://www.worldfootball.net/search/?q= 経由で候補ページを取得
+
+・詳細ページに遷移して <h2 itemprop="name">英語名</h2> から名前を抽出（現在未使用）
+
+・undefinedになったもののみ手動で調整
+
+updatePlayers.mjs 実行時、既に "englishplayers" に "undefined" が入っている選手は、リトライ更新（RetryUpdate） がかかるように処理されています。
+
+ただし、取得できなかった選手は "RetryUpdate" ログとして transfer_cleanup_log.csv に出力されます。
+
+このように、updatePlayers.mjs は現在、
+・日本人選手の検出とチーム紐づけ（Yahoo! JAPAN）
+
+・英語名の取得（Wikipedia → FootballDatabase → 今後WorldFootball.net）
+
+・変更ログの保存（CSV）
+
+・フォーマット整形（空行挿入を含む）
+といった全機能をワンストップで実施します。
+
+🔎 transfer_cleanup_log.csv のログ種別補足
+| 種類 | 意味 |
+|------|------|
+| `Added` | 新しい選手がチームに追加された |
+| `Removed` | データ上存在していたが Yahoo! 側にいなかった選手（削除対象） |
+| `RetryUpdate` | 既存選手の英語名が `"undefined"` だったため再取得を試行 |
+| `Unchanged` | 選手情報・英語名に変更なし |
+| `TeamMismatch` | Yahoo! 上にいるが `team_league_names.json` にチームが見つからず割り当てできなかった |
+
+💡補足：TeamMismatch の選手は `team_league_names.json` の元のチームに **そのまま残る** 仕様になっています（= 自動で移動されない）
 
 🔁 新しいチャットでこのプロジェクトを説明する時のテンプレ
 このプロジェクトは Next.js App Router を使ったサッカー情報アプリで、Firebase 認証と Firestore、Yahoo! JAPAN から日本人選手を取得する機能、そして football-data.org や API-FOOTBALL からチーム・ロゴ・日程を取得する仕組みが入ってます。team_league_names.json が全チーム情報の中心で、admin ダッシュボードから更新できます。
+
+✅ firebaseへの保存形式
+
+leagues/{leagueId}/matches/{matchesId}
+
+ドキュメント構造
+フィールド名	型	説明
+matchId	string	試合ID（文字列形式）例: "524108"
+kickoffTime	string	キックオフ日時（ISO形式）例: "2025-04-08T19:00:00Z"　←今後日本時間にしたい
+matchday	number	試合節（例: 1）
+league	object	リーグ名（日英）
+例: { "en": "UEFA Champions League", "jp": "UEFAチャンピオンズリーグ" }
+homeTeam	object	ホームチーム情報
+awayTeam	object	アウェイチーム情報
+lineupStatus	string	`"未発表"
+score	object	試合スコア情報（詳細下記）
+startingMembers	string[]	日本人スタメン選手名（日本語名）
+substitutes	string[]	日本人サブ選手名（日本語名）
+outOfSquad	string[]	日本人ベンチ外選手名（日本語名）
+
+homeTeam / awayTeam の構造
+フィールド名	型	説明
+id	number	チームID
+name	object	チーム名（日英）
+例: { "jp": "アーセナル", "en": "Arsenal FC" }
+players	string[]	日本人選手名（日本語）
+englishplayers	string[]	日本人選手名（英語）
+logo	string	チームロゴ画像URL
+
+score の構造
+フィールド名	型	説明
+winner	string or null	"HOME_TEAM", "AWAY_TEAM" または null
+duration	string	"REGULAR"（90分）など
+fullTime	object	試合終了時のスコア例：{ home: 2, away: 1 }
+halfTime	object	前半終了時のスコア例：{ home: 1, away: 0 }
+
+✅ 今後の方針
+src/app/api/admin/set-admin/route.ts のような App Router 用の管理者付与API
+管理者ダッシュボードで UID 入力 → 管理者登録ボタン → 上記API実行
+取得できなかったロゴマークの対処
+.mts スクリプトへの移行	admin-tools/ などの CLI スクリプト群を中心に
+npm script の --loader ts-node/esm 対応	node --loader ts-node/esm で統一
+.ts ファイルを .mts に変換（スクリプト類のみ）	.ts → .mts へ名称変更のみ
+FIREBASE_PRIVATE_KEY_JSON_BASE64 にすべて統一	セキュリティと GitHub Actions 対応のため

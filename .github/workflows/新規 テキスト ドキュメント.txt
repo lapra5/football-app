@@ -1,0 +1,10 @@
+cd F:\Python\practice\web_sample\my-app
+
+# ワークフローファイルをステージに追加
+git add .github/workflows/update-current-month.yml
+
+# コミット（メッセージはなんでもOK）
+git commit -m "Fix working directory issue"
+
+# GitHubにpush（main ブランチ名を使っていると仮定）
+git push origin master

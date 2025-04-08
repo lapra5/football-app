@@ -1,0 +1,25 @@
+allInOneAuto.js
+
+シーズンの情報を取得するもの。以下のリーグに所属するチームとロゴを登録して画面に表示する。node allInOneAuto.jsで実行可。
+  "Premier League": "プレミアリーグ（イングランド1部）",
+  "Championship": "EFLチャンピオンシップ（イングランド2部）",
+  "League One": "EFLリーグ1（イングランド3部）",
+  "Bundesliga": "ブンデスリーガ（ドイツ1部）",
+  "Serie A": "セリエA（イタリア1部）",
+  "La Liga": "ラ・リーガ（スペイン1部）",
+  "Ligue 1": "リーグ・アン（フランス1部）",
+  "Eredivisie": "エールディヴィジ（オランダ1部）",
+  "Primeira Liga": "プリメイラ・リーガ（ポルトガル1部）",
+  "Champions-League": "UEFAチャンピオンズリーグ",
+
+年に1回
+
+updatePlayers.mjs
+
+上記リーグとベルギーリーグ、スコットランドリーグに所属する日本人をhttps://soccer.yahoo.co.jp/ws/japanese/playersから取得する。node updatePlayers.mjsで実行可。
+
+移籍期間に更新
+
+team_league_names.json
+
+上記更新したら、上書きされるデータ。これが各データにインポートされる。

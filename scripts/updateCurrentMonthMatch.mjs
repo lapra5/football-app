@@ -1,86 +1,125 @@
-// scripts/updateCurrentMonthMatch.mjs
-
-import { initializeApp, cert } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc.js";
-import timezone from "dayjs/plugin/timezone.js";
-dayjs.extend(utc);
-dayjs.extend(timezone);
+import { initializeApp, cert } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 
-// ✅ パス設定
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const OUTPUT_PATH = path.join(__dirname, "../src/data/current_month_match.json");
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ✅ Firebase 初期化（serviceAccountKey.json を使用）
-const serviceAccount = JSON.parse(fs.readFileSync("serviceAccountKey.json", "utf8"));
-initializeApp({ credential: cert(serviceAccount) });
-const db = getFirestore();
+// ✅ 共通の Firebase 初期化処理
+const getFirestoreInstance = () => {
+  const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
+  if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
+  const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
+  initializeApp({ credential: cert(serviceAccount) });
+  return getFirestore();
+};
 
-// ✅ 今日の年月を取得（UTC → JST）
-const now = dayjs().tz("Asia/Tokyo");
-const year = now.year();
-const month = now.month() + 1; // 0-indexed → 1-indexed
+const db = getFirestoreInstance();
 
-function isSameMonth(dateStr) {
-  const d = dayjs(dateStr).tz("Asia/Tokyo");
-  return d.year() === year && d.month() + 1 === month;
-}
+const LEAGUE_IDS = [
+  "2001", "2002", "2003", "2013", "2014",
+  "2015", "2016", "2017", "2019", "2021"
+];
 
-async function fetchMatchesThisMonth() {
-  const matchesRef = db.collection("matches");
-  const snapshot = await matchesRef.get();
+const teamDataPath = path.resolve(__dirname, "../src/data/team_league_names.json");
+const targetPath = path.resolve(__dirname, "../src/data/current_month_matches.json");
 
-  const result = [];
+const getTargetRange = () => {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30, 0, 0, 0);
+  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 30, 23, 59, 59);
+  return [start.toISOString(), end.toISOString()];
+};
 
-  snapshot.forEach(doc => {
-    const data = doc.data();
-    if (!data.kickoffTime) return;
-    if (!isSameMonth(data.kickoffTime)) return;
-
-    result.push({
-      matchId: doc.id,
-      league: data.league,
-      kickoffTime: data.kickoffTime,
-      matchday: data.matchday,
-      homeTeam: {
-        id: data.homeTeam.id,
-        name: data.homeTeam.name,
-        players: data.homeTeam.players || [],
-      },
-      awayTeam: {
-        id: data.awayTeam.id,
-        name: data.awayTeam.name,
-        players: data.awayTeam.players || [],
-      },
-      lineupStatus: data.lineupStatus || "未発表",
-      score: data.score || {
-        fullTime: { home: null, away: null },
-        halfTime: { home: null, away: null, winner: null },
-      },
-      startingMembers: data.startingMembers || [],
-      substitutes: data.substitutes || [],
-      outOfSquad: data.outOfSquad || [],
-    });
-  });
-
-  return result;
-}
-
-async function main() {
+const main = async () => {
   try {
-    const matches = await fetchMatchesThisMonth();
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(matches, null, 2), "utf8");
-    console.log(`✅ 保存完了: ${OUTPUT_PATH}`);
-    console.log(`🔄 今月の試合数: ${matches.length}`);
+    const [start, end] = getTargetRange();
+
+    const results = await Promise.allSettled(
+      LEAGUE_IDS.map((leagueId) =>
+        db
+          .collection("leagues")
+          .doc(leagueId)
+          .collection("matches")
+          .where("kickoffTime", ">=", start)
+          .where("kickoffTime", "<=", end)
+          .get()
+          .then((snapshot) => ({
+            leagueId,
+            matches: snapshot.docs.map((doc) => doc.data()),
+          }))
+      )
+    );
+
+    const successful = results
+      .filter((r) => r.status === "fulfilled")
+      .flatMap((r) => r.value.matches);
+
+    const failed = results
+      .filter((r) => r.status === "rejected")
+      .map((r, i) => ({ leagueId: LEAGUE_IDS[i], error: r.reason }));
+
+    if (failed.length > 0) {
+      console.warn("⚠️ 一部のリーグでデータ取得に失敗しました:");
+      for (const { leagueId, error } of failed) {
+        console.warn(`- ${leagueId}:`, error.message || error);
+      }
+    }
+
+    const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
+    const teamData = JSON.parse(teamDataRaw);
+    const teams = teamData.teams;
+    const leagueMap = Object.fromEntries(
+      (Array.isArray(teamData.leagues) ? teamData.leagues : []).map((l) => [l.en, l.jp])
+    );
+
+    const getTeamInfo = (teamId) => {
+      const team = teams.find((t) => t.teamId === teamId);
+      return team
+        ? {
+            id: teamId,
+            name: { jp: team.team, en: team.englishName },
+            players: team.players || [],
+            englishplayers: team.englishplayers || [],
+            logo: team.logo || "",
+          }
+        : {
+            id: teamId,
+            name: { jp: "", en: "" },
+            players: [],
+            englishplayers: [],
+            logo: "",
+          };
+    };
+
+    const enrichedMatches = successful.map((match) => ({
+      matchId: match.matchId?.toString() || match.id?.toString(),
+      kickoffTime: match.kickoffTime || match.utcDate,
+      matchday: match.matchday,
+      league: {
+        en: match.league || match.competition?.name || "",
+        jp: leagueMap[match.league || match.competition?.name] || match.league || "",
+      },
+      homeTeam: getTeamInfo(match.homeTeam?.id),
+      awayTeam: getTeamInfo(match.awayTeam?.id),
+      lineupStatus: match.lineupStatus || "未発表",
+      score: match.score || {
+        winner: null,
+        duration: "REGULAR",
+        fullTime: { home: null, away: null },
+        halfTime: { home: null, away: null },
+      },
+      startingMembers: match.startingMembers || [],
+      substitutes: match.substitutes || [],
+      outOfSquad: match.outOfSquad || [],
+    }));
+
+    fs.writeFileSync(targetPath, JSON.stringify(enrichedMatches, null, 2), "utf-8");
+    console.log(`✅ ${enrichedMatches.length}件の試合情報を ${targetPath} に保存しました`);
   } catch (err) {
     console.error("❌ エラー:", err);
-    process.exit(1);
   }
-}
+};
 
 main();

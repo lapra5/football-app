@@ -1,3 +1,5 @@
+Remove-Item -Recurse -Force .next
+
 npm run dev
 http://localhost:3000
 

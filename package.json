@@ -9,8 +9,8 @@
     "update-japanese-players": "node src/data/updateJapanesePlayers.js",
     "dev-refresh": "npm run dev",
     "update-and-restart": "npm run allinone && echo '✅ データ更新完了！開発サーバーを再起動してください 🙌'",
-    "set-admin": "node scripts/setAdminClaim.js",
-    "get-user-info": "node scripts/getUserInfo.js"
+    "set-admin-claim": "node --loader ts-node/esm scripts/admin-tools/setAdminClaim.mts",
+    "get-user-info": "node --loader ts-node/esm scripts/admin-tools/getUserInfo.mts"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.6",
