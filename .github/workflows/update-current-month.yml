@@ -1,11 +1,9 @@
-# .github/workflows/update-current-month.yml
-
 name: Update Current Month Matches (Daily)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *' # JST 12:00（UTC 3:00）に毎日実行
+    - cron: '0 3 * * *' # JST 12:00 に毎日実行
 
 jobs:
   update:
@@ -23,11 +21,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Decode FIREBASE_ADMIN_BASE64 to .env.local
+      # ✅ ここで .env.local を作成（.mjs で dotenv.config が使えるように）
+      - name: Create .env.local file
         run: |
           echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" > .env.local
 
-      - name: Run updateCurrentMonthMatch.mjs script
+      - name: Run updateCurrentMonthMatch.mjs
         run: node ./scripts/updateCurrentMonthMatch.mjs
 
       - name: Commit and push updated match data
