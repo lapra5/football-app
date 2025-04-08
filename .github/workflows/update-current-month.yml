@@ -1,11 +1,9 @@
-# .github/workflows/update-current-month.yml
-
-name: Update Current Month Match (Daily)
+name: Update Current Matches (Daily)
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 4 * * *' # 毎日13:00 JST
+    - cron: '0 0 * * *' # 毎日 UTC 0:00（日本時間で09:00）に実行
+  workflow_dispatch:
 
 jobs:
   update:
@@ -23,7 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run updateCurrentMonthMatch script
-        run: node ./scripts/updateCurrentMonthMatch.mjs
+      - name: Decode Firebase key to serviceAccountKey.json
+        run: |
+          echo -n "$FIREBASE_ADMIN_BASE64" | base64 --decode > serviceAccountKey.json
         env:
           FIREBASE_ADMIN_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
+
+      - name: Run update script
+        run: node ./scripts/updateCurrentMonthMatch.mjs
+        env:
+          NODE_OPTIONS: "--experimental-specifier-resolution=node"
