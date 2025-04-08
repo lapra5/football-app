@@ -21,20 +21,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # ✅ .env.local を作成して BASE64 秘密鍵をセット
-      - name: Create .env.local
-        run: |
-          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" > .env.local
+      # 🔐 Secrets から環境変数として渡す（.env.local は作成しない）
+      - name: Export FIREBASE_PRIVATE_KEY_JSON_BASE64
+        run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
-      # ✅ スクリプトを実行
+      # ✅ スクリプト実行（ESM 対応）
       - name: Run updateCurrentMonthMatch script
-        run: node ./scripts/updateCurrentMonthMatch.mjs
+        run: node --no-warnings --loader ts-node/esm ./scripts/updateCurrentMonthMatch.mjs
 
-      # ✅ データを commit & push（必要に応じて）
+      # ✅ 結果をコミットして保存（任意）
       - name: Commit and push updated JSON
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/current_month_matches.json
-          git commit -m "✅ Auto update current_month_matches.json" || echo "No changes"
+          git commit -m "✅ Auto update current_month_matches.json" || echo "No changes to commit"
           git push origin master
