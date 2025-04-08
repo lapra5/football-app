@@ -1,18 +1,16 @@
-# .github/workflows/fetch-lineup-score.yml
-
-name: Fetch Lineup & Score (Every 10 min)
+name: Update Current Month Matches (Daily)
 
 on:
-  schedule:
-    - cron: '*/10 * * * *'  # 毎時10分間隔
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * *' # JST 12:00 に毎日実行
 
 jobs:
-  fetch:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
@@ -23,16 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Export secrets
+      - name: Export FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
         run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
-      - name: Run fetchLineupAndScore script
-        run: node --no-warnings ./scripts/fetchLineupAndScore.mjs
+      - name: Run updateCurrentMonthMatch script
+        run: node --no-warnings ./scripts/updateCurrentMonthMatch.mjs
 
-      - name: Commit updates
+      - name: Commit and push updated current_month_matches.json
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/current_month_matches.json
-          git commit -m "⚽️ Auto update lineup & score info" || echo "No changes"
+          git commit -m "🗓️ Auto update match list" || echo "No changes"
           git push origin master || echo "No changes to push"
