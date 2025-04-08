@@ -28,4 +28,4 @@ jobs:
           echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_PRIVATE_KEY_JSON_BASE64 }}" > .env.local
 
       - name: Run update script for 30days matches
-        run: node ./scripts/updateCurrentMatches.mjs
+        run: node ./scripts/updateCurrentMonthMatch.mjs
