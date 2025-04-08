@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { initializeApp, cert } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+import { getFirestore, Timestamp } from "firebase-admin/firestore";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -29,7 +29,7 @@ const getTargetRange = () => {
   const now = new Date();
   const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30, 0, 0, 0);
   const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 30, 23, 59, 59);
-  return [start.toISOString(), end.toISOString()];
+  return [Timestamp.fromDate(start), Timestamp.fromDate(end)];
 };
 
 const main = async () => {
