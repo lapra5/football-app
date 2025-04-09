@@ -10,7 +10,11 @@
     "dev-refresh": "npm run dev",
     "update-and-restart": "npm run allinone && echo '✅ データ更新完了！開発サーバーを再起動してください 🙌'",
     "set-admin-claim": "node --loader ts-node/esm scripts/admin-tools/setAdminClaim.mts",
-    "get-user-info": "node --loader ts-node/esm scripts/admin-tools/getUserInfo.mts"
+    "get-user-info": "node --loader ts-node/esm scripts/admin-tools/getUserInfo.mts",
+    "fetch:lineups": "ts-node --esm ./scripts/fetchLineupsFootballData.mts",
+    "fetch-scores": "ts-node-esm scripts/fetchScores.mts",
+    "update:matchday-status": "ts-node-esm scripts/updateMatchdayStatus.mts"
+
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.6",

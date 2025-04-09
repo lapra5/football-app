@@ -47,11 +47,14 @@ F:/Python/practice/web_sample/my-app
 ├─ node_modules/                → npm パッケージ群（`npm install` 時に生成される）
 ├─ public/                      → 静的ファイル置き場（画像・favicon・robots.txt など）
 ├─ scripts/                     → 
-│    ├─ api/                   → 管理者専用のCLIツールを格納するフォルダ。
+│    ├─ admin-tools/            → 管理者専用のCLIツールを格納するフォルダ。
 │    │  ├─ getUserInfo.ts      → 指定した UID の Firebase ユーザー情報を取得して表示します。管理者かどうかを含めて確認可能です。
 │    │  └─ setAdminClaim.ts    → 指定した Firebase UID に admin: true のカスタムクレームを設定し、管理者権限を付与します。
+│    ├─ fetchLineupsFootballData.mts → FOOTBALL_DATA API を使って日本人選手のスタメン・ベンチ・ベンチ外情報を取得する自動化スクリプトです。
+│    ├─ fetchScores.mts              → スコアの取得（試合開始2時間後
 │    ├─ transfer_cleanup_log.csv     → updatePlayers.mjs 実行時に出力される、選手の移籍更新ログファイル。
-│    └─ updateCurrentMonthMatch.mjs  → 今月の日本人所属試合だけを抽出して current_month_match.json に保存するメインスクリプト。
+│    ├─ updateCurrentMonthMatch.mjs  → 今月の日本人所属試合だけを抽出して current_month_match.json に保存するメインスクリプト。月初に1か月分の試合日程取得（現在は30日前〜30日後）
+│    └─ updateMatchdayStatus.mts     → Firestoreの年間スケジュールからマッチデイを取得・更新
 └─ src
   ├─ app/                    → Next.js App Router の構成ルート
   │  ├─ page.tsx             → 一般ページ

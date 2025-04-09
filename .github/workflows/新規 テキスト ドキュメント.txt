@@ -1,10 +1,10 @@
 cd F:\Python\practice\web_sample\my-app
 
-# ワークフローファイルをステージに追加
-git add .github/workflows/update-current-month.yml
+# すべての変更をステージに追加
+git add -A
 
-# コミット（メッセージはなんでもOK）
-git commit -m "Fix working directory issue"
+# コミット（メッセージは適宜変更してください）
+git commit -m "🔥 Update match range script to use Timestamp and fetch 30-day window"
 
-# GitHubにpush（main ブランチ名を使っていると仮定）
+# GitHub にプッシュ
 git push origin master
