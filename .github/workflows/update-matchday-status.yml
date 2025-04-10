@@ -1,13 +1,12 @@
-# .github/workflows/update-matchday-status.yml
 name: Update Matchday Status (Daily)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 3 * * *' # JST 12:10 に毎日実行
+    - cron: '0 2 * * *' # JST 11:00
 
 jobs:
-  update:
+  update-matchday-status:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,11 +21,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Export FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
+      - name: Set FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
         run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
       - name: Run updateMatchdayStatus script
-        run: npx ts-node-esm ./scripts/updateMatchdayStatus.mts
+        run: node --loader ts-node/esm ./scripts/updateMatchdayStatus.mts
 
       - name: Commit and push updated matchday_status.json
         run: |
