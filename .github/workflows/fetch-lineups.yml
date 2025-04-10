@@ -4,7 +4,7 @@ name: Fetch Lineups (Every 30 Minutes)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/15 * * * *' # UTC → JSTで毎時 0,15,30,45分
 
 jobs:
   fetch-lineups:
@@ -16,7 +16,7 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
-      - run: npx ts-node-esm scripts/fetchLineupsFootballData.mts
+      - run: npx ts-node-esm scripts/fetchLineups.mts
       - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
