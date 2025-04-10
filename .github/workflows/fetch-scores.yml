@@ -1,25 +1,40 @@
 # .github/workflows/fetch-scores.yml
-name: Fetch Match Scores (Every 10 Minutes)
+name: Fetch Scores (Every Hour)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 * * * *' # JST 9:00, 10:00, ... 毎時00分（UTC基準）
 
 jobs:
   fetch-scores:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - run: npm install
-      - run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
-      - run: node --loader ts-node/esm scripts/fetchScores.mts
-      - run: |
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
+        run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+
+      - name: Set FOOTBALL_DATA_API_KEY as env
+        run: echo "FOOTBALL_DATA_API_KEY=${{ secrets.FOOTBALL_DATA_API_KEY }}" >> $GITHUB_ENV
+
+      - name: Run fetchScores script
+        run: node --loader ts-node/esm scripts/fetchScores.mts
+
+      - name: Commit and push updated current_month_matches.json
+        run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/current_month_matches.json
-          git commit -m "🎯 Auto fetch match scores" || echo "No changes"
+          git commit -m "⚽ Auto fetch scores" || echo "No changes"
           git push origin master || echo "No changes to push"
