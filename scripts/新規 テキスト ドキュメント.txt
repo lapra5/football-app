@@ -3,3 +3,5 @@ node updateCurrentMonthMatch.mjs
 npm run fetch:lineups
 
 npm run fetch-scores
+
+npm run update:matchday-status
