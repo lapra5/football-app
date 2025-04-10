@@ -1,10 +1,23 @@
 cd F:\Python\practice\web_sample\my-app
+git stash push -u -m "temp-stash" && \
+git pull origin master --rebase && \
+git stash pop && \
+git add -A && \
+git commit -m "💾 Auto-commit after rebase" || echo "No changes to commit" && \
+git push origin master || echo "Push failed"
 
-# すべての変更をステージに追加
-git add -A
 
-# コミット（メッセージは適宜変更してください）
-git commit -m "🔥 Update match range script to use Timestamp and fetch 30-day window"
+# 旧ファイルの削除をステージに追加（※削除済みファイルなので rm）
+git rm scripts/fetchLineupsFootballData.mts
 
-# GitHub にプッシュ
+# 新ファイルをステージに追加
+git add scripts/fetchLineups.mts
+
+# コミット
+git commit -m "✅ Rename fetchLineupsFootballData.mts to fetchLineups.mts"
+
+# 最新の master を取り込みつつリベース（必要であれば）
+git pull origin master --rebase
+
+# プッシュ
 git push origin master
