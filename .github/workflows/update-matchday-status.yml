@@ -4,7 +4,11 @@ on:
   workflow_dispatch:
   schedule:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     - cron: '0 2 * * *' # JST 11:00
+=======
+    - cron: '0 4 * * *' # JST 13:00 に実行
+>>>>>>> Stashed changes
 =======
     - cron: '0 4 * * *' # JST 13:00 に実行
 >>>>>>> Stashed changes
@@ -17,6 +21,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '20'
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 
       - name: Install dependencies
@@ -31,10 +36,15 @@ jobs:
       - name: Commit and push updated matchday_status.json
         run: |
 =======
+=======
+>>>>>>> Stashed changes
       - run: npm install
       - run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
       - run: node --loader ts-node/esm ./scripts/updateMatchdayStatus.mts
       - run: |
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
