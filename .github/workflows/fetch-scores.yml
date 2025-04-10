@@ -16,7 +16,7 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
-      - run: npx ts-node-esm scripts/fetchScores.mts
+      - run: node --loader ts-node/esm scripts/fetchScores.mts
       - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
