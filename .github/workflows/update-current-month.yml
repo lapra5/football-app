@@ -3,7 +3,7 @@ name: Update Current Month Matches (Daily)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *' # JST 12:00 毎日実行
+    - cron: '0 3 * * *' # JST 12:00 に毎日実行
 
 jobs:
   update:
