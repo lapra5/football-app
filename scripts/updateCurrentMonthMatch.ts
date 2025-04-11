@@ -4,7 +4,7 @@ console.log("🚀 updateCurrentMonthMatch 開始");
 // ✅ Firestore 書き込みやファイル保存処理のための各種 import
 import * as fs from "fs";
 import * as path from "path";
-import { sendDiscordMessage } from "@/utils/discordNotify.ts";
+import { sendDiscordMessage } from "@/utils/discordNotify";
 
 type Match = {
   id: number;
@@ -31,7 +31,6 @@ const saveMatches = async (matches: Match[]) => {
 const main = async () => {
   const matches = await fetchMatchData();
   const count = await saveMatches(matches);
-
   await sendDiscordMessage(`✅ 試合データ ${count} 件を更新しました`);
 };
 
