@@ -130,6 +130,7 @@ const main = async () => {
 };
 
 main().catch((err) => {
-  console.error("❌ スクリプト全体で未処理のエラー:", err);
+  console.error("❌ スクリプト実行中にエラーが発生しました:");
+  console.error(err); // 詳細をログに出す
   process.exit(1);
 });
