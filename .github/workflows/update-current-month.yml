@@ -24,13 +24,8 @@ jobs:
       - name: Export FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
         run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
-      - name: Run updateCurrentMonthMatch script with ts-node loader (register method)
-        run: >
-          node
-          --import 'data:text/javascript,import { register } from "node:module";
-          import { pathToFileURL } from "node:url";
-          register("ts-node/esm", pathToFileURL("./"));'
-          ./scripts/updateCurrentMonthMatch.mts
+      - name: Run updateCurrentMonthMatch script with ts-node loader
+        run: node --import ./scripts/ts-loader.mjs ./scripts/updateCurrentMonthMatch.mts
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
