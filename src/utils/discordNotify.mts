@@ -1,4 +1,5 @@
-// src/utils/discordNotify.mts
+console.log("🔔 discordNotify モジュール読み込み");
+
 export const sendDiscordMessage = async (message: string) => {
   const url = process.env.DISCORD_WEBHOOK_URL;
   if (!url) {
