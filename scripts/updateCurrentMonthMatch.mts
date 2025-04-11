@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.mts";
+import util from "util"; // ← 上の方に追加
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -131,6 +132,6 @@ const main = async () => {
 
 main().catch((err) => {
   console.error("❌ スクリプト実行中にエラーが発生しました:");
-  console.error(err); // 詳細をログに出す
+  console.error(util.inspect(err, { depth: null, colors: false }));
   process.exit(1);
 });
