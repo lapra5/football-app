@@ -130,16 +130,23 @@ const main = async () => {
   }
 };
 
-main().catch((err) => {
+main().catch(async (err) => {
   console.error("❌ スクリプト実行中にエラーが発生しました:");
 
+  let message: string;
+
   if (err instanceof Error) {
-    console.error(err.message);
+    message = `❌ updateCurrentMonthMatch エラー:\n${err.message}\n${err.stack}`;
     console.error(err.stack);
   } else {
-    console.error("非Error型:", typeof err);
+    try {
+      message = `❌ updateCurrentMonthMatch 不明なエラー:\n${JSON.stringify(err)}`;
+    } catch (e) {
+      message = "❌ updateCurrentMonthMatch でエラー発生（内容不明）";
+    }
     console.error(err);
   }
 
+  await sendDiscordMessage(message);
   process.exit(1);
 });
