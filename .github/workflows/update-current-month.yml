@@ -21,15 +21,24 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Export secrets
+      - name: Export FIREBASE_PRIVATE_KEY_JSON_BASE64 as env
+        run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+
+      - name: Run updateCurrentMonthMatch script with ts-node loader (register method)
+        run: >
+          node
+          --import 'data:text/javascript,import { register } from "node:module";
+          import { pathToFileURL } from "node:url";
+          register("ts-node/esm", pathToFileURL("./"));'
+          ./scripts/updateCurrentMonthMatch.mts
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
+
+      - name: Commit and push updated current_month_matches.json
         run: |
-          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
-          echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }}" >> $GITHUB_ENV
-
-      - name: Run updateCurrentMonthMatch script (.mts + ts-node/esm)
-        run: node --loader ts-node/esm ./scripts/updateCurrentMonthMatch.mts
-
-          main().catch((err) => {
-            console.error("❌ updateCurrentMonthMatch スクリプトの実行中に予期せぬエラー:", err);
-            process.exit(1);
-          });
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/current_month_matches.json
+          git commit -m "🗓️ Auto update match list" || echo "No changes"
+          git push origin master || echo "No changes to push"
