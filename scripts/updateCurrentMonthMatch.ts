@@ -1,42 +1,84 @@
-// 🚀 開始ログ
-console.log("🚀 updateCurrentMonthMatch 開始");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { initializeApp, cert } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
+import { sendDiscordMessage } from "../src/utils/discordNotify";
 
-// ✅ Firestore 書き込みやファイル保存処理のための各種 import
-import * as fs from "fs";
-import * as path from "path";
-import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-type Match = {
-  id: number;
-  home: string;
-  away: string;
-  date: string;
-};
+// Firebase 初期化
+const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
+if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
+const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
+initializeApp({ credential: cert(serviceAccount) });
+const db = getFirestore();
 
-const fetchMatchData = async (): Promise<Match[]> => {
-  console.log("📡 データ取得開始...");
-  return [
-    { id: 1, home: "Team A", away: "Team B", date: "2025-04-12" },
-    { id: 2, home: "Team C", away: "Team D", date: "2025-04-13" },
-  ];
-};
+const LEAGUE_IDS = [
+  "2001", "2002", "2003", "2013", "2014",
+  "2015", "2016", "2017", "2019", "2021"
+];
 
-const saveMatches = async (matches: Match[]) => {
-  const outputPath = path.resolve("src/data/current_month_matches.json");
-  fs.writeFileSync(outputPath, JSON.stringify(matches, null, 2));
-  console.log(`✅ ${matches.length}件の試合情報を ${outputPath} に保存しました`);
-  return matches.length;
-};
+const teamDataPath = path.resolve(__dirname, "../src/data/team_league_names.json");
+const targetPath = path.resolve(__dirname, "../src/data/matchday_status.json");
 
 const main = async () => {
-  const matches = await fetchMatchData();
-  const count = await saveMatches(matches);
-  await sendDiscordMessage(`✅ 試合データ ${count} 件を更新しました`);
+  try {
+    console.log("🚀 updateMatchdayStatus 開始");
+
+    const now = new Date();
+    const leagueStatusMap: Record<string, { previous: number; current: number; next: number }> = {};
+
+    const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
+    const teamData = JSON.parse(teamDataRaw);
+    const leagueMap = Object.fromEntries(
+      (Array.isArray(teamData.leagues) ? teamData.leagues : []).map((l) => [l.en, l.jp])
+    );
+
+    for (const leagueId of LEAGUE_IDS) {
+      const snapshot = await db.collection("leagues").doc(leagueId).collection("matches").get();
+      const matches = snapshot.docs.map((doc) => doc.data());
+
+      const sortedMatches = matches
+        .filter((m) => m.kickoffTime)
+        .sort((a, b) => new Date(a.kickoffTime).getTime() - new Date(b.kickoffTime).getTime());
+
+      const grouped = new Map<number, any[]>();
+      sortedMatches.forEach((m) => {
+        if (!grouped.has(m.matchday)) grouped.set(m.matchday, []);
+        grouped.get(m.matchday)!.push(m);
+      });
+
+      let currentMatchday: number | undefined;
+      for (const [matchday, matchesOfDay] of grouped) {
+        if (matchesOfDay.some((m) => new Date(m.kickoffTime).getTime() > now.getTime())) {
+          currentMatchday = matchday;
+          break;
+        }
+      }
+      if (!currentMatchday) {
+        const all = [...grouped.keys()].sort((a, b) => b - a);
+        currentMatchday = all[0];
+      }
+
+      const leagueName = sortedMatches[0]?.league || sortedMatches[0]?.competition?.name || "";
+      const jpName = leagueMap[leagueName] || leagueName;
+
+      leagueStatusMap[jpName] = {
+        previous: currentMatchday - 1,
+        current: currentMatchday,
+        next: currentMatchday + 1,
+      };
+    }
+
+    fs.writeFileSync(targetPath, JSON.stringify(leagueStatusMap, null, 2), "utf-8");
+    console.log(`✅ matchday_status.json に保存しました (${Object.keys(leagueStatusMap).length} リーグ)`);
+    await sendDiscordMessage(`✅ matchday_status.json を更新しました（${Object.keys(leagueStatusMap).length} リーグ）`);
+  } catch (err) {
+    console.error("❌ エラー:", err);
+    await sendDiscordMessage(`❌ エラー発生: ${err instanceof Error ? err.message : String(err)}`);
+    process.exit(1);
+  }
 };
 
-main().catch(async (err) => {
-  console.error("❌ スクリプト実行中にエラーが発生しました:");
-  console.error(err);
-  await sendDiscordMessage(`❌ エラー発生: ${err instanceof Error ? err.message : String(err)}`);
-  process.exit(1);
-});
+main();
