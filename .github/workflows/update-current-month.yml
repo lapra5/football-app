@@ -24,8 +24,8 @@ jobs:
       - name: Export secrets
         run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
-      - name: Run update script (.mts 対応)
-        run: node --import ./scripts/ts-loader.mjs ./scripts/updateCurrentMonthMatch.mts
+      - name: Run update script
+        run: npx ts-node --esm ./scripts/updateCurrentMonthMatch.ts
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
