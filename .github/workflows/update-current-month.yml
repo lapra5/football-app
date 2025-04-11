@@ -3,7 +3,7 @@ name: Update Current Month Matches (Daily)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *' # JST 12:00 に毎日実行
+    - cron: '0 3 * * *' # JST 12:00 毎日実行
 
 jobs:
   update:
@@ -21,19 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Export secrets to environment
-        run: |
-          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
-        shell: bash
+      - name: Export secrets
+        run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
-      - name: Run updateCurrentMonthMatch script
-        run: |
-          npx ts-node-esm ./scripts/updateCurrentMonthMatch.mts
+      - name: Run update script (.mts 対応)
+        run: node --import ./scripts/ts-loader.mjs ./scripts/updateCurrentMonthMatch.mts
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
 
-      - name: Commit and push updated current_month_matches.json
+      - name: Commit and push updated file
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
