@@ -17,6 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
+
     },
     "plugins": [
       {
@@ -24,10 +25,6 @@
       }
     ],
     "strictNullChecks": true
-  },
-  "ts-node": {
-    "esm": true,
-    "experimentalSpecifierResolution": "node"
   },
   "include": [
     "**/*.ts",
