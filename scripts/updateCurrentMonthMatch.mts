@@ -133,20 +133,10 @@ const main = async () => {
 main().catch(async (err) => {
   console.error("❌ スクリプト実行中にエラーが発生しました:");
 
-  let message: string;
+  const msg = `❌ updateCurrentMonthMatch エラー:\n` +
+              (err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err));
 
-  if (err instanceof Error) {
-    message = `❌ updateCurrentMonthMatch エラー:\n${err.message}\n${err.stack}`;
-    console.error(err.stack);
-  } else {
-    try {
-      message = `❌ updateCurrentMonthMatch 不明なエラー:\n${JSON.stringify(err)}`;
-    } catch (e) {
-      message = "❌ updateCurrentMonthMatch でエラー発生（内容不明）";
-    }
-    console.error(err);
-  }
-
-  await sendDiscordMessage(message);
+  await sendDiscordMessage(msg);
   process.exit(1);
 });
+
