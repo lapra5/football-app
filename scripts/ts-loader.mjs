@@ -1,5 +1,8 @@
-// ts-loader.mjs
-import { register } from "node:module";
-import { pathToFileURL } from "node:url";
+// scripts/ts-loader.mjs
+import { register } from 'ts-node/esm';
+import { pathToFileURL } from 'url';
 
-register("ts-node/esm", pathToFileURL("./"));
+register({
+  loader: 'ts-node/esm',
+  experimentalSpecifierResolution: 'node',
+});
