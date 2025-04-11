@@ -129,4 +129,7 @@ const main = async () => {
   }
 };
 
-main();
+main().catch((err) => {
+  console.error("❌ スクリプト全体で未処理のエラー:", err);
+  process.exit(1);
+});
