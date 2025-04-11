@@ -132,6 +132,14 @@ const main = async () => {
 
 main().catch((err) => {
   console.error("❌ スクリプト実行中にエラーが発生しました:");
-  console.error(util.inspect(err, { depth: null, colors: false }));
+
+  if (err instanceof Error) {
+    console.error(err.message);
+    console.error(err.stack);
+  } else {
+    console.error("非Error型:", typeof err);
+    console.error(err);
+  }
+
   process.exit(1);
 });
