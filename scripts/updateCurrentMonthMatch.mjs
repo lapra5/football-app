@@ -3,10 +3,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import { sendDiscordMessage } from "../src/utils/discordNotify.mts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ✅ 共通の Firebase 初期化処理
 const getFirestoreInstance = () => {
   const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
   if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
@@ -60,12 +60,15 @@ const main = async () => {
       .filter((r) => r.status === "rejected")
       .map((r, i) => ({ leagueId: LEAGUE_IDS[i], error: r.reason }));
 
-    if (failed.length > 0) {
-      console.warn("⚠️ 一部のリーグでデータ取得に失敗しました:");
-      for (const { leagueId, error } of failed) {
-        console.warn(`- ${leagueId}:`, error.message || error);
-      }
-    }
+      if (failed.length > 0) {
+        const msgLines = [
+          `⚠️ 一部のリーグで試合データの取得に失敗しました`,
+          ...failed.map(f => `・${f.leagueId}: ${f.error.message || String(f.error)}`)
+        ];
+        const msg = msgLines.join('\n');
+        console.warn(msg);
+        await sendDiscordMessage(msg);
+      }      
 
     const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
     const teamData = JSON.parse(teamDataRaw);
@@ -116,9 +119,13 @@ const main = async () => {
     }));
 
     fs.writeFileSync(targetPath, JSON.stringify(enrichedMatches, null, 2), "utf-8");
-    console.log(`✅ ${enrichedMatches.length}件の試合情報を ${targetPath} に保存しました`);
+
+    const successMsg = `✅ updateCurrentMonthMatch 成功: ${enrichedMatches.length} 試合更新`;
+    console.log(successMsg);
+    await sendDiscordMessage(successMsg);
   } catch (err) {
     console.error("❌ エラー:", err);
+    await sendDiscordMessage(`❌ updateCurrentMonthMatch でエラー発生: ${err.message}`);
   }
 };
 
