@@ -25,7 +25,7 @@ jobs:
         run: echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
 
       - name: Run updateCurrentMonthMatch script
-        run: npx ts-node-esm ./scripts/updateCurrentMonthMatch.mjs
+        run: npx ts-node-esm ./scripts/updateCurrentMonthMatch.mts
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
           FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
