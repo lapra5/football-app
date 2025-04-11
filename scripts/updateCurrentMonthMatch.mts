@@ -1,17 +1,15 @@
-// scripts/updateCurrentMonthMatch.mjs
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.mts";
-import util from "util"; // ← 上の方に追加
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const getFirestoreInstance = () => {
   const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
-  if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
+  if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が未設定です");
   const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
   initializeApp({ credential: cert(serviceAccount) });
   return getFirestore();
@@ -36,9 +34,6 @@ const getTargetRange = () => {
 
 const main = async () => {
   try {
-    // ✅ テスト通知（最初に送信）
-    await sendDiscordMessage("📢 テスト通知：GitHub Actions 経由で送信できています！");
-
     const [start, end] = getTargetRange();
 
     const results = await Promise.allSettled(
@@ -124,19 +119,15 @@ const main = async () => {
     const successMsg = `✅ updateCurrentMonthMatch 成功: ${enrichedMatches.length} 試合更新`;
     console.log(successMsg);
     await sendDiscordMessage(successMsg);
-  } catch (err) {
+  } catch (err: any) {
     console.error("❌ エラー:", err);
-    await sendDiscordMessage(`❌ updateCurrentMonthMatch でエラー発生: ${err.stack || err.message}`);
+    const msg =
+      `❌ updateCurrentMonthMatch エラー:\n` +
+      `🧾 ${err.message || err}\n` +
+      (err.stack ? `📄\n${err.stack.split("\n").slice(0, 5).join("\n")}` : "");
+    await sendDiscordMessage(msg);
+    process.exit(1);
   }
 };
 
-main().catch(async (err) => {
-  console.error("❌ スクリプト実行中にエラーが発生しました:");
-
-  const msg = `❌ updateCurrentMonthMatch エラー:\n` +
-              (err instanceof Error ? `${err.message}\n${err.stack}` : JSON.stringify(err));
-
-  await sendDiscordMessage(msg);
-  process.exit(1);
-});
-
+main();
