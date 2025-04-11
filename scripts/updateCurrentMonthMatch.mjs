@@ -1,3 +1,4 @@
+// scripts/updateCurrentMonthMatch.mjs
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -34,6 +35,9 @@ const getTargetRange = () => {
 
 const main = async () => {
   try {
+    // ✅ テスト通知（最初に送信）
+    await sendDiscordMessage("📢 テスト通知：GitHub Actions 経由で送信できています！");
+
     const [start, end] = getTargetRange();
 
     const results = await Promise.allSettled(
@@ -60,15 +64,11 @@ const main = async () => {
       .filter((r) => r.status === "rejected")
       .map((r, i) => ({ leagueId: LEAGUE_IDS[i], error: r.reason }));
 
-      if (failed.length > 0) {
-        const msgLines = [
-          `⚠️ 一部のリーグで試合データの取得に失敗しました`,
-          ...failed.map(f => `・${f.leagueId}: ${f.error.message || String(f.error)}`)
-        ];
-        const msg = msgLines.join('\n');
-        console.warn(msg);
-        await sendDiscordMessage(msg);
-      }      
+    if (failed.length > 0) {
+      const msg = `⚠️ 一部のリーグで取得失敗: ${failed.map(f => f.leagueId).join(', ')}`;
+      console.warn(msg);
+      await sendDiscordMessage(msg);
+    }
 
     const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
     const teamData = JSON.parse(teamDataRaw);
@@ -125,7 +125,7 @@ const main = async () => {
     await sendDiscordMessage(successMsg);
   } catch (err) {
     console.error("❌ エラー:", err);
-    await sendDiscordMessage(`❌ updateCurrentMonthMatch でエラー発生: ${err.message}`);
+    await sendDiscordMessage(`❌ updateCurrentMonthMatch でエラー発生: ${err.stack || err.message}`);
   }
 };
 
