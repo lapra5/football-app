@@ -3,7 +3,7 @@ name: Update Current Month Matches (Daily)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 3 * * *' # JST 12:00 実行
+    - cron: '0 3 * * *' # JST 12:00 に毎日実行
 
 jobs:
   update:
@@ -26,6 +26,5 @@ jobs:
           echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
           echo "DISCORD_WEBHOOK_URL=${{ secrets.DISCORD_WEBHOOK_URL }}" >> $GITHUB_ENV
 
-      - name: Run updateCurrentMonthMatch script (with .mts)
-        run: |
-          npx ts-node-esm --loader ts-node/esm ./scripts/updateCurrentMonthMatch.mts
+      - name: Run updateCurrentMonthMatch script (.mts + ts-node/esm)
+        run: node --loader ts-node/esm ./scripts/updateCurrentMonthMatch.mts
