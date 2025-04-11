@@ -1,11 +1,9 @@
 // scripts/ts-loader.mjs
-import { register } from 'ts-node/esm';
+import { registerAndCreateEsmLoader } from 'ts-node/esm';
 import { pathToFileURL } from 'url';
-// scripts/ts-loader.mjs
-import 'ts-node/register/esm';
 
-
-register({
-  loader: 'ts-node/esm',
-  experimentalSpecifierResolution: 'node',
-});
+// Register ts-node
+const loader = registerAndCreateEsmLoader();
+export const resolve = loader.resolve;
+export const getFormat = loader.getFormat;
+export const transformSource = loader.transformSource;
