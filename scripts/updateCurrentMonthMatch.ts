@@ -4,7 +4,7 @@ console.log("🚀 updateCurrentMonthMatch 開始");
 // ✅ Firestore 書き込みやファイル保存処理のための各種 import
 import * as fs from "fs";
 import * as path from "path";
-import { sendDiscordMessage } from "../src/utils/discordNotify"; // ← 拡張子なしに！
+import { sendDiscordMessage } from "../src/utils/discordNotify";
 
 type Match = {
   id: number;
