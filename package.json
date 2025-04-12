@@ -14,7 +14,8 @@
     "fetch:lineups": "ts-node --esm ./scripts/fetchLineupsFootballData.mts",
     "fetch-scores": "ts-node-esm scripts/fetchScores.mts",
     "update:matchday-status": "ts-node-esm scripts/updateMatchdayStatus.mts",
-    "update-current-month": "dotenv -e .env.local -- node --loader ts-node/esm scripts/updateCurrentMonthMatch.mts"
+    "update-current-month": "dotenv -e .env.local -- node --loader ts-node/esm scripts/updateCurrentMonthMatch.mts",
+    "update-players": "dotenv -e .env.local -- node --loader ts-node/esm scripts/updatePlayers.mts"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.6",

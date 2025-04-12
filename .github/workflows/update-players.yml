@@ -1,0 +1,47 @@
+name: Update Players(Summer&Winter)
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 冬: Jan 1〜31
+    - cron: '0 3 1-31 1 *'
+    # 夏: Jun 1〜30
+    - cron: '0 3 1-30 6 *'
+    # 夏: Jul 1〜31
+    - cron: '0 3 1-31 7 *'
+    # 夏: Aug 1〜31
+    - cron: '0 3 1-31 8 *'
+    # 夏: Sep 1〜30
+    - cron: '0 3 1-30 9 *'
+
+jobs:
+  update-players:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set Secrets as Environment Variables
+        run: |
+          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+          echo "DISCORD_WEBHOOK_PLAYERS=${{ secrets.DISCORD_WEBHOOK_PLAYERS }}" >> $GITHUB_ENV
+
+      - name: Run updatePlayers script
+        run: node --loader ts-node/esm scripts/updatePlayers.mts
+
+      - name: Commit and push if changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/team_league_names.json src/data/transfer_cleanup_log.csv
+          git commit -m "👤 Auto update Japanese player transfers" || echo "No changes"
+          git push origin master || echo "No changes to push"
