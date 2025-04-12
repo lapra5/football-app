@@ -1,9 +1,18 @@
 // 🚀 開始ログ
+<<<<<<< HEAD
 console.log("🚀 updateCurrentMonthMatch 開始");
 
 // 必要な import
 import * as fs from "fs";
 import * as path from "path";
+=======
+console.log("🚀 updateMatchdayStatus 開始");
+
+// ✅ Firestore 書き込みやファイル保存処理のための各種 import
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+>>>>>>> c3f0d5c (🔔 feat: 分離されたWebhookで試合データ通知を送信)
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
@@ -32,6 +41,7 @@ const getTargetRange = () => {
 
 const main = async () => {
   try {
+<<<<<<< HEAD
     const [start, end] = getTargetRange();
 
     const results = await Promise.allSettled(
@@ -53,6 +63,10 @@ const main = async () => {
     const successful = results
       .filter((r) => r.status === "fulfilled")
       .flatMap((r) => r.status === "fulfilled" ? r.value.matches : []);
+=======
+    const now = new Date();
+    const leagueStatusMap: Record<string, { previous: number; current: number; next: number }> = {};
+>>>>>>> c3f0d5c (🔔 feat: 分離されたWebhookで試合データ通知を送信)
 
     const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
     const teamData = JSON.parse(teamDataRaw);
