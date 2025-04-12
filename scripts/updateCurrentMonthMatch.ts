@@ -2,18 +2,21 @@
 console.log("🚀 updateCurrentMonthMatch 開始");
 
 // 必要な import
-import fs from "fs";
-import path from "path";
+import * as fs from "fs";
+import * as path from "path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 
-// ✅ Firebase 初期化
+// Firebase 初期化
 const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
 if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
 const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
+
+// Webhook URL（方法2: 直接渡す方式）
+const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
 // 対象リーグ
 const LEAGUE_IDS = [
@@ -21,11 +24,10 @@ const LEAGUE_IDS = [
   "2015", "2016", "2017", "2019", "2021"
 ];
 
-// パス定義
+// データファイルのパス
 const teamDataPath = path.resolve("src/data/team_league_names.json");
 const targetPath = path.resolve("src/data/current_month_matches.json");
 
-// 日付範囲取得
 const getTargetRange = () => {
   const now = new Date();
   const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
@@ -55,18 +57,7 @@ const main = async () => {
 
     const successful = results
       .filter((r) => r.status === "fulfilled")
-      .flatMap((r) => (r.status === "fulfilled" ? r.value.matches : []));
-
-    const failed = results
-      .filter((r) => r.status === "rejected")
-      .map((r, i) => ({ leagueId: LEAGUE_IDS[i], error: r.reason }));
-
-    if (failed.length > 0) {
-      console.warn("⚠️ 一部のリーグでデータ取得に失敗:");
-      for (const { leagueId, error } of failed) {
-        console.warn(`- ${leagueId}:`, error.message || error);
-      }
-    }
+      .flatMap((r) => r.status === "fulfilled" ? r.value.matches : []);
 
     const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
     const teamData = JSON.parse(teamDataRaw);
@@ -121,13 +112,13 @@ const main = async () => {
 
     await sendDiscordMessage(
       `✅ 試合データ ${enrichedMatches.length} 件を更新しました`,
-      "matches"
+      DISCORD_WEBHOOK
     );
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(
-      `❌ 試合データ更新中にエラー: ${err instanceof Error ? err.message : String(err)}`,
-      "matches"
+      `❌ エラー発生: ${err instanceof Error ? err.message : String(err)}`,
+      DISCORD_WEBHOOK
     );
     process.exit(1);
   }

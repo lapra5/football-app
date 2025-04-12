@@ -1,14 +1,16 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+import { sendDiscordMessage } from "../src/utils/discordNotify";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
 
-// Firebase 初期化
 const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
 if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
+
 const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
@@ -18,60 +20,42 @@ const LEAGUE_IDS = [
   "2015", "2016", "2017", "2019", "2021"
 ];
 
-const teamDataPath = path.resolve(__dirname, "../src/data/team_league_names.json");
-const targetPath = path.resolve(__dirname, "../src/data/matchday_status.json");
-
 const main = async () => {
   try {
-    const now = new Date();
-    const leagueStatusMap: Record<string, { previous: number; current: number; next: number }> = {};
-
-    const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
-    const teamData = JSON.parse(teamDataRaw);
-    const leagueMap = Object.fromEntries(
-      (Array.isArray(teamData.leagues) ? teamData.leagues : []).map((l) => [l.en, l.jp])
-    );
+    let updatedCount = 0;
 
     for (const leagueId of LEAGUE_IDS) {
-      const snapshot = await db.collection("leagues").doc(leagueId).collection("matches").get();
-      const matches = snapshot.docs.map((doc) => doc.data());
+      const ref = db.collection("leagues").doc(leagueId);
+      const doc = await ref.get();
+      const data = doc.data();
+      if (!data) continue;
 
-      const sortedMatches = matches
-        .filter((m) => m.kickoffTime)
-        .sort((a, b) => new Date(a.kickoffTime).getTime() - new Date(b.kickoffTime).getTime());
-
-      const grouped = new Map<number, any[]>();
-      sortedMatches.forEach((m) => {
-        if (!grouped.has(m.matchday)) grouped.set(m.matchday, []);
-        grouped.get(m.matchday)!.push(m);
-      });
-
-      let currentMatchday: number | undefined;
-      for (const [matchday, matchesOfDay] of grouped) {
-        if (matchesOfDay.some((m) => new Date(m.kickoffTime).getTime() > now.getTime())) {
-          currentMatchday = matchday;
-          break;
+      const newData = {
+        ...data,
+        matchday: {
+          previous: data.matchday?.previous ?? 0,
+          current: data.matchday?.current ?? 0,
+          next: data.matchday?.next ?? 0,
         }
-      }
-      if (!currentMatchday) {
-        const all = [...grouped.keys()].sort((a, b) => b - a);
-        currentMatchday = all[0];
-      }
-
-      const leagueName = sortedMatches[0]?.league || sortedMatches[0]?.competition?.name || "";
-      const jpName = leagueMap[leagueName] || leagueName;
-
-      leagueStatusMap[jpName] = {
-        previous: currentMatchday - 1,
-        current: currentMatchday,
-        next: currentMatchday + 1,
       };
-    }
 
-    fs.writeFileSync(targetPath, JSON.stringify(leagueStatusMap, null, 2), "utf-8");
-    console.log(`✅ matchday_status.json に保存しました (${Object.keys(leagueStatusMap).length} リーグ)`);
+      await ref.set(newData, { merge: true });
+      updatedCount++;
+    }
+    console.log("🔍 Webhook URL:", process.env.DISCORD_WEBHOOK_MATCHDAY);
+
+    console.log(`✅ マッチデイ情報を ${updatedCount} リーグ分更新しました`);
+    await sendDiscordMessage(
+      `✅ マッチデイステータスを更新しました（全${updatedCount}リーグ）`,
+      process.env.DISCORD_WEBHOOK_MATCHDAY as string
+    );    
   } catch (err) {
     console.error("❌ エラー:", err);
+    await sendDiscordMessage(
+      `❌ マッチデイ更新エラー: ${err instanceof Error ? err.message : String(err)}`,
+      process.env.DISCORD_WEBHOOK_MATCHDAY!  // ← ここにも `!` を追加
+    );
+    process.exit(1);
   }
 };
 

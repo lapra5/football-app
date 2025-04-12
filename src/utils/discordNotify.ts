@@ -1,28 +1,28 @@
+// src/utils/discordNotify.ts
+import fetch from 'node-fetch';
+
+/**
+ * Discordにメッセージを送信する関数
+ * @param message - 通知内容
+ * @param webhookUrl - 通知を送信するWebhook URL（Discordのもの）
+ */
 export const sendDiscordMessage = async (
   message: string,
-  type: 'matches' | 'matchday' | 'lineups' | 'scores' = 'matches'
+  webhookUrl: string
 ) => {
-  const webhookMap = {
-    matches: process.env.DISCORD_WEBHOOK_MATCHES,
-    matchday: process.env.DISCORD_WEBHOOK_MATCHDAY,
-    lineups: process.env.DISCORD_WEBHOOK_LINEUPS,
-    scores: process.env.DISCORD_WEBHOOK_SCORES,
-  };
-
-  const url = webhookMap[type];
-  if (!url) {
-    console.warn(`⚠️ Webhook URL for ${type} is not defined.`);
+  if (!webhookUrl) {
+    console.warn("⚠️ Webhook URLが未定義です。通知をスキップします。");
     return;
   }
 
   try {
-    await fetch(url, {
+    await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ content: message }),
     });
-    console.log(`✅ Discord通知送信成功（${type}）`);
+    console.log("✅ Discord通知送信成功");
   } catch (error) {
-    console.error(`❌ Discord通知送信失敗（${type}）`, error);
+    console.error("❌ Discord通知送信失敗", error);
   }
 };
