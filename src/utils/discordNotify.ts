@@ -1,23 +1,24 @@
-export const sendDiscordMessage = async (message: string, webhookEnvKey = "DISCORD_WEBHOOK_URL") => {
-  const url = process.env[webhookEnvKey];
+import fetch from "node-fetch";
+
+export const sendDiscordMessage = async (content: string, webhookUrl?: string) => {
+  const url = webhookUrl || process.env.DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH;
+
   if (!url) {
-    console.error(`❌ Webhook URL が環境変数 ${webhookEnvKey} に設定されていません`);
+    console.error("❌ Webhook URL が環境変数 DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH に設定されていません");
     return;
   }
 
   try {
-    const res = await fetch(url, {
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: message }),
+      body: JSON.stringify({ content }),
     });
 
-    if (!res.ok) {
-      console.error(`❌ Discord通知失敗: ${res.status} ${res.statusText}`);
-    } else {
-      console.log("✅ Discord通知成功");
+    if (!response.ok) {
+      console.error(`❌ Discord通知に失敗しました: ${response.statusText}`);
     }
-  } catch (err) {
-    console.error("❌ Discord通知エラー:", err);
+  } catch (error) {
+    console.error("❌ Discord通知中にエラーが発生しました:", error);
   }
 };
