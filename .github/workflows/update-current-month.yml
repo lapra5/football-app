@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON_BASE64 }}
-      DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH: ${{ secrets.DISCORD_WEBHOOK_UPDATE_MATCHES }}
+      FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
+      DISCORD_WEBHOOK_MATCHES: ${{ secrets.DISCORD_WEBHOOK_MATCHES }}
 
     steps:
       - name: Checkout repository
@@ -27,12 +27,6 @@ jobs:
 
       - name: Run update script
         run: node --loader ts-node/esm --require tsconfig-paths/register ./scripts/updateCurrentMonthMatch.ts
-<<<<<<< HEAD
-=======
-        env:
-          DISCORD_WEBHOOK_MATCHES: ${{ secrets.DISCORD_WEBHOOK_MATCHES }}
-          FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
->>>>>>> c3f0d5c (🔔 feat: 分離されたWebhookで試合データ通知を送信)
 
       - name: Commit and push changes
         run: |
