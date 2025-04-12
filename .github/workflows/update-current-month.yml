@@ -28,7 +28,7 @@ jobs:
         run: node --loader ts-node/esm --require tsconfig-paths/register ./scripts/updateCurrentMonthMatch.ts
         env:
           FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
-          DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH: ${{ secrets.DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH }}
 
       - name: Commit and push updated file
         run: |
