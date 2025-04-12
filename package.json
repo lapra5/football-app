@@ -13,7 +13,8 @@
     "get-user-info": "node --loader ts-node/esm scripts/admin-tools/getUserInfo.mts",
     "fetch:lineups": "ts-node --esm ./scripts/fetchLineupsFootballData.mts",
     "fetch-scores": "ts-node-esm scripts/fetchScores.mts",
-    "update:matchday-status": "ts-node-esm scripts/updateMatchdayStatus.mts"
+    "update:matchday-status": "ts-node-esm scripts/updateMatchdayStatus.mts",
+    "update-current-month": "dotenv -e .env.local -- node --loader ts-node/esm scripts/updateCurrentMonthMatch.mts"
   },
   "dependencies": {
     "@radix-ui/react-select": "^2.1.6",
@@ -41,6 +42,7 @@
     "@tailwindcss/postcss": "^4.0.12",
     "@types/react": "^19.0.10",
     "autoprefixer": "^10.4.20",
+    "dotenv-cli": "^8.0.0",
     "eslint": "^8.56.0",
     "eslint-config-next": "^15.2.1",
     "lightningcss": "^1.29.2",

@@ -1,4 +1,4 @@
-name: update
+name: Update Current Month Matches(daily at 1:00 PM)
 
 on:
   schedule:
@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Run update script
-        run: node --loader ts-node/esm --require tsconfig-paths/register ./scripts/updateCurrentMonthMatch.ts
+        run: node --loader ts-node/esm scripts/updateCurrentMonthMatch.mts
 
       - name: Commit and push changes
         run: |

@@ -1,5 +1,201 @@
 [
   {
+    "matchId": "524106",
+    "kickoffTime": "2025-03-12T17:45:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "UEFA Champions League",
+      "jp": "UEFAチャンピオンズリーグ"
+    },
+    "homeTeam": {
+      "id": 521,
+      "name": {
+        "jp": "LOSCリール",
+        "en": "Lille OSC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/521.svg"
+    },
+    "awayTeam": {
+      "id": 4,
+      "name": {
+        "jp": "ボルシア・ドルトムント",
+        "en": "Borussia Dortmund"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/4.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 2
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "524101",
+    "kickoffTime": "2025-03-12T20:00:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "UEFA Champions League",
+      "jp": "UEFAチャンピオンズリーグ"
+    },
+    "homeTeam": {
+      "id": 58,
+      "name": {
+        "jp": "アストン・ヴィラ",
+        "en": "Aston Villa FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/58.svg"
+    },
+    "awayTeam": {
+      "id": 851,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "524102",
+    "kickoffTime": "2025-03-12T20:00:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "UEFA Champions League",
+      "jp": "UEFAチャンピオンズリーグ"
+    },
+    "homeTeam": {
+      "id": 78,
+      "name": {
+        "jp": "アトレティコ・マドリード",
+        "en": "Club Atlético de Madrid"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/78.svg"
+    },
+    "awayTeam": {
+      "id": 86,
+      "name": {
+        "jp": "レアル・マドリード",
+        "en": "Real Madrid CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/86.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 4
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 0
+      },
+      "regularTime": {
+        "home": 1,
+        "away": 0
+      },
+      "extraTime": {
+        "home": 0,
+        "away": 0
+      },
+      "penalties": {
+        "home": 1,
+        "away": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "524103",
+    "kickoffTime": "2025-03-12T20:00:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "UEFA Champions League",
+      "jp": "UEFAチャンピオンズリーグ"
+    },
+    "homeTeam": {
+      "id": 57,
+      "name": {
+        "jp": "アーセナル",
+        "en": "Arsenal FC"
+      },
+      "players": [
+        "冨安 健洋"
+      ],
+      "englishplayers": [
+        "Takehiro Tomiyasu"
+      ],
+      "logo": "https://crests.football-data.org/57.svg"
+    },
+    "awayTeam": {
+      "id": 674,
+      "name": {
+        "jp": "PSVアイントホーフェン",
+        "en": "PSV"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/674.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 2
+      },
+      "halfTime": {
+        "home": 2,
+        "away": 1
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "524108",
     "kickoffTime": "2025-04-08T19:00:00Z",
     "matchday": 1,
@@ -17811,6 +18007,243 @@
       "halfTime": {
         "home": null,
         "away": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "500881",
+    "kickoffTime": "2025-03-12T19:45:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Championship",
+      "jp": "EFLチャンピオンシップ（イングランド2部）"
+    },
+    "homeTeam": {
+      "id": 325,
+      "name": {
+        "jp": "ポーツマスFC",
+        "en": "Portsmouth FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 1138,
+      "name": {
+        "jp": "プリマス・アーガイルFC",
+        "en": "Plymouth Argyle FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1138.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 2
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 1
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "500884",
+    "kickoffTime": "2025-03-12T19:45:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Championship",
+      "jp": "EFLチャンピオンシップ（イングランド2部）"
+    },
+    "homeTeam": {
+      "id": 322,
+      "name": {
+        "jp": "ハル・シティAFC",
+        "en": "Hull City AFC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/322.svg"
+    },
+    "awayTeam": {
+      "id": 1082,
+      "name": {
+        "jp": "オックスフォード・ユナイテッドFC",
+        "en": "Oxford United FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1082.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 1
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "500885",
+    "kickoffTime": "2025-03-12T19:45:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Championship",
+      "jp": "EFLチャンピオンシップ（イングランド2部）"
+    },
+    "homeTeam": {
+      "id": 341,
+      "name": {
+        "jp": "リーズ・ユナイテッド",
+        "en": "Leeds United FC"
+      },
+      "players": [
+        "田中 碧"
+      ],
+      "englishplayers": [
+        "Ao Tanaka"
+      ],
+      "logo": "https://crests.football-data.org/341.svg"
+    },
+    "awayTeam": {
+      "id": 384,
+      "name": {
+        "jp": "ミルウォールFC",
+        "en": "Millwall FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/384.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "500888",
+    "kickoffTime": "2025-03-12T19:45:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Championship",
+      "jp": "EFLチャンピオンシップ（イングランド2部）"
+    },
+    "homeTeam": {
+      "id": 346,
+      "name": {
+        "jp": "ワトフォードFC",
+        "en": "Watford FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/346.svg"
+    },
+    "awayTeam": {
+      "id": 72,
+      "name": {
+        "jp": "スウォンジー・シティAFC",
+        "en": "Swansea City AFC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/72.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "500882",
+    "kickoffTime": "2025-03-12T20:00:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Championship",
+      "jp": "EFLチャンピオンシップ（イングランド2部）"
+    },
+    "homeTeam": {
+      "id": 70,
+      "name": {
+        "jp": "ストーク・シティ",
+        "en": "Stoke City FC"
+      },
+      "players": [
+        "瀬古 樹"
+      ],
+      "englishplayers": [
+        "Tatsuki Seko"
+      ],
+      "logo": "https://crests.football-data.org/70.svg"
+    },
+    "awayTeam": {
+      "id": 59,
+      "name": {
+        "jp": "ブラックバーン・ローバーズ",
+        "en": "Blackburn Rovers FC"
+      },
+      "players": [
+        "大橋 祐紀"
+      ],
+      "englishplayers": [
+        "Yūki Ohashi"
+      ],
+      "logo": "https://crests.football-data.org/59.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 0
       }
     },
     "startingMembers": [],

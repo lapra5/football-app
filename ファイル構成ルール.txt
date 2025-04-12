@@ -40,6 +40,11 @@ F:/Python/practice/web_sample/my-app
 ├─ tsconfig.json                → TypeScript の設定ファイル。必須
 ├─ .git/                        → Git 管理のメタデータ（バージョン履歴など）
 ├─ .github/                     → GitHub Actions など CI/CD 設定やテンプレート配置用
+│    └─ workflows/              → GitHub Actions（4種の定期実行）
+│        ├─ fetch-lineups.yml   → 毎15分：fetchLineups.mts 実行＋通知
+│        ├─ fetch-scores.yml    → 毎30分：fetchScores.mts 実行＋通知
+│        ├─ update-current-month.yml     → 毎日13:00 JST：試合データ更新
+│        └─ update-matchday-status.yml   → 毎日14:00 JST：マッチデイ補正
 ├─ .next/                       → Next.js のビルドキャッシュ・中間生成物（自動生成）
 ├─ chromedriver/                → Puppeteer / Selenium 用の ChromeDriver バイナリ格納用（スクレイピングに利用）
 ├─ components/                  → 再利用可能な React コンポーネント群
@@ -50,10 +55,10 @@ F:/Python/practice/web_sample/my-app
 │    ├─ admin-tools/            → 管理者専用のCLIツールを格納するフォルダ。
 │    │  ├─ getUserInfo.ts      → 指定した UID の Firebase ユーザー情報を取得して表示します。管理者かどうかを含めて確認可能です。
 │    │  └─ setAdminClaim.ts    → 指定した Firebase UID に admin: true のカスタムクレームを設定し、管理者権限を付与します。
-│    ├─ fetchLineupsFootballData.mts → FOOTBALL_DATA API を使って日本人選手のスタメン・ベンチ・ベンチ外情報を取得する自動化スクリプトです。
+│    ├─ fetchLineups.mts → FOOTBALL_DATA API を使って日本人選手のスタメン・ベンチ・ベンチ外情報を取得する自動化スクリプトです。
 │    ├─ fetchScores.mts              → スコアの取得（試合開始2時間後
 │    ├─ transfer_cleanup_log.csv     → updatePlayers.mjs 実行時に出力される、選手の移籍更新ログファイル。
-│    ├─ updateCurrentMonthMatch.mjs  → 今月の日本人所属試合だけを抽出して current_month_match.json に保存するメインスクリプト。月初に1か月分の試合日程取得（現在は30日前〜30日後）
+│    ├─ updateCurrentMonthMatch.mts  → 日本人試合 current_month_match.json に保存。今月前後30日の全試合データを取得・保存
 │    └─ updateMatchdayStatus.mts     → Firestoreの年間スケジュールからマッチデイを取得・更新
 └─ src
   ├─ app/                    → Next.js App Router の構成ルート
@@ -80,7 +85,8 @@ F:/Python/practice/web_sample/my-app
   │
   ├─ data/                   → データファイル・スクリプト保存
   │  ├─ .gitkeep                    → Git 上で 空のディレクトリを保持するためのプレースホルダファイル 
-  │  ├─ current_month_match.json    → 月初に日本人所属試合だけを抽出・保存して画面で利用
+  │  ├─ current_month_match.json    → 表示対象試合（30日前～30日後）
+  │  ├─ matchday_status.json        → 各リーグの matchday 状態
   │  ├─ team_league_names.json      → チーム情報（チームID・チーム日本語名・チーム英語名・日本人選手日本語名・日本人選手英語名・ロゴ）
   │  ├─ updated_log.json            → 各更新APIの 最終更新日時 を保存し、ダッシュボード上に表示される
   │  ├─ updatePlayers.mjs           → Yahoo! JAPAN から日本人選手と所属チームを取得するスクリプト ※後述する🔍 英語名の自動取得ロジック参照
@@ -111,6 +117,7 @@ F:/Python/practice/web_sample/my-app
   │  └─ match.ts             → Match型定義（試合情報構造）
   │
   └─ utils/
+    ├─ discordNotify.ts     → Discord通知用の共通関数（Webhook URLベース）
     └─ updateLog.ts         → 最終更新ログを更新する共通関数
 ✅ 管理者ができること（ダッシュボードボタン）
 ボタン名	機能の概要
@@ -177,6 +184,25 @@ updatePlayers.mjs 実行時、既に "englishplayers" に "undefined" が入っ�
 
 🔁 新しいチャットでこのプロジェクトを説明する時のテンプレ
 このプロジェクトは Next.js App Router を使ったサッカー情報アプリで、Firebase 認証と Firestore、Yahoo! JAPAN から日本人選手を取得する機能、そして football-data.org や API-FOOTBALL からチーム・ロゴ・日程を取得する仕組みが入ってます。team_league_names.json が全チーム情報の中心で、admin ダッシュボードから更新できます。
+
+✅ Discord通知（Webhook別チャンネル）
+
+| 種別 | Webhook 環境変数 | 対象スクリプト |
+|------|-------------------|----------------|
+| 試合データ | `DISCORD_WEBHOOK_MATCHES` | updateCurrentMonthMatch.mts |
+| マッチデイ | `DISCORD_WEBHOOK_MATCHDAY` | updateMatchdayStatus.mts |
+| スタメン | `DISCORD_WEBHOOK_LINEUPS` | fetchLineups.mts |
+| スコア | `DISCORD_WEBHOOK_SCORES` | fetchScores.mts |
+
+通知は `discordNotify.ts` の共通関数から送信され、GitHub Actions・ローカル問わず同じ形式で統一。
+
+
+ ✅ GitHub Actions での対応まとめ
+
+- すべての `.mts` スクリプトは `--loader ts-node/esm` で実行
+- Secrets は `GITHUB_ENV` 経由で渡す
+- 自動コミット処理あり（No changes fallback）
+- Webhook URL は通知種別ごとに分離（Discordチャンネルごと）
 
 ✅ firebaseへの保存形式
 
