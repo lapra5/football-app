@@ -6,7 +6,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { sendDiscordMessage } from '../src/utils/discordNotify';
+import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 
 // Firebase 初期化
 const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
