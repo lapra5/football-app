@@ -1,24 +1,28 @@
-import fetch from "node-fetch";
+export const sendDiscordMessage = async (
+  message: string,
+  type: 'matches' | 'matchday' | 'lineups' | 'scores' = 'matches'
+) => {
+  const webhookMap = {
+    matches: process.env.DISCORD_WEBHOOK_MATCHES,
+    matchday: process.env.DISCORD_WEBHOOK_MATCHDAY,
+    lineups: process.env.DISCORD_WEBHOOK_LINEUPS,
+    scores: process.env.DISCORD_WEBHOOK_SCORES,
+  };
 
-export const sendDiscordMessage = async (content: string, webhookUrl?: string) => {
-  const url = webhookUrl || process.env.DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH;
-
+  const url = webhookMap[type];
   if (!url) {
-    console.error("❌ Webhook URL が環境変数 DISCORD_WEBHOOK_URL_CURRENT_MONTH_MATCH に設定されていません");
+    console.warn(`⚠️ Webhook URL for ${type} is not defined.`);
     return;
   }
 
   try {
-    const response = await fetch(url, {
+    await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content }),
+      body: JSON.stringify({ content: message }),
     });
-
-    if (!response.ok) {
-      console.error(`❌ Discord通知に失敗しました: ${response.statusText}`);
-    }
+    console.log(`✅ Discord通知送信成功（${type}）`);
   } catch (error) {
-    console.error("❌ Discord通知中にエラーが発生しました:", error);
+    console.error(`❌ Discord通知送信失敗（${type}）`, error);
   }
 };
