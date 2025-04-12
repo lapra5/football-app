@@ -1,9 +1,7 @@
-console.log("🔔 discordNotify モジュール読み込み");
-
-export const sendDiscordMessage = async (message: string) => {
-  const url = process.env.DISCORD_WEBHOOK_URL;
+export const sendDiscordMessage = async (message: string, webhookEnvKey = "DISCORD_WEBHOOK_URL") => {
+  const url = process.env[webhookEnvKey];
   if (!url) {
-    console.error("❌ DISCORD_WEBHOOK_URL が設定されていません");
+    console.error(`❌ Webhook URL が環境変数 ${webhookEnvKey} に設定されていません`);
     return;
   }
 
