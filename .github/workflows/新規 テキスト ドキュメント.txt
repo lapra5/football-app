@@ -1,22 +1,12 @@
 cd F:\Python\practice\web_sample\my-app
-git stash push -u -m "temp-stash" && \
-git pull origin master --rebase && \
-git stash pop && \
-git add -A && \
-git commit -m "💾 Auto-commit after rebase" || echo "No changes to commit" && \
-git push origin master || echo "Push failed"
 
-
-# 旧ファイルの削除をステージに追加（※削除済みファイルなので rm）
-git rm scripts/fetchLineupsFootballData.mts
-
-# 新ファイルをステージに追加
-git add scripts/fetchLineups.mts
+# 変更ファイルをすべてステージング
+git add .
 
 # コミット
-git commit -m "✅ Rename fetchLineupsFootballData.mts to fetchLineups.mts"
+git commit -m "🔁 自動化スクリプト＆Actionsの通知対応 を全体に適用"
 
-# 最新の master を取り込みつつリベース（必要であれば）
+
 git pull origin master --rebase
 
 # プッシュ
