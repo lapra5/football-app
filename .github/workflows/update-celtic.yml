@@ -2,26 +2,29 @@ name: Update Celtic Schedule
 
 on:
   schedule:
-    - cron: '0 22 * * *' # JST 7:00（UTCでは前日の22:00）
+    - cron: '0 22 * * *'  # JST 7:00 = UTC 22:00
   workflow_dispatch:
 
 jobs:
   update-celtic:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Install Dependencies
-        run: npm ci
+      - name: Install dependencies
+        run: npm install
 
-      - name: Run updateCelticSchedule.mts
-        env:
-          FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON_BASE64 }}
-          DISCORD_WEBHOOK_CELTIC: ${{ secrets.DISCORD_WEBHOOK_CELTIC }}
+      - name: Set Secrets as Environment Variables
+        run: |
+          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+          echo "DISCORD_WEBHOOK_CELTIC=${{ secrets.DISCORD_WEBHOOK_CELTIC }}" >> $GITHUB_ENV
+
+      - name: Run updateCelticSchedule script
         run: node --loader ts-node/esm scripts/updateCelticSchedule.mts
