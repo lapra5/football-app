@@ -48,23 +48,23 @@ const main = async () => {
       const res = await axios.get(url);
       const $ = cheerio.load(res.data);
 
-      $(".data_table tr").each((_, el) => {
+      $("tbody > tr").each((_, el) => {
         const cols = $(el).find("td");
         if (cols.length < 8) return;
       
-        const dateStr = $(cols[3]).text().trim();
-        const timeStr = $(cols[4]).text().trim();
+        const matchdayText = $(cols[2]).text().trim(); // 例: 第1節第2日
+        const matchdayMatch = matchdayText.match(/第(\d+)節/);
+        const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
+      
+        const dateStr = $(cols[3]).text().trim(); // 例: 02/14(金)
+        const timeStr = $(cols[4]).text().trim(); // 例: 19:03
         const homeTeam = $(cols[5]).text().trim();
         const awayTeam = $(cols[7]).text().trim();
-        const matchdayStr = $(cols[2]).text().trim();
-        const matchdayMatch = matchdayStr.match(/第(\d+)節/);
-        const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
       
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
       
         const fullDateTimeStr = `2025/${dateStr} ${timeStr}`;
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
-      
         if (isNaN(kickoff.getTime())) return;
       
         allMatches.push({
@@ -73,10 +73,10 @@ const main = async () => {
           homeTeam: { name: homeTeam, id: null, players: [] },
           awayTeam: { name: awayTeam, id: null, players: [] },
           league,
-          matchday,
+          matchday, // ←これ！
           status: "SCHEDULED",
           lineupStatus: "未発表",
-        });
+        });        
       });      
     }
 
