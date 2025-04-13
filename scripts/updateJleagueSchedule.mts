@@ -53,7 +53,7 @@ const main = async () => {
         if (cols.length < 8) return;
       
         const matchdayText = $(cols[2]).text().trim(); // 例: 第1節第2日
-        const matchdayMatch = matchdayText.match(/第(\d+)節/);
+        const matchdayMatch = matchdayText.match(/第\s*(\d+)\s*節/);
         const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
       
         const dateStr = $(cols[3]).text().trim(); // 例: 02/14(金)
