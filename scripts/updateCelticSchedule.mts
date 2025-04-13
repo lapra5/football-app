@@ -1,4 +1,3 @@
-// scripts/updateCelticSchedule.mts
 import puppeteer, { Page } from "puppeteer";
 import * as cheerio from "cheerio";
 import fs from "fs";
@@ -44,22 +43,33 @@ const main = async () => {
 
     const browser = await puppeteer.launch({
       headless: true,
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      args: ["--no-sandbox", "--disable-setuid-sandbox"]
     });
+
     const page = await browser.newPage();
-    await page.goto(URL, { waitUntil: "networkidle2" });
+    await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36");
+
+    await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 60000 });
 
     const popupSelector = "#onetrust-accept-btn-handler";
     const popupFound = await page.waitForSelector(popupSelector, { timeout: 10000 }).catch(() => null);
     if (popupFound) await page.click(popupSelector);
 
     await autoScroll(page);
-    await new Promise(resolve => setTimeout(resolve, 5000)); // 5秒待機
-    await page.waitForSelector("table.items", { timeout: 30000 });
-// ↓が見つからないなら .items tbody tr の代わりに rows = $('table.items').find('tbody tr')
+    await new Promise((r) => setTimeout(r, 5000)); // ページ描画待機
 
+    const selector = "table.items tbody tr";
+    const tableExists = await page.waitForSelector(selector, { timeout: 30000 }).catch(() => null);
+
+    if (!tableExists) {
+      const html = await page.content();
+      fs.writeFileSync("debug_celtic_error.html", html);
+      throw new Error("❌ セレクタが見つかりません: table.items tbody tr");
+    }
 
     const html = await page.content();
+    fs.writeFileSync("debug_celtic.html", html); // 成功時も保存
+
     const $ = cheerio.load(html);
     const rows = $("table.items tbody tr");
 
@@ -103,9 +113,9 @@ const main = async () => {
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(
-      "❌ セルティック日程取得エラー: HTML構造が想定外か、描画遅延の可能性があります。",
-      process.env.DISCORD_WEBHOOK_CELTIC!
-    );    
+      `❌ セルティック日程取得エラー: ${(err as Error).message}`,
+      webhookUrl!
+    );
     process.exit(1);
   }
 };
