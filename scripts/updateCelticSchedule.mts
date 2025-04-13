@@ -1,4 +1,3 @@
-// scripts/updateCelticSchedule.mts
 import puppeteer, { Page } from "puppeteer";
 import * as cheerio from "cheerio";
 import fs from "fs";
@@ -62,7 +61,7 @@ const main = async () => {
     fs.writeFileSync("debug_celtic.html", html); // デバッグ保存
 
     const $ = cheerio.load(html);
-    const rows = $("table.items > tbody > tr");
+    const rows = $("table tbody tr");
 
     if (rows.length === 0) {
       throw new Error("❌ tr 要素が空です。HTML構造が変更された可能性があります。");
@@ -73,10 +72,6 @@ const main = async () => {
     rows.each((_, el) => {
       const cols = $(el).find("td");
       if (cols.length < 7) return;
-
-      const matchdayRaw = $(cols[0]).text().trim(); // 例: "1."
-      const matchdayParsed = parseInt(matchdayRaw.replace(/\D/g, ""), 10);
-      const matchday = isNaN(matchdayParsed) ? 0 : matchdayParsed;
 
       const rawDate = $(cols[1]).text().trim().replace(/[^\d/]/g, "");
       const timeStr = $(cols[2]).text().trim();
@@ -93,7 +88,7 @@ const main = async () => {
         homeTeam: { name: "セルティックFC", id: null, players: [] },
         awayTeam: { name: opponent, id: null, players: [] },
         league: "スコットランド",
-        matchday, // 🔥 ここで登録
+        matchday: 0,
         status: "SCHEDULED",
         lineupStatus: "未発表"
       });
