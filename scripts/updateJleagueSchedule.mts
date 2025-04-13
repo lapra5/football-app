@@ -51,30 +51,33 @@ const main = async () => {
       $("tbody > tr").each((_, el) => {
         const cols = $(el).find("td");
         if (cols.length < 8) return;
-
+      
+        const matchdayText = $(cols[2]).text().trim(); // 例: 第1節第2日
+        const matchdayMatch = matchdayText.match(/第(\d+)節/);
+        const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
+      
         const dateStr = $(cols[3]).text().trim(); // 例: 02/14(金)
         const timeStr = $(cols[4]).text().trim(); // 例: 19:03
         const homeTeam = $(cols[5]).text().trim();
         const awayTeam = $(cols[7]).text().trim();
-
+      
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
-
+      
         const fullDateTimeStr = `2025/${dateStr} ${timeStr}`;
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
-
         if (isNaN(kickoff.getTime())) return;
-
+      
         allMatches.push({
           matchId: `${league}_${kickoff.toISOString()}_${homeTeam}_vs_${awayTeam}`,
           kickoffTime: kickoff.toISOString(),
           homeTeam: { name: homeTeam, id: null, players: [] },
           awayTeam: { name: awayTeam, id: null, players: [] },
           league,
-          matchday: 0,
+          matchday,
           status: "SCHEDULED",
           lineupStatus: "未発表",
         });
-      });
+      });      
     }
 
     const ref = db.collection("leagues").doc("jleague").collection("matches");
