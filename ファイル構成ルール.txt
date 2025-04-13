@@ -44,7 +44,8 @@ F:/Python/practice/web_sample/my-app
 │        ├─ fetch-lineups.yml   → 毎15分：fetchLineups.mts 実行＋通知
 │        ├─ fetch-scores.yml    → 毎30分：fetchScores.mts 実行＋通知
 │        ├─ update-current-month.yml     → 毎日13:00 JST：試合データ更新
-│        └─ update-matchday-status.yml   → 毎日14:00 JST：マッチデイ補正
+│        ├─ update-matchday-status.yml   → 毎日14:00 JST：マッチデイ補正
+│        └─ update-players.yml  → 夏：6月〜9月末、冬：1月 に毎日12:00 JST：日本人移籍情報更新
 ├─ .next/                       → Next.js のビルドキャッシュ・中間生成物（自動生成）
 ├─ chromedriver/                → Puppeteer / Selenium 用の ChromeDriver バイナリ格納用（スクレイピングに利用）
 ├─ components/                  → 再利用可能な React コンポーネント群
@@ -59,7 +60,8 @@ F:/Python/practice/web_sample/my-app
 │    ├─ fetchScores.mts              → スコアの取得（試合開始2時間後
 │    ├─ transfer_cleanup_log.csv     → updatePlayers.mjs 実行時に出力される、選手の移籍更新ログファイル。
 │    ├─ updateCurrentMonthMatch.mts  → 日本人試合 current_month_match.json に保存。今月前後30日の全試合データを取得・保存
-│    └─ updateMatchdayStatus.mts     → Firestoreの年間スケジュールからマッチデイを取得・更新
+│    ├─ updateMatchdayStatus.mts     → Firestoreの年間スケジュールからマッチデイを取得・更新
+│    └─ updatePlayers.mts            → 日本人選手移籍情報更新API
 └─ src
   ├─ app/                    → Next.js App Router の構成ルート
   │  ├─ page.tsx             → 一般ページ
@@ -71,7 +73,6 @@ F:/Python/practice/web_sample/my-app
   │     │  ├─ update-jleague-schedule/   → Jリーグ 日程全体の更新API
   │     │  ├─ update-matches/       → 試合日程全体の更新API（Jリーグおよびスコットランドリーグ（セルティックのみ）を除く）
   │     │  ├─ update-lineups/       → スタメン情報更新API
-  │     │  ├─ update-players/       → 日本人選手移籍情報更新API
   │     │  ├─ update-scotland-schedule/  → 
   │     │  └─ update-season-data/   → チーム・ロゴ・リーグ一括更新API
   │     ├─ matches/          → 試合情報取得API（Firestore）
