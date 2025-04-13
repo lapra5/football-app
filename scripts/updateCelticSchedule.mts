@@ -62,7 +62,7 @@ const main = async () => {
     fs.writeFileSync("debug_celtic.html", html); // デバッグ用保存
 
     const $ = cheerio.load(html);
-    const rows = $("table.items tbody tr");
+    const rows = $("table tbody tr");
 
     if (rows.length === 0) {
       throw new Error("❌ tr 要素が空です。HTML構造が変更された可能性があります。");
