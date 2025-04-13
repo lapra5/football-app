@@ -1,8 +1,8 @@
-name: Update Celtic Schedule(daily at 7:00 AM)
+name: Update Celtic Schedule
 
 on:
   schedule:
-    - cron: '0 22 * * *' # JST 07:00（22:00 UTC）
+    - cron: '0 22 * * *'  # JST 7:00 = UTC 22:00
   workflow_dispatch:
 
 jobs:
@@ -28,10 +28,3 @@ jobs:
 
       - name: Run updateCelticSchedule script
         run: node --loader ts-node/esm scripts/updateCelticSchedule.mts
-
-      - name: Upload debug_celtic.html
-        uses: actions/upload-artifact@v3
-        with:
-         name: debug-celtic-html
-         path: debug_celtic.html
-
