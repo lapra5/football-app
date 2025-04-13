@@ -22,18 +22,22 @@ const J_URLS = [
   {
     url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=1&competition_ids=651",
     league: "J1",
+    docId: "j1",
   },
   {
     url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=2",
     league: "J2",
+    docId: "j2",
   },
   {
     url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=3",
     league: "J3",
+    docId: "j3",
   },
   {
     url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=11",
     league: "Jリーグカップ",
+    docId: "jcup",
   },
 ];
 
@@ -42,29 +46,33 @@ const webhookUrl = process.env.DISCORD_WEBHOOK_JLEAGUE;
 const main = async () => {
   try {
     console.log("🚀 Jリーグ日程取得開始");
-    const allMatches: any[] = [];
 
-    for (const { url, league } of J_URLS) {
+    let totalCount = 0;
+    const leagueCountMap: Record<string, number> = {};
+
+    for (const { url, league, docId } of J_URLS) {
       const res = await axios.get(url);
       const $ = cheerio.load(res.data);
+      const matches: any[] = [];
 
       $(".data_table tr").each((_, el) => {
         const cols = $(el).find("td");
         if (cols.length < 8) return;
 
-        const dateStr = $(cols[0]).text().trim(); // 例: 02/25（土）
-        const timeStr = $(cols[1]).text().trim(); // 例: 14:00
-        const homeTeam = $(cols[4]).text().trim();
-        const awayTeam = $(cols[6]).text().trim();
+        const dateStr = $(cols[3]).text().trim(); // ex: "02/25(土)"
+        const timeStr = $(cols[4]).text().trim(); // ex: "14:00"
+        const homeTeam = $(cols[5]).text().trim();
+        const awayTeam = $(cols[7]).text().trim();
 
+        // 日時未定の試合はスキップ
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
+        if (timeStr === "未定") return;
 
         const fullDateTimeStr = `2025/${dateStr} ${timeStr}`;
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
-
         if (isNaN(kickoff.getTime())) return;
 
-        allMatches.push({
+        matches.push({
           matchId: `${league}_${kickoff.toISOString()}_${homeTeam}_vs_${awayTeam}`,
           kickoffTime: kickoff.toISOString(),
           homeTeam: { name: homeTeam, id: null, players: [] },
@@ -75,15 +83,26 @@ const main = async () => {
           lineupStatus: "未発表",
         });
       });
+
+      const ref = db.collection("leagues").doc(docId).collection("matches");
+      const batch = db.batch();
+      matches.forEach((match) => {
+        batch.set(ref.doc(match.matchId), match, { merge: true });
+      });
+      await batch.commit();
+
+      totalCount += matches.length;
+      leagueCountMap[league] = matches.length;
+      console.log(`📥 ${league}: ${matches.length}件`);
     }
 
-    const ref = db.collection("leagues").doc("jleague").collection("matches");
-    const batch = db.batch();
-    allMatches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
-    await batch.commit();
+    const summary = Object.entries(leagueCountMap)
+      .map(([lg, cnt]) => `• ${lg}: ${cnt}件`)
+      .join("\n");
 
-    console.log(`✅ Jリーグ試合 ${allMatches.length} 件を保存`);
-    await sendDiscordMessage(`✅ Jリーグ試合 ${allMatches.length} 件を更新しました`, webhookUrl!);
+    const message = `✅ Jリーグ試合取得完了\n合計: ${totalCount}件\n${summary}`;
+    console.log(message);
+    await sendDiscordMessage(message, webhookUrl!);
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(`❌ Jリーグ日程取得エラー: ${(err as Error).message}`, webhookUrl!);
