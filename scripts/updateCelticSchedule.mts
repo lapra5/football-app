@@ -6,7 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { sendDiscordMessage } from "../src/utils/discordNotify";
+import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 import dotenv from "dotenv";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
