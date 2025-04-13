@@ -28,3 +28,10 @@ jobs:
 
       - name: Run updateCelticSchedule script
         run: node --loader ts-node/esm scripts/updateCelticSchedule.mts
+
+      - name: Upload debug_celtic.html
+        uses: actions/upload-artifact@v3
+        with:
+         name: debug-celtic-html
+         path: debug_celtic.html
+
