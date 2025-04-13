@@ -1,0 +1,31 @@
+# .github/workflows/update-jleague.yml
+name: Update J.League Schedule
+
+on:
+  schedule:
+    - cron: "0 22 * * *" # JST 7:00
+  workflow_dispatch:
+
+jobs:
+  update-jleague:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set Secrets as Environment Variables
+        run: |
+          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+          echo "DISCORD_WEBHOOK_JLEAGUE=${{ secrets.DISCORD_WEBHOOK_JLEAGUE }}" >> $GITHUB_ENV
+
+      - name: Run updateJleagueSchedule script
+        run: node --loader ts-node/esm scripts/updateJleagueSchedule.mts
