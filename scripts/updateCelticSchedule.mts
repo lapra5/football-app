@@ -7,7 +7,6 @@ import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 import dotenv from "dotenv";
-import { readFileSync } from "fs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
@@ -49,7 +48,6 @@ const main = async () => {
 
     const page = await browser.newPage();
     await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36");
-
     await page.goto(URL, { waitUntil: "load", timeout: 60000 });
 
     const popupSelector = "#onetrust-accept-btn-handler";
@@ -57,21 +55,13 @@ const main = async () => {
     if (popupFound) await page.click(popupSelector);
 
     await autoScroll(page);
-    await new Promise((r) => setTimeout(r, 8000)); // ← 待機時間を 5秒 → 8秒 に増加
-
-    // まず table.items の存在確認（tr は後でチェック）
-    const tableFound = await page.waitForSelector("table.items", { timeout: 30000 }).catch(() => null);
-    if (!tableFound) {
-      const html = await page.content();
-      fs.writeFileSync("debug_celtic_error.html", html);
-      throw new Error("❌ セレクタが見つかりません: table.items");
-    }
+    await new Promise((r) => setTimeout(r, 8000));
 
     const html = await page.content();
-    fs.writeFileSync("debug_celtic.html", html);
+    fs.writeFileSync("debug_celtic.html", html); // デバッグ保存
 
     const $ = cheerio.load(html);
-    const rows = $("table.items tbody tr");
+    const rows = $("table tbody tr");
 
     if (rows.length === 0) {
       throw new Error("❌ tr 要素が空です。HTML構造が変更された可能性があります。");
@@ -83,14 +73,13 @@ const main = async () => {
       const cols = $(el).find("td");
       if (cols.length < 7) return;
 
-      const dateStr = $(cols[1]).text().trim();
+      const rawDate = $(cols[1]).text().trim().replace(/[^\d/]/g, "");
       const timeStr = $(cols[2]).text().trim();
-      const opponent = $(cols[6]).text().trim();
+      const opponent = $(cols[6]).find("a").first().text().trim();
 
-      const dateMatch = dateStr.match(/\d{4}\/\d{2}\/\d{2}/);
-      if (!dateMatch || !timeStr || !opponent) return;
+      if (!rawDate || !timeStr || !opponent) return;
 
-      const kickoff = new Date(`${dateMatch[0]} ${timeStr}:00 GMT+0000`);
+      const kickoff = new Date(`${rawDate} ${timeStr}:00 GMT+0000`);
       if (isNaN(kickoff.getTime())) return;
 
       matches.push({
@@ -101,7 +90,7 @@ const main = async () => {
         league: "スコットランド",
         matchday: 0,
         status: "SCHEDULED",
-        lineupStatus: "未発表",
+        lineupStatus: "未発表"
       });
     });
 
@@ -115,7 +104,6 @@ const main = async () => {
     console.log(`✅ セルティック試合 ${matches.length} 件を保存`);
     await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を更新しました`, webhookUrl!);
   } catch (err) {
-    
     console.error("❌ エラー:", err);
     await sendDiscordMessage(
       `❌ セルティック日程取得エラー: ${(err as Error).message}`,
