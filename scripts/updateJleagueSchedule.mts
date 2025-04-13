@@ -52,11 +52,11 @@ const main = async () => {
         const cols = $(el).find("td");
         if (cols.length < 8) return;
       
-        const dateStr = $(cols[3]).text().trim(); // 修正: 日付は index 3
-        const timeStr = $(cols[4]).text().trim(); // 修正: 時刻は index 4
+        const dateStr = $(cols[3]).text().trim();
+        const timeStr = $(cols[4]).text().trim();
         const homeTeam = $(cols[5]).text().trim();
         const awayTeam = $(cols[7]).text().trim();
-        const matchdayStr = $(cols[2]).text().trim(); // ← ここから節を取得
+        const matchdayStr = $(cols[2]).text().trim();
         const matchdayMatch = matchdayStr.match(/第(\d+)節/);
         const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
       
