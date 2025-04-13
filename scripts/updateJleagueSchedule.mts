@@ -73,10 +73,10 @@ const main = async () => {
           homeTeam: { name: homeTeam, id: null, players: [] },
           awayTeam: { name: awayTeam, id: null, players: [] },
           league,
-          matchday,
+          matchday, // ←これ！
           status: "SCHEDULED",
           lineupStatus: "未発表",
-        });
+        });        
       });      
     }
 
