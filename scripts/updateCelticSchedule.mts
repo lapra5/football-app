@@ -49,29 +49,32 @@ const main = async () => {
     const page = await browser.newPage();
     await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36");
 
-    await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 60000 });
+    await page.goto(URL, { waitUntil: "load", timeout: 60000 });
 
     const popupSelector = "#onetrust-accept-btn-handler";
     const popupFound = await page.waitForSelector(popupSelector, { timeout: 10000 }).catch(() => null);
     if (popupFound) await page.click(popupSelector);
 
     await autoScroll(page);
-    await new Promise((r) => setTimeout(r, 5000)); // ページ描画待機
+    await new Promise((r) => setTimeout(r, 8000)); // ← 待機時間を 5秒 → 8秒 に増加
 
-    const selector = "table.items tbody tr";
-    const tableExists = await page.waitForSelector(selector, { timeout: 30000 }).catch(() => null);
-
-    if (!tableExists) {
+    // まず table.items の存在確認（tr は後でチェック）
+    const tableFound = await page.waitForSelector("table.items", { timeout: 30000 }).catch(() => null);
+    if (!tableFound) {
       const html = await page.content();
       fs.writeFileSync("debug_celtic_error.html", html);
-      throw new Error("❌ セレクタが見つかりません: table.items tbody tr");
+      throw new Error("❌ セレクタが見つかりません: table.items");
     }
 
     const html = await page.content();
-    fs.writeFileSync("debug_celtic.html", html); // 成功時も保存
+    fs.writeFileSync("debug_celtic.html", html);
 
     const $ = cheerio.load(html);
     const rows = $("table.items tbody tr");
+
+    if (rows.length === 0) {
+      throw new Error("❌ tr 要素が空です。HTML構造が変更された可能性があります。");
+    }
 
     const matches: any[] = [];
 
