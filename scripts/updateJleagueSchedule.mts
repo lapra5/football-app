@@ -52,9 +52,17 @@ const main = async () => {
         const cols = $(el).find("td");
         if (cols.length < 8) return;
       
-        const matchdayText = $(cols[2]).text().trim(); // 例: 第1節第2日
-        const matchdayMatch = matchdayText.match(/第\s*(\d+)\s*節/);
-        const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
+        const matchdayText = $(cols[2]).text().trim(); // 例: 第１節第２日
+
+        // 全角数字を半角に変換
+        const normalized = matchdayText.replace(/[０-９]/g, (s) =>
+          String.fromCharCode(s.charCodeAt(0) - 0xfee0)
+        );
+        
+        const matchdayMatch = normalized.match(/第(\d+)節/);
+        const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;      
+        
+        console.log(`📅 節情報: ${matchdayText} → ${normalized} → ${matchday}`);
       
         const dateStr = $(cols[3]).text().trim(); // 例: 02/14(金)
         const timeStr = $(cols[4]).text().trim(); // 例: 19:03
