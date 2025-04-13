@@ -42,7 +42,10 @@ const main = async () => {
   try {
     console.log("🚀 セルティック日程取得開始");
 
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    });
     const page = await browser.newPage();
     await page.goto(URL, { waitUntil: "domcontentloaded" });
 
