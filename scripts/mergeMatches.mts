@@ -1,50 +1,60 @@
-import fs from "fs";
-import path from "path";
+// 🚀 マージ処理開始ログ
+console.log("🚀 mergeMatches 開始");
+
+import * as fs from "fs";
+import * as path from "path";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 import { updateTimestamp } from "../src/utils/updateLog.ts";
 
-// 出力先
-const outputPath = path.resolve("src/data/current_month_matches.json");
-const webhookUrl = process.env.DISCORD_WEBHOOK_MATCHES || "";
+// Webhook（方法2: 環境変数から直接取得）
+const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
-// 各JSONファイルのパス
-const sourceFiles = [
+// データファイルのパス
+const basePath = path.resolve("src/data");
+const inputFiles = [
   "current_month_matches_oversea.json",
   "current_month_matches_jleague.json",
   "current_month_matches_celtic.json",
-].map((file) => path.resolve("src/data", file));
+];
+const outputPath = path.resolve(basePath, "current_month_matches.json");
 
 const main = async () => {
   try {
-    console.log("🚀 mergeMatches 開始");
-
     const allMatches: any[] = [];
 
-    for (const filePath of sourceFiles) {
-      if (fs.existsSync(filePath)) {
-        const raw = fs.readFileSync(filePath, "utf-8");
-        const parsed = JSON.parse(raw);
-        allMatches.push(...parsed);
-        console.log(`📄 ${path.basename(filePath)}: ${parsed.length} 件`);
-      } else {
-        console.warn(`⚠️ ファイルが存在しません: ${filePath}`);
+    for (const file of inputFiles) {
+      const fullPath = path.resolve(basePath, file);
+      if (!fs.existsSync(fullPath)) {
+        console.warn(`⚠️ ${file} が見つかりません。スキップします`);
+        continue;
       }
+
+      const raw = fs.readFileSync(fullPath, "utf-8");
+      const data = JSON.parse(raw);
+      if (!Array.isArray(data)) {
+        console.warn(`⚠️ ${file} の形式が不正です。スキップします`);
+        continue;
+      }
+
+      console.log(`📦 ${file}: ${data.length} 件`);
+      allMatches.push(...data);
     }
 
     fs.writeFileSync(outputPath, JSON.stringify(allMatches, null, 2), "utf-8");
-    console.log(`✅ 統合完了: ${allMatches.length} 件 → ${outputPath}`);
+    console.log(`✅ ${allMatches.length} 件の試合を ${outputPath} に保存しました`);
 
     updateTimestamp("mergeMatches");
 
+    // mergeMatches.mts のDiscord通知
     await sendDiscordMessage(
-      `📦 試合データ統合完了: ${allMatches.length} 件を current_month_matches.json に保存しました`,
-      webhookUrl
+        `✅ 月間試合データ統合完了: 海外＋Jリーグ＋セルティックで合計 ${allMatches.length} 件を current_month_matches.json に保存しました`,
+        DISCORD_WEBHOOK
     );
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(
-      `❌ mergeMatches エラー: ${(err as Error).message}`,
-      webhookUrl
+      `❌ mergeMatches エラー: ${err instanceof Error ? err.message : String(err)}`,
+      DISCORD_WEBHOOK
     );
     process.exit(1);
   }

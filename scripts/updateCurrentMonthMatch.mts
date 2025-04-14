@@ -113,8 +113,9 @@ const main = async () => {
 
     updateTimestamp("updateCurrentMonthMatch");
 
+    // updateCurrentMonthMatch.mts の最後のDiscord通知
     await sendDiscordMessage(
-      `✅ 試合データ ${enrichedMatches.length} 件を更新しました`,
+      `✅ 海外リーグ試合データ取得完了: ${enrichedMatches.length} 件を current_month_matches_oversea.json に保存しました`,
       DISCORD_WEBHOOK
     );
   } catch (err) {

@@ -1,0 +1,30 @@
+name: Merge Match Data
+
+on:
+  schedule:
+    - cron: "5 22 * * *" # JST 7:05 に実行（他のスクリプト後）
+  workflow_dispatch:
+
+jobs:
+  merge-matches:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set Secrets as Environment Variables
+        run: |
+          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+          echo "DISCORD_WEBHOOK_MATCHES=${{ secrets.DISCORD_WEBHOOK_MATCHES }}" >> $GITHUB_ENV
+
+      - name: Run mergeMatches script
+        run: node --loader ts-node/esm scripts/mergeMatches.mts
