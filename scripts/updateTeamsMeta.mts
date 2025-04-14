@@ -165,11 +165,17 @@ ${teamLines.join("\n")}
 ${leaguesJson}
 }`;
 
-  fs.writeFileSync(outputFile, finalJson, "utf-8");
-  console.log("🎉 完了！ team_league_names.json を更新しました。");
+    // 🔁 強制上書き（中身が同じでも必ず更新される）
+    fs.writeFileSync(outputFile, finalJson, "utf-8");
+    console.log("✅ team_league_names.json を強制的に上書きしました");
 
-  // ✅ updated_log.json に更新日時記録
-  updateTimestamp("updateTeamsMeta");
+    // 🕒 更新後の更新日時を出力（デバッグ確認用）
+    const { mtime } = fs.statSync(outputFile);
+    console.log(`🕒 ファイルの更新日時: ${mtime.toISOString()}`);
+
+    // ✅ updated_log.json に更新記録
+    updateTimestamp("updateTeamsMeta");
+
 
   // ✅ Discord 通知
   if (DISCORD_WEBHOOK_TEAMS) {

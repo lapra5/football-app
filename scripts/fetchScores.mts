@@ -63,9 +63,16 @@ const main = async () => {
     }
 
     fs.writeFileSync(targetPath, JSON.stringify(matches, null, 2), "utf-8");
+    console.log(`✅ current_month_matches.json を強制的に上書きしました`);
     console.log(`📝 スコア更新件数: ${updatedCount}`);
-    updateTimestamp("updateCurrentMonthMatch"); // ← 追加！
-
+    
+    // 🔎 更新後のファイル更新日時を確認（オプション）
+    const { mtime } = fs.statSync(targetPath);
+    console.log(`🕒 ファイルの更新日時: ${mtime.toISOString()}`);
+    
+    // 🕒 updated_log.json にも更新記録
+    updateTimestamp("updateCurrentMonthMatch");
+    
     await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました`, webhookUrl);
   } catch (err) {
     console.error("❌ エラー:", err);
