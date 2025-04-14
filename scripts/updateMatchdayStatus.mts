@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
+import { updateTimestamp } from "../src/utils/updateLog.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
@@ -48,6 +49,9 @@ const main = async () => {
       `✅ マッチデイステータスを更新しました（全${updatedCount}リーグ）`,
       process.env.DISCORD_WEBHOOK_MATCHDAY as string
     );    
+
+    updateTimestamp("updateMatchdayStatus");
+
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(

@@ -71,7 +71,7 @@ const main = async () => {
     console.log(`🕒 ファイルの更新日時: ${mtime.toISOString()}`);
     
     // 🕒 updated_log.json にも更新記録
-    updateTimestamp("updateCurrentMonthMatch");
+    updateTimestamp("fetchScores");
     
     await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました`, webhookUrl);
   } catch (err) {

@@ -65,7 +65,7 @@ const main = async () => {
 
     fs.writeFileSync(targetPath, JSON.stringify(matches, null, 2), 'utf-8');
     console.log('📝 current_month_matches.json を更新しました');
-    updateTimestamp("updateCurrentMonthMatch"); // ← 追加！
+    updateTimestamp("fetchLineups"); // ← 追加！
 
     await sendDiscordMessage(`✅ スタメンデータを ${targets.length} 件更新しました`, DISCORD_WEBHOOK);
   } catch (err) {

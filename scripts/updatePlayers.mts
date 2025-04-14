@@ -5,6 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
+import { updateTimestamp } from "../src/utils/updateLog.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -199,6 +200,9 @@ const main = async () => {
       `✅ 日本人選手の移籍情報を更新しました（件数: ${logs.length}）\n・team_league_names.json を保存\n・transfer_cleanup_log.csv を出力`,
       process.env.DISCORD_WEBHOOK_PLAYERS ?? ""
     );
+
+    updateTimestamp("updatePlayers");
+
   } catch (err) {
     console.error("❌ エラー発生:", err);
     await sendDiscordMessage(

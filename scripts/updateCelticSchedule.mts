@@ -8,6 +8,7 @@ import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 import dotenv from "dotenv";
+import { updateTimestamp } from "../src/utils/updateLog.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
@@ -108,6 +109,9 @@ const main = async () => {
 
     console.log(`✅ セルティック試合 ${matches.length} 件を保存`);
     await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を更新しました`, webhookUrl!);
+
+    updateTimestamp("updateCelticSchedule");
+
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(

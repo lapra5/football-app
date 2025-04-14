@@ -8,6 +8,7 @@ import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import dotenv from "dotenv";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
+import { updateTimestamp } from "../src/utils/updateLog.ts";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
@@ -95,6 +96,9 @@ const main = async () => {
 
     console.log(`✅ Jリーグ試合 ${allMatches.length} 件を保存`);
     await sendDiscordMessage(`✅ Jリーグ試合 ${allMatches.length} 件を更新しました`, webhookUrl!);
+
+    updateTimestamp("updateJleagueSchedule");
+
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(`❌ Jリーグ日程取得エラー: ${(err as Error).message}`, webhookUrl!);
