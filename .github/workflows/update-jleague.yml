@@ -1,4 +1,3 @@
-# .github/workflows/update-jleague.yml
 name: Update J.League Schedule
 
 on:
@@ -29,3 +28,11 @@ jobs:
 
       - name: Run updateJleagueSchedule script
         run: node --loader ts-node/esm scripts/updateJleagueSchedule.mts
+
+      - name: Commit and push updated_log.json
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/updated_log.json
+          git commit -m "📅 Auto update J.League schedule log" || echo "No changes"
+          git push origin master || echo "No changes to push"
