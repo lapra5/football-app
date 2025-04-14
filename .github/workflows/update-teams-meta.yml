@@ -27,4 +27,5 @@ jobs:
 
       - name: Run updateTeamsMeta.mts
         run: |
-          npx ts-node --esm ./scripts/updateTeamsMeta.mts
+          npx ts-node --loader ts-node/esm ./scripts/updateTeamsMeta.mts
+
