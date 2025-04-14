@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
-import { updateTimestamp } from "../src/utils/updateLog";
+import { updateTimestamp } from "../src/utils/updateLog.ts";
 
 dotenv.config({ path: path.resolve("../../.env.local") });
 
