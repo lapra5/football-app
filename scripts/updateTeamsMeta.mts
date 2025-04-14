@@ -12,9 +12,10 @@ const API_FOOTBALL_KEY = process.env.API_FOOTBALL_KEY;
 const DISCORD_WEBHOOK_TEAMS = process.env.DISCORD_WEBHOOK_TEAMS;
 
 if (!FOOTBALL_DATA_KEY || !API_FOOTBALL_KEY) {
-  console.error("❌ .env.local に FOOTBALL_DATA_KEY または API_FOOTBALL_KEY が設定されていません");
+  console.error("❌ 環境変数 FOOTBALL_DATA_KEY または API_FOOTBALL_KEY が設定されていません");
   process.exit(1);
 }
+
 
 const leagues = {
   "Premier League": "プレミアリーグ（イングランド1部）",
