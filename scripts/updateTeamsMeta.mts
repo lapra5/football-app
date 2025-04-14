@@ -3,7 +3,7 @@ import path from "path";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
 import { fileURLToPath } from "url";
-import { sendDiscordMessage } from "../src/utils/discordNotify";
+import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 
 dotenv.config({ path: path.resolve("../../.env.local") });
 
