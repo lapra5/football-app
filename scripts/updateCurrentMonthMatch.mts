@@ -27,7 +27,7 @@ const LEAGUE_IDS = [
 
 // データファイルのパス
 const teamDataPath = path.resolve("src/data/team_league_names.json");
-const targetPath = path.resolve("src/data/current_month_matches.json");
+const targetPath = path.resolve("src/data/current_month_matches_oversea.json");
 
 const getTargetRange = () => {
   const now = new Date();
@@ -111,7 +111,7 @@ const main = async () => {
     fs.writeFileSync(targetPath, JSON.stringify(enrichedMatches, null, 2), "utf-8");
     console.log(`✅ ${enrichedMatches.length}件の試合情報を ${targetPath} に保存しました`);
 
-    updateTimestamp("updateCurrentMonthMatch"); // ← 追加！
+    updateTimestamp("updateCurrentMonthMatch");
 
     await sendDiscordMessage(
       `✅ 試合データ ${enrichedMatches.length} 件を更新しました`,
