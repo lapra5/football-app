@@ -7,12 +7,12 @@ import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 
 dotenv.config({ path: path.resolve("../../.env.local") });
 
-const FOOTBALL_DATA_KEY = process.env.FOOTBALL_DATA_KEY;
+const FOOTBALL_DATA_KEY = process.env.FOOTBALL_DATA_API_KEY; // ✅ 名前一致
 const API_FOOTBALL_KEY = process.env.API_FOOTBALL_KEY;
 const DISCORD_WEBHOOK_TEAMS = process.env.DISCORD_WEBHOOK_TEAMS;
 
 if (!FOOTBALL_DATA_KEY || !API_FOOTBALL_KEY) {
-  console.error("❌ 環境変数 FOOTBALL_DATA_KEY または API_FOOTBALL_KEY が設定されていません");
+  console.error("❌ 環境変数 FOOTBALL_DATA_API_KEY または API_FOOTBALL_KEY が設定されていません");
   process.exit(1);
 }
 
