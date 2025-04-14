@@ -52,14 +52,16 @@ F:/Python/practice/web_sample/my-app
 ├─ dist/                        → ビルド成果物出力先（現状あまり使われていない可能性あり）
 ├─ node_modules/                → npm パッケージ群（`npm install` 時に生成される）
 ├─ public/                      → 静的ファイル置き場（画像・favicon・robots.txt など）
-├─ scripts/                     → 
+├─ scripts/                     → J1〜J3・ルヴァンの全試合日程を取得（スクレイピング）
 │    ├─ admin-tools/            → 管理者専用のCLIツールを格納するフォルダ。
 │    │  ├─ getUserInfo.ts      → 指定した UID の Firebase ユーザー情報を取得して表示します。管理者かどうかを含めて確認可能です。
 │    │  └─ setAdminClaim.ts    → 指定した Firebase UID に admin: true のカスタムクレームを設定し、管理者権限を付与します。
 │    ├─ fetchLineups.mts → FOOTBALL_DATA API を使って日本人選手のスタメン・ベンチ・ベンチ外情報を取得する自動化スクリプトです。
 │    ├─ fetchScores.mts              → スコアの取得（試合開始2時間後
 │    ├─ transfer_cleanup_log.csv     → updatePlayers.mjs 実行時に出力される、選手の移籍更新ログファイル。
+│    ├─ updateCelticSchedule.mts     → セルティックFCの試合日程をTransfermarktから取得
 │    ├─ updateCurrentMonthMatch.mts  → 日本人試合 current_month_match.json に保存。今月前後30日の全試合データを取得・保存
+│    ├─ updateJleagueSchedule.mts    → J1〜J3・ルヴァンの全試合日程を取得（スクレイピング）
 │    ├─ updateMatchdayStatus.mts     → Firestoreの年間スケジュールからマッチデイを取得・更新
 │    └─ updatePlayers.mts            → 日本人選手移籍情報更新API
 └─ src
@@ -248,3 +250,10 @@ src/app/api/admin/set-admin/route.ts のような App Router 用の管理者付�
 npm script の --loader ts-node/esm 対応	node --loader ts-node/esm で統一
 .ts ファイルを .mts に変換（スクリプト類のみ）	.ts → .mts へ名称変更のみ
 FIREBASE_PRIVATE_KEY_JSON_BASE64 にすべて統一	セキュリティと GitHub Actions 対応のため
+タスク内容	説明・目的	優先度
+✅ allInOneAuto.js の自動化	チーム名やロゴ・日本人情報を定期更新（現状手動？）	★★★
+🔄 team_league_names.json の定期更新	allInOneAuto.js 実行による更新を自動化	★★★
+🔍 選手移籍情報の検出	毎日 or 毎週、選手移籍（チーム名の変化）を検出して通知	★★☆
+📝 updateLog の定期ログ整理	更新記録が増えすぎた場合の整理、Slack/Discord通知連携など	★★☆
+📤 Webフロントのビルド&デプロイ	Firebase Hosting へビルド/デプロイを GitHub Actions で自動化	★★☆
+🔁 過去試合の定期バックフィル	延期や補足のため、数ヶ月前の試合も再取得（オプション）	★☆☆

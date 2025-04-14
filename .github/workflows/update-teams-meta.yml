@@ -1,0 +1,30 @@
+name: Update Teams Meta(8/1)
+
+on:
+  schedule:
+    - cron: '0 3 1 8 *'  # 毎年8月1日 12:00 JST
+  workflow_dispatch:
+
+jobs:
+  update-teams-meta:
+    runs-on: ubuntu-latest
+
+    env:
+      FOOTBALL_DATA_KEY: ${{ secrets.FOOTBALL_DATA_KEY }}
+      API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      DISCORD_WEBHOOK_TEAMS: ${{ secrets.DISCORD_WEBHOOK_TEAMS }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run updateTeamsMeta.mts
+        run: |
+          npx ts-node --esm ./scripts/updateTeamsMeta.mts

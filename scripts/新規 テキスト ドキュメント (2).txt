@@ -1,0 +1,8 @@
+updateCurrentMonthMatch.mts	football-data.org / API-FOOTBALL	Firestore: leagues/{leagueId}/matches
+JSON: current_month_matches.json	DISCORD_WEBHOOK_MATCHES	毎日午前4時	前後30日間の試合データ
+fetchLineups.mts	API-FOOTBALL（日本人選手がいる試合のスタメン情報）	JSON: current_month_matches.json	DISCORD_WEBHOOK_LINEUPS	毎日6:30～試合前に複数回	スタメンのみ
+fetchScores.mts	API-FOOTBALL（試合スコア）	JSON: current_month_matches.json	DISCORD_WEBHOOK_SCORES	毎日試合終了直後に実行	スコア更新のみ
+updateMatchdayStatus.mts	各リーグの日程を補正・マッチデイ情報更新	Firestore: leagues/{leagueId}/matches	DISCORD_WEBHOOK_MATCHDAY	毎日	今節・前節・次節の識別
+updatePlayers.mts	API-FOOTBALL	Firestore: players	DISCORD_WEBHOOK_PLAYERS	毎月1・6・7・8・9月の毎日	日本人選手の情報
+updateJleagueSchedule.mts	Jリーグ公式（日程検索ページ）	Firestore: leagues/jleague/matches	DISCORD_WEBHOOK_JLEAGUE	毎日	J1～J3 + Jリーグカップ対応
+updateCelticSchedule.mts	Transfermarkt（セルティックFCページ）	Firestore: leagues/celtic/matches	DISCORD_WEBHOOK_CELTIC	毎日7:00	Puppeteer使用
