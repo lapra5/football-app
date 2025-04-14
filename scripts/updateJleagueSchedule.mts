@@ -97,6 +97,13 @@ const main = async () => {
     console.log(`✅ Jリーグ試合 ${allMatches.length} 件を保存`);
     await sendDiscordMessage(`✅ Jリーグ試合 ${allMatches.length} 件を更新しました`, webhookUrl!);
 
+    // JSON出力先のパス
+    const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_jleague.json");
+
+    // Firestore保存後に追加：
+    fs.writeFileSync(outputPath, JSON.stringify(allMatches, null, 2), "utf-8");
+    console.log(`📝 ${outputPath} に ${allMatches.length} 件の試合を保存しました`);
+
     updateTimestamp("updateJleagueSchedule");
 
   } catch (err) {

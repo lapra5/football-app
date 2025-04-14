@@ -110,6 +110,14 @@ const main = async () => {
     console.log(`✅ セルティック試合 ${matches.length} 件を保存`);
     await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を更新しました`, webhookUrl!);
 
+    // JSON出力先のパス
+    const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_celtic.json");
+
+    // Firestore保存後に追加：
+    fs.writeFileSync(outputPath, JSON.stringify(matches, null, 2), "utf-8");
+    console.log(`📝 ${outputPath} に ${matches.length} 件の試合を保存しました`);
+
+
     updateTimestamp("updateCelticSchedule");
 
   } catch (err) {
