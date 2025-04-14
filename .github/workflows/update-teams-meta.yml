@@ -1,9 +1,9 @@
-name: Update Teams Meta(8/1)
+name: Update Teams Meta
 
 on:
-  schedule:
-    - cron: '0 3 1 8 *'  # 毎年8月1日 12:00 JST
   workflow_dispatch:
+  schedule:
+    - cron: '0 3 1 8 *' # 毎年8月1日 12:00 JST
 
 jobs:
   update-teams-meta:
@@ -14,11 +14,10 @@ jobs:
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
       DISCORD_WEBHOOK_TEAMS: ${{ secrets.DISCORD_WEBHOOK_TEAMS }}
 
-
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
@@ -30,3 +29,12 @@ jobs:
         run: |
           node --loader ts-node/esm ./scripts/updateTeamsMeta.mts
 
+      - name: Commit and push updated files
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/team_league_names.json src/data/updated_log.json
+          git commit -m "auto: update team_league_names.json"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

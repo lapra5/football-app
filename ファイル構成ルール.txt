@@ -257,3 +257,4 @@ FIREBASE_PRIVATE_KEY_JSON_BASE64 にすべて統一	セキュリティと GitHub
 📝 updateLog の定期ログ整理	更新記録が増えすぎた場合の整理、Slack/Discord通知連携など	★★☆
 📤 Webフロントのビルド&デプロイ	Firebase Hosting へビルド/デプロイを GitHub Actions で自動化	★★☆
 🔁 過去試合の定期バックフィル	延期や補足のため、数ヶ月前の試合も再取得（オプション）	★☆☆
+ Firebase Hosting にも deploy
