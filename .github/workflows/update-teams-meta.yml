@@ -9,6 +9,9 @@ jobs:
   update-teams-meta:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     env:
       FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
@@ -34,7 +37,8 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add src/data/team_league_names.json src/data/updated_log.json
-          git commit -m "auto: update team_league_names.json"
+          git commit -m "auto: update team_league_names.json" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
