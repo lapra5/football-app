@@ -206,14 +206,4 @@ ${leaguesJson}
   }  
 };
 
-import { execSync } from "child_process";
-import { writeFileSync } from "fs";
-
-// JSON 保存後の処理
-execSync("git config --global user.email 'action@github.com'");
-execSync("git config --global user.name 'GitHub Action'");
-execSync("git add src/data/team_league_names.json");
-execSync("git commit -m 'auto: update team_league_names.json'");
-execSync("git push");
-
 run();
