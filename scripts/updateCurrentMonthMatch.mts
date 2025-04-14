@@ -7,6 +7,7 @@ import * as path from "path";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
+import { updateTimestamp } from "../src/utils/updateLog";
 
 // Firebase 初期化
 const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
@@ -109,6 +110,8 @@ const main = async () => {
 
     fs.writeFileSync(targetPath, JSON.stringify(enrichedMatches, null, 2), "utf-8");
     console.log(`✅ ${enrichedMatches.length}件の試合情報を ${targetPath} に保存しました`);
+
+    updateTimestamp("updateCurrentMonthMatch"); // ← 追加！
 
     await sendDiscordMessage(
       `✅ 試合データ ${enrichedMatches.length} 件を更新しました`,

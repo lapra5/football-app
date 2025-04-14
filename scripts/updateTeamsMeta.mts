@@ -33,7 +33,6 @@ const leagues = {
 
 const breakAfterIds = [1044, 576, 6806, 7397, 745, 721, 10340, 1138];
 const outputFile = path.resolve("team_league_names.json");
-const updatedLogPath = path.resolve("src/data/updated_log.json");
 
 const fetchTeamsFromFootballData = async (leagueId: number) => {
   const response = await fetch(
@@ -95,22 +94,6 @@ const fetchJapaneseNameFromWikidata = async (englishName: string) => {
   } catch (err) {
     console.error(`❌ Wikidata検索エラー (${englishName}):`, err);
     return "";
-  }
-};
-
-const updateUpdatedLog = async () => {
-  try {
-    const logExists = fs.existsSync(updatedLogPath);
-    let logData: Record<string, string> = {};
-    if (logExists) {
-      const raw = fs.readFileSync(updatedLogPath, "utf-8");
-      logData = JSON.parse(raw);
-    }
-    logData.updateTeamsMeta = new Date().toISOString();
-    fs.writeFileSync(updatedLogPath, JSON.stringify(logData, null, 2), "utf-8");
-    console.log("🕒 updated_log.json を更新しました。");
-  } catch (err) {
-    console.error("❌ updated_log.json の更新に失敗しました:", err);
   }
 };
 
@@ -192,21 +175,21 @@ ${teamLines.join("\n")}
   ],
 ${leaguesJson}
 }`;
-  fs.writeFileSync(outputFile, finalJson, "utf-8");
+// 💾 JSON保存
+fs.writeFileSync(outputFile, finalJson, "utf-8");
+console.log("🎉 完了！ team_league_names.json を更新しました。");
 
-  console.log("🎉 完了！ team_league_names.json を更新しました。");
+// 🕒 updated_log.json に更新日時を記録
+updateTimestamp("updateTeamsMeta");
 
-  // ログ保存＆通知
-  await updateUpdatedLog();
+// 📣 Discord通知
+if (DISCORD_WEBHOOK_TEAMS) {
+  await sendDiscordMessage(
+    `✅ チーム情報を更新しました（件数: ${allTeams.length}）`,
+    DISCORD_WEBHOOK_TEAMS
+  );
+}
 
-  updateTimestamp("updateTeamsMeta");
-
-  if (DISCORD_WEBHOOK_TEAMS) {
-    await sendDiscordMessage(
-      `✅ チーム情報を更新しました（件数: ${allTeams.length}）`,
-      DISCORD_WEBHOOK_TEAMS
-    );
-  }  
 };
 
 run();
