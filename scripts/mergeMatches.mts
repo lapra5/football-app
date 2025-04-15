@@ -9,6 +9,7 @@ import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 const JLEAGUE_PATH = path.resolve("src/data/current_month_matches_jleague.json");
 const CELTIC_PATH = path.resolve("src/data/current_month_matches_celtic.json");
 const OVERSEA_PATH = path.resolve("src/data/current_month_matches_oversea.json");
+const TEAM_LEAGUE_NAMES_PATH = path.resolve("src/data/team_league_names.json");
 const OUTPUT_PATH = path.resolve("src/data/current_month_matches.json");
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
@@ -22,14 +23,27 @@ const readJson = (filePath: string): any[] => {
   }
 };
 
-const normalizeMatch = (match: any): any => {
+const readLeagueMap = (): Record<string, string> => {
+  try {
+    const raw = fs.readFileSync(TEAM_LEAGUE_NAMES_PATH, "utf-8");
+    const json = JSON.parse(raw);
+    const leagues = json.leagues as { en: string; jp: string }[];
+    return Object.fromEntries(leagues.map((l) => [l.en, l.jp]));
+  } catch (err) {
+    console.warn("⚠️ team_league_names.json の読み込みに失敗しました:", err);
+    return {};
+  }
+};
+
+const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
+  const leagueEn = match.league?.en || match.league || "";
   return {
     matchId: match.matchId || "",
     kickoffTime: match.kickoffTime || null,
     matchday: match.matchday ?? null,
     league: {
-      en: match.league?.en || match.league || "",
-      jp: match.league?.jp || match.league || ""
+      en: leagueEn,
+      jp: match.league?.jp || leagueMap[leagueEn] || leagueEn
     },
     homeTeam: {
       id: match.homeTeam?.id ?? null,
@@ -63,8 +77,9 @@ const main = async () => {
     const jleagueMatches = readJson(JLEAGUE_PATH);
     const celticMatches = readJson(CELTIC_PATH);
     const overseaMatchesRaw = readJson(OVERSEA_PATH);
+    const leagueMap = readLeagueMap();
 
-    const normalized = [...jleagueMatches, ...celticMatches, ...overseaMatchesRaw].map(normalizeMatch);
+    const normalized = [...jleagueMatches, ...celticMatches, ...overseaMatchesRaw].map((m) => normalizeMatch(m, leagueMap));
 
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
     console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
