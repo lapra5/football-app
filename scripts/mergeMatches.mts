@@ -36,17 +36,8 @@ const readLeagueMap = (): Record<string, string> => {
 };
 
 const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
-  let leagueEn = "";
-  if (typeof match.league === "string") {
-    leagueEn = match.league.trim();
-  } else if (typeof match.league?.en === "string") {
-    leagueEn = match.league.en.trim();
-  }
-
-  const leagueJp =
-    typeof match.league?.jp === "string"
-      ? match.league.jp
-      : leagueMap[leagueEn] || leagueEn;
+  const leagueEn = match.league?.en?.trim?.() || (typeof match.league === "string" ? match.league.trim() : "");
+  const leagueJp = leagueMap[leagueEn] || leagueEn;
 
   return {
     matchId: match.matchId || "",
