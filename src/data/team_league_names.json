@@ -186,17 +186,16 @@
     { "teamId": 6685, "team": "サントスFC", "englishName": "Santos FC", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/6685.svg" }
   ],
   "leagues": {
-    "0": "[object Object]",
-    "1": "[object Object]",
-    "2": "[object Object]",
-    "3": "[object Object]",
-    "4": "[object Object]",
-    "5": "[object Object]",
-    "6": "[object Object]",
-    "7": "[object Object]",
-    "8": "[object Object]",
-    "9": "[object Object]",
-    "10": "[object Object]",
-    "11": "[object Object]"
+    "Premier League": "プレミアリーグ（イングランド1部）",
+    "Championship": "EFLチャンピオンシップ（イングランド2部）",
+    "League One": "EFLリーグ1（イングランド3部）",
+    "Bundesliga": "ブンデスリーガ（ドイツ1部）",
+    "Serie A": "セリエA（イタリア1部）",
+    "La Liga": "ラ・リーガ（スペイン1部）",
+    "Ligue 1": "リーグ・アン（フランス1部）",
+    "Eredivisie": "エールディヴィジ（オランダ1部）",
+    "Primeira Liga": "プリメイラ・リーガ（ポルトガル1部）",
+    "Champions-League": "UEFAチャンピオンズリーグ",
+    "Campeonato Brasileiro Série A": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
   }
 }
