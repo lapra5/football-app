@@ -1,8 +1,8 @@
-name: Merge Match Data
+name: Merge Matches
 
 on:
   schedule:
-    - cron: "5 22 * * *" # JST 7:05 に実行（他のスクリプト後）
+    - cron: "0 22 * * *" # JST 7:00
   workflow_dispatch:
 
 jobs:
@@ -28,3 +28,11 @@ jobs:
 
       - name: Run mergeMatches script
         run: node --loader ts-node/esm scripts/mergeMatches.mts
+
+      - name: Commit merged data
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/current_month_matches.json src/data/updated_log.json
+          git commit -m "🗂️ Auto merge match data" || echo "No changes"
+          git push origin master || echo "No changes to push"
