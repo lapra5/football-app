@@ -35,32 +35,42 @@ const readLeagueMap = (): Record<string, string> => {
   }
 };
 
+const isFromWebScraping = (leagueJp: string): boolean =>
+  ["J1", "J2", "J3", "スコティッシュ・プレミアシップ"].includes(leagueJp);
+
 const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
-  const leagueEn = match.league?.en?.trim?.() || (typeof match.league === "string" ? match.league.trim() : "");
-  const leagueJp = leagueMap[leagueEn] || leagueEn;
+  const leagueRaw = match.league?.en || match.league || "";
+  const leagueEn = typeof leagueRaw === "string" ? leagueRaw.trim() : "";
+  const leagueJp = match.league?.jp || leagueMap[leagueEn] || leagueEn;
+
+  const useOriginalTeam = isFromWebScraping(leagueJp);
+
+  const getTeam = (team: any) => {
+    const rawName = team?.name;
+
+    const nameObj =
+      useOriginalTeam && typeof rawName === "string"
+        ? { jp: rawName, en: "" }
+        : typeof rawName === "object"
+        ? rawName
+        : { jp: "", en: "" };
+
+    return {
+      id: team?.id ?? null,
+      name: nameObj,
+      players: team?.players || [],
+      englishplayers: team?.englishplayers || [],
+      logo: team?.logo || "",
+    };
+  };
 
   return {
     matchId: match.matchId || "",
     kickoffTime: match.kickoffTime || null,
     matchday: match.matchday ?? null,
-    league: {
-      en: leagueEn,
-      jp: leagueJp,
-    },
-    homeTeam: {
-      id: match.homeTeam?.id ?? null,
-      name: match.homeTeam?.name || { jp: "", en: "" },
-      players: match.homeTeam?.players || [],
-      englishplayers: match.homeTeam?.englishplayers || [],
-      logo: match.homeTeam?.logo || "",
-    },
-    awayTeam: {
-      id: match.awayTeam?.id ?? null,
-      name: match.awayTeam?.name || { jp: "", en: "" },
-      players: match.awayTeam?.players || [],
-      englishplayers: match.awayTeam?.englishplayers || [],
-      logo: match.awayTeam?.logo || "",
-    },
+    league: { en: leagueEn, jp: leagueJp },
+    homeTeam: getTeam(match.homeTeam),
+    awayTeam: getTeam(match.awayTeam),
     lineupStatus: match.lineupStatus || "未発表",
     score: match.score || {
       winner: null,
