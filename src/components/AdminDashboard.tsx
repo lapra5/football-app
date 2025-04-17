@@ -62,6 +62,7 @@ export default function AdminDashboard() {
         router.push("/");
         return;
       }
+      
       await refreshUserClaims();
       const token = await user.getIdTokenResult();
       setIsAdmin(token.claims.admin === true);
@@ -138,6 +139,22 @@ export default function AdminDashboard() {
     router.push("/");
   };
 
+  const formatDateTime = (iso?: string) => {
+    if (!iso) return "未取得";
+    try {
+      return new Date(iso).toLocaleString("ja-JP", {
+        timeZone: "Asia/Tokyo",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+    } catch {
+      return "未取得";
+    }
+  };  
+
   const renderTimestamp = (key: string) => {
     return lastUpdated[key]
       ? new Date(lastUpdated[key]).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })
@@ -175,35 +192,70 @@ export default function AdminDashboard() {
       <h1 className="text-3xl font-bold text-center mb-8">管理者ダッシュボード</h1>
 
       <div className="flex flex-wrap justify-center gap-4">
-        {[
-          { key: "updateMatches", label: "全リーグ日程更新", url: "/api/admin/update-matches?all=true", color: "blue" },
-          { key: "updateCL", label: "CL日程更新", url: "/api/admin/update-matches?leagueId=2001", color: "purple" },
-          { key: "updateLineups", label: "スタメン一括更新", url: "/api/admin/update-lineups", color: "green" },
-          { key: "updatePlayers", label: "移籍情報更新", url: "/api/admin/update-players", color: "indigo" },
-          { key: "updateSeason", label: "シーズン更新", url: "/api/admin/update-season-data", color: "yellow" },
-          { key: "updateScraped_jleague", label: "Jリーグ日程更新", url: "/api/admin/update-scraped-matches", color: "orange" },
-          { key: "updateScraped_scotland", label: "スコットランド日程更新", url: "/api/admin/update-scraped-matches", color: "cyan" },
-        ].map(({ key, label, url, color }) => (
-          <div key={key} className="text-center space-y-1">
-            <p className="text-xs text-gray-500">最終更新: {renderTimestamp(key)}</p>
-            <button
-              onClick={() => handleAdminAction(url, `${label}完了！`, key)}
-              disabled={adminApiLoading}
-              title={buttonDescriptions[key]}
-              className={`${colorMap[color]} text-white px-4 py-2 rounded shadow`}
-            >
-              {adminApiLoading ? "処理中..." : label}
-            </button>
-          </div>
-        ))}
+  {[
+    {
+      key: "updateMatches",
+      label: "全リーグ日程更新",
+      color: "blue",
+      title: "全リーグの日程をAPIから取得してFirestoreに保存します。",
+    },
+    {
+      key: "updateCL",
+      label: "CL日程更新",
+      color: "purple",
+      title: "CL（チャンピオンズリーグ）の日程を取得してFirestoreに保存します。",
+    },
+    {
+      key: "updateLineups",
+      label: "スタメン一括更新",
+      color: "green",
+      title: "日本人が所属する試合のスタメンをAPIから取得してFirestoreに反映します。",
+    },
+    {
+      key: "updatePlayers",
+      label: "移籍情報更新",
+      color: "indigo",
+      title: "日本人選手の移籍情報を取得し、所属チーム情報を更新します。",
+    },
+    {
+      key: "updateSeason",
+      label: "シーズン更新",
+      color: "yellow",
+      title: "チーム名やロゴ、リーグ情報などをすべて再取得してデータを更新します。",
+    },
+    {
+      key: "updateScraped_jleague",
+      label: "Jリーグ日程更新",
+      color: "orange",
+      title: "Jリーグ（J1〜J3）の公式サイトから日程を取得し、Firestoreに保存します。",
+    },
+    {
+      key: "updateScraped_scotland",
+      label: "スコットランド日程更新",
+      color: "cyan",
+      title: "セルティックFCの試合日程をTransfermarktから取得し、Firestoreに保存します。",
+    },
+  ].map(({ key, label, color, title }) => (
+    <div key={key} className="text-center space-y-1">
+      <p className="text-xs text-gray-500">最終更新: {formatDateTime(lastUpdated[key])}</p>
+      <button
+        disabled
+        title={title}
+        className={`cursor-default ${colorMap[color]} text-white px-4 py-2 rounded shadow opacity-70`}
+      >
+        {label}
+      </button>
+    </div>
+  ))}
 
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
-        >
-          ログアウト
-        </button>
-      </div>
+  <button
+    onClick={handleLogout}
+    className="bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded shadow"
+  >
+    ログアウト
+  </button>
+</div>
+
 
       {teamLeagueNames && (
         <MatchList
