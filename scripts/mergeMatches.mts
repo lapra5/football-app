@@ -35,18 +35,11 @@ const readLeagueMap = (): Record<string, string> => {
       const trimmedEn = en.trim();
       const trimmedJp = jp.trim();
 
-      // 通常の登録
       map[trimmedEn] = trimmedJp;
 
-      // よくある別名に対応（必要に応じて追加）
+      // 別名も登録
       if (trimmedEn === "Champions-League") {
         map["UEFA Champions League"] = trimmedJp;
-      }
-      if (trimmedEn === "Premier League") {
-        map["English Premier League"] = trimmedJp;
-      }
-      if (trimmedEn === "La Liga") {
-        map["Primera Division"] = trimmedJp;
       }
     });
 
