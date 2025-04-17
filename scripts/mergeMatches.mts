@@ -48,22 +48,22 @@ const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
   const getTeam = (team: any) => {
     const rawName = team?.name;
   
-    let nameObj = { jp: "", en: "" };
-    if (typeof rawName === "string") {
-      nameObj = { jp: rawName, en: "" };
-    } else if (typeof rawName === "object" && rawName !== null) {
-      nameObj = {
-        jp: rawName.jp || "",
-        en: rawName.en || ""
-      };
-    }
+    const nameObj =
+      useOriginalTeam && typeof rawName === "string"
+        ? { jp: rawName, en: "" }
+        : typeof rawName === "object"
+          ? {
+              jp: rawName?.jp ?? "",
+              en: rawName?.en ?? ""
+            }
+          : { jp: "", en: "" };
   
     return {
       id: team?.id ?? null,
       name: nameObj,
       players: team?.players || [],
       englishplayers: team?.englishplayers || [],
-      logo: team?.logo || ""
+      logo: team?.logo || "",
     };
   };  
 };
