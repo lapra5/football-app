@@ -35,8 +35,8 @@ const readLeagueMap = (): Record<string, string> => {
   }
 };
 
-const isFromWebScraping = (leagueJp: string) =>
-  ["J1", "J2", "J3", "スコットランド", "Jリーグカップ"].includes(leagueJp);
+const isFromWebScraping = (league: string) =>
+  ["J1", "J2", "J3", "スコットランド", "Jリーグカップ"].includes(league);
 
 const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
   const leagueRaw = match.league?.en || match.league || "";
@@ -47,17 +47,13 @@ const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
 
   const getTeam = (team: any) => {
     const rawName = team?.name;
-  
     const nameObj =
       useOriginalTeam && typeof rawName === "string"
         ? { jp: rawName, en: "" }
         : typeof rawName === "object"
-          ? {
-              jp: rawName?.jp ?? "",
-              en: rawName?.en ?? ""
-            }
-          : { jp: "", en: "" };
-  
+        ? rawName
+        : { jp: "", en: "" };
+
     return {
       id: team?.id ?? null,
       name: nameObj,
@@ -65,7 +61,26 @@ const normalizeMatch = (match: any, leagueMap: Record<string, string>): any => {
       englishplayers: team?.englishplayers || [],
       logo: team?.logo || "",
     };
-  };  
+  };
+
+  return {
+    matchId: match.matchId || "",
+    kickoffTime: match.kickoffTime || null,
+    matchday: match.matchday ?? null,
+    league: { en: leagueEn, jp: leagueJp },
+    homeTeam: getTeam(match.homeTeam),
+    awayTeam: getTeam(match.awayTeam),
+    lineupStatus: match.lineupStatus || "未発表",
+    score: match.score || {
+      winner: null,
+      duration: "REGULAR",
+      fullTime: { home: null, away: null },
+      halfTime: { home: null, away: null },
+    },
+    startingMembers: match.startingMembers || [],
+    substitutes: match.substitutes || [],
+    outOfSquad: match.outOfSquad || [],
+  };
 };
 
 const main = async () => {
