@@ -27,6 +27,7 @@ const leagues = {
   "Eredivisie": "エールディヴィジ（オランダ1部）",
   "Primeira Liga": "プリメイラ・リーガ（ポルトガル1部）",
   "Champions-League": "UEFAチャンピオンズリーグ",
+  "UEFA Champions League": "UEFAチャンピオンズリーグ",
 };
 
 const breakAfterIds = [1044, 576, 6806, 7397, 745, 721, 10340, 1138];

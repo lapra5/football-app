@@ -28,7 +28,29 @@ const readLeagueMap = (): Record<string, string> => {
     const raw = fs.readFileSync(TEAM_LEAGUE_NAMES_PATH, "utf-8");
     const json = JSON.parse(raw);
     const leagues = json.leagues as { en: string; jp: string }[];
-    return Object.fromEntries(leagues.map((l) => [l.en.trim(), l.jp.trim()]));
+
+    const map: Record<string, string> = {};
+
+    leagues.forEach(({ en, jp }) => {
+      const trimmedEn = en.trim();
+      const trimmedJp = jp.trim();
+
+      // 通常の登録
+      map[trimmedEn] = trimmedJp;
+
+      // よくある別名に対応（必要に応じて追加）
+      if (trimmedEn === "Champions-League") {
+        map["UEFA Champions League"] = trimmedJp;
+      }
+      if (trimmedEn === "Premier League") {
+        map["English Premier League"] = trimmedJp;
+      }
+      if (trimmedEn === "La Liga") {
+        map["Primera Division"] = trimmedJp;
+      }
+    });
+
+    return map;
   } catch (err) {
     console.warn("⚠️ team_league_names.json の読み込みに失敗しました:", err);
     return {};
