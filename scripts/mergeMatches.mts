@@ -29,21 +29,19 @@ const readLeagueMap = (): Record<string, string> => {
     const json = JSON.parse(raw);
     const leagues = json.leagues as { en: string; jp: string }[];
 
-    const map: Record<string, string> = {};
+    // 補助マッピング（例: Champions League → Champions-League）
+    const alias: Record<string, string> = {
+      "UEFA Champions League": "Champions-League",
+    };
 
-    leagues.forEach(({ en, jp }) => {
-      const trimmedEn = en.trim();
-      const trimmedJp = jp.trim();
-
-      map[trimmedEn] = trimmedJp;
-
-      // 別名も登録
-      if (trimmedEn === "Champions-League") {
-        map["UEFA Champions League"] = trimmedJp;
-      }
-    });
-
-    return map;
+    return Object.fromEntries(
+      leagues.flatMap(({ en, jp }) => {
+        const entries = [[en.trim(), jp.trim()]];
+        const aliasKey = Object.entries(alias).find(([full]) => full === en);
+        if (aliasKey) entries.push([aliasKey[1], jp.trim()]);
+        return entries;
+      })
+    );
   } catch (err) {
     console.warn("⚠️ team_league_names.json の読み込みに失敗しました:", err);
     return {};
