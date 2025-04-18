@@ -1,4 +1,4 @@
-name: update-season-data
+name: Update Season Data
 
 on:
   schedule:
@@ -10,20 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Run updateSeasonData.mts
-        env:
-          FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON_BASE64 }}
-          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
-          DISCORD_WEBHOOK_SEASON: ${{ secrets.DISCORD_WEBHOOK_SEASON }}
-        run: npx tsx scripts/updateSeasonData.mts
+      - name: Set Secrets as Environment Variables
+        run: |
+          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+          echo "DISCORD_WEBHOOK_SEASON=${{ secrets.DISCORD_WEBHOOK_SEASON }}" >> $GITHUB_ENV
+
+      - name: Run updateSeasonData script
+        run: node --loader ts-node/esm scripts/updateSeasonData.mts
+
+      - name: Commit and push team_league_names.json and updated_log.json
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add src/data/team_league_names.json src/data/updated_log.json
+          git commit -m "📅 Auto update season data" || echo "No changes"
+          git push origin master || echo "No changes to push"
