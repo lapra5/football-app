@@ -61,6 +61,25 @@ const MatchList = ({
     return '（試合終了）';
   };
 
+  const startOfWeek = new Date(now);
+  startOfWeek.setDate(now.getDate() - now.getDay() + 1);
+  startOfWeek.setHours(0, 0, 0, 0);
+
+  const endOfWeek = new Date(startOfWeek);
+  endOfWeek.setDate(startOfWeek.getDate() + 6);
+  endOfWeek.setHours(23, 59, 59, 999);
+
+  const startOfNextWeek = new Date(endOfWeek);
+  startOfNextWeek.setDate(endOfWeek.getDate() + 1);
+  startOfNextWeek.setHours(0, 0, 0, 0);
+
+  const endOfNextWeek = new Date(startOfNextWeek);
+  endOfNextWeek.setDate(startOfNextWeek.getDate() + 6);
+  endOfNextWeek.setHours(23, 59, 59, 999);
+
+  const leagueMatchdaysToShow = new Set<string>();
+  const currentMatchdayMap = new Map<string, number>();
+
   const groupedByLeague = new Map<string, Match[]>();
   matches.forEach((match) => {
     if (!groupedByLeague.has(match.league.jp)) {
@@ -69,39 +88,49 @@ const MatchList = ({
     groupedByLeague.get(match.league.jp)!.push(match);
   });
 
-  const leagueMatchdaysToShow = new Set<string>();
-  const currentMatchdayMap = new Map<string, number>();
-
   for (const [league, leagueMatches] of groupedByLeague.entries()) {
-    const groupedByMatchday = new Map<number, Match[]>();
-    leagueMatches.forEach((m) => {
-      if (!groupedByMatchday.has(m.matchday)) groupedByMatchday.set(m.matchday, []);
-      groupedByMatchday.get(m.matchday)!.push(m);
-    });
+    const isCup = league === "Jリーグカップ";
+    if (isCup) {
+      for (const match of leagueMatches) {
+        const kickoff = new Date(match.kickoffTime);
+        if (showCurrent && kickoff >= startOfWeek && kickoff <= endOfWeek) {
+          leagueMatchdaysToShow.add(`${league}-${match.matchId}`);
+        } else if (showPrevious && kickoff < startOfWeek) {
+          leagueMatchdaysToShow.add(`${league}-${match.matchId}`);
+        } else if (showNext && kickoff >= startOfNextWeek) {
+          leagueMatchdaysToShow.add(`${league}-${match.matchId}`);
+        }
+      }
+    } else {
+      const groupedByMatchday = new Map<number, Match[]>();
+      leagueMatches.forEach((m) => {
+        if (!groupedByMatchday.has(m.matchday)) groupedByMatchday.set(m.matchday, []);
+        groupedByMatchday.get(m.matchday)!.push(m);
+      });
 
-    const matchdayCenters: { matchday: number; center: number }[] = Array.from(groupedByMatchday.entries()).map(([md, games]) => ({
-      matchday: md,
-      center: games.map((m) => new Date(m.kickoffTime).getTime()).sort((a, b) => a - b)[Math.floor(games.length / 2)],
-    }));
+      const matchdayCenters: { matchday: number; center: number }[] = Array.from(groupedByMatchday.entries()).map(([md, games]) => ({
+        matchday: md,
+        center: games.map((m) => new Date(m.kickoffTime).getTime()).sort((a, b) => a - b)[Math.floor(games.length / 2)],
+      }));
 
-    matchdayCenters.sort((a, b) => Math.abs(a.center - now.getTime()) - Math.abs(b.center - now.getTime()));
-    const currentMatchday = matchdayCenters[0]?.matchday;
-    currentMatchdayMap.set(league, currentMatchday);
+      matchdayCenters.sort((a, b) => Math.abs(a.center - now.getTime()) - Math.abs(b.center - now.getTime()));
+      const currentMatchday = matchdayCenters[0]?.matchday;
+      currentMatchdayMap.set(league, currentMatchday);
 
-    if (showPrevious) leagueMatchdaysToShow.add(`${league}-${currentMatchday - 1}`);
-    if (showCurrent) leagueMatchdaysToShow.add(`${league}-${currentMatchday}`);
-    if (showNext) leagueMatchdaysToShow.add(`${league}-${currentMatchday + 1}`);
+      if (showPrevious) leagueMatchdaysToShow.add(`${league}-${currentMatchday - 1}`);
+      if (showCurrent) leagueMatchdaysToShow.add(`${league}-${currentMatchday}`);
+      if (showNext) leagueMatchdaysToShow.add(`${league}-${currentMatchday + 1}`);
+    }
   }
 
-  const filteredMatches = matches.filter(
-    (match) =>
-      selectedLeagues.includes(match.league.jp) &&
-      leagueMatchdaysToShow.has(`${match.league.jp}-${match.matchday}`)
-  );
+  const filteredMatches = matches.filter((match) => {
+    const key = match.matchday === 0 && match.league.jp === "Jリーグカップ"
+      ? `${match.league.jp}-${match.matchId}`
+      : `${match.league.jp}-${match.matchday}`;
+    return selectedLeagues.includes(match.league.jp) && leagueMatchdaysToShow.has(key);
+  });
 
-  const sortedMatches = [...filteredMatches].sort(
-    (a, b) => new Date(a.kickoffTime).getTime() - new Date(b.kickoffTime).getTime()
-  );
+  const sortedMatches = [...filteredMatches].sort((a, b) => new Date(a.kickoffTime).getTime() - new Date(b.kickoffTime).getTime());
 
   const toggleLeague = (league: string) => {
     setSelectedLeagues((prev) =>
@@ -115,32 +144,32 @@ const MatchList = ({
 
   return (
     <div className="w-full p-4">
+      <div className="flex gap-2 mb-4 items-center flex-wrap">
+        <span className="font-bold">表示設定:</span>
+        <button onClick={() => setShowPrevious((prev) => !prev)} className={`w-24 text-center px-3 py-1 rounded border ${showPrevious ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>前節</button>
+        <button onClick={() => setShowCurrent((prev) => !prev)} className={`w-24 text-center px-3 py-1 rounded border ${showCurrent ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>今節</button>
+        <button onClick={() => setShowNext((prev) => !prev)} className={`w-24 text-center px-3 py-1 rounded border ${showNext ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>次節</button>
+        <button onClick={() => toggleAllLeagues(true)} className="w-24 text-center px-3 py-1 rounded border bg-green-100 text-green-800">すべてオン</button>
+        <button onClick={() => toggleAllLeagues(false)} className="w-24 text-center px-3 py-1 rounded border bg-red-100 text-red-800">すべてオフ</button>
+      </div>
+
       <div className="flex gap-2 flex-wrap mb-4">
-        <button onClick={() => toggleAllLeagues(true)} className="px-3 py-1 rounded border bg-green-100 text-green-800">すべてオン</button>
-        <button onClick={() => toggleAllLeagues(false)} className="px-3 py-1 rounded border bg-red-100 text-red-800">すべてオフ</button>
         {Array.from(new Set(matches.map((m) => m.league.jp))).map((league) => (
           <button
             key={league}
             onClick={() => toggleLeague(league)}
-            className={`px-3 py-1 rounded border ${selectedLeagues.includes(league) ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'}`}
+            className={`w-36 text-center px-3 py-1 rounded border ${selectedLeagues.includes(league) ? 'bg-blue-600 text-white' : 'bg-gray-200 text-black'}`}
           >
             {league}
           </button>
         ))}
       </div>
 
-      <div className="flex gap-2 mb-4">
-        <button onClick={() => setShowPrevious((prev) => !prev)} className={`px-3 py-1 rounded border ${showPrevious ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>前節</button>
-        <button onClick={() => setShowCurrent((prev) => !prev)} className={`px-3 py-1 rounded border ${showCurrent ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>今節</button>
-        <button onClick={() => setShowNext((prev) => !prev)} className={`px-3 py-1 rounded border ${showNext ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>次節</button>
-      </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedMatches.map((match) => {
           const kickoff = new Date(match.kickoffTime);
-          const isCurrent = match.matchday === currentMatchdayMap.get(match.league.jp);
           const matchStatus = now < kickoff
-            ? (isCurrent ? `キックオフまで: ${formatCountdown(kickoff)}` : '')
+            ? `キックオフまで: ${formatCountdown(kickoff)}`
             : formatMatchTimeStatus(kickoff);
           const playerText = (players: string[]) => players.map(p => `🇯🇵 ${p}`).join(' / ');
 
@@ -159,17 +188,13 @@ const MatchList = ({
                 </div>
                 <div className="flex justify-between text-center items-center">
                   <div className="w-1/3 flex flex-col items-center">
-                    {match.homeTeam.logo ? (
-                      <img src={match.homeTeam.logo} alt="home" className="h-6 w-6 mb-1" />
-                    ) : null}
+                    {match.homeTeam.logo && <img src={match.homeTeam.logo} alt="home" className="h-6 w-6 mb-1" />}
                     <div className="font-bold text-lg">{match.homeTeam.name.jp || '未定'}</div>
                     <div className="text-sm text-gray-600">{playerText(match.homeTeam.players)}</div>
                   </div>
                   <div className="text-gray-500 w-1/3">vs</div>
                   <div className="w-1/3 flex flex-col items-center">
-                    {match.awayTeam.logo ? (
-                      <img src={match.awayTeam.logo} alt="away" className="h-6 w-6 mb-1" />
-                    ) : null}
+                    {match.awayTeam.logo && <img src={match.awayTeam.logo} alt="away" className="h-6 w-6 mb-1" />}
                     <div className="font-bold text-lg">{match.awayTeam.name.jp || '未定'}</div>
                     <div className="text-sm text-gray-600">{playerText(match.awayTeam.players)}</div>
                   </div>

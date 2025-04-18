@@ -98,7 +98,7 @@ const run = async () => {
     logo: string;
   }[] = [];
 
-  for (const leagueId of [2021, 2016, 2015, 2002, 2019, 2014, 2003, 2017, 2013]) {
+  for (const leagueId of [2001, 2021, 2016, 2015, 2002, 2019, 2014, 2003, 2017, 2013]) {
     const leagueTeams = await fetchTeamsFromFootballData(leagueId);
     leagueTeams.forEach((team: any) => {
       allTeams.push({
