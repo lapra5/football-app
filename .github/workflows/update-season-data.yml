@@ -1,0 +1,29 @@
+name: update-season-data
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # JST 09:00（UTC 0:00）
+  workflow_dispatch:
+
+jobs:
+  update-season:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run updateSeasonData.mts
+        env:
+          FIREBASE_PRIVATE_KEY_JSON_BASE64: ${{ secrets.FIREBASE_PRIVATE_KEY_JSON_BASE64 }}
+          FOOTBALL_DATA_API_KEY: ${{ secrets.FOOTBALL_DATA_API_KEY }}
+          DISCORD_WEBHOOK_SEASON: ${{ secrets.DISCORD_WEBHOOK_SEASON }}
+        run: npx tsx scripts/updateSeasonData.mts

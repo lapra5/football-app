@@ -5,16 +5,26 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 import { updateTimestamp } from "../src/utils/updateLog.ts";
+import { initializeApp, cert } from "firebase-admin/app";
+import { getFirestore } from "firebase-admin/firestore";
 
+// 🔧 初期化
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
 
 const API_BASE_URL = "https://api.football-data.org/v4/matches";
 const API_KEY = process.env.FOOTBALL_DATA_API_KEY;
-const webhookUrl = process.env.DISCORD_WEBHOOK_SCORES;
+const FIREBASE_KEY = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
+const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_SCORES;
 
 if (!API_KEY) throw new Error("❌ FOOTBALL_DATA_API_KEY が設定されていません");
-if (!webhookUrl) throw new Error("❌ DISCORD_WEBHOOK_SCORES が設定されていません");
+if (!FIREBASE_KEY) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません");
+if (!DISCORD_WEBHOOK) throw new Error("❌ DISCORD_WEBHOOK_SCORES が設定されていません");
+
+// 🧠 Firebase 初期化
+const serviceAccount = JSON.parse(Buffer.from(FIREBASE_KEY, "base64").toString());
+initializeApp({ credential: cert(serviceAccount) });
+const db = getFirestore();
 
 const targetPath = path.resolve(__dirname, "../src/data/current_month_matches.json");
 
@@ -24,8 +34,7 @@ const fetchScore = async (matchId: string) => {
   const url = `${API_BASE_URL}/${matchId}`;
   const res = await fetch(url, { headers: { "X-Auth-Token": API_KEY } });
   if (!res.ok) throw new Error(`❌ ${matchId} のスコア取得失敗: ${res.status}`);
-  const data = await res.json();
-  return data;
+  return await res.json();
 };
 
 const main = async () => {
@@ -53,32 +62,28 @@ const main = async () => {
           const score = detail.score;
           if (!score || !score.fullTime) throw new Error(`score 情報が不正`);
 
-          match.score = score;
+          const updated = { ...match, score };
+
+          const leagueId = match.matchId.split("_")[0]; // "2001", "J1", etc
+          const docRef = db.collection("leagues").doc(leagueId).collection("matches").doc(match.matchId);
+          await docRef.set(updated, { merge: true });
+
           updatedCount++;
-          return match;
         })
       );
 
       if (i + 10 < targets.length) await delay(2000);
     }
 
-    fs.writeFileSync(targetPath, JSON.stringify(matches, null, 2), "utf-8");
-    console.log(`✅ current_month_matches.json を強制的に上書きしました`);
-    console.log(`📝 スコア更新件数: ${updatedCount}`);
-    
-    // 🔎 更新後のファイル更新日時を確認（オプション）
-    const { mtime } = fs.statSync(targetPath);
-    console.log(`🕒 ファイルの更新日時: ${mtime.toISOString()}`);
-    
-    // 🕒 updated_log.json にも更新記録
     updateTimestamp("fetchScores");
-    
-    await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました`, webhookUrl);
+
+    await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました（Firestore書き込みのみ）`, DISCORD_WEBHOOK);
+    console.log(`✅ Firestore に ${updatedCount} 件のスコア情報を書き込みました`);
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(
       `❌ スコア取得エラー: ${err instanceof Error ? err.message : String(err)}`,
-      webhookUrl
+      DISCORD_WEBHOOK
     );
     process.exit(1);
   }
