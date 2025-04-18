@@ -1,4 +1,5 @@
-// "use client";
+'use client';
+
 import { useAuth } from "@/hooks/useAuth";
 import { useState, useEffect } from "react";
 import { refreshUserClaims } from "@/hooks/useRefreshClaims";
@@ -32,17 +33,23 @@ const buttonDescriptions: Record<string, string> = {
   updatePlayers: "日本人選手の移籍情報を取得し、所属チーム情報を更新します。",
   updateSeason: "チーム名やロゴ、リーグ情報などをすべて再取得してデータを更新します。",
   updateScraped_jleague: "Jリーグ（J1〜J3）の公式サイトから日程を取得し、Firestoreに保存します。",
-  updateScraped_scotland: "セルティックFCの試合日程をTransfermarktから取得し、Firestoreに保存します。",
+  updateScraped_scotland: "スコットランドリーグの試合日程を取得してFirestoreに保存します。",
 };
 
-const colorMap: Record<string, string> = {
-  blue: "bg-blue-600 hover:bg-blue-700",
-  purple: "bg-purple-600 hover:bg-purple-700",
-  green: "bg-green-600 hover:bg-green-700",
-  indigo: "bg-indigo-600 hover:bg-indigo-700",
-  yellow: "bg-yellow-600 hover:bg-yellow-700",
-  orange: "bg-orange-600 hover:bg-orange-700",
-  cyan: "bg-cyan-600 hover:bg-cyan-700",
+const formatDateTime = (iso?: string) => {
+  if (!iso) return "未取得";
+  try {
+    return new Date(iso).toLocaleString("ja-JP", {
+      timeZone: "Asia/Tokyo",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  } catch {
+    return "未取得";
+  }
 };
 
 export default function AdminDashboard() {
@@ -53,7 +60,6 @@ export default function AdminDashboard() {
   const [lastUpdated, setLastUpdated] = useState<Record<string, string>>({});
   const [loadingMatches, setLoadingMatches] = useState(false);
   const [loadingLogos, setLoadingLogos] = useState(false);
-  const [adminApiLoading, setAdminApiLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -62,7 +68,6 @@ export default function AdminDashboard() {
         router.push("/");
         return;
       }
-      
       await refreshUserClaims();
       const token = await user.getIdTokenResult();
       setIsAdmin(token.claims.admin === true);
@@ -83,9 +88,9 @@ export default function AdminDashboard() {
   const fetchMatches = async () => {
     setLoadingMatches(true);
     try {
-      const res = await fetch("/api/matches");
+      const res = await fetch("/api/current-month-matches");
       const data = await res.json();
-      setMatches(data.matches || []);
+      setMatches(data || []);
     } catch (err) {
       console.error("❌ fetchMatches エラー:", err);
     } finally {
@@ -98,7 +103,6 @@ export default function AdminDashboard() {
     try {
       const res = await fetch("/api/team-league-names");
       const data = await res.json();
-      console.log("✅ teamLeagueNames fetched:", data);
       setTeamLeagueNames(data);
     } catch (err) {
       console.error("❌ fetchLogos エラー:", err);
@@ -117,62 +121,9 @@ export default function AdminDashboard() {
     }
   };
 
-  const handleAdminAction = async (url: string, successMessage: string, key: string) => {
-    setAdminApiLoading(true);
-    try {
-      const res = await fetch(url, {
-        method: "POST",
-        headers: { Authorization: `Bearer ${await user?.getIdToken()}` },
-      });
-      await res.json();
-      alert(successMessage);
-      fetchAllData();
-    } catch {
-      alert("エラーが発生しました");
-    } finally {
-      setAdminApiLoading(false);
-    }
-  };
-
   const handleLogout = async () => {
     await logout();
     router.push("/");
-  };
-
-  const formatDateTime = (iso?: string) => {
-    if (!iso) return "未取得";
-    try {
-      return new Date(iso).toLocaleString("ja-JP", {
-        timeZone: "Asia/Tokyo",
-        year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-      });
-    } catch {
-      return "未取得";
-    }
-  };  
-
-  const renderTimestamp = (key: string) => {
-    return lastUpdated[key]
-      ? new Date(lastUpdated[key]).toLocaleDateString("ja-JP", { timeZone: "Asia/Tokyo" })
-      : "未取得";
-  };
-
-  const getJapanesePlayers = () => {
-    if (!teamLeagueNames) return [];
-    const filtered = teamLeagueNames.teams
-      .filter((team) => team.players && team.players.length > 0)
-      .map((team) => ({
-        teamId: team.teamId,
-        teamName: team.team,
-        players: team.players,
-      }));
-
-    console.log("👀 日本人選手抽出結果:", filtered);
-    return filtered;
   };
 
   if (!isInitialized || isAdmin === null) {
@@ -193,58 +144,26 @@ export default function AdminDashboard() {
 
       <div className="flex flex-wrap justify-center gap-4">
   {[
-    {
-      key: "updateMatches",
-      label: "全リーグ日程更新",
-      color: "blue",
-      title: "全リーグの日程をAPIから取得してFirestoreに保存します。",
-    },
-    {
-      key: "updateCL",
-      label: "CL日程更新",
-      color: "purple",
-      title: "CL（チャンピオンズリーグ）の日程を取得してFirestoreに保存します。",
-    },
-    {
-      key: "updateLineups",
-      label: "スタメン一括更新",
-      color: "green",
-      title: "日本人が所属する試合のスタメンをAPIから取得してFirestoreに反映します。",
-    },
-    {
-      key: "updatePlayers",
-      label: "移籍情報更新",
-      color: "indigo",
-      title: "日本人選手の移籍情報を取得し、所属チーム情報を更新します。",
-    },
-    {
-      key: "updateSeason",
-      label: "シーズン更新",
-      color: "yellow",
-      title: "チーム名やロゴ、リーグ情報などをすべて再取得してデータを更新します。",
-    },
-    {
-      key: "updateScraped_jleague",
-      label: "Jリーグ日程更新",
-      color: "orange",
-      title: "Jリーグ（J1〜J3）の公式サイトから日程を取得し、Firestoreに保存します。",
-    },
-    {
-      key: "updateScraped_scotland",
-      label: "スコットランド日程更新",
-      color: "cyan",
-      title: "セルティックFCの試合日程をTransfermarktから取得し、Firestoreに保存します。",
-    },
-  ].map(({ key, label, color, title }) => (
-    <div key={key} className="text-center space-y-1">
+    { key: "updateMatches", label: "全リーグ日程更新", color: "blue" },
+    { key: "updateCL", label: "CL日程更新", color: "purple" },
+    { key: "updateLineups", label: "スタメン一括更新", color: "green" },
+    { key: "updatePlayers", label: "移籍情報更新", color: "indigo" },
+    { key: "updateSeason", label: "シーズン更新", color: "yellow" },
+    { key: "updateScraped_jleague", label: "Jリーグ日程更新", color: "orange" },
+    { key: "updateScraped_scotland", label: "スコットランド日程更新", color: "cyan" },
+  ].map(({ key, label, color }) => (
+    <div key={key} className="text-center space-y-1 relative group">
       <p className="text-xs text-gray-500">最終更新: {formatDateTime(lastUpdated[key])}</p>
-      <button
-        disabled
-        title={title}
-        className={`cursor-default ${colorMap[color]} text-white px-4 py-2 rounded shadow opacity-70`}
+      <div
+        className={`bg-${color}-600 text-white px-4 py-2 rounded shadow flex items-center justify-center`}
       >
         {label}
-      </button>
+        <span className="ml-1 text-white cursor-pointer relative group-hover:underline">❗
+          <div className="absolute left-1/2 -translate-x-1/2 mt-2 px-3 py-1 rounded bg-black text-white text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition duration-200 z-10">
+            {buttonDescriptions[key]}
+          </div>
+        </span>
+      </div>
     </div>
   ))}
 
@@ -257,28 +176,14 @@ export default function AdminDashboard() {
 </div>
 
 
+
       {teamLeagueNames && (
         <MatchList
           matches={matches}
-          onFetchLineups={() =>
-            handleAdminAction("/api/admin/update-lineups", "スタメン一括更新完了！", "updateLineups")
-          }
+          onFetchLineups={async () => {}}
           lineupUpdateResults={[]}
           teamLeagueNames={teamLeagueNames}
         />
-      )}
-
-      {teamLeagueNames && (
-        <section className="mt-12">
-          <h2 className="text-xl font-bold mb-4 text-center">日本人選手が所属するチーム一覧</h2>
-          <ul className="space-y-2">
-            {getJapanesePlayers().map(({ teamId, teamName, players }) => (
-              <li key={teamId} className="bg-gray-100 p-4 rounded shadow">
-                <strong>{teamName}</strong>：{players.join("、")}
-              </li>
-            ))}
-          </ul>
-        </section>
       )}
     </main>
   );
