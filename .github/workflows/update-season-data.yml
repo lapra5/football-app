@@ -25,6 +25,7 @@ jobs:
         run: |
           echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
           echo "DISCORD_WEBHOOK_SEASON=${{ secrets.DISCORD_WEBHOOK_SEASON }}" >> $GITHUB_ENV
+          echo "FOOTBALL_DATA_API_KEY=${{ secrets.FOOTBALL_DATA_API_KEY }}" >> $GITHUB_ENV
 
       - name: Run updateSeasonData script
         run: node --loader ts-node/esm scripts/updateSeasonData.mts
