@@ -32,7 +32,6 @@ const readLeagueMap = (): Record<string, string> => {
     // 補助マッピング（例: Champions League → Champions-League）
     const alias: Record<string, string> = {
       "UEFA Champions League": "Champions-League",
-      "Primera Division": "La Liga",
     };
 
     return Object.fromEntries(
