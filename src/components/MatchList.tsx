@@ -108,7 +108,7 @@ const MatchList = ({
         groupedByMatchday.get(m.matchday)!.push(m);
       });
 
-      const matchdayCenters: { matchday: number; center: number }[] = Array.from(groupedByMatchday.entries()).map(([md, games]) => ({
+      const matchdayCenters = Array.from(groupedByMatchday.entries()).map(([md, games]) => ({
         matchday: md,
         center: games.map((m) => new Date(m.kickoffTime).getTime()).sort((a, b) => a - b)[Math.floor(games.length / 2)],
       }));
@@ -168,10 +168,16 @@ const MatchList = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedMatches.map((match) => {
           const kickoff = new Date(match.kickoffTime);
-          const matchStatus = now < kickoff
-            ? `キックオフまで: ${formatCountdown(kickoff)}`
-            : formatMatchTimeStatus(kickoff);
-          const playerText = (players: string[]) => players.map(p => `🇯🇵 ${p}`).join(' / ');
+          const matchStatus = now < kickoff ? `キックオフまで: ${formatCountdown(kickoff)}` : formatMatchTimeStatus(kickoff);
+          const playerText = (players: string[]) => players.map((p) => `🇯🇵 ${p}`).join(' / ');
+
+          const fullTimeHome = match.score?.fullTime?.home;
+          const fullTimeAway = match.score?.fullTime?.away;
+          const pkHome = match.score?.halfTime?.home;
+          const pkAway = match.score?.halfTime?.away;
+
+          const isScored = Number.isFinite(fullTimeHome) && Number.isFinite(fullTimeAway);
+          const isPk = match.league.jp === "Jリーグカップ" && Number.isFinite(pkHome) && Number.isFinite(pkAway);
 
           return (
             <Card key={match.matchId} className="p-4">
@@ -180,21 +186,46 @@ const MatchList = ({
                   {match.league.jp}（第{match.matchday}節）
                 </div>
                 <div className="text-sm text-gray-600 mb-2">
-                  {kickoff.toLocaleString('ja-JP', {
-                    year: 'numeric', month: '2-digit', day: '2-digit',
-                    hour: '2-digit', minute: '2-digit', weekday: 'short', hour12: false
+                  {kickoff.toLocaleString("ja-JP", {
+                    year: "numeric",
+                    month: "2-digit",
+                    day: "2-digit",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    weekday: "short",
+                    hour12: false
                   })}
                   {matchStatus && <span className="text-blue-600 text-xs ml-2">{matchStatus}</span>}
                 </div>
+
                 <div className="flex justify-between text-center items-center">
                   <div className="w-1/3 flex flex-col items-center">
-                    {match.homeTeam.logo && <img src={match.homeTeam.logo} alt="home" className="h-6 w-6 mb-1" />}
+                    {match.homeTeam.logo && (
+                      <img src={match.homeTeam.logo} alt="home" className="h-6 w-6 mb-1" />
+                    )}
                     <div className="font-bold text-lg">{match.homeTeam.name.jp || '未定'}</div>
                     <div className="text-sm text-gray-600">{playerText(match.homeTeam.players)}</div>
                   </div>
-                  <div className="text-gray-500 w-1/3">vs</div>
+
+                  <div className="text-gray-500 w-1/3 text-sm text-center">
+                    {isScored ? (
+                      <>
+                        {fullTimeHome} - {fullTimeAway}
+                        {isPk && (
+                          <div className="text-xs text-gray-600">
+                            (PK {pkHome}-{pkAway})
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      "vs"
+                    )}
+                  </div>
+
                   <div className="w-1/3 flex flex-col items-center">
-                    {match.awayTeam.logo && <img src={match.awayTeam.logo} alt="away" className="h-6 w-6 mb-1" />}
+                    {match.awayTeam.logo && (
+                      <img src={match.awayTeam.logo} alt="away" className="h-6 w-6 mb-1" />
+                    )}
                     <div className="font-bold text-lg">{match.awayTeam.name.jp || '未定'}</div>
                     <div className="text-sm text-gray-600">{playerText(match.awayTeam.players)}</div>
                   </div>

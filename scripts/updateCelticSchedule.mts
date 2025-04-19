@@ -92,22 +92,23 @@ const main = async () => {
       const kickoff = new Date(`${dateStr} ${timeStr}:00 GMT+0900`);
       if (isNaN(kickoff.getTime())) return;
 
-      let fullTime: { home: number | null; away: number | null } = { home: null, away: null };
+      let fullTimeHome: number | null = null;
+      let fullTimeAway: number | null = null;
       let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
 
       const scoreMatch = scoreText.match(/(\d+):(\d+)/);
       if (scoreMatch) {
-        fullTime = {
-          home: parseInt(scoreMatch[1], 10),
-          away: parseInt(scoreMatch[2], 10)
-        };
+        fullTimeHome = parseInt(scoreMatch[1], 10);
+        fullTimeAway = parseInt(scoreMatch[2], 10);
 
-        if (fullTime.home !== null && fullTime.away !== null) {
-          if (fullTime.home > fullTime.away) winner = "HOME_TEAM";
-          else if (fullTime.home < fullTime.away) winner = "AWAY_TEAM";
+        if (!isNaN(fullTimeHome) && !isNaN(fullTimeAway)) {
+          if (fullTimeHome > fullTimeAway) winner = "HOME_TEAM";
+          else if (fullTimeHome < fullTimeAway) winner = "AWAY_TEAM";
           else winner = "DRAW";
         }
       }
+
+      const status = (fullTimeHome !== null && fullTimeAway !== null) ? "FINISHED" : "SCHEDULED";
 
       matches.push({
         matchId: `CELTIC_${kickoff.toISOString()}_vs_${opponent}`,
@@ -118,11 +119,11 @@ const main = async () => {
           endDate: `${saisonId + 1}-06-30`,
           currentMatchday: matchday
         },
-        status: scoreMatch ? "FINISHED" : "SCHEDULED",
+        status,
         score: {
           winner,
           duration: "REGULAR",
-          fullTime,
+          fullTime: { home: fullTimeHome, away: fullTimeAway },
           halfTime: { home: null, away: null }
         },
         homeTeam: {

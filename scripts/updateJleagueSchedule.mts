@@ -19,26 +19,28 @@ const serviceAccount = JSON.parse(
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
+const currentYear = new Date().getFullYear();
+const webhookUrl = process.env.DISCORD_WEBHOOK_JLEAGUE;
+
+// 🔁 URL を動的に年差し替え
 const J_URLS = [
   {
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=1&competition_ids=651",
+    url: `https://data.j-league.or.jp/SFMS01/search?competition_years=${currentYear}&competition_frame_ids=1&competition_ids=651`,
     league: "J1",
   },
   {
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=2",
+    url: `https://data.j-league.or.jp/SFMS01/search?competition_years=${currentYear}&competition_frame_ids=2`,
     league: "J2",
   },
   {
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=3",
+    url: `https://data.j-league.or.jp/SFMS01/search?competition_years=${currentYear}&competition_frame_ids=3`,
     league: "J3",
   },
   {
-    url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=11",
+    url: `https://data.j-league.or.jp/SFMS01/search?competition_years=${currentYear}&competition_frame_ids=11`,
     league: "Jリーグカップ",
   },
 ];
-
-const webhookUrl = process.env.DISCORD_WEBHOOK_JLEAGUE;
 
 function extractSeasonYear(url: string): string {
   const match = url.match(/competition_years=(\d{4})/);

@@ -88,6 +88,13 @@ const buttonInfo = [
     description: "Jリーグ・セルティック・海外リーグのマッチデータを結合して current_month_matches.json を生成します。",
     frequency: "毎日 朝7:00に自動実行",
     className: "bg-gray-700 hover:bg-gray-800"
+  },
+  {
+    key: "updateSeasonData",
+    label: "シーズンデータ更新",
+    description: "FootballData APIから最新のシーズン試合日程を取得し、Firestoreに保存します（スコア・スタメンは含まれません）。",
+    frequency: "毎日 5:00 に自動実行",
+    className: "bg-lime-600 hover:bg-lime-700"
   }
 ];
 
