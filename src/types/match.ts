@@ -1,4 +1,3 @@
-// src/types/match.ts
 export interface Match {
   matchId: string;
   league: {
@@ -40,7 +39,20 @@ export interface Match {
       away: number | null;
     };
   };
-  startingMembers: string[];
-  substitutes: string[];
-  outOfSquad: string[];
+
+  // 🔽 スタメン・サブ・ベンチ外（home/away対応 + 旧形式との互換も確保）
+  startingMembers?: {
+    home?: string[];
+    away?: string[];
+  } | string[];
+
+  substitutes?: {
+    home?: string[];
+    away?: string[];
+  } | string[];
+
+  outOfSquad?: {
+    home?: string[];
+    away?: string[];
+  } | string[];
 }

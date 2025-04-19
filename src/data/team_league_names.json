@@ -75,7 +75,7 @@
     { "teamId": 15, "team": "1.FSVマインツ05", "englishName": "1. FSV Mainz 05", "players": ["佐野 海舟"], "englishplayers": ["Kaishū Sano"], "logo": "https://crests.football-data.org/15.svg" },
     { "teamId": 16, "team": "アウクスブルク", "englishName": "FC Augsburg", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/16.svg" },
     { "teamId": 17, "team": "フライブルク", "englishName": "SC Freiburg", "players": ["堂安 律"], "englishplayers": ["Ritsu Dōan"], "logo": "https://crests.football-data.org/17.svg" },
-    { "teamId": 18, "team": "ボルシア・メンヒェングラートバッハ", "englishName": "Borussia Mönchengladbach", "players": ["板倉 滉", "福田 師王"], "englishplayers": ["Kō Itakura", "Shio Fukuda"], "logo": "https://crests.football-data.org/18.svg" },
+    { "teamId": 18, "team": "ボルシア", "englishName": "Borussia Mönchengladbach", "players": ["板倉 滉", "福田 師王"], "englishplayers": ["Kō Itakura", "Shio Fukuda"], "logo": "https://crests.football-data.org/18.svg" },
     { "teamId": 19, "team": "アイントラハト・フランクフルト", "englishName": "Eintracht Frankfurt", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/19.svg" },
     { "teamId": 20, "team": "ザンクト・パウリ", "englishName": "FC St. Pauli 1910", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/20.svg" },
     { "teamId": 28, "team": "1.FCウニオン・ベルリン", "englishName": "1. FC Union Berlin", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/28.svg" },
@@ -186,19 +186,18 @@
     { "teamId": 6685, "team": "サントスFC", "englishName": "Santos FC", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/6685.svg" }
   ],
   "leagues": [
-    { "en": "Premier League", "jp": "プレミアリーグ（イングランド1部）" },
-    { "en": "Championship", "jp": "EFLチャンピオンシップ（イングランド2部）" },
-    { "en": "League One", "jp": "EFLリーグ1（イングランド3部）" },
-    { "en": "Bundesliga", "jp": "ブンデスリーガ（ドイツ1部）" },
-    { "en": "Serie A", "jp": "セリエA（イタリア1部）" },
-    { "en": "La Liga", "jp": "ラ・リーガ（スペイン1部）" },
-    { "en": "Ligue 1", "jp": "リーグ・アン（フランス1部）" },
-    { "en": "Eredivisie", "jp": "エールディヴィジ（オランダ1部）" },
-    { "en": "Primeira Liga", "jp": "プリメイラ・リーガ（ポルトガル1部）" },
-    { "en": "Champions-League", "jp": "UEFAチャンピオンズリーグ" },
-    { "en": "UEFA Champions League", "jp": "UEFAチャンピオンズリーグ" },
-    { "en": "Campeonato Brasileiro Série A", "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）" },
-    { "en": "Scottish Premiership", "jp": "スコティッシュ・プレミアシップ" }
+    { "en": "Premier League", "jp": "プレミアリーグ（イングランド1部）", "leaguesId": 2021 },
+    { "en": "Championship", "jp": "EFLチャンピオンシップ（イングランド2部）", "leaguesId": 2018 },
+    { "en": "League One", "jp": "EFLリーグ1（イングランド3部）", "leaguesId": 0 },
+    { "en": "Bundesliga", "jp": "ブンデスリーガ（ドイツ1部）", "leaguesId": 2002 },
+    { "en": "Serie A", "jp": "セリエA（イタリア1部）", "leaguesId": 2019 },
+    { "en": "La Liga", "jp": "ラ・リーガ（スペイン1部）", "leaguesId": 2014 },
+    { "en": "Ligue 1", "jp": "リーグ・アン（フランス1部）", "leaguesId": 2015 },
+    { "en": "Eredivisie", "jp": "エールディヴィジ（オランダ1部）", "leaguesId": 2003 },
+    { "en": "Primeira Liga", "jp": "プリメイラ・リーガ（ポルトガル1部）", "leaguesId": 2017 },
+    { "en": "Champions-League", "jp": "UEFAチャンピオンズリーグ", "leaguesId": 2001 },
+    { "en": "UEFA Champions League", "jp": "UEFAチャンピオンズリーグ", "leaguesId": 2001 },
+    { "en": "Campeonato Brasileiro Série A", "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）", "leaguesId": 2013 }
 
   ]
 }
