@@ -40,31 +40,6 @@ const J_URLS = [
 
 const webhookUrl = process.env.DISCORD_WEBHOOK_JLEAGUE;
 
-const parseScore = (text: string) => {
-  const scoreRegex = /(\d+)-(\d+)(?:\s*\(PK(\d+)-(\d+)\))?/;
-  const match = text.match(scoreRegex);
-  if (!match) return null;
-  const home = parseInt(match[1], 10);
-  const away = parseInt(match[2], 10);
-  const pkHome = match[3] ? parseInt(match[3], 10) : null;
-  const pkAway = match[4] ? parseInt(match[4], 10) : null;
-
-  let winner: "HOME_TEAM" | "AWAY_TEAM" | null = null;
-  if (pkHome !== null && pkAway !== null) {
-    winner = pkHome > pkAway ? "HOME_TEAM" : "AWAY_TEAM";
-  } else if (home > away) {
-    winner = "HOME_TEAM";
-  } else if (home < away) {
-    winner = "AWAY_TEAM";
-  }
-
-  return {
-    fullTime: { home, away },
-    halfTime: pkHome !== null && pkAway !== null ? { home: pkHome, away: pkAway } : { home: null, away: null },
-    winner,
-  };
-};
-
 const main = async () => {
   try {
     console.log("🚀 Jリーグ日程取得開始");
@@ -88,7 +63,7 @@ const main = async () => {
         const dateStr = $(cols[3]).text().trim();
         const timeStr = $(cols[4]).text().trim();
         const homeTeam = $(cols[5]).text().trim();
-        const resultText = $(cols[6]).text().trim();
+        const scoreRaw = $(cols[6]).text().trim();
         const awayTeam = $(cols[7]).text().trim();
 
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
@@ -97,12 +72,22 @@ const main = async () => {
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
         if (isNaN(kickoff.getTime())) return;
 
-        const score = parseScore(resultText) || {
-          duration: "REGULAR",
-          fullTime: { home: null, away: null },
-          halfTime: { home: null, away: null },
-          winner: null,
-        };
+        const scoreMatch = scoreRaw.match(/^(\d+)-(\d+)(?:\s*\(PK(\d+)-(\d+)\))?/);
+        const fullTimeHome = scoreMatch ? parseInt(scoreMatch[1], 10) : null;
+        const fullTimeAway = scoreMatch ? parseInt(scoreMatch[2], 10) : null;
+        const pkHome = scoreMatch && scoreMatch[3] ? parseInt(scoreMatch[3], 10) : null;
+        const pkAway = scoreMatch && scoreMatch[4] ? parseInt(scoreMatch[4], 10) : null;
+
+        let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
+        if (fullTimeHome !== null && fullTimeAway !== null) {
+          if (fullTimeHome > fullTimeAway) winner = "HOME_TEAM";
+          else if (fullTimeHome < fullTimeAway) winner = "AWAY_TEAM";
+          else if (league === "Jリーグカップ" && pkHome !== null && pkAway !== null) {
+            winner = pkHome > pkAway ? "HOME_TEAM" : "AWAY_TEAM";
+          } else {
+            winner = "DRAW";
+          }
+        }
 
         allMatches.push({
           matchId: `${league}_${kickoff.toISOString()}_${homeTeam}_vs_${awayTeam}`,
@@ -115,9 +100,11 @@ const main = async () => {
           lineupStatus: "未発表",
           score: {
             duration: "REGULAR",
-            fullTime: score.fullTime,
-            halfTime: score.halfTime,
-            winner: score.winner,
+            fullTime: { home: fullTimeHome, away: fullTimeAway },
+            halfTime: league === "Jリーグカップ" && pkHome !== null && pkAway !== null
+              ? { home: pkHome, away: pkAway }
+              : { home: null, away: null },
+            winner,
           },
           startingMembers: [],
           substitutes: [],
@@ -126,11 +113,9 @@ const main = async () => {
       });
     }
 
-    const seasonLabel = new Date().getMonth() >= 6
-      ? `${new Date().getFullYear()}-${new Date().getFullYear() + 1}`
-      : `${new Date().getFullYear() - 1}-${new Date().getFullYear()}`;
-
-    const ref = db.collection("leagues").doc("jleague").collection("seasons").doc(seasonLabel).collection("matches");
+    const season = new Date().getMonth() + 1 >= 2 ? new Date().getFullYear() : new Date().getFullYear() - 1;
+    const year = `${season}-${season + 1}`;
+    const ref = db.collection("leagues").doc("jleague").collection("seasons").doc(year).collection("matches");
     const batch = db.batch();
     allMatches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
     await batch.commit();
@@ -143,6 +128,7 @@ const main = async () => {
     console.log(`📝 ${outputPath} に ${allMatches.length} 件の試合を保存しました`);
 
     updateTimestamp("updateJleagueSchedule");
+
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(`❌ Jリーグ日程取得エラー: ${(err as Error).message}`, webhookUrl!);
