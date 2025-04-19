@@ -1,6 +1,7 @@
 // 🚀 開始ログ
 console.log("🚀 updateCurrentMonthMatch 開始");
 
+// 必要な import
 import * as fs from "fs";
 import * as path from "path";
 import { initializeApp, cert } from "firebase-admin/app";
@@ -17,45 +18,54 @@ const db = getFirestore();
 
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
-const LEAGUE_IDS = [
-  "2001", "2002", "2003", "2013", "2014",
-  "2015", "2016", "2017", "2019", "2021"
-];
+// 対象リーグ
+const LEAGUE_IDS = ["2001", "2002", "2003", "2013", "2014", "2015", "2016", "2017", "2019", "2021"];
 
 const teamDataPath = path.resolve("src/data/team_league_names.json");
 const targetPath = path.resolve("src/data/current_month_matches_oversea.json");
 
-// 🔁 前後30日を取得
-const getTargetRange = (): [string, string] => {
+const getTargetRange = () => {
   const now = new Date();
-  const start = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
-  const end = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
+  const start = new Date(now);
+  start.setDate(now.getDate() - 30);
+  const end = new Date(now);
+  end.setDate(now.getDate() + 30);
+  end.setHours(23, 59, 59, 999);
   return [start.toISOString(), end.toISOString()];
+};
+
+const getCurrentSeasonLabel = (): string => {
+  const now = new Date();
+  const year = now.getMonth() + 1 <= 6 ? now.getFullYear() - 1 : now.getFullYear();
+  return `${year}-${year + 1}`;
 };
 
 const main = async () => {
   try {
     const [start, end] = getTargetRange();
+    const seasonLabel = getCurrentSeasonLabel();
 
     const results = await Promise.allSettled(
-      LEAGUE_IDS.map((leagueId) =>
-        db
+      LEAGUE_IDS.map(async (leagueId) => {
+        const snapshot = await db
           .collection("leagues")
           .doc(leagueId)
+          .collection("seasons")
+          .doc(seasonLabel)
           .collection("matches")
           .where("kickoffTime", ">=", start)
           .where("kickoffTime", "<=", end)
-          .get()
-          .then((snapshot) => ({
-            leagueId,
-            matches: snapshot.docs.map((doc) => doc.data()),
-          }))
-      )
+          .get();
+        return {
+          leagueId,
+          matches: snapshot.docs.map((doc) => doc.data()),
+        };
+      })
     );
 
     const successful = results
       .filter((r) => r.status === "fulfilled")
-      .flatMap((r) => r.status === "fulfilled" ? r.value.matches : []);
+      .flatMap((r: any) => r.value.matches);
 
     const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
     const teamData = JSON.parse(teamDataRaw);
