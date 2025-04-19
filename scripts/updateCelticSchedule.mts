@@ -19,7 +19,11 @@ const serviceAccount = JSON.parse(
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-const URL = "https://www.transfermarkt.jp/serutikkufc/spielplan/verein/371/plus/0?saison_id=2024";
+// 🚦 saison_id の自動判定（7月以前は前年のID）
+const today = new Date();
+const year = today.getMonth() + 1 <= 6 ? today.getFullYear() - 1 : today.getFullYear();
+const saisonId = year;
+const URL = `https://www.transfermarkt.jp/serutikkufc/spielplan/verein/371/plus/0?saison_id=${saisonId}`;
 const webhookUrl = process.env.DISCORD_WEBHOOK_CELTIC;
 
 async function autoScroll(page: Page) {
@@ -39,12 +43,7 @@ async function autoScroll(page: Page) {
   });
 }
 
-const getSeasonLabel = () => {
-  const now = new Date();
-  const year = now.getFullYear();
-  const nextYear = now.getMonth() < 6 ? year : year + 1;
-  return `${nextYear - 1}-${nextYear}`;
-};
+const getSeasonLabel = () => `${saisonId}-${saisonId + 1}`;
 
 const main = async () => {
   try {
@@ -56,7 +55,7 @@ const main = async () => {
     });
 
     const page = await browser.newPage();
-    await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36");
+    await page.setUserAgent("Mozilla/5.0");
     await page.goto(URL, { waitUntil: "load", timeout: 60000 });
 
     const popupSelector = "#onetrust-accept-btn-handler";
@@ -85,10 +84,10 @@ const main = async () => {
 
       const dateStr = $(cols[1]).text().trim().replace(/[年月]/g, "/").replace("日", "");
       const timeStr = $(cols[2]).text().trim().replace("：", ":");
-      const rawOpponent = $(cols[6]).text().trim().replace(/\(.*?\)/g, "").trim(); // ← 順位除去
+      const opponent = $(cols[6]).text().trim().replace(/\(.*?\)/g, "").trim();
       const scoreText = $(cols[9]).text().trim().replace(/\s/g, "");
 
-      if (!dateStr || !timeStr || !rawOpponent) return;
+      if (!dateStr || !timeStr || !opponent) return;
 
       const kickoff = new Date(`${dateStr} ${timeStr}:00 GMT+0900`);
       if (isNaN(kickoff.getTime())) return;
@@ -111,12 +110,12 @@ const main = async () => {
       }
 
       matches.push({
-        matchId: `CELTIC_${kickoff.toISOString()}_vs_${rawOpponent}`,
+        matchId: `CELTIC_${kickoff.toISOString()}_vs_${opponent}`,
         utcDate: kickoff.toISOString(),
         matchday,
         season: {
-          startDate: `${kickoff.getFullYear()}-07-01`,
-          endDate: `${kickoff.getFullYear() + 1}-06-30`,
+          startDate: `${saisonId}-07-01`,
+          endDate: `${saisonId + 1}-06-30`,
           currentMatchday: matchday
         },
         status: scoreMatch ? "FINISHED" : "SCHEDULED",
@@ -135,9 +134,9 @@ const main = async () => {
         },
         awayTeam: {
           id: null,
-          name: rawOpponent,
+          name: opponent,
           crest: "",
-          shortName: rawOpponent,
+          shortName: opponent,
           tla: ""
         },
         area: {
