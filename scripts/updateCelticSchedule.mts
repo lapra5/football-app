@@ -114,6 +114,7 @@ const main = async () => {
         matchId: `CELTIC_${kickoff.toISOString()}_vs_${opponent}`,
         utcDate: kickoff.toISOString(),
         matchday,
+        league: "スコットランド",
         season: {
           startDate: `${saisonId}-07-01`,
           endDate: `${saisonId + 1}-06-30`,
