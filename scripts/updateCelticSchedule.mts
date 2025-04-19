@@ -22,6 +22,12 @@ const db = getFirestore();
 const URL = "https://www.transfermarkt.jp/serutikkufc/spielplan/verein/371/plus/0?saison_id=2024";
 const webhookUrl = process.env.DISCORD_WEBHOOK_CELTIC;
 
+function getSeasonKey(date: Date): string {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  return month >= 7 ? `${year}-${year + 1}` : `${year - 1}-${year}`;
+}
+
 async function autoScroll(page: Page) {
   await page.evaluate(async () => {
     await new Promise<void>((resolve) => {
@@ -75,7 +81,7 @@ const main = async () => {
       const cols = $(el).find("td");
       if (cols.length < 7) return;
 
-      const rawMatchday = $(cols[0]).text().trim(); // 例: "1."
+      const rawMatchday = $(cols[0]).text().trim();
       const matchdayParsed = parseInt(rawMatchday.replace(/\D/g, ""), 10);
       const matchday = isNaN(matchdayParsed) ? 0 : matchdayParsed;
 
@@ -102,21 +108,20 @@ const main = async () => {
 
     await browser.close();
 
-    const ref = db.collection("leagues").doc("celtic").collection("matches");
+    // Firestore 保存（新構造）
+    const seasonKey = getSeasonKey(new Date());
+    const baseRef = db.collection("leagues").doc("celtic").collection("seasons").doc(seasonKey).collection("matches");
     const batch = db.batch();
-    matches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
+    matches.forEach((match) => batch.set(baseRef.doc(match.matchId), match, { merge: true }));
     await batch.commit();
 
-    console.log(`✅ セルティック試合 ${matches.length} 件を保存`);
-    await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を更新しました`, webhookUrl!);
+    console.log(`✅ セルティック試合 ${matches.length} 件を Firestore 保存`);
+    await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を Firestore に保存しました`, webhookUrl!);
 
-    // JSON出力先のパス
+    // JSON にも保存
     const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_celtic.json");
-
-    // Firestore保存後に追加：
     fs.writeFileSync(outputPath, JSON.stringify(matches, null, 2), "utf-8");
     console.log(`📝 ${outputPath} に ${matches.length} 件の試合を保存しました`);
-
 
     updateTimestamp("updateCelticSchedule");
 
