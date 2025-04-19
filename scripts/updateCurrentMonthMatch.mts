@@ -1,7 +1,6 @@
-// 🚀 開始ログ
+// scripts/updateCurrentMonthMatch.mts
 console.log("🚀 updateCurrentMonthMatch 開始");
 
-// 必要な import
 import * as fs from "fs";
 import * as path from "path";
 import { initializeApp, cert } from "firebase-admin/app";
@@ -9,7 +8,6 @@ import { getFirestore } from "firebase-admin/firestore";
 import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 import { updateTimestamp } from "../src/utils/updateLog.ts";
 
-// Firebase 初期化
 const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
 if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
 const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
@@ -18,54 +16,53 @@ const db = getFirestore();
 
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
-// 対象リーグ
-const LEAGUE_IDS = ["2001", "2002", "2003", "2013", "2014", "2015", "2016", "2017", "2019", "2021"];
+const LEAGUE_IDS = [
+  "2001", "2002", "2003", "2013", "2014",
+  "2015", "2016", "2017", "2019", "2021"
+];
 
 const teamDataPath = path.resolve("src/data/team_league_names.json");
 const targetPath = path.resolve("src/data/current_month_matches_oversea.json");
 
 const getTargetRange = () => {
   const now = new Date();
-  const start = new Date(now);
-  start.setDate(now.getDate() - 30);
-  const end = new Date(now);
-  end.setDate(now.getDate() + 30);
-  end.setHours(23, 59, 59, 999);
+  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
+  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 30, 23, 59, 59);
   return [start.toISOString(), end.toISOString()];
 };
 
-const getCurrentSeasonLabel = (): string => {
+const getCurrentSeasonLabel = () => {
   const now = new Date();
-  const year = now.getMonth() + 1 <= 6 ? now.getFullYear() - 1 : now.getFullYear();
-  return `${year}-${year + 1}`;
+  const startYear = now.getMonth() < 6 ? now.getFullYear() - 1 : now.getFullYear();
+  return `${startYear}-${startYear + 1}`;
 };
 
 const main = async () => {
   try {
     const [start, end] = getTargetRange();
-    const seasonLabel = getCurrentSeasonLabel();
+    const seasonId = getCurrentSeasonLabel();
 
     const results = await Promise.allSettled(
-      LEAGUE_IDS.map(async (leagueId) => {
-        const snapshot = await db
+      LEAGUE_IDS.map((leagueId) =>
+        db
           .collection("leagues")
           .doc(leagueId)
           .collection("seasons")
-          .doc(seasonLabel)
+          .doc(seasonId)
           .collection("matches")
           .where("kickoffTime", ">=", start)
           .where("kickoffTime", "<=", end)
-          .get();
-        return {
-          leagueId,
-          matches: snapshot.docs.map((doc) => doc.data()),
-        };
-      })
+          .get()
+          .then((snapshot) => ({
+            leagueId,
+            matches: snapshot.docs.map((doc) => doc.data()),
+          }))
+      )
     );
 
     const successful = results
-      .filter((r) => r.status === "fulfilled")
-      .flatMap((r: any) => r.value.matches);
+      .filter((r): r is PromiseFulfilledResult<{ leagueId: string; matches: any[] }> => r.status === "fulfilled")
+      .flatMap((r) => r.value.matches);
 
     const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
     const teamData = JSON.parse(teamDataRaw);
@@ -74,8 +71,8 @@ const main = async () => {
       (Array.isArray(teamData.leagues) ? teamData.leagues : []).map((l) => [l.en, l.jp])
     );
 
-    const getTeamInfo = (teamId: string) => {
-      const team = teams.find((t) => t.teamId === teamId);
+    const getTeamInfo = (teamId: string | number | null | undefined) => {
+      const team = teams.find((t) => t.teamId?.toString() === teamId?.toString());
       return team
         ? {
             id: teamId,
@@ -96,7 +93,7 @@ const main = async () => {
     const enrichedMatches = successful.map((match) => ({
       matchId: match.matchId?.toString() || match.id?.toString(),
       kickoffTime: match.kickoffTime || match.utcDate,
-      matchday: match.matchday,
+      matchday: match.matchday ?? 0,
       league: {
         en: match.league || match.competition?.name || "",
         jp: leagueMap[match.league || match.competition?.name] || match.league || "",
