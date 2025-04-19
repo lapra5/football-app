@@ -83,40 +83,40 @@ const main = async () => {
       const matchdayText = $(cols[0]).text().trim();
       const matchday = parseInt(matchdayText, 10) || 0;
 
-      const dateText = $(cols[1]).text().trim();
-      const timeText = $(cols[2]).text().trim();
+      const dateStr = $(cols[1]).text().trim().replace(/[年月]/g, "/").replace("日", "");
+      const timeStr = $(cols[2]).text().trim().replace("：", ":");
+      const rawOpponent = $(cols[6]).text().trim().replace(/\(.*?\)/g, "").trim(); // ← 順位除去
       const scoreText = $(cols[9]).text().trim().replace(/\s/g, "");
 
-      const dateStr = dateText.replace(/[^0-9/]/g, "");
-      const timeStr = timeText.replace("：", ":");
-      if (!dateStr || !timeStr) return;
+      if (!dateStr || !timeStr || !rawOpponent) return;
 
-      const kickoffJST = new Date(`${dateStr} ${timeStr}:00+0900`);
-      if (isNaN(kickoffJST.getTime())) return;
-      const kickoffUTC = new Date(kickoffJST.getTime() - 9 * 60 * 60 * 1000);
-
-      const opponent = $(cols[6]).text().trim().replace(/\(.*?\)/g, "").trim();
-      if (!opponent) return;
+      const kickoff = new Date(`${dateStr} ${timeStr}:00 GMT+0900`);
+      if (isNaN(kickoff.getTime())) return;
 
       let fullTime: { home: number | null; away: number | null } = { home: null, away: null };
       let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
 
       const scoreMatch = scoreText.match(/(\d+):(\d+)/);
       if (scoreMatch) {
-        fullTime.home = parseInt(scoreMatch[1], 10);
-        fullTime.away = parseInt(scoreMatch[2], 10);
-        if (fullTime.home > fullTime.away) winner = "HOME_TEAM";
-        else if (fullTime.home < fullTime.away) winner = "AWAY_TEAM";
-        else winner = "DRAW";
+        fullTime = {
+          home: parseInt(scoreMatch[1], 10),
+          away: parseInt(scoreMatch[2], 10)
+        };
+
+        if (fullTime.home !== null && fullTime.away !== null) {
+          if (fullTime.home > fullTime.away) winner = "HOME_TEAM";
+          else if (fullTime.home < fullTime.away) winner = "AWAY_TEAM";
+          else winner = "DRAW";
+        }
       }
 
       matches.push({
-        matchId: `CELTIC_${kickoffUTC.toISOString()}_vs_${opponent}`,
-        utcDate: kickoffUTC.toISOString(),
+        matchId: `CELTIC_${kickoff.toISOString()}_vs_${rawOpponent}`,
+        utcDate: kickoff.toISOString(),
         matchday,
         season: {
-          startDate: `${kickoffUTC.getFullYear()}-07-01`,
-          endDate: `${kickoffUTC.getFullYear() + 1}-06-30`,
+          startDate: `${kickoff.getFullYear()}-07-01`,
+          endDate: `${kickoff.getFullYear() + 1}-06-30`,
           currentMatchday: matchday
         },
         status: scoreMatch ? "FINISHED" : "SCHEDULED",
@@ -135,9 +135,9 @@ const main = async () => {
         },
         awayTeam: {
           id: null,
-          name: opponent,
+          name: rawOpponent,
           crest: "",
-          shortName: opponent,
+          shortName: rawOpponent,
           tla: ""
         },
         area: {
