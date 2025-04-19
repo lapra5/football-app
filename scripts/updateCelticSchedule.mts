@@ -22,12 +22,6 @@ const db = getFirestore();
 const URL = "https://www.transfermarkt.jp/serutikkufc/spielplan/verein/371/plus/0?saison_id=2024";
 const webhookUrl = process.env.DISCORD_WEBHOOK_CELTIC;
 
-function getSeasonKey(date: Date): string {
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  return month >= 7 ? `${year}-${year + 1}` : `${year - 1}-${year}`;
-}
-
 async function autoScroll(page: Page) {
   await page.evaluate(async () => {
     await new Promise<void>((resolve) => {
@@ -66,8 +60,6 @@ const main = async () => {
     await new Promise((r) => setTimeout(r, 8000));
 
     const html = await page.content();
-    fs.writeFileSync("debug_celtic.html", html); // デバッグ用保存
-
     const $ = cheerio.load(html);
     const rows = $("table tbody tr");
 
@@ -87,6 +79,7 @@ const main = async () => {
 
       const rawDate = $(cols[1]).text().trim().replace(/[^\d/]/g, "");
       const timeStr = $(cols[2]).text().trim();
+      const resultText = $(cols[3]).text().trim();
       const opponent = $(cols[6]).find("a").first().text().trim();
 
       if (!rawDate || !timeStr || !opponent) return;
@@ -94,43 +87,66 @@ const main = async () => {
       const kickoff = new Date(`${rawDate} ${timeStr}:00 GMT+0000`);
       if (isNaN(kickoff.getTime())) return;
 
+      // スコア抽出と winner 判定
+      let fullTime = { home: null as number | null, away: null as number | null };
+      let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
+
+      const scoreMatch = resultText.match(/^(\d+):(\d+)/);
+      if (scoreMatch) {
+        const homeScore = parseInt(scoreMatch[1], 10);
+        const awayScore = parseInt(scoreMatch[2], 10);
+        fullTime = { home: homeScore, away: awayScore };
+
+        if (homeScore > awayScore) winner = "HOME_TEAM";
+        else if (homeScore < awayScore) winner = "AWAY_TEAM";
+        else winner = "DRAW";
+      }
+
       matches.push({
         matchId: `CELTIC_${kickoff.toISOString()}_vs_${opponent}`,
         kickoffTime: kickoff.toISOString(),
+        matchday,
+        league: "スコットランド",
         homeTeam: { name: "セルティックFC", id: null, players: [] },
         awayTeam: { name: opponent, id: null, players: [] },
-        league: "スコットランド",
-        matchday,
-        status: "SCHEDULED",
-        lineupStatus: "未発表"
+        lineupStatus: "未発表",
+        score: {
+          winner,
+          duration: "REGULAR",
+          fullTime,
+          halfTime: { home: null, away: null }
+        },
+        startingMembers: [],
+        substitutes: [],
+        outOfSquad: []
       });
     });
 
     await browser.close();
 
-    // Firestore 保存（新構造）
-    const seasonKey = getSeasonKey(new Date());
-    const baseRef = db.collection("leagues").doc("celtic").collection("seasons").doc(seasonKey).collection("matches");
+    // シーズン年表記を生成（例: "2024-2025"）
+    const now = new Date();
+    const thisYear = now.getMonth() >= 6 ? now.getFullYear() : now.getFullYear() - 1;
+    const seasonYear = `${thisYear}-${thisYear + 1}`;
+
     const batch = db.batch();
-    matches.forEach((match) => batch.set(baseRef.doc(match.matchId), match, { merge: true }));
+    const ref = db.collection("leagues").doc("celtic").collection("seasons").doc(seasonYear).collection("matches");
+    matches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
     await batch.commit();
 
-    console.log(`✅ セルティック試合 ${matches.length} 件を Firestore 保存`);
-    await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を Firestore に保存しました`, webhookUrl!);
+    console.log(`✅ セルティック試合 ${matches.length} 件を保存`);
 
-    // JSON にも保存
+    // JSONにも保存（確認用）
     const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_celtic.json");
     fs.writeFileSync(outputPath, JSON.stringify(matches, null, 2), "utf-8");
     console.log(`📝 ${outputPath} に ${matches.length} 件の試合を保存しました`);
 
     updateTimestamp("updateCelticSchedule");
 
+    await sendDiscordMessage(`✅ セルティック試合 ${matches.length} 件を更新しました`, webhookUrl!);
   } catch (err) {
     console.error("❌ エラー:", err);
-    await sendDiscordMessage(
-      `❌ セルティック日程取得エラー: ${(err as Error).message}`,
-      webhookUrl!
-    );
+    await sendDiscordMessage(`❌ セルティック日程取得エラー: ${(err as Error).message}`, webhookUrl!);
     process.exit(1);
   }
 };
