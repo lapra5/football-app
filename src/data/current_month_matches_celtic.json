@@ -1,84 +1,1697 @@
 [
   {
-    "matchId": "CELTIC_2024-12-31T16:00:00.000Z_vs_48.537",
-    "kickoffTime": "2024-12-31T16:00:00.000Z",
-    "matchday": 0,
-    "league": "スコットランド",
-    "homeTeam": {
-      "name": "2.71",
-      "id": null,
-      "players": []
+    "matchId": "CELTIC_2024-08-04T15:30:00.000Z_vs_キルマーノック   (9.)",
+    "utcDate": "2024-08-04T15:30:00.000Z",
+    "matchday": 1,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 1
     },
-    "awayTeam": {
-      "name": "48.537",
-      "id": null,
-      "players": []
-    },
-    "lineupStatus": "未発表",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "キルマーノック   (9.)",
+      "crest": "",
+      "shortName": "キルマーノック   (9.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
   },
   {
-    "matchId": "CELTIC_2025-01-31T18:00:00.000Z_vs_10.574",
-    "kickoffTime": "2025-01-31T18:00:00.000Z",
-    "matchday": 0,
-    "league": "スコットランド",
-    "homeTeam": {
-      "name": "2.19",
-      "id": null,
-      "players": []
+    "matchId": "CELTIC_2024-08-11T11:30:00.000Z_vs_ハイバーニアン   (11.)",
+    "utcDate": "2024-08-11T11:30:00.000Z",
+    "matchday": 2,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 2
     },
-    "awayTeam": {
-      "name": "10.574",
-      "id": null,
-      "players": []
-    },
-    "lineupStatus": "未発表",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 2
       },
       "halfTime": {
         "home": null,
         "away": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハイバーニアン   (11.)",
+      "crest": "",
+      "shortName": "ハイバーニアン   (11.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
   },
   {
-    "matchId": "CELTIC_2025-03-31T18:00:00.000Z_vs_52.474",
-    "kickoffTime": "2025-03-31T18:00:00.000Z",
-    "matchday": 0,
-    "league": "スコットランド",
+    "matchId": "CELTIC_2024-08-25T11:00:00.000Z_vs_セント・ミレン   (6.)",
+    "utcDate": "2024-08-25T11:00:00.000Z",
+    "matchday": 3,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 3
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
     "homeTeam": {
-      "name": "1.30",
       "id": null,
-      "players": []
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
     },
     "awayTeam": {
-      "name": "52.474",
       "id": null,
-      "players": []
+      "name": "セント・ミレン   (6.)",
+      "crest": "",
+      "shortName": "セント・ミレン   (6.)",
+      "tla": ""
     },
-    "lineupStatus": "未発表",
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-09-01T11:30:00.000Z_vs_レンジャーズ   (3.)",
+    "utcDate": "2024-09-01T11:30:00.000Z",
+    "matchday": 4,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 4
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "レンジャーズ   (3.)",
+      "crest": "",
+      "shortName": "レンジャーズ   (3.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-09-14T14:00:00.000Z_vs_ハーツ   (11.)",
+    "utcDate": "2024-09-14T14:00:00.000Z",
+    "matchday": 5,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 5
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハーツ   (11.)",
+      "crest": "",
+      "shortName": "ハーツ   (11.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-09-28T16:45:00.000Z_vs_セント・ジョンストン   (10.)",
+    "utcDate": "2024-09-28T16:45:00.000Z",
+    "matchday": 6,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 6
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 6
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ジョンストン   (10.)",
+      "crest": "",
+      "shortName": "セント・ジョンストン   (10.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-10-06T11:00:00.000Z_vs_ロス・カウンティ   (7.)",
+    "utcDate": "2024-10-06T11:00:00.000Z",
+    "matchday": 7,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 7
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ロス・カウンティ   (7.)",
+      "crest": "",
+      "shortName": "ロス・カウンティ   (7.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-10-19T14:00:00.000Z_vs_アバディーン   (2.)",
+    "utcDate": "2024-10-19T14:00:00.000Z",
+    "matchday": 8,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 8
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アバディーン   (2.)",
+      "crest": "",
+      "shortName": "アバディーン   (2.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-10-27T15:00:00.000Z_vs_マザーウェル   (5.)",
+    "utcDate": "2024-10-27T15:00:00.000Z",
+    "matchday": 9,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 9
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "マザーウェル   (5.)",
+      "crest": "",
+      "shortName": "マザーウェル   (5.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-10-30T19:45:00.000Z_vs_ダンディーFC   (6.)",
+    "utcDate": "2024-10-30T19:45:00.000Z",
+    "matchday": 10,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 10
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディーFC   (6.)",
+      "crest": "",
+      "shortName": "ダンディーFC   (6.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-08T19:45:00.000Z_vs_ダンディー・ユナイテッド   (5.)",
+    "utcDate": "2025-01-08T19:45:00.000Z",
+    "matchday": 11,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 11
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディー・ユナイテッド   (5.)",
+      "crest": "",
+      "shortName": "ダンディー・ユナイテッド   (5.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-11-10T15:00:00.000Z_vs_キルマーノック   (6.)",
+    "utcDate": "2024-11-10T15:00:00.000Z",
+    "matchday": 12,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 12
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "キルマーノック   (6.)",
+      "crest": "",
+      "shortName": "キルマーノック   (6.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-11-23T19:45:00.000Z_vs_ハーツ   (10.)",
+    "utcDate": "2024-11-23T19:45:00.000Z",
+    "matchday": 13,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 13
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 4
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハーツ   (10.)",
+      "crest": "",
+      "shortName": "ハーツ   (10.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-11-30T15:00:00.000Z_vs_ロス・カウンティ   (7.)",
+    "utcDate": "2024-11-30T15:00:00.000Z",
+    "matchday": 14,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 14
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 5,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ロス・カウンティ   (7.)",
+      "crest": "",
+      "shortName": "ロス・カウンティ   (7.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-04T20:00:00.000Z_vs_アバディーン   (2.)",
+    "utcDate": "2024-12-04T20:00:00.000Z",
+    "matchday": 15,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 15
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アバディーン   (2.)",
+      "crest": "",
+      "shortName": "アバディーン   (2.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-07T15:00:00.000Z_vs_ハイバーニアン   (11.)",
+    "utcDate": "2024-12-07T15:00:00.000Z",
+    "matchday": 16,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 16
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハイバーニアン   (11.)",
+      "crest": "",
+      "shortName": "ハイバーニアン   (11.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-14T20:00:00.000Z_vs_ダンディーFC   (7.)",
+    "utcDate": "2025-01-14T20:00:00.000Z",
+    "matchday": 17,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 17
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディーFC   (7.)",
+      "crest": "",
+      "shortName": "ダンディーFC   (7.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-22T12:00:00.000Z_vs_ダンディー・ユナイテッド   (5.)",
+    "utcDate": "2024-12-22T12:00:00.000Z",
+    "matchday": 18,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 18
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディー・ユナイテッド   (5.)",
+      "crest": "",
+      "shortName": "ダンディー・ユナイテッド   (5.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-26T15:00:00.000Z_vs_マザーウェル   (4.)",
+    "utcDate": "2024-12-26T15:00:00.000Z",
+    "matchday": 19,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 19
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 4,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "マザーウェル   (4.)",
+      "crest": "",
+      "shortName": "マザーウェル   (4.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-29T15:00:00.000Z_vs_セント・ジョンストン   (12.)",
+    "utcDate": "2024-12-29T15:00:00.000Z",
+    "matchday": 20,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 20
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 4,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ジョンストン   (12.)",
+      "crest": "",
+      "shortName": "セント・ジョンストン   (12.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-02T15:00:00.000Z_vs_レンジャーズ   (2.)",
+    "utcDate": "2025-01-02T15:00:00.000Z",
+    "matchday": 21,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 21
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "レンジャーズ   (2.)",
+      "crest": "",
+      "shortName": "レンジャーズ   (2.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-05T15:00:00.000Z_vs_セント・ミレン   (6.)",
+    "utcDate": "2025-01-05T15:00:00.000Z",
+    "matchday": 22,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 22
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ミレン   (6.)",
+      "crest": "",
+      "shortName": "セント・ミレン   (6.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-11T12:30:00.000Z_vs_ロス・カウンティ   (9.)",
+    "utcDate": "2025-01-11T12:30:00.000Z",
+    "matchday": 23,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 23
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 4
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ロス・カウンティ   (9.)",
+      "crest": "",
+      "shortName": "ロス・カウンティ   (9.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-05T19:45:00.000Z_vs_ダンディーFC   (7.)",
+    "utcDate": "2025-02-05T19:45:00.000Z",
+    "matchday": 24,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 24
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 6,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディーFC   (7.)",
+      "crest": "",
+      "shortName": "ダンディーFC   (7.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-02T15:00:00.000Z_vs_マザーウェル   (5.)",
+    "utcDate": "2025-02-02T15:00:00.000Z",
+    "matchday": 25,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 25
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "マザーウェル   (5.)",
+      "crest": "",
+      "shortName": "マザーウェル   (5.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-15T15:00:00.000Z_vs_ダンディー・ユナイテッド   (3.)",
+    "utcDate": "2025-02-15T15:00:00.000Z",
+    "matchday": 26,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 26
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディー・ユナイテッド   (3.)",
+      "crest": "",
+      "shortName": "ダンディー・ユナイテッド   (3.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-22T12:30:00.000Z_vs_ハイバーニアン   (5.)",
+    "utcDate": "2025-02-22T12:30:00.000Z",
+    "matchday": 27,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 27
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハイバーニアン   (5.)",
+      "crest": "",
+      "shortName": "ハイバーニアン   (5.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-25T20:00:00.000Z_vs_アバディーン   (3.)",
+    "utcDate": "2025-02-25T20:00:00.000Z",
+    "matchday": 28,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 28
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 5,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アバディーン   (3.)",
+      "crest": "",
+      "shortName": "アバディーン   (3.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-03-01T17:30:00.000Z_vs_セント・ミレン   (7.)",
+    "utcDate": "2025-03-01T17:30:00.000Z",
+    "matchday": 29,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 29
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 5
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ミレン   (7.)",
+      "crest": "",
+      "shortName": "セント・ミレン   (7.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-03-16T12:30:00.000Z_vs_レンジャーズ   (2.)",
+    "utcDate": "2025-03-16T12:30:00.000Z",
+    "matchday": 30,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 30
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "レンジャーズ   (2.)",
+      "crest": "",
+      "shortName": "レンジャーズ   (2.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-03-29T15:00:00.000Z_vs_ハーツ   (6.)",
+    "utcDate": "2025-03-29T15:00:00.000Z",
+    "matchday": 31,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 31
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハーツ   (6.)",
+      "crest": "",
+      "shortName": "ハーツ   (6.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-04-06T11:00:00.000Z_vs_セント・ジョンストン   (12.)",
+    "utcDate": "2025-04-06T11:00:00.000Z",
+    "matchday": 32,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 32
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ジョンストン   (12.)",
+      "crest": "",
+      "shortName": "セント・ジョンストン   (12.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-04-12T11:30:00.000Z_vs_キルマーノック   (9.)",
+    "utcDate": "2025-04-12T11:30:00.000Z",
+    "matchday": 33,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 33
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 5,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "キルマーノック   (9.)",
+      "crest": "",
+      "shortName": "キルマーノック   (9.)",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-04-26T11:30:00.000Z_vs_ダンディー・ユナイテッド",
+    "utcDate": "2025-04-26T11:30:00.000Z",
+    "matchday": 34,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 34
+    },
+    "status": "SCHEDULED",
     "score": {
       "winner": null,
       "duration": "REGULAR",
@@ -91,8 +1704,1155 @@
         "away": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ダンディー・ユナイテッド",
+      "crest": "",
+      "shortName": "ダンディー・ユナイテッド",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-05-04T11:00:00.000Z_vs_レンジャーズ",
+    "utcDate": "2025-05-04T11:00:00.000Z",
+    "matchday": 35,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 35
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "レンジャーズ",
+      "crest": "",
+      "shortName": "レンジャーズ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-05-10T14:00:00.000Z_vs_ハイバーニアン",
+    "utcDate": "2025-05-10T14:00:00.000Z",
+    "matchday": 36,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 36
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハイバーニアン",
+      "crest": "",
+      "shortName": "ハイバーニアン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-05-14T18:45:00.000Z_vs_アバディーン",
+    "utcDate": "2025-05-14T18:45:00.000Z",
+    "matchday": 37,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 37
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アバディーン",
+      "crest": "",
+      "shortName": "アバディーン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-05-17T11:30:00.000Z_vs_セント・ミレン",
+    "utcDate": "2025-05-17T11:30:00.000Z",
+    "matchday": 38,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 38
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ミレン",
+      "crest": "",
+      "shortName": "セント・ミレン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-09-18T19:00:00.000Z_vs_スロ・ブラチスラヴァ",
+    "utcDate": "2024-09-18T19:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 5,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "スロ・ブラチスラヴァ",
+      "crest": "",
+      "shortName": "スロ・ブラチスラヴァ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-10-01T19:00:00.000Z_vs_ドルトムント",
+    "utcDate": "2024-10-01T19:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 7,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ドルトムント",
+      "crest": "",
+      "shortName": "ドルトムント",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-10-23T16:45:00.000Z_vs_アタランタBC",
+    "utcDate": "2024-10-23T16:45:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アタランタBC",
+      "crest": "",
+      "shortName": "アタランタBC",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-11-05T20:00:00.000Z_vs_ライプツィヒ",
+    "utcDate": "2024-11-05T20:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ライプツィヒ",
+      "crest": "",
+      "shortName": "ライプツィヒ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-11-27T20:00:00.000Z_vs_クラブ・ブルッヘ",
+    "utcDate": "2024-11-27T20:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "クラブ・ブルッヘ",
+      "crest": "",
+      "shortName": "クラブ・ブルッヘ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-10T17:45:00.000Z_vs_ディナモ・ザグレブ",
+    "utcDate": "2024-12-10T17:45:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ディナモ・ザグレブ",
+      "crest": "",
+      "shortName": "ディナモ・ザグレブ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-22T20:00:00.000Z_vs_BSCヤングボーイズ",
+    "utcDate": "2025-01-22T20:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "BSCヤングボーイズ",
+      "crest": "",
+      "shortName": "BSCヤングボーイズ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-29T20:00:00.000Z_vs_アストン・ヴィラ",
+    "utcDate": "2025-01-29T20:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 4,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アストン・ヴィラ",
+      "crest": "",
+      "shortName": "アストン・ヴィラ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-12T20:00:00.000Z_vs_バイエルン",
+    "utcDate": "2025-02-12T20:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "バイエルン",
+      "crest": "",
+      "shortName": "バイエルン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-18T20:00:00.000Z_vs_バイエルン",
+    "utcDate": "2025-02-18T20:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "DRAW",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "バイエルン",
+      "crest": "",
+      "shortName": "バイエルン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-01-18T17:30:00.000Z_vs_キルマーノック",
+    "utcDate": "2025-01-18T17:30:00.000Z",
+    "matchday": 4,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 4
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "キルマーノック",
+      "crest": "",
+      "shortName": "キルマーノック",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-02-08T17:30:00.000Z_vs_Raith Rovers",
+    "utcDate": "2025-02-08T17:30:00.000Z",
+    "matchday": 5,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 5
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 5,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "Raith Rovers",
+      "crest": "",
+      "shortName": "Raith Rovers",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-03-09T15:00:00.000Z_vs_ハイバーニアン",
+    "utcDate": "2025-03-09T15:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハイバーニアン",
+      "crest": "",
+      "shortName": "ハイバーニアン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-04-20T14:00:00.000Z_vs_セント・ジョンストン",
+    "utcDate": "2025-04-20T14:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "セント・ジョンストン",
+      "crest": "",
+      "shortName": "セント・ジョンストン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-08-18T14:00:00.000Z_vs_ハイバーニアン",
+    "utcDate": "2024-08-18T14:00:00.000Z",
+    "matchday": 2,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 2
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "ハイバーニアン",
+      "crest": "",
+      "shortName": "ハイバーニアン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-09-22T14:00:00.000Z_vs_フォルカークFC",
+    "utcDate": "2024-09-22T14:00:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 5,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "フォルカークFC",
+      "crest": "",
+      "shortName": "フォルカークFC",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-11-02T17:30:00.000Z_vs_アバディーン",
+    "utcDate": "2024-11-02T17:30:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 6,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アバディーン",
+      "crest": "",
+      "shortName": "アバディーン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2024-12-15T15:30:00.000Z_vs_レンジャーズ",
+    "utcDate": "2024-12-15T15:30:00.000Z",
+    "matchday": 0,
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "FINISHED",
+    "score": {
+      "winner": "HOME_TEAM",
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 8,
+        "away": 7
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "レンジャーズ",
+      "crest": "",
+      "shortName": "レンジャーズ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
   }
 ]
