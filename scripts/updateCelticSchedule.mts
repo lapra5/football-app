@@ -95,20 +95,20 @@ const main = async () => {
 
       let fullTime: { home: number | null; away: number | null } = { home: null, away: null };
       let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
-      
-      const scoreMatch = scoreText.match(/(\d+):(\d+)/);
+
+      const scoreMatch = scoreText.match(/^(\d+):(\d+)$/);
       if (scoreMatch) {
         fullTime = {
           home: parseInt(scoreMatch[1], 10),
           away: parseInt(scoreMatch[2], 10)
         };
-      
+
         if (fullTime.home !== null && fullTime.away !== null) {
           if (fullTime.home > fullTime.away) winner = "HOME_TEAM";
           else if (fullTime.home < fullTime.away) winner = "AWAY_TEAM";
           else winner = "DRAW";
         }
-      }      
+      }
 
       matches.push({
         matchId: `CELTIC_${kickoff.toISOString()}_vs_${opponent}`,
