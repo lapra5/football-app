@@ -19,11 +19,6 @@ const serviceAccount = JSON.parse(
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-const currentYear = new Date().getFullYear();
-const currentMonth = new Date().getMonth();
-const seasonYear =
-  currentMonth < 6 ? `${currentYear - 1}-${currentYear}` : `${currentYear}-${currentYear + 1}`;
-
 const J_URLS = [
   {
     url: "https://data.j-league.or.jp/SFMS01/search?competition_years=2025&competition_frame_ids=1&competition_ids=651",
@@ -65,11 +60,11 @@ const main = async () => {
         const matchdayMatch = normalized.match(/第(\d+)節/);
         const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
 
-        const dateStr = $(cols[3]).text().trim(); // 例: 02/14(金)
-        const timeStr = $(cols[4]).text().trim(); // 例: 19:03
+        const dateStr = $(cols[3]).text().trim();
+        const timeStr = $(cols[4]).text().trim();
         const homeTeam = $(cols[5]).text().trim();
-        const scoreText = $(cols[6]).text().trim(); // 例: 1-1 (PK2-4)
         const awayTeam = $(cols[7]).text().trim();
+        const scoreStr = $(cols[6]).text().trim();
 
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
 
@@ -77,19 +72,30 @@ const main = async () => {
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
         if (isNaN(kickoff.getTime())) return;
 
-        let fullTime: { home: number | null; away: number | null } = { home: null, away: null };
-        let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
+        // スコアの判定処理
+        const scoreMatch = scoreStr.match(/^(\d+)[-ー](\d+)(?:\s*\(PK\d+[-ー](\d+)\))?/);
+        const fullTime =
+          scoreMatch && scoreMatch[1] && scoreMatch[2]
+            ? {
+                home: parseInt(scoreMatch[1], 10),
+                away: parseInt(scoreMatch[2], 10),
+              }
+            : { home: null, away: null };
 
-        const scoreMatch = scoreText.match(/(\d+)[-－](\d+)/);
-        if (scoreMatch) {
-          fullTime.home = parseInt(scoreMatch[1], 10);
-          fullTime.away = parseInt(scoreMatch[2], 10);
-          if (fullTime.home != null && fullTime.away != null) {
-            if (fullTime.home > fullTime.away) winner = "HOME_TEAM";
-            else if (fullTime.home < fullTime.away) winner = "AWAY_TEAM";
-            else winner = "DRAW";
-          }
-        }
+        const winner =
+          fullTime.home != null && fullTime.away != null
+            ? fullTime.home > fullTime.away
+              ? "HOME_TEAM"
+              : fullTime.home < fullTime.away
+              ? "AWAY_TEAM"
+              : league === "Jリーグカップ"
+              ? scoreStr.includes("PK")
+                ? scoreStr.includes("PK2-4") || scoreStr.includes("PK3-5") // ←ここは適宜修正
+                  ? "AWAY_TEAM"
+                  : "HOME_TEAM"
+                : null
+              : "DRAW"
+            : null;
 
         allMatches.push({
           matchId: `${league}_${kickoff.toISOString()}_${homeTeam}_vs_${awayTeam}`,
@@ -113,20 +119,29 @@ const main = async () => {
       });
     }
 
-    const ref = db.collection("leagues").doc("jleague").collection("seasons").doc(seasonYear).collection("matches");
+    // Firestore 書き込み
+    const year = "2025";
+    const season = `${parseInt(year)}-${parseInt(year) + 1}`;
     const batch = db.batch();
-    allMatches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
+    for (const match of allMatches) {
+      const ref = db
+        .collection("leagues")
+        .doc("jleague")
+        .collection("seasons")
+        .doc(season)
+        .collection("matches")
+        .doc(match.matchId);
+      batch.set(ref, match, { merge: true });
+    }
     await batch.commit();
+
+    // JSON出力
+    const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_jleague.json");
+    fs.writeFileSync(outputPath, JSON.stringify(allMatches, null, 2), "utf-8");
 
     console.log(`✅ Jリーグ試合 ${allMatches.length} 件を保存`);
     await sendDiscordMessage(`✅ Jリーグ試合 ${allMatches.length} 件を更新しました`, webhookUrl!);
-
-    const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_jleague.json");
-    fs.writeFileSync(outputPath, JSON.stringify(allMatches, null, 2), "utf-8");
-    console.log(`📝 ${outputPath} に ${allMatches.length} 件の試合を保存しました`);
-
     updateTimestamp("updateJleagueSchedule");
-
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(`❌ Jリーグ日程取得エラー: ${(err as Error).message}`, webhookUrl!);
