@@ -1,7 +1,6 @@
 // 🚀 開始ログ
 console.log("🚀 updateCurrentMonthMatch 開始");
 
-// 必要な import
 import * as fs from "fs";
 import * as path from "path";
 import { initializeApp, cert } from "firebase-admin/app";
@@ -16,23 +15,21 @@ const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-// Webhook URL（方法2: 直接渡す方式）
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
-// 対象リーグ
 const LEAGUE_IDS = [
   "2001", "2002", "2003", "2013", "2014",
   "2015", "2016", "2017", "2019", "2021"
 ];
 
-// データファイルのパス
 const teamDataPath = path.resolve("src/data/team_league_names.json");
 const targetPath = path.resolve("src/data/current_month_matches_oversea.json");
 
-const getTargetRange = () => {
+// 🔁 前後30日を取得
+const getTargetRange = (): [string, string] => {
   const now = new Date();
-  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
-  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 30, 23, 59, 59);
+  const start = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+  const end = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
   return [start.toISOString(), end.toISOString()];
 };
 
@@ -113,7 +110,6 @@ const main = async () => {
 
     updateTimestamp("updateCurrentMonthMatch");
 
-    // updateCurrentMonthMatch.mts の最後のDiscord通知
     await sendDiscordMessage(
       `✅ 海外リーグ試合データ取得完了: ${enrichedMatches.length} 件を current_month_matches_oversea.json に保存しました`,
       DISCORD_WEBHOOK
