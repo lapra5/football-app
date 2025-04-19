@@ -25,6 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set Secrets as Environment Variables
+        run: |
+          echo "FIREBASE_PRIVATE_KEY_JSON_BASE64=${{ secrets.FIREBASE_ADMIN_BASE64 }}" >> $GITHUB_ENV
+          echo "DISCORD_WEBHOOK_SCORES=${{ secrets.DISCORD_WEBHOOK_SCORES }}" >> $GITHUB_ENV
+
       - name: Run fetchScores script
         run: node --loader ts-node/esm scripts/fetchScores.mts
 
