@@ -1,3 +1,4 @@
+// scripts/updateJleagueSchedule.mts
 import axios from "axios";
 import * as cheerio from "cheerio";
 import path from "path";
@@ -17,6 +18,11 @@ const serviceAccount = JSON.parse(
 );
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
+
+const currentYear = new Date().getFullYear();
+const currentMonth = new Date().getMonth();
+const seasonYear =
+  currentMonth < 6 ? `${currentYear - 1}-${currentYear}` : `${currentYear}-${currentYear + 1}`;
 
 const J_URLS = [
   {
@@ -59,11 +65,11 @@ const main = async () => {
         const matchdayMatch = normalized.match(/第(\d+)節/);
         const matchday = matchdayMatch ? parseInt(matchdayMatch[1], 10) : 0;
 
-        const dateStr = $(cols[3]).text().trim();
-        const timeStr = $(cols[4]).text().trim();
+        const dateStr = $(cols[3]).text().trim(); // 例: 02/14(金)
+        const timeStr = $(cols[4]).text().trim(); // 例: 19:03
         const homeTeam = $(cols[5]).text().trim();
+        const scoreText = $(cols[6]).text().trim(); // 例: 1-1 (PK2-4)
         const awayTeam = $(cols[7]).text().trim();
-        const resultText = $(cols[6]).text().trim();
 
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
 
@@ -71,27 +77,17 @@ const main = async () => {
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
         if (isNaN(kickoff.getTime())) return;
 
-        const scoreMatch = resultText.match(/^(\d+)[-－](\d+)/);
-        const pkMatch = resultText.match(/\(PK\s*(\d+)[-－](\d+)\)/i);
-
         let fullTime: { home: number | null; away: number | null } = { home: null, away: null };
         let winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null = null;
 
+        const scoreMatch = scoreText.match(/(\d+)[-－](\d+)/);
         if (scoreMatch) {
-          const homeScore = parseInt(scoreMatch[1], 10);
-          const awayScore = parseInt(scoreMatch[2], 10);
-          fullTime = { home: homeScore, away: awayScore };
-
-          if (homeScore > awayScore) winner = "HOME_TEAM";
-          else if (homeScore < awayScore) winner = "AWAY_TEAM";
-          else if (pkMatch) {
-            const homePK = parseInt(pkMatch[1], 10);
-            const awayPK = parseInt(pkMatch[2], 10);
-            if (homePK > awayPK) winner = "HOME_TEAM";
-            else if (homePK < awayPK) winner = "AWAY_TEAM";
+          fullTime.home = parseInt(scoreMatch[1], 10);
+          fullTime.away = parseInt(scoreMatch[2], 10);
+          if (fullTime.home != null && fullTime.away != null) {
+            if (fullTime.home > fullTime.away) winner = "HOME_TEAM";
+            else if (fullTime.home < fullTime.away) winner = "AWAY_TEAM";
             else winner = "DRAW";
-          } else {
-            winner = "DRAW";
           }
         }
 
@@ -109,12 +105,15 @@ const main = async () => {
             fullTime,
             halfTime: { home: null, away: null },
             winner,
-          }
+          },
+          startingMembers: [],
+          substitutes: [],
+          outOfSquad: [],
         });
       });
     }
 
-    const ref = db.collection("leagues").doc("jleague").collection("matches");
+    const ref = db.collection("leagues").doc("jleague").collection("seasons").doc(seasonYear).collection("matches");
     const batch = db.batch();
     allMatches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
     await batch.commit();
