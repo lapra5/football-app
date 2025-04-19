@@ -36,6 +36,10 @@ const fetchLineupForMatch = async (matchId: string) => {
   return await res.json();
 };
 
+// 日本人だけを lineup, substitutes, outOfSquad から抽出
+const extractJpPlayers = (all: any[] = [], jpNames: string[] = []) =>
+  all.map(p => p.name).filter((name: string) => jpNames.includes(name));
+
 const main = async () => {
   try {
     const json = fs.readFileSync(targetPath, 'utf-8');
@@ -57,15 +61,27 @@ const main = async () => {
         group.map(async (match) => {
           const detail = await fetchLineupForMatch(match.matchId);
 
+          const homeJp = match.homeTeam?.players ?? [];
+          const awayJp = match.awayTeam?.players ?? [];
+
           const updated = {
             ...match,
             lineupStatus: '取得済み',
-            startingMembers: detail.match?.homeTeam?.lineup || [],
-            substitutes: detail.match?.homeTeam?.substitutes || [],
-            outOfSquad: detail.match?.homeTeam?.outOfSquad || [],
+            startingMembers: {
+              home: extractJpPlayers(detail.match?.homeTeam?.lineup, homeJp),
+              away: extractJpPlayers(detail.match?.awayTeam?.lineup, awayJp),
+            },
+            substitutes: {
+              home: extractJpPlayers(detail.match?.homeTeam?.substitutes, homeJp),
+              away: extractJpPlayers(detail.match?.awayTeam?.substitutes, awayJp),
+            },
+            outOfSquad: {
+              home: extractJpPlayers(detail.match?.homeTeam?.outOfSquad, homeJp),
+              away: extractJpPlayers(detail.match?.awayTeam?.outOfSquad, awayJp),
+            },
           };
 
-          const leagueId = match.matchId.split('_')[0]; // 例: "2001" or "J1"
+          const leagueId = match.matchId.split('_')[0]; // 例: "2001", "J1", "CELTIC" など
           const docRef = db.collection('leagues').doc(leagueId).collection('matches').doc(match.matchId);
           await docRef.set(updated, { merge: true });
 
