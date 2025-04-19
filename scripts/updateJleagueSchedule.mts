@@ -40,13 +40,29 @@ const J_URLS = [
 
 const webhookUrl = process.env.DISCORD_WEBHOOK_JLEAGUE;
 
-const parsePKWinner = (pkText: string): "HOME_TEAM" | "AWAY_TEAM" | null => {
-  const match = pkText.match(/\(PK(\d+)-(\d+)\)/);
+const parseScore = (text: string) => {
+  const scoreRegex = /(\d+)-(\d+)(?:\s*\(PK(\d+)-(\d+)\))?/;
+  const match = text.match(scoreRegex);
   if (!match) return null;
-  const [_, home, away] = match.map(Number);
-  if (home > away) return "HOME_TEAM";
-  if (home < away) return "AWAY_TEAM";
-  return null;
+  const home = parseInt(match[1], 10);
+  const away = parseInt(match[2], 10);
+  const pkHome = match[3] ? parseInt(match[3], 10) : null;
+  const pkAway = match[4] ? parseInt(match[4], 10) : null;
+
+  let winner: "HOME_TEAM" | "AWAY_TEAM" | null = null;
+  if (pkHome !== null && pkAway !== null) {
+    winner = pkHome > pkAway ? "HOME_TEAM" : "AWAY_TEAM";
+  } else if (home > away) {
+    winner = "HOME_TEAM";
+  } else if (home < away) {
+    winner = "AWAY_TEAM";
+  }
+
+  return {
+    fullTime: { home, away },
+    halfTime: pkHome !== null && pkAway !== null ? { home: pkHome, away: pkAway } : { home: null, away: null },
+    winner,
+  };
 };
 
 const main = async () => {
@@ -72,8 +88,8 @@ const main = async () => {
         const dateStr = $(cols[3]).text().trim();
         const timeStr = $(cols[4]).text().trim();
         const homeTeam = $(cols[5]).text().trim();
+        const resultText = $(cols[6]).text().trim();
         const awayTeam = $(cols[7]).text().trim();
-        const scoreText = $(cols[6]).text().trim();
 
         if (!dateStr || !timeStr || !homeTeam || !awayTeam) return;
 
@@ -81,22 +97,12 @@ const main = async () => {
         const kickoff = new Date(`${fullDateTimeStr}:00 GMT+0900`);
         if (isNaN(kickoff.getTime())) return;
 
-        const fullTimeMatch = scoreText.match(/(\d+)-(\d+)/);
-        const fullTime = fullTimeMatch
-          ? {
-              home: Number(fullTimeMatch[1]),
-              away: Number(fullTimeMatch[2]),
-            }
-          : { home: null, away: null };
-
-        const winner =
-          fullTime.home !== null && fullTime.away !== null
-            ? fullTime.home > fullTime.away
-              ? "HOME_TEAM"
-              : fullTime.home < fullTime.away
-              ? "AWAY_TEAM"
-              : parsePKWinner(scoreText) || null
-            : null;
+        const score = parseScore(resultText) || {
+          duration: "REGULAR",
+          fullTime: { home: null, away: null },
+          halfTime: { home: null, away: null },
+          winner: null,
+        };
 
         allMatches.push({
           matchId: `${league}_${kickoff.toISOString()}_${homeTeam}_vs_${awayTeam}`,
@@ -108,10 +114,10 @@ const main = async () => {
           status: "SCHEDULED",
           lineupStatus: "未発表",
           score: {
-            winner,
             duration: "REGULAR",
-            fullTime,
-            halfTime: { home: null, away: null },
+            fullTime: score.fullTime,
+            halfTime: score.halfTime,
+            winner: score.winner,
           },
           startingMembers: [],
           substitutes: [],
@@ -120,23 +126,21 @@ const main = async () => {
       });
     }
 
-    for (const match of allMatches) {
-      const year = new Date(match.kickoffTime).getFullYear().toString();
-      const ref = db
-        .collection("leagues")
-        .doc("jleague")
-        .collection("seasons")
-        .doc(year)
-        .collection("matches")
-        .doc(match.matchId);
-      await ref.set(match, { merge: true });
-    }
+    const seasonLabel = new Date().getMonth() >= 6
+      ? `${new Date().getFullYear()}-${new Date().getFullYear() + 1}`
+      : `${new Date().getFullYear() - 1}-${new Date().getFullYear()}`;
 
-    const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_jleague.json");
-    fs.writeFileSync(outputPath, JSON.stringify(allMatches, null, 2), "utf-8");
+    const ref = db.collection("leagues").doc("jleague").collection("seasons").doc(seasonLabel).collection("matches");
+    const batch = db.batch();
+    allMatches.forEach((match) => batch.set(ref.doc(match.matchId), match, { merge: true }));
+    await batch.commit();
 
     console.log(`✅ Jリーグ試合 ${allMatches.length} 件を保存`);
     await sendDiscordMessage(`✅ Jリーグ試合 ${allMatches.length} 件を更新しました`, webhookUrl!);
+
+    const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_jleague.json");
+    fs.writeFileSync(outputPath, JSON.stringify(allMatches, null, 2), "utf-8");
+    console.log(`📝 ${outputPath} に ${allMatches.length} 件の試合を保存しました`);
 
     updateTimestamp("updateJleagueSchedule");
   } catch (err) {
