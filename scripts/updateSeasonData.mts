@@ -15,6 +15,7 @@ initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
+const DISCORD_WEBHOOK_SEASON = process.env.DISCORD_WEBHOOK_SEASON || "";
 
 const LEAGUE_IDS = [
   "2001", "2002", "2003", "2013", "2014",
@@ -119,16 +120,24 @@ const main = async () => {
 
     updateTimestamp("updateCurrentMonthMatch");
 
-    await sendDiscordMessage(
-      `✅ 海外リーグ試合データ取得完了: ${enrichedMatches.length} 件を current_month_matches_oversea.json に保存しました`,
-      DISCORD_WEBHOOK
-    );
+    const message = `✅ 海外リーグ試合データ取得完了: ${enrichedMatches.length} 件を current_month_matches_oversea.json に保存しました`;
+
+    if (DISCORD_WEBHOOK) {
+      await sendDiscordMessage(message, DISCORD_WEBHOOK);
+    }
+    if (DISCORD_WEBHOOK_SEASON) {
+      await sendDiscordMessage(message, DISCORD_WEBHOOK_SEASON);
+    }
+
   } catch (err) {
     console.error("❌ エラー:", err);
-    await sendDiscordMessage(
-      `❌ エラー発生: ${err instanceof Error ? err.message : String(err)}`,
-      DISCORD_WEBHOOK
-    );
+    const errorMessage = `❌ エラー発生: ${err instanceof Error ? err.message : String(err)}`;
+    if (DISCORD_WEBHOOK) {
+      await sendDiscordMessage(errorMessage, DISCORD_WEBHOOK);
+    }
+    if (DISCORD_WEBHOOK_SEASON) {
+      await sendDiscordMessage(errorMessage, DISCORD_WEBHOOK_SEASON);
+    }
     process.exit(1);
   }
 };
