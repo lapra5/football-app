@@ -1,3 +1,5 @@
+// scripts/fetchLineups.mts
+
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
@@ -36,9 +38,12 @@ const fetchLineupForMatch = async (matchId: string) => {
   return await res.json();
 };
 
-// 日本人だけを lineup, substitutes, outOfSquad から抽出
-const extractJpPlayers = (all: any[] = [], jpNames: string[] = []) =>
-  all.map(p => p.name).filter((name: string) => jpNames.includes(name));
+const getSeasonYear = (date: Date): string => {
+  const year = date.getFullYear();
+  return date.getMonth() >= 6
+    ? `${year}-${year + 1}`
+    : `${year - 1}-${year}`;
+};
 
 const main = async () => {
   try {
@@ -46,6 +51,8 @@ const main = async () => {
     const matches = JSON.parse(json);
 
     const now = new Date();
+    const season = getSeasonYear(now);
+
     const targets = matches.filter((match: any) => {
       const kickoff = new Date(match.kickoffTime);
       const diffMinutes = Math.floor((kickoff.getTime() - now.getTime()) / 60000);
@@ -61,31 +68,39 @@ const main = async () => {
         group.map(async (match) => {
           const detail = await fetchLineupForMatch(match.matchId);
 
-          const homeJp = match.homeTeam?.players ?? [];
-          const awayJp = match.awayTeam?.players ?? [];
-
-          const updated = {
-            ...match,
-            lineupStatus: '取得済み',
-            startingMembers: {
-              home: extractJpPlayers(detail.match?.homeTeam?.lineup, homeJp),
-              away: extractJpPlayers(detail.match?.awayTeam?.lineup, awayJp),
-            },
-            substitutes: {
-              home: extractJpPlayers(detail.match?.homeTeam?.substitutes, homeJp),
-              away: extractJpPlayers(detail.match?.awayTeam?.substitutes, awayJp),
-            },
-            outOfSquad: {
-              home: extractJpPlayers(detail.match?.homeTeam?.outOfSquad, homeJp),
-              away: extractJpPlayers(detail.match?.awayTeam?.outOfSquad, awayJp),
-            },
+          const startingMembers = {
+            home: detail.match?.homeTeam?.lineup ?? [],
+            away: detail.match?.awayTeam?.lineup ?? [],
+          };
+          const substitutes = {
+            home: detail.match?.homeTeam?.substitutes ?? [],
+            away: detail.match?.awayTeam?.substitutes ?? [],
+          };
+          const outOfSquad = {
+            home: detail.match?.homeTeam?.outOfSquad ?? [],
+            away: detail.match?.awayTeam?.outOfSquad ?? [],
           };
 
-          const leagueId = match.matchId.split('_')[0]; // 例: "2001", "J1", "CELTIC" など
-          const docRef = db.collection('leagues').doc(leagueId).collection('matches').doc(match.matchId);
-          await docRef.set(updated, { merge: true });
+          const leagueId = match.matchId.split('_')[0];
+          const docRef = db
+            .collection('leagues')
+            .doc(leagueId)
+            .collection('seasons')
+            .doc(season)
+            .collection('matches')
+            .doc(match.matchId);
 
-          return updated;
+          await docRef.set(
+            {
+              lineupStatus: '取得済み',
+              startingMembers,
+              substitutes,
+              outOfSquad,
+            },
+            { merge: true }
+          );
+
+          return match.matchId;
         })
       );
 
@@ -94,7 +109,10 @@ const main = async () => {
     }
 
     updateTimestamp('fetchLineups');
-    await sendDiscordMessage(`✅ スタメンデータを ${targets.length} 件更新しました（Firestore書き込みのみ）`, DISCORD_WEBHOOK);
+    await sendDiscordMessage(
+      `✅ スタメンデータを ${targets.length} 件更新しました（Firestore書き込みのみ）`,
+      DISCORD_WEBHOOK
+    );
   } catch (err) {
     console.error('❌ エラー:', err);
     await sendDiscordMessage(
