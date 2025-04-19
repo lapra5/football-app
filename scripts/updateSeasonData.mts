@@ -1,36 +1,27 @@
 // 🚀 開始ログ
-console.log("🚀 updateCurrentMonthMatch 開始");
+console.log("🚀 updateSeasonData 開始");
 
-import * as fs from "fs";
 import * as path from "path";
+import * as fs from "fs";
+import fetch from "node-fetch";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
-import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
+import dotenv from "dotenv";
 import { updateTimestamp } from "../src/utils/updateLog.ts";
+import { sendDiscordMessage } from "../src/utils/discordNotify.ts";
 
-const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64;
-if (!base64) throw new Error("❌ FIREBASE_PRIVATE_KEY_JSON_BASE64 が設定されていません。");
+dotenv.config({ path: path.resolve(".env.local") });
+
+const base64 = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64!;
 const serviceAccount = JSON.parse(Buffer.from(base64, "base64").toString());
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
-const DISCORD_WEBHOOK_SEASON = process.env.DISCORD_WEBHOOK_SEASON || "";
-
-const LEAGUE_IDS = [
-  "2001", "2002", "2003", "2013", "2014",
-  "2015", "2016", "2017", "2019", "2021"
+const API_KEY = process.env.FOOTBALL_DATA_API_KEY!;
+const DISCORD_WEBHOOK_SEASON = process.env.DISCORD_WEBHOOK_SEASON!;
+const leagueIds = [
+  2021, 2016, 2015, 2002, 2019, 2014, 2003, 2017, 2013, 2001
 ];
-
-const teamDataPath = path.resolve("src/data/team_league_names.json");
-const targetPath = path.resolve("src/data/current_month_matches_oversea.json");
-
-const getTargetRange = () => {
-  const now = new Date();
-  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
-  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 30, 23, 59, 59);
-  return [start.toISOString(), end.toISOString()];
-};
 
 const getSeasonYear = (date: Date): string => {
   const year = date.getFullYear();
@@ -39,105 +30,68 @@ const getSeasonYear = (date: Date): string => {
     : `${year - 1}-${year}`;
 };
 
+const getTargetRange = () => {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 30);
+  const end = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 30);
+  return [start.toISOString(), end.toISOString()];
+};
+
 const main = async () => {
   try {
-    const now = new Date();
     const [start, end] = getTargetRange();
-    const season = getSeasonYear(now);
+    const seasonLabel = getSeasonYear(new Date());
 
-    const results = await Promise.allSettled(
-      LEAGUE_IDS.map((leagueId) =>
-        db
-          .collection("leagues")
-          .doc(leagueId)
-          .collection("seasons")
-          .doc(season)
-          .collection("matches")
-          .where("kickoffTime", ">=", start)
-          .where("kickoffTime", "<=", end)
-          .get()
-          .then((snapshot) => ({
-            leagueId,
-            matches: snapshot.docs.map((doc) => doc.data()),
-          }))
-      )
-    );
+    const allMatches: any[] = [];
 
-    const successful = results
-      .filter((r) => r.status === "fulfilled")
-      .flatMap((r) => r.status === "fulfilled" ? r.value.matches : []);
+    for (const leagueId of leagueIds) {
+      const res = await fetch(`https://api.football-data.org/v4/competitions/${leagueId}/matches`, {
+        headers: { "X-Auth-Token": API_KEY }
+      });
+      const json = await res.json();
 
-    const teamDataRaw = fs.readFileSync(teamDataPath, "utf-8");
-    const teamData = JSON.parse(teamDataRaw);
-    const teams = teamData.teams;
-    const leagueMap = Object.fromEntries(
-      (Array.isArray(teamData.leagues) ? teamData.leagues : []).map((l) => [l.en, l.jp])
-    );
+      const matches = (json.matches || []).filter((m: any) =>
+        m.utcDate >= start && m.utcDate <= end
+      );
 
-    const getTeamInfo = (teamId: string) => {
-      const team = teams.find((t) => t.teamId === teamId);
-      return team
-        ? {
-            id: teamId,
-            name: { jp: team.team, en: team.englishName },
-            players: team.players || [],
-            englishplayers: team.englishplayers || [],
-            logo: team.logo || "",
-          }
-        : {
-            id: teamId,
-            name: { jp: "", en: "" },
-            players: [],
-            englishplayers: [],
-            logo: "",
-          };
-    };
+      matches.forEach((match: any) => {
+        const matchId = match.id.toString();
+        allMatches.push({
+          matchId,
+          ...match // そのままのAPI形式
+        });
+      });
 
-    const enrichedMatches = successful.map((match) => ({
-      matchId: match.matchId?.toString() || match.id?.toString(),
-      kickoffTime: match.kickoffTime || match.utcDate,
-      matchday: match.matchday,
-      league: {
-        en: match.league || match.competition?.name || "",
-        jp: leagueMap[match.league || match.competition?.name] || match.league || "",
-      },
-      homeTeam: getTeamInfo(match.homeTeam?.id),
-      awayTeam: getTeamInfo(match.awayTeam?.id),
-      lineupStatus: match.lineupStatus || "未発表",
-      score: match.score || {
-        winner: null,
-        duration: "REGULAR",
-        fullTime: { home: null, away: null },
-        halfTime: { home: null, away: null },
-      },
-      startingMembers: match.startingMembers || [],
-      substitutes: match.substitutes || [],
-      outOfSquad: match.outOfSquad || [],
-    }));
+      // Firestore 保存
+      const ref = db
+        .collection("leagues")
+        .doc(leagueId.toString())
+        .collection("seasons")
+        .doc(seasonLabel)
+        .collection("matches");
 
-    fs.writeFileSync(targetPath, JSON.stringify(enrichedMatches, null, 2), "utf-8");
-    console.log(`✅ ${enrichedMatches.length}件の試合情報を ${targetPath} に保存しました`);
-
-    updateTimestamp("updateCurrentMonthMatch");
-
-    const message = `✅ 海外リーグ試合データ取得完了: ${enrichedMatches.length} 件を current_month_matches_oversea.json に保存しました`;
-
-    if (DISCORD_WEBHOOK) {
-      await sendDiscordMessage(message, DISCORD_WEBHOOK);
-    }
-    if (DISCORD_WEBHOOK_SEASON) {
-      await sendDiscordMessage(message, DISCORD_WEBHOOK_SEASON);
+      const batch = db.batch();
+      for (const match of matches) {
+        const matchId = match.id.toString();
+        batch.set(ref.doc(matchId), match, { merge: true });
+      }
+      await batch.commit();
     }
 
+    // 保存件数
+    console.log(`✅ ${allMatches.length} 件のマッチデータを保存しました`);
+    updateTimestamp("updateSeason");
+
+    await sendDiscordMessage(
+      `✅ updateSeasonData 完了: ${allMatches.length} 件保存しました`,
+      DISCORD_WEBHOOK_SEASON
+    );
   } catch (err) {
     console.error("❌ エラー:", err);
-    const errorMessage = `❌ エラー発生: ${err instanceof Error ? err.message : String(err)}`;
-    if (DISCORD_WEBHOOK) {
-      await sendDiscordMessage(errorMessage, DISCORD_WEBHOOK);
-    }
-    if (DISCORD_WEBHOOK_SEASON) {
-      await sendDiscordMessage(errorMessage, DISCORD_WEBHOOK_SEASON);
-    }
+    await sendDiscordMessage(
+      `❌ updateSeasonData エラー: ${(err as Error).message}`,
+      DISCORD_WEBHOOK_SEASON
+    );
     process.exit(1);
   }
 };
