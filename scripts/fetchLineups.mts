@@ -3,7 +3,7 @@ import { getFirestore } from "firebase-admin/firestore";
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
-// Firebase Admin 初期化
+// Firebase 認証
 const serviceAccountBase64 = process.env.FIREBASE_ADMIN_BASE64;
 const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
 
@@ -67,13 +67,16 @@ const extractAppearanceInfo = async (): Promise<
     });
   });
 
+  console.log(`🔍 appearance件数: ${appearances.length}`);
+  console.log(`📋 appearanceサンプル:`, appearances.slice(0, 5));
+
   return appearances;
 };
 
 const updateFirestoreWithAppearances = async (
   appearances: Awaited<ReturnType<typeof extractAppearanceInfo>>
 ) => {
-  const snapshot = await db.collectionGroup("matches").get(); // ← インデックス不要バージョン
+  const snapshot = await db.collectionGroup("matches").get();
 
   let updatedCount = 0;
   const updatedPlayers: { name: string; status: AppearanceStatus }[] = [];
@@ -83,25 +86,32 @@ const updateFirestoreWithAppearances = async (
 
     const matchday = data.matchday;
     const utcDate = data.utcDate;
-    if (!utcDate || typeof utcDate !== "string") continue;
-
-    const kickoff = utcDate.slice(0, 16);
-    const matchRef = doc.ref;
     const homeTeam = data.homeTeam?.name;
     const awayTeam = data.awayTeam?.name;
 
-    if (!homeTeam || !awayTeam) continue;
+    if (!utcDate || !homeTeam || !awayTeam) continue;
+    if (typeof utcDate !== "string") continue;
+
+    const kickoff = utcDate.slice(0, 16);
+
+    console.log(`🆚 試合: ${homeTeam} vs ${awayTeam} | matchday: ${matchday}, kickoff: ${kickoff}`);
 
     const updates: any = {};
 
     for (const player of appearances) {
-      if (player.matchday !== matchday) continue;
-      if (!kickoff.includes(player.kickoff.slice(0, 5))) continue;
+      const matchdayMatch = player.matchday === matchday;
+      const kickoffMatch = kickoff.includes(player.kickoff.slice(0, 5));
 
-      const teamName = [homeTeam, awayTeam].find((t) => player.name.includes(t));
-      if (!teamName) continue;
+      if (!matchdayMatch || !kickoffMatch) continue;
 
-      const side = teamName === homeTeam ? "homeTeam" : "awayTeam";
+      const side = player.name.includes(homeTeam)
+        ? "homeTeam"
+        : player.name.includes(awayTeam)
+        ? "awayTeam"
+        : null;
+
+      if (!side) continue;
+
       const key =
         player.status === "starter"
           ? "startingMembers"
@@ -113,11 +123,13 @@ const updateFirestoreWithAppearances = async (
       if (!updates[`${side}.${key}`].includes(player.name)) {
         updates[`${side}.${key}`].push(player.name);
         updatedPlayers.push({ name: player.name, status: player.status });
+
+        console.log(`✅ 登録: ${player.name}（${player.status}） -> ${side}.${key}`);
       }
     }
 
     if (Object.keys(updates).length > 0) {
-      await matchRef.update(updates);
+      await doc.ref.update(updates);
       updatedCount++;
     }
   }
