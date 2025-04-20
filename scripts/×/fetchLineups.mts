@@ -1,5 +1,3 @@
-// fetchLineups.mts
-
 import fs from 'fs';
 import path from 'path';
 import fetch from 'node-fetch';
@@ -61,47 +59,52 @@ const main = async () => {
     console.log(`🎯 対象試合数: ${targets.length}`);
     const updatedMatchIds: string[] = [];
 
-    for (const match of targets) {
-      try {
-        const detail = await fetchLineupForMatch(match.matchId);
+    for (let i = 0; i < targets.length; i += 9) {
+      const group = targets.slice(i, i + 9);
 
-        const homePlayers = detail.match?.homeTeam?.lineup?.map((p: any) => p.name) || [];
-        const awayPlayers = detail.match?.awayTeam?.lineup?.map((p: any) => p.name) || [];
-        const homeSubs = detail.match?.homeTeam?.substitutes?.map((p: any) => p.name) || [];
-        const awaySubs = detail.match?.awayTeam?.substitutes?.map((p: any) => p.name) || [];
-        const homeOut = detail.match?.homeTeam?.outOfSquad?.map((p: any) => p.name) || [];
-        const awayOut = detail.match?.awayTeam?.outOfSquad?.map((p: any) => p.name) || [];
+      const results = await Promise.allSettled(
+        group.map(async (match) => {
+          const detail = await fetchLineupForMatch(match.matchId);
 
-        const season = getSeasonYear(new Date(match.kickoffTime));
-        const leagueId = leagueNameToId[match.league.jp];
-        if (!leagueId) throw new Error(`❌ ${match.league.jp} の leagueId が見つかりません`);
+          const homePlayers = detail.match?.homeTeam?.lineup?.map((p: any) => p.name) || [];
+          const awayPlayers = detail.match?.awayTeam?.lineup?.map((p: any) => p.name) || [];
+          const homeSubs = detail.match?.homeTeam?.substitutes?.map((p: any) => p.name) || [];
+          const awaySubs = detail.match?.awayTeam?.substitutes?.map((p: any) => p.name) || [];
+          const homeOut = detail.match?.homeTeam?.outOfSquad?.map((p: any) => p.name) || [];
+          const awayOut = detail.match?.awayTeam?.outOfSquad?.map((p: any) => p.name) || [];
 
-        const docRef = db
-          .collection('leagues')
-          .doc(leagueId)
-          .collection('seasons')
-          .doc(season)
-          .collection('matches')
-          .doc(match.matchId);
+          const season = getSeasonYear(new Date(match.kickoffTime));
+          const leagueId = leagueNameToId[match.league.jp];
+          if (!leagueId) throw new Error(`❌ ${match.league.jp} の leagueId が見つかりません`);
 
-        await docRef.set(
-          {
-            lineupStatus: '取得済み',
-            startingMembers: { home: homePlayers, away: awayPlayers },
-            substitutes: { home: homeSubs, away: awaySubs },
-            outOfSquad: { home: homeOut, away: awayOut },
-          },
-          { merge: true }
-        );
+          const docRef = db
+            .collection('leagues')
+            .doc(leagueId)
+            .collection('seasons')
+            .doc(season)
+            .collection('matches')
+            .doc(match.matchId);
 
-        updatedMatchIds.push(match.matchId);
-        await delay(1000);
-      } catch (error) {
-        console.warn(`⚠️ 試合 ${match.matchId} の処理でエラー:`, error);
-      }
+          await docRef.set(
+            {
+              lineupStatus: '取得済み',
+              startingMembers: { home: homePlayers, away: awayPlayers },
+              substitutes: { home: homeSubs, away: awaySubs },
+              outOfSquad: { home: homeOut, away: awayOut },
+            },
+            { merge: true }
+          );
+
+          updatedMatchIds.push(match.matchId);
+        })
+      );
+
+      console.log(`✅ ${results.length}件処理済み (${i + 1}〜${i + group.length})`);
+      if (i + 9 < targets.length) await delay(3000);
     }
 
     updateTimestamp('fetchLineups');
+
     await sendDiscordMessage(
       `✅ スタメンデータを ${updatedMatchIds.length} 件更新しました（Firestore書き込み）\nmatchIds: ${updatedMatchIds.join(', ')}`,
       DISCORD_WEBHOOK
