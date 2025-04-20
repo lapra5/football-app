@@ -2661,13 +2661,13 @@
       "endDate": "2025-06-30",
       "currentMatchday": 0
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 5
       },
       "halfTime": {
         "home": null,
