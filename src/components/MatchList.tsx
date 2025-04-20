@@ -14,7 +14,7 @@ interface TeamInfo {
 
 interface TeamLeagueNames {
   teams: TeamInfo[];
-  leagues: { en: string; jp: string }[];
+  leagues: { en: string; jp: string; leaguesId?: number }[];
 }
 
 interface MatchListProps {
@@ -34,6 +34,7 @@ const MatchList = ({
   const [showCurrent, setShowCurrent] = useState(true);
   const [showPrevious, setShowPrevious] = useState(true);
   const [showNext, setShowNext] = useState(true);
+  const [onlyWithJapanese, setOnlyWithJapanese] = useState(false);
   const [now, setNow] = useState<Date>(new Date());
 
   useEffect(() => {
@@ -122,10 +123,26 @@ const MatchList = ({
     const key = match.matchday === 0 && match.league.jp === "Jリーグカップ"
       ? `${match.league.jp}-${match.matchId}`
       : `${match.league.jp}-${match.matchday}`;
-    return selectedLeagues.includes(match.league.jp) && leagueMatchdaysToShow.has(key);
+    const hasJapanese = match.homeTeam.players.length > 0 || match.awayTeam.players.length > 0;
+    return selectedLeagues.includes(match.league.jp)
+      && leagueMatchdaysToShow.has(key)
+      && (!onlyWithJapanese || hasJapanese);
   });
 
-  const sortedMatches = [...filteredMatches].sort((a, b) => new Date(a.kickoffTime).getTime() - new Date(b.kickoffTime).getTime());
+  const sortedMatches = [...filteredMatches].sort((a, b) => {
+    const kickoffA = new Date(a.kickoffTime).getTime();
+    const kickoffB = new Date(b.kickoffTime).getTime();
+    const nowTime = now.getTime();
+
+    const isLiveA = nowTime >= kickoffA && nowTime - kickoffA < 90 * 60 * 1000;
+    const isLiveB = nowTime >= kickoffB && nowTime - kickoffB < 90 * 60 * 1000;
+    const isBeforeA = nowTime < kickoffA;
+    const isBeforeB = nowTime < kickoffB;
+
+    if (isLiveA !== isLiveB) return isLiveA ? -1 : 1;
+    if (isBeforeA !== isBeforeB) return isBeforeA ? -1 : 1;
+    return kickoffA - kickoffB;
+  });
 
   const toggleLeague = (league: string) => {
     setSelectedLeagues((prev) =>
@@ -135,12 +152,6 @@ const MatchList = ({
 
   const toggleAllLeagues = (on: boolean) => {
     setSelectedLeagues(on ? Array.from(new Set(matches.map((m) => m.league.jp))) : []);
-  };
-
-  const getPlayerStatus = (player: string, homePlayers: string[], awayPlayers: string[]): string => {
-    if (homePlayers?.includes(player)) return 'スタメン';
-    if (awayPlayers?.includes(player)) return 'スタメン';
-    return '';
   };
 
   const getJapanesePlayerStatusText = (team: any, side: 'home' | 'away', match: Match) => {
@@ -170,6 +181,14 @@ const MatchList = ({
         <button onClick={() => setShowNext(!showNext)} className={`w-24 text-center px-3 py-1 rounded border ${showNext ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>次節</button>
         <button onClick={() => toggleAllLeagues(true)} className="w-24 text-center px-3 py-1 rounded border bg-green-100 text-green-800">すべてオン</button>
         <button onClick={() => toggleAllLeagues(false)} className="w-24 text-center px-3 py-1 rounded border bg-red-100 text-red-800">すべてオフ</button>
+        <label className="ml-2 flex items-center gap-1 text-sm">
+          <input
+            type="checkbox"
+            checked={onlyWithJapanese}
+            onChange={() => setOnlyWithJapanese(!onlyWithJapanese)}
+          />
+          🇯🇵日本人選手のいる試合のみ
+        </label>
       </div>
 
       <div className="flex gap-2 flex-wrap mb-4">
@@ -210,7 +229,6 @@ const MatchList = ({
                 </div>
 
                 <div className="flex justify-between items-center text-center">
-                  {/* ホームチーム */}
                   <div className="w-1/3 flex flex-col items-center">
                     <div className="flex items-center justify-center gap-2">
                       {match.homeTeam.logo && <img src={match.homeTeam.logo} alt="home" className="h-6 w-6" />}
@@ -223,7 +241,6 @@ const MatchList = ({
                     </div>
                   </div>
 
-                  {/* スコア or vs */}
                   <div className="text-gray-500 w-1/3 text-sm text-center">
                     {isScored ? (
                       <>
@@ -233,7 +250,6 @@ const MatchList = ({
                     ) : "vs"}
                   </div>
 
-                  {/* アウェイチーム */}
                   <div className="w-1/3 flex flex-col items-center">
                     <div className="flex items-center justify-center gap-2">
                       {match.awayTeam.logo && <img src={match.awayTeam.logo} alt="away" className="h-6 w-6" />}
