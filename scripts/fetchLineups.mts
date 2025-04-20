@@ -74,10 +74,12 @@ const extractAppearanceInfo = async (): Promise<
 const updateFirestoreWithAppearances = async (
   appearances: Awaited<ReturnType<typeof extractAppearanceInfo>>
 ) => {
-  const snapshot = await db
-    .collectionGroup("matches")
-    .where("season.year", ">=", "2024")
-    .get();
+  //const snapshot = await db
+    //.collectionGroup("matches")
+    //.where("season.year", ">=", "2024")
+    //.get();
+
+  const snapshot = await db.collectionGroup("matches").get(); // ← まずはこれで
 
   let updatedCount = 0;
   const updatedPlayers: { name: string; status: AppearanceStatus }[] = [];
