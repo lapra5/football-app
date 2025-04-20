@@ -100,8 +100,18 @@ const updateFirestoreWithAppearances = async (
     for (const player of appearances) {
       const matchdayMatch = player.matchday === matchday;
       const kickoffMatch = kickoff.includes(player.kickoff.slice(0, 5));
-      if (!matchdayMatch || !kickoffMatch) continue;
-
+    
+      if (!matchdayMatch) {
+        console.log(`🛑 matchday不一致: 選手 ${player.name} 節: ${player.matchday} ≠ 試合: ${matchday}`);
+        continue;
+      }
+    
+      if (!kickoffMatch) {
+        console.log(`🛑 kickoff不一致: 選手 ${player.name} 開始: ${player.kickoff} ≠ 試合: ${kickoff}`);
+        continue;
+      }
+    
+      // ここまで来たらマッチしている（両チームに登録試行）
       for (const side of ["homeTeam", "awayTeam"] as const) {
         const key =
           player.status === "starter"
@@ -109,7 +119,7 @@ const updateFirestoreWithAppearances = async (
             : player.status === "sub"
             ? "substitutes"
             : "outOfSquad";
-
+    
         updates[`${side}.${key}`] ??= [];
         if (!updates[`${side}.${key}`].includes(player.name)) {
           updates[`${side}.${key}`].push(player.name);
@@ -117,7 +127,7 @@ const updateFirestoreWithAppearances = async (
           console.log(`✅ 登録: ${player.name}（${player.status}） -> ${side}.${key}`);
         }
       }
-    }
+    }    
 
     if (Object.keys(updates).length > 0) {
       await doc.ref.update(updates);
