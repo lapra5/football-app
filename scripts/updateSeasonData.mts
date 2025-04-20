@@ -20,7 +20,8 @@ const db = getFirestore();
 const API_KEY = process.env.FOOTBALL_DATA_API_KEY!;
 const DISCORD_WEBHOOK_SEASON = process.env.DISCORD_WEBHOOK_SEASON!;
 const leagueIds = [
-  2021, 2016, 2015, 2002, 2019, 2014, 2003, 2017, 2013, 2001
+  2021, 2016, 2015, 2002, 2019,
+  2014, 2003, 2017, 2013, 2001
 ];
 
 const getSeasonYear = (date: Date): string => {
@@ -62,7 +63,7 @@ const main = async () => {
         });
       });
 
-      // Firestore 保存
+      // Firestore 保存（merge: true）
       const ref = db
         .collection("leagues")
         .doc(leagueId.toString())
@@ -78,7 +79,6 @@ const main = async () => {
       await batch.commit();
     }
 
-    // 保存件数
     console.log(`✅ ${allMatches.length} 件のマッチデータを保存しました`);
     updateTimestamp("updateSeason");
 
