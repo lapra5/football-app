@@ -3,18 +3,17 @@ import { getFirestore } from "firebase-admin/firestore";
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
-const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
+// Firebase Admin 初期化
 const serviceAccountBase64 = process.env.FIREBASE_ADMIN_BASE64;
+const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
 
-if (!serviceAccountBase64) throw new Error("FIREBASE_SERVICE_ACCOUNT が未設定です");
-if (!webhookUrl) console.warn("⚠️ DISCORD_WEBHOOK_LINEUPS が未設定です");
-
+if (!serviceAccountBase64) throw new Error("FIREBASE_ADMIN_BASE64 が未設定です");
 const serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("utf8"));
 initializeApp({ credential: cert(serviceAccount) });
 
 const db = getFirestore();
-
 const JAPANESE_PLAYERS_URL = "https://soccer.yahoo.co.jp/ws/japanese/players";
+
 type AppearanceStatus = "starter" | "sub" | "benchOut";
 
 const sendDiscordMessage = async (message: string) => {
@@ -74,24 +73,24 @@ const extractAppearanceInfo = async (): Promise<
 const updateFirestoreWithAppearances = async (
   appearances: Awaited<ReturnType<typeof extractAppearanceInfo>>
 ) => {
-  //const snapshot = await db
-    //.collectionGroup("matches")
-    //.where("season.year", ">=", "2024")
-    //.get();
-
-  const snapshot = await db.collectionGroup("matches").get(); // ← まずはこれで
+  const snapshot = await db.collectionGroup("matches").get(); // ← インデックス不要バージョン
 
   let updatedCount = 0;
   const updatedPlayers: { name: string; status: AppearanceStatus }[] = [];
 
   for (const doc of snapshot.docs) {
     const data = doc.data();
-    const matchday = data.matchday;
-    const kickoff = data.utcDate.slice(0, 16);
 
+    const matchday = data.matchday;
+    const utcDate = data.utcDate;
+    if (!utcDate || typeof utcDate !== "string") continue;
+
+    const kickoff = utcDate.slice(0, 16);
     const matchRef = doc.ref;
-    const homeTeam = data.homeTeam.name;
-    const awayTeam = data.awayTeam.name;
+    const homeTeam = data.homeTeam?.name;
+    const awayTeam = data.awayTeam?.name;
+
+    if (!homeTeam || !awayTeam) continue;
 
     const updates: any = {};
 
