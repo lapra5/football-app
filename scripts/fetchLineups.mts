@@ -57,7 +57,7 @@ const main = async () => {
     });
 
     console.log(`🎯 対象試合数: ${targets.length}`);
-    let updatedCount = 0;
+    const updatedMatchIds: string[] = [];
 
     for (let i = 0; i < targets.length; i += 9) {
       const group = targets.slice(i, i + 9);
@@ -95,7 +95,7 @@ const main = async () => {
             { merge: true }
           );
 
-          updatedCount++;
+          updatedMatchIds.push(match.matchId);
         })
       );
 
@@ -104,7 +104,11 @@ const main = async () => {
     }
 
     updateTimestamp('fetchLineups');
-    await sendDiscordMessage(`✅ スタメンデータを ${updatedCount} 件更新しました（Firestore書き込み）`, DISCORD_WEBHOOK);
+
+    await sendDiscordMessage(
+      `✅ スタメンデータを ${updatedMatchIds.length} 件更新しました（Firestore書き込み）\nmatchIds: ${updatedMatchIds.join(', ')}`,
+      DISCORD_WEBHOOK
+    );
   } catch (err) {
     console.error('❌ エラー:', err);
     await sendDiscordMessage(
