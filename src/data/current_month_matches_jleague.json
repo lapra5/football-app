@@ -3663,8 +3663,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-04-20T07:00:00.000Z_浦和_vs_横浜FM",
-    "kickoffTime": "2025-04-20T07:00:00.000Z",
+    "matchId": "J1_2025-04-20T07:03:00.000Z_浦和_vs_横浜FM",
+    "kickoffTime": "2025-04-20T07:03:00.000Z",
     "homeTeam": {
       "name": "浦和",
       "id": null,
@@ -3682,14 +3682,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
@@ -21681,8 +21681,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-04-20T08:00:00.000Z_琉球_vs_宮崎",
-    "kickoffTime": "2025-04-20T08:00:00.000Z",
+    "matchId": "J3_2025-04-20T08:03:00.000Z_琉球_vs_宮崎",
+    "kickoffTime": "2025-04-20T08:03:00.000Z",
     "homeTeam": {
       "name": "琉球",
       "id": null,
@@ -21700,8 +21700,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,

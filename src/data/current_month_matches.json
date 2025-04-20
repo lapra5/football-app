@@ -33234,8 +33234,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-04-20T07:00:00.000Z_浦和_vs_横浜FM",
-    "kickoffTime": "2025-04-20T07:00:00.000Z",
+    "matchId": "J1_2025-04-20T07:03:00.000Z_浦和_vs_横浜FM",
+    "kickoffTime": "2025-04-20T07:03:00.000Z",
     "matchday": 11,
     "league": {
       "en": "J1",
@@ -33265,22 +33265,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-04-20T08:00:00.000Z_琉球_vs_宮崎",
-    "kickoffTime": "2025-04-20T08:00:00.000Z",
+    "matchId": "J3_2025-04-20T08:03:00.000Z_琉球_vs_宮崎",
+    "kickoffTime": "2025-04-20T08:03:00.000Z",
     "matchday": 10,
     "league": {
       "en": "J3",
@@ -33310,8 +33310,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,
@@ -33445,7 +33445,7 @@
       ],
       "logo": "https://crests.football-data.org/519.svg"
     },
-    "lineupStatus": "未発表",
+    "lineupStatus": "取得済み",
     "score": {
       "duration": "REGULAR",
       "winner": null,
@@ -33458,9 +33458,18 @@
         "home": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "startingMembers": {
+      "away": [],
+      "home": []
+    },
+    "substitutes": {
+      "away": [],
+      "home": []
+    },
+    "outOfSquad": {
+      "away": [],
+      "home": []
+    }
   },
   {
     "matchId": "503365",
@@ -33490,7 +33499,7 @@
       "englishplayers": [],
       "logo": "https://crests.football-data.org/454.svg"
     },
-    "lineupStatus": "未発表",
+    "lineupStatus": "取得済み",
     "score": {
       "duration": "REGULAR",
       "winner": null,
@@ -33503,9 +33512,18 @@
         "home": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "startingMembers": {
+      "away": [],
+      "home": []
+    },
+    "substitutes": {
+      "away": [],
+      "home": []
+    },
+    "outOfSquad": {
+      "away": [],
+      "home": []
+    }
   },
   {
     "matchId": "497734",
@@ -33535,7 +33553,7 @@
       "englishplayers": [],
       "logo": "https://crests.football-data.org/61.svg"
     },
-    "lineupStatus": "未発表",
+    "lineupStatus": "取得済み",
     "score": {
       "duration": "REGULAR",
       "winner": null,
@@ -33548,9 +33566,18 @@
         "home": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "startingMembers": {
+      "away": [],
+      "home": []
+    },
+    "substitutes": {
+      "away": [],
+      "home": []
+    },
+    "outOfSquad": {
+      "away": [],
+      "home": []
+    }
   },
   {
     "matchId": "497735",
@@ -33584,7 +33611,7 @@
       ],
       "logo": "https://crests.football-data.org/57.svg"
     },
-    "lineupStatus": "未発表",
+    "lineupStatus": "取得済み",
     "score": {
       "duration": "REGULAR",
       "winner": null,
@@ -33597,9 +33624,18 @@
         "home": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "startingMembers": {
+      "away": [],
+      "home": []
+    },
+    "substitutes": {
+      "away": [],
+      "home": []
+    },
+    "outOfSquad": {
+      "away": [],
+      "home": []
+    }
   },
   {
     "matchId": "497737",
@@ -33629,7 +33665,7 @@
       "englishplayers": [],
       "logo": "https://crests.football-data.org/76.svg"
     },
-    "lineupStatus": "未発表",
+    "lineupStatus": "取得済み",
     "score": {
       "duration": "REGULAR",
       "winner": null,
@@ -33642,9 +33678,18 @@
         "home": null
       }
     },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
+    "startingMembers": {
+      "away": [],
+      "home": []
+    },
+    "substitutes": {
+      "away": [],
+      "home": []
+    },
+    "outOfSquad": {
+      "away": [],
+      "home": []
+    }
   },
   {
     "matchId": "502635",
