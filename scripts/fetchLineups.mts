@@ -3,7 +3,6 @@ import { getFirestore } from "firebase-admin/firestore";
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
-// Firebase 認証
 const serviceAccountBase64 = process.env.FIREBASE_ADMIN_BASE64;
 const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
 
@@ -101,30 +100,22 @@ const updateFirestoreWithAppearances = async (
     for (const player of appearances) {
       const matchdayMatch = player.matchday === matchday;
       const kickoffMatch = kickoff.includes(player.kickoff.slice(0, 5));
-
       if (!matchdayMatch || !kickoffMatch) continue;
 
-      const side = player.name.includes(homeTeam)
-        ? "homeTeam"
-        : player.name.includes(awayTeam)
-        ? "awayTeam"
-        : null;
+      for (const side of ["homeTeam", "awayTeam"] as const) {
+        const key =
+          player.status === "starter"
+            ? "startingMembers"
+            : player.status === "sub"
+            ? "substitutes"
+            : "outOfSquad";
 
-      if (!side) continue;
-
-      const key =
-        player.status === "starter"
-          ? "startingMembers"
-          : player.status === "sub"
-          ? "substitutes"
-          : "outOfSquad";
-
-      updates[`${side}.${key}`] ??= [];
-      if (!updates[`${side}.${key}`].includes(player.name)) {
-        updates[`${side}.${key}`].push(player.name);
-        updatedPlayers.push({ name: player.name, status: player.status });
-
-        console.log(`✅ 登録: ${player.name}（${player.status}） -> ${side}.${key}`);
+        updates[`${side}.${key}`] ??= [];
+        if (!updates[`${side}.${key}`].includes(player.name)) {
+          updates[`${side}.${key}`].push(player.name);
+          updatedPlayers.push({ name: player.name, status: player.status });
+          console.log(`✅ 登録: ${player.name}（${player.status}） -> ${side}.${key}`);
+        }
       }
     }
 
