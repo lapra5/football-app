@@ -106,7 +106,8 @@ const main = async () => {
     const allMatches = [...jleagueMatches, ...celticMatches, ...overseaMatches];
     const normalized = allMatches
     .map((match) => normalizeMatch(match, leagueMap))
-    .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));
+    .filter((m) => !!m.kickoffTime)
+    .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));  
   
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
   console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
