@@ -1,0 +1,13 @@
+{
+    "indexes": [
+      {
+        "collectionGroup": "matches",
+        "queryScope": "COLLECTION",
+        "fields": [
+          { "fieldPath": "season.year", "order": "ASCENDING" }
+        ]
+      }
+    ],
+    "fieldOverrides": []
+  }
+  
