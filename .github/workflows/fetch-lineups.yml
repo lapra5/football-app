@@ -9,6 +9,10 @@ jobs:
   fetch-lineups:
     runs-on: ubuntu-latest
 
+    env:
+      FIREBASE_ADMIN_BASE64: ${{ secrets.FIREBASE_ADMIN_BASE64 }}
+      DISCORD_WEBHOOK_LINEUPS: ${{ secrets.DISCORD_WEBHOOK_LINEUPS }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
