@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
 const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
-const serviceAccountBase64 = process.env.FIREBASE_SERVICE_ACCOUNT;
+const serviceAccountBase64 = process.env.FIREBASE_ADMIN_BASE64;
 
 if (!serviceAccountBase64) throw new Error("FIREBASE_SERVICE_ACCOUNT が未設定です");
 if (!webhookUrl) console.warn("⚠️ DISCORD_WEBHOOK_LINEUPS が未設定です");
