@@ -155,22 +155,29 @@ const MatchList = ({
   };
 
   const getJapanesePlayerStatusText = (team: any, side: 'home' | 'away', match: Match) => {
-    const players = team.players || [];
+    const jpPlayers = team.players || [];
+    const enPlayers = team.englishplayers || [];
     const starters = (match.startingMembers as any)?.[side] ?? [];
     const subs = (match.substitutes as any)?.[side] ?? [];
     const outs = (match.outOfSquad as any)?.[side] ?? [];
-
-    return players.map((name: string) => {
-      const status = starters.includes(name)
+  
+    return jpPlayers.map((jpName: string, idx: number) => {
+      const enName = enPlayers[idx];
+      const inStarter = starters.includes(jpName) || starters.includes(enName);
+      const inSub = subs.includes(jpName) || subs.includes(enName);
+      const inOut = outs.includes(jpName) || outs.includes(enName);
+  
+      const status = inStarter
         ? 'スタメン'
-        : subs.includes(name)
+        : inSub
         ? 'ベンチ'
-        : outs.includes(name)
+        : inOut
         ? 'ベンチ外'
         : '';
-      return `🇯🇵 ${name}：${status}`;
+  
+      return `🇯🇵 ${jpName}：${status}`;
     }).join(' / ');
-  };
+  };  
 
   return (
     <div className="w-full p-4">
