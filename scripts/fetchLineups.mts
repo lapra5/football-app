@@ -53,7 +53,7 @@ const main = async () => {
     const targets = matches.filter((match: any) => {
       const kickoff = new Date(match.kickoffTime);
       const diffMinutes = Math.floor((kickoff.getTime() - now.getTime()) / 60000);
-      return [90, 60, 30].some((target) => Math.abs(diffMinutes - target) <= 1);
+      return Math.abs(diffMinutes) <= 15;
     });
 
     console.log(`🎯 対象試合数: ${targets.length}`);
