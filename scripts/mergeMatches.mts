@@ -104,10 +104,14 @@ const main = async () => {
     const leagueMap = readLeagueMap();
 
     const allMatches = [...jleagueMatches, ...celticMatches, ...overseaMatches];
-    const normalized = allMatches.map((match) => normalizeMatch(match, leagueMap));
-
-    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
-    console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
+    const normalized = allMatches
+    .map((match) => normalizeMatch(match, leagueMap))
+    .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));
+  
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
+  console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
+  console.log(`📝 最終試合: ${normalized.at(-1)?.matchId} / ${normalized.at(-1)?.league?.jp}`);
+  console.log(`🕓 ファイル更新時刻: ${fs.statSync(OUTPUT_PATH).mtime.toLocaleString()}`);  
 
     updateTimestamp("mergeMatches");
     await sendDiscordMessage(
