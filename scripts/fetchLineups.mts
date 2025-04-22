@@ -47,34 +47,37 @@ const extractAppearanceInfo = async (): Promise<
   $(".sc-player").each((i, el) => {
     const name = $(el).find("h3 a").text().trim();
     const rows = $(el).find("table tbody tr");
-  
+
     rows.each((j, row) => {
       const cols = $(row).find("td");
       const matchdayStr = $(cols[0]).text().trim().replace("第", "").replace("節", "");
-      const kickoffRaw = $(cols[1]).text().trim(); // e.g. "4/21（月）27:45"
+      const kickoffRaw = $(cols[1]).text().trim();
       const statusStr = $(cols[4]).text().trim();
-  
+
       const matchday = parseInt(matchdayStr, 10);
       if (isNaN(matchday) || !kickoffRaw) return;
-  
+
       const match = kickoffRaw.match(/(\d+)\/(\d+).*?(\d+):(\d+)/);
       if (!match) return;
       const [_, month, day, hour, minute] = match.map(Number);
-  
+
       const adjustedHour = hour >= 24 ? hour - 24 : hour;
-      const date = dayjs.tz(`2025-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")} ${adjustedHour}:${minute}`, "Asia/Tokyo");
+      const date = dayjs.tz(
+        `2025-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")} ${adjustedHour}:${minute}`,
+        "Asia/Tokyo"
+      );
       const kickoff = date.utc().format("YYYY-MM-DDTHH:mm");
-  
+
       let status: AppearanceStatus | null = null;
       if (statusStr.includes("先発")) status = "starter";
       else if (statusStr.includes("途中")) status = "sub";
       else if (statusStr.includes("ベンチ外")) status = "benchOut";
-  
+
       if (status) {
         appearances.push({ name, matchday, kickoff, status });
       }
     });
-  });  
+  });
 
   console.log(`🔍 appearance件数: ${appearances.length}`);
   return appearances;
@@ -91,47 +94,44 @@ const updateLocalMatchJson = async (
 
   for (const match of matches) {
     const matchday = match.matchday;
-    const kickoffTime = match.kickoffTime?.slice(0, 16); // "2025-04-19T16:30"
+    const kickoffTime = match.kickoffTime?.slice(0, 16);
     const homeNames = match.homeTeam?.players ?? [];
     const awayNames = match.awayTeam?.players ?? [];
-
-    const updates = { startingMembers: [], substitutes: [], outOfSquad: [] };
+    const allPlayers = [...homeNames, ...awayNames];
 
     for (const player of appearances) {
-      if (player.matchday !== matchday) continue;
-      if (kickoffTime !== player.kickoff) continue;
-    
-      const inHome = homeNames.includes(player.name);
-      const inAway = awayNames.includes(player.name);
-      if (!inHome && !inAway) continue;
-    
+      const matchdayMatch = player.matchday === matchday;
+      const kickoffMatch = kickoffTime === player.kickoff;
+      const playerMatch = allPlayers.includes(player.name);
+
+      // ✅ デバッグ出力
+      console.log(`🔎 チェック中: ${player.name} | 節=${player.matchday}, kickoff=${player.kickoff}`);
+      console.log(`    🟢 節一致: ${matchdayMatch}, 🕒 時刻一致: ${kickoffMatch}, 👤 名前一致: ${playerMatch}`);
+
+      if (!matchdayMatch || !kickoffMatch || !playerMatch) {
+        console.log("    ⛔ マッチしなかったためスキップ\n");
+        continue;
+      }
+
       const key =
         player.status === "starter"
           ? "startingMembers"
           : player.status === "sub"
           ? "substitutes"
           : "outOfSquad";
-    
-      match[key] ??= []; // ← これがないと push() で失敗することがある
-    
+
+      match[key] ??= [];
       if (!match[key].includes(player.name)) {
         match[key].push(player.name);
         updatedPlayers.push({ name: player.name, status: player.status });
+        console.log(`✅ ${player.name} を ${key} に追加\n`);
+        updatedCount++;
       }
-    }    
-
-    if (
-      match.startingMembers.length > 0 ||
-      match.substitutes.length > 0 ||
-      match.outOfSquad.length > 0
-    ) {
-      updatedCount++;
     }
   }
 
   await fs.writeFile(MATCH_JSON_PATH, JSON.stringify(matches, null, 2), "utf-8");
 
-  // 更新ログも反映
   const updatedLog = JSON.parse(await fs.readFile(UPDATED_LOG_PATH, "utf-8"));
   updatedLog["fetchLineups"] = new Date().toISOString();
   await fs.writeFile(UPDATED_LOG_PATH, JSON.stringify(updatedLog, null, 2), "utf-8");
