@@ -1,17 +1,11 @@
-import { initializeApp, cert } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+// scripts/fetchLineups.mts
+import fs from "fs/promises";
+import path from "path";
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
 
-const serviceAccountBase64 = process.env.FIREBASE_ADMIN_BASE64;
 const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
-
-if (!serviceAccountBase64) throw new Error("FIREBASE_ADMIN_BASE64 が未設定です");
-const serviceAccount = JSON.parse(Buffer.from(serviceAccountBase64, "base64").toString("utf8"));
-initializeApp({ credential: cert(serviceAccount) });
-
-const db = getFirestore();
-const JAPANESE_PLAYERS_URL = "https://soccer.yahoo.co.jp/ws/japanese/players";
+const JSON_PATH = path.resolve("src/data/current_month_matches.json");
 
 type AppearanceStatus = "starter" | "sub" | "benchOut";
 
@@ -32,7 +26,7 @@ const sendDiscordMessage = async (message: string) => {
 const extractAppearanceInfo = async (): Promise<
   { name: string; matchday: number; kickoff: string; status: AppearanceStatus }[]
 > => {
-  const res = await fetch(JAPANESE_PLAYERS_URL);
+  const res = await fetch("https://soccer.yahoo.co.jp/ws/japanese/players");
   const html = await res.text();
   const $ = cheerio.load(html);
   const appearances: {
@@ -51,7 +45,6 @@ const extractAppearanceInfo = async (): Promise<
       const matchdayStr = $(cols[0]).text().trim().replace("第", "").replace("節", "");
       const kickoff = $(cols[1]).text().trim();
       const statusStr = $(cols[4]).text().trim();
-
       const matchday = parseInt(matchdayStr, 10);
       if (isNaN(matchday)) return;
 
@@ -68,72 +61,66 @@ const extractAppearanceInfo = async (): Promise<
 
   console.log(`🔍 appearance件数: ${appearances.length}`);
   console.log(`📋 appearanceサンプル:`, appearances.slice(0, 5));
-
   return appearances;
 };
 
-const updateFirestoreWithAppearances = async (
+const updateJsonWithAppearances = async (
   appearances: Awaited<ReturnType<typeof extractAppearanceInfo>>
 ) => {
-  const snapshot = await db.collectionGroup("matches").get();
-
+  const fileContent = await fs.readFile(JSON_PATH, "utf8");
+  const matches = JSON.parse(fileContent);
   let updatedCount = 0;
   const updatedPlayers: { name: string; status: AppearanceStatus }[] = [];
 
-  for (const doc of snapshot.docs) {
-    const data = doc.data();
+  for (const match of matches) {
+    const kickoff = match.kickoffTime?.slice(0, 16);
+    const matchday = match.matchday;
+    if (!kickoff || !match.homeTeam || !match.awayTeam) continue;
 
-    const matchday = data.matchday;
-    const utcDate = data.utcDate;
-    const homeTeam = data.homeTeam?.name;
-    const awayTeam = data.awayTeam?.name;
+    const updates: Record<string, string[]> = {
+      startingMembers: match.startingMembers ?? [],
+      substitutes: match.substitutes ?? [],
+      outOfSquad: match.outOfSquad ?? [],
+    };
 
-    if (!utcDate || !homeTeam || !awayTeam) continue;
-    if (typeof utcDate !== "string") continue;
-
-    const kickoff = utcDate.slice(0, 16);
-
-    console.log(`🆚 試合: ${homeTeam} vs ${awayTeam} | matchday: ${matchday}, kickoff: ${kickoff}`);
-
-    const updates: any = {};
+    const japanesePlayers = [
+      ...(match.homeTeam.players ?? []),
+      ...(match.awayTeam.players ?? []),
+    ];
 
     for (const player of appearances) {
-      const matchdayMatch = player.matchday === matchday;
-      const kickoffMatch = kickoff.includes(player.kickoff.slice(0, 5));
-    
-      if (!matchdayMatch) {
-        console.log(`🛑 matchday不一致: 選手 ${player.name} 節: ${player.matchday} ≠ 試合: ${matchday}`);
-        continue;
-      }
-    
-      if (!kickoffMatch) {
-        console.log(`🛑 kickoff不一致: 選手 ${player.name} 開始: ${player.kickoff} ≠ 試合: ${kickoff}`);
-        continue;
-      }
-    
-      // ここまで来たらマッチしている（両チームに登録試行）
-      for (const side of ["homeTeam", "awayTeam"] as const) {
-        const key =
-          player.status === "starter"
-            ? "startingMembers"
-            : player.status === "sub"
-            ? "substitutes"
-            : "outOfSquad";
-    
-        updates[`${side}.${key}`] ??= [];
-        if (!updates[`${side}.${key}`].includes(player.name)) {
-          updates[`${side}.${key}`].push(player.name);
-          updatedPlayers.push({ name: player.name, status: player.status });
-          console.log(`✅ 登録: ${player.name}（${player.status}） -> ${side}.${key}`);
-        }
-      }
-    }    
+      if (player.matchday !== matchday) continue;
+      if (!kickoff.includes(player.kickoff.slice(0, 5))) continue;
+      if (!japanesePlayers.includes(player.name)) continue;
 
-    if (Object.keys(updates).length > 0) {
-      await doc.ref.update(updates);
+      const targetKey =
+        player.status === "starter"
+          ? "startingMembers"
+          : player.status === "sub"
+          ? "substitutes"
+          : "outOfSquad";
+
+      if (!updates[targetKey].includes(player.name)) {
+        updates[targetKey].push(player.name);
+        updatedPlayers.push({ name: player.name, status: player.status });
+        console.log(`✅ 登録: ${player.name} (${player.status}) -> ${targetKey}`);
+      }
+    }
+
+    match.startingMembers = updates.startingMembers;
+    match.substitutes = updates.substitutes;
+    match.outOfSquad = updates.outOfSquad;
+
+    if (
+      updates.startingMembers.length > 0 ||
+      updates.substitutes.length > 0 ||
+      updates.outOfSquad.length > 0
+    ) {
       updatedCount++;
     }
   }
+
+  await fs.writeFile(JSON_PATH, JSON.stringify(matches, null, 2), "utf8");
 
   return { updatedCount, updatedPlayers };
 };
@@ -142,7 +129,7 @@ const main = async () => {
   try {
     console.log("🟡 スタメン情報取得開始（fetchLineups）");
     const appearances = await extractAppearanceInfo();
-    const { updatedCount, updatedPlayers } = await updateFirestoreWithAppearances(appearances);
+    const { updatedCount, updatedPlayers } = await updateJsonWithAppearances(appearances);
 
     const maxList = 15;
     const playerList = updatedPlayers
@@ -152,9 +139,8 @@ const main = async () => {
     const more = updatedPlayers.length > maxList ? `\n…他${updatedPlayers.length - maxList}名` : "";
 
     await sendDiscordMessage(
-      `✅ スタメン取得成功\nFirestoreに${updatedCount}試合分の出場情報を反映しました。\n\n${playerList}${more}`
+      `✅ スタメン取得成功\n${updatedCount}試合分の出場情報を current_month_matches.json に反映しました。\n\n${playerList}${more}`
     );
-
     console.log("✅ 完了");
   } catch (error) {
     console.error("❌ エラー:", error);
