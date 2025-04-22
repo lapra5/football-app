@@ -98,27 +98,27 @@ const updateLocalMatchJson = async (
     const updates = { startingMembers: [], substitutes: [], outOfSquad: [] };
 
     for (const player of appearances) {
-      const matchdayMatch = player.matchday === matchday;
-      const kickoffMatch = kickoffTime?.includes(player.kickoff);
-
-      if (!matchdayMatch || !kickoffMatch) continue;
-
+      if (player.matchday !== matchday) continue;
+      if (kickoffTime !== player.kickoff) continue;
+    
       const inHome = homeNames.includes(player.name);
       const inAway = awayNames.includes(player.name);
       if (!inHome && !inAway) continue;
-
+    
       const key =
         player.status === "starter"
           ? "startingMembers"
           : player.status === "sub"
           ? "substitutes"
           : "outOfSquad";
-
+    
+      match[key] ??= []; // ← これがないと push() で失敗することがある
+    
       if (!match[key].includes(player.name)) {
         match[key].push(player.name);
         updatedPlayers.push({ name: player.name, status: player.status });
       }
-    }
+    }    
 
     if (
       match.startingMembers.length > 0 ||
