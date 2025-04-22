@@ -1,11 +1,13 @@
-// scripts/fetchLineups.mts
 import fs from "fs/promises";
 import path from "path";
 import fetch from "node-fetch";
 import * as cheerio from "cheerio";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
+const JAPANESE_PLAYERS_URL = "https://soccer.yahoo.co.jp/ws/japanese/players";
+const JSON_PATH = path.join(dirname(fileURLToPath(import.meta.url)), "../src/data/current_month_matches.json");
 const webhookUrl = process.env.DISCORD_WEBHOOK_LINEUPS ?? "";
-const JSON_PATH = path.resolve("src/data/current_month_matches.json");
 
 type AppearanceStatus = "starter" | "sub" | "benchOut";
 
@@ -23,10 +25,33 @@ const sendDiscordMessage = async (message: string) => {
   }
 };
 
+const parseYahooTime = (text: string): string | null => {
+  const match = text.match(/(\d+)\/(\d+).*?(\d{1,2}):(\d{2})/);
+  if (!match) return null;
+  const [, month, day, hourStr, minuteStr] = match;
+  let hour = parseInt(hourStr, 10);
+  const minute = parseInt(minuteStr, 10);
+  const date = new Date();
+
+  date.setMonth(parseInt(month, 10) - 1);
+  date.setDate(parseInt(day, 10));
+  date.setMinutes(minute);
+  date.setSeconds(0);
+  date.setMilliseconds(0);
+
+  if (hour >= 24) {
+    date.setDate(date.getDate() + 1);
+    hour -= 24;
+  }
+
+  date.setHours(hour);
+  return date.toISOString().slice(0, 16); // YYYY-MM-DDTHH:mm
+};
+
 const extractAppearanceInfo = async (): Promise<
   { name: string; matchday: number; kickoff: string; status: AppearanceStatus }[]
 > => {
-  const res = await fetch("https://soccer.yahoo.co.jp/ws/japanese/players");
+  const res = await fetch(JAPANESE_PLAYERS_URL);
   const html = await res.text();
   const $ = cheerio.load(html);
   const appearances: {
@@ -43,10 +68,12 @@ const extractAppearanceInfo = async (): Promise<
     rows.each((_, row) => {
       const cols = $(row).find("td");
       const matchdayStr = $(cols[0]).text().trim().replace("第", "").replace("節", "");
-      const kickoff = $(cols[1]).text().trim();
+      const kickoffRaw = $(cols[1]).text().trim();
       const statusStr = $(cols[4]).text().trim();
+
+      const kickoff = parseYahooTime(kickoffRaw);
       const matchday = parseInt(matchdayStr, 10);
-      if (isNaN(matchday)) return;
+      if (!kickoff || isNaN(matchday)) return;
 
       let status: AppearanceStatus | null = null;
       if (statusStr.includes("先発")) status = "starter";
@@ -67,43 +94,39 @@ const extractAppearanceInfo = async (): Promise<
 const updateJsonWithAppearances = async (
   appearances: Awaited<ReturnType<typeof extractAppearanceInfo>>
 ) => {
-  const fileContent = await fs.readFile(JSON_PATH, "utf8");
-  const matches = JSON.parse(fileContent);
+  const raw = await fs.readFile(JSON_PATH, "utf-8");
+  const matches = JSON.parse(raw);
   let updatedCount = 0;
   const updatedPlayers: { name: string; status: AppearanceStatus }[] = [];
 
   for (const match of matches) {
-    const kickoff = match.kickoffTime?.slice(0, 16);
     const matchday = match.matchday;
-    if (!kickoff || !match.homeTeam || !match.awayTeam) continue;
+    const kickoff = match.kickoffTime?.slice(0, 16); // YYYY-MM-DDTHH:mm
+    const homePlayers: string[] = match.homeTeam?.players ?? [];
+    const awayPlayers: string[] = match.awayTeam?.players ?? [];
 
-    const updates: Record<string, string[]> = {
+    const updates: any = {
       startingMembers: match.startingMembers ?? [],
       substitutes: match.substitutes ?? [],
       outOfSquad: match.outOfSquad ?? [],
     };
 
-    const japanesePlayers = [
-      ...(match.homeTeam.players ?? []),
-      ...(match.awayTeam.players ?? []),
-    ];
+    for (const p of appearances) {
+      if (p.matchday !== matchday || p.kickoff !== kickoff) continue;
 
-    for (const player of appearances) {
-      if (player.matchday !== matchday) continue;
-      if (!kickoff.includes(player.kickoff.slice(0, 5))) continue;
-      if (!japanesePlayers.includes(player.name)) continue;
+      const isHome = homePlayers.includes(p.name);
+      const isAway = awayPlayers.includes(p.name);
+      if (!isHome && !isAway) continue;
 
-      const targetKey =
-        player.status === "starter"
-          ? "startingMembers"
-          : player.status === "sub"
-          ? "substitutes"
-          : "outOfSquad";
+      const key =
+        p.status === "starter" ? "startingMembers" :
+        p.status === "sub" ? "substitutes" :
+        "outOfSquad";
 
-      if (!updates[targetKey].includes(player.name)) {
-        updates[targetKey].push(player.name);
-        updatedPlayers.push({ name: player.name, status: player.status });
-        console.log(`✅ 登録: ${player.name} (${player.status}) -> ${targetKey}`);
+      if (!updates[key].includes(p.name)) {
+        updates[key].push(p.name);
+        updatedPlayers.push({ name: p.name, status: p.status });
+        console.log(`✅ 反映: ${p.name}（${p.status}）`);
       }
     }
 
@@ -120,8 +143,7 @@ const updateJsonWithAppearances = async (
     }
   }
 
-  await fs.writeFile(JSON_PATH, JSON.stringify(matches, null, 2), "utf8");
-
+  await fs.writeFile(JSON_PATH, JSON.stringify(matches, null, 2), "utf-8");
   return { updatedCount, updatedPlayers };
 };
 
@@ -139,14 +161,12 @@ const main = async () => {
     const more = updatedPlayers.length > maxList ? `\n…他${updatedPlayers.length - maxList}名` : "";
 
     await sendDiscordMessage(
-      `✅ スタメン取得成功\n${updatedCount}試合分の出場情報を current_month_matches.json に反映しました。\n\n${playerList}${more}`
+      `✅ スタメン取得成功\ncurrent_month_matches.json に${updatedCount}試合分の出場情報を反映しました。\n\n${playerList}${more}`
     );
     console.log("✅ 完了");
   } catch (error) {
     console.error("❌ エラー:", error);
-    await sendDiscordMessage(
-      `❌ スタメン取得失敗\nエラー内容：\n\`\`\`\n${String(error)}\n\`\`\``
-    );
+    await sendDiscordMessage(`❌ スタメン取得失敗\nエラー内容：\n\`\`\`\n${String(error)}\n\`\`\``);
     process.exit(1);
   }
 };
