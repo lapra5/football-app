@@ -42,7 +42,7 @@ export default function HomePage() {
           <h1 className="text-3xl font-bold mb-4 text-center">ログインまたは新規登録</h1>
           <div className="flex flex-col md:flex-row gap-8 justify-center">
             <LoginForm />
-            <SignupForm />
+            {/* <SignupForm /> */}
           </div>
         </>
       ) : (
