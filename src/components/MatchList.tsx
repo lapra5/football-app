@@ -183,20 +183,17 @@ const MatchList = ({
     <div className="w-full p-4">
       {/* 表示設定エリア */}
       <div className="flex flex-wrap justify-center gap-2 mb-6">
-        {/* 前節・今節・次節 */}
         <div className="flex flex-wrap md:flex-nowrap justify-center gap-2">
           <button onClick={() => setShowPrevious(!showPrevious)} className={`min-w-[80px] px-3 py-1 rounded border text-sm ${showPrevious ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>前節</button>
           <button onClick={() => setShowCurrent(!showCurrent)} className={`min-w-[80px] px-3 py-1 rounded border text-sm ${showCurrent ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>今節</button>
           <button onClick={() => setShowNext(!showNext)} className={`min-w-[80px] px-3 py-1 rounded border text-sm ${showNext ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>次節</button>
         </div>
 
-        {/* すべてオン・すべてオフ */}
         <div className="flex flex-wrap md:flex-nowrap justify-center gap-2 mt-2 md:mt-0">
-          <button onClick={() => toggleAllLeagues(true)} className="min-w-[80px] px-3 py-1 rounded border bg-green-100 text-green-800 text-sm">すべてオン</button>
-          <button onClick={() => toggleAllLeagues(false)} className="min-w-[80px] px-3 py-1 rounded border bg-red-100 text-red-800 text-sm">すべてオフ</button>
+          <button onClick={() => setSelectedLeagues(Array.from(new Set(matches.map((m) => m.league.jp))))} className="min-w-[80px] px-3 py-1 rounded border bg-green-100 text-green-800 text-sm">すべてオン</button>
+          <button onClick={() => setSelectedLeagues([])} className="min-w-[80px] px-3 py-1 rounded border bg-red-100 text-red-800 text-sm">すべてオフ</button>
         </div>
 
-        {/* 日本人フィルター */}
         <label className="ml-2 flex items-center gap-1 text-sm">
           <input type="checkbox" checked={onlyWithJapanese} onChange={() => setOnlyWithJapanese(!onlyWithJapanese)} />
           🇯🇵日本人選手のいる試合のみ
@@ -217,7 +214,7 @@ const MatchList = ({
       </div>
 
       {/* 試合リスト */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {sortedMatches.map((match) => {
           const kickoff = new Date(match.kickoffTime);
           const matchStatus = now < kickoff ? `キックオフまで: ${formatCountdown(kickoff)}` : formatMatchTimeStatus(kickoff);
@@ -229,46 +226,44 @@ const MatchList = ({
           const isPk = match.league.jp === "Jリーグカップ" && Number.isFinite(pkHome) && Number.isFinite(pkAway);
 
           return (
-            <Card key={match.matchId} className="p-4">
-              <CardContent>
-                <div className="text-sm text-gray-500 mb-1">
-                  {match.league.jp}（第{match.matchday}節）
-                </div>
-                <div className="text-sm text-gray-600 mb-2">
+            <Card key={match.matchId} className="p-1 md:p-2">
+              <CardContent className="text-xs md:text-sm space-y-1">
+                <div className="text-gray-500">{match.league.jp}（第{match.matchday}節）</div>
+                <div className="text-gray-600">
                   {kickoff.toLocaleString("ja-JP", {
                     year: "numeric", month: "2-digit", day: "2-digit",
                     hour: "2-digit", minute: "2-digit", weekday: "short", hour12: false
                   })}
-                  {matchStatus && <span className="text-blue-600 text-xs ml-2">{matchStatus}</span>}
+                  {matchStatus && <span className="text-blue-600 ml-2">{matchStatus}</span>}
                 </div>
 
-                <div className="flex justify-between items-center text-center">
-                  {/* Home team */}
-                  <div className="w-1/3 flex flex-col items-center">
-                    <div className="flex items-center justify-center gap-2">
-                      {match.homeTeam.logo && <img src={match.homeTeam.logo} alt="home" className="h-6 w-6" />}
-                      <div className="font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis">{match.homeTeam.name.jp || '未定'}</div>
+                <div className="flex justify-between items-center text-center text-sm">
+                {/* Home */}
+                  <div className="w-[45%] flex flex-col items-center gap-0.5">
+                    <div className="flex items-center justify-center gap-0.5">
+                      {match.homeTeam.logo && <img src={match.homeTeam.logo} alt="home" className="h-5 w-5" />}
+                      <div className="font-bold text-xs md:text-sm truncate">{match.homeTeam.name.jp || '未定'}</div>
                     </div>
-                    <div className="text-xs text-gray-600 text-center mt-1">{getJapanesePlayerStatusText(match.homeTeam, 'home', match)}</div>
+                    <div className="text-[10px] text-gray-500 text-center">{getJapanesePlayerStatusText(match.homeTeam, 'home', match)}</div>
                   </div>
 
                   {/* Score */}
-                  <div className="text-gray-500 w-1/3 text-sm text-center">
+                  <div className="w-[10%] text-gray-600 text-xs md:text-sm">
                     {isScored ? (
                       <>
                         {fullTimeHome} - {fullTimeAway}
-                        {isPk && <div className="text-xs text-gray-600">(PK {pkHome}-{pkAway})</div>}
+                        {isPk && <div className="text-[10px] text-gray-400">(PK {pkHome}-{pkAway})</div>}
                       </>
                     ) : "vs"}
                   </div>
 
-                  {/* Away team */}
-                  <div className="w-1/3 flex flex-col items-center">
-                    <div className="flex items-center justify-center gap-2">
-                      {match.awayTeam.logo && <img src={match.awayTeam.logo} alt="away" className="h-6 w-6" />}
-                      <div className="font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis">{match.awayTeam.name.jp || '未定'}</div>
+                  {/* Away */}
+                  <div className="w-[45%] flex flex-col items-center gap-0.5">
+                    <div className="flex items-center justify-center gap-0.5">
+                      {match.awayTeam.logo && <img src={match.awayTeam.logo} alt="away" className="h-5 w-5" />}
+                      <div className="font-bold text-xs md:text-sm truncate">{match.awayTeam.name.jp || '未定'}</div>
                     </div>
-                    <div className="text-xs text-gray-600 text-center mt-1">{getJapanesePlayerStatusText(match.awayTeam, 'away', match)}</div>
+                    <div className="text-[10px] text-gray-500 text-center">{getJapanesePlayerStatusText(match.awayTeam, 'away', match)}</div>
                   </div>
                 </div>
               </CardContent>
