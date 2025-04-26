@@ -1,47 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import { useEffect, useState } from "react";
 import { LoginForm } from "@/components/LoginForm";
 import { SignupForm } from "@/components/SignupForm";
 import MatchList from "@/components/MatchList";
 import { Match } from "@/types/match";
-import teamLeagueNames from "@/data/team_league_names.json"; // ✅ これはJSON直接OK
-
-interface TeamInfo {
-  teamId: number;
-  team: string;
-  englishName: string;
-  players: string[];
-  logo: string;
-}
-interface TeamLeagueNames {
-  teams: TeamInfo[];
-  leagues: Record<string, string>;
-}
+import teamLeagueNames from "@/data/team_league_names.json"; // ✅ JSON直接OK
 
 export default function HomePage() {
   const { user, logout, isInitialized } = useAuth();
   const [matches, setMatches] = useState<Match[]>([]);
-  const [lineupUpdateResults, setLineupUpdateResults] = useState<{ matchId: string; message: string }[]>([]);
   const [loadingMatches, setLoadingMatches] = useState(false);
 
-  const loadMatches = async () => {
-    setLoadingMatches(true);
-    try {
-      const res = await fetch("/api/current-month-matches"); // ✅ API 経由に変更
-      const data = await res.json();
-      setMatches(data || []);
-    } catch (err) {
-      console.error("試合データ取得エラー:", err);
-    } finally {
-      setLoadingMatches(false);
-    }
-  };
-
   useEffect(() => {
+    const loadMatches = async () => {
+      setLoadingMatches(true);
+      try {
+        const res = await fetch("/current_month_matches.json");
+        const data = await res.json();
+        setMatches(data || []);
+      } catch (err) {
+        console.error("試合データ取得エラー:", err);
+      } finally {
+        setLoadingMatches(false);
+      }
+    };
+
     if (user) {
-      loadMatches(); // ✅ ログイン後に試合データ取得
+      loadMatches();
     }
   }, [user]);
 
@@ -62,7 +49,7 @@ export default function HomePage() {
         <div className="space-y-6">
           {matches.length > 0 ? (
             <>
-              <div className="flex gap-4 justify-center">
+              <div className="flex justify-center">
                 <button
                   onClick={logout}
                   className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded shadow"
@@ -73,8 +60,8 @@ export default function HomePage() {
               <MatchList
                 matches={matches}
                 teamLeagueNames={teamLeagueNames}
-                onFetchLineups={() => Promise.resolve()}
-                lineupUpdateResults={lineupUpdateResults}
+                onFetchLineups={() => Promise.resolve()} // ✅ 今は使わないので空で
+                lineupUpdateResults={[]} // ✅ 今は使わないので空で
               />
             </>
           ) : (

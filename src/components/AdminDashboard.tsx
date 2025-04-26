@@ -1,29 +1,12 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { refreshUserClaims } from "@/hooks/useRefreshClaims";
 import { useRouter } from "next/navigation";
 import { Match } from "@/types/match";
 import MatchList from "@/components/MatchList";
-
-interface TeamInfo {
-  teamId: number;
-  team: string;
-  englishName: string;
-  players: string[];
-  logo: string;
-}
-
-interface League {
-  en: string;
-  jp: string;
-}
-
-interface TeamLeagueNames {
-  teams: TeamInfo[];
-  leagues: League[];
-}
+import teamLeagueNames from "@/data/team_league_names.json"; // ✅ ここは直接importに統一！
 
 const buttonInfo = [
   {
@@ -118,7 +101,6 @@ export default function AdminDashboard() {
   const { user, logout, isInitialized } = useAuth();
   const [isAdmin, setIsAdmin] = useState<true | false | null>(null);
   const [matches, setMatches] = useState<Match[]>([]);
-  const [teamLeagueNames, setTeamLeagueNames] = useState<TeamLeagueNames | null>(null);
   const [lastUpdated, setLastUpdated] = useState<Record<string, string>>({});
   const router = useRouter();
 
@@ -132,33 +114,20 @@ export default function AdminDashboard() {
       const token = await user.getIdTokenResult();
       setIsAdmin(token.claims.admin === true);
       if (token.claims.admin === true) {
-        fetchAllData();
+        fetchMatches();
+        fetchLastUpdated();
       }
     };
     if (isInitialized) checkAdmin();
   }, [user, isInitialized, router]);
 
-  const fetchAllData = async () => {
-    await Promise.all([fetchMatches(), fetchLogos(), fetchLastUpdated()]);
-  };
-
   const fetchMatches = async () => {
     try {
-      const res = await fetch("/api/current-month-matches");
+      const res = await fetch("/current_month_matches.json");
       const data = await res.json();
       setMatches(data || []);
     } catch (err) {
       console.error("❌ fetchMatches エラー:", err);
-    }
-  };
-
-  const fetchLogos = async () => {
-    try {
-      const res = await fetch("/api/team-league-names");
-      const data = await res.json();
-      setTeamLeagueNames(data);
-    } catch (err) {
-      console.error("❌ fetchLogos エラー:", err);
     }
   };
 
@@ -213,13 +182,16 @@ export default function AdminDashboard() {
         </button>
       </div>
 
-      {teamLeagueNames && (
-        <MatchList
-          matches={matches}
-          onFetchLineups={async () => {}}
-          lineupUpdateResults={[]}
-          teamLeagueNames={teamLeagueNames}
-        />
+      {matches.length > 0 && (
+        <div className="mt-10">
+          <h2 className="text-2xl font-bold text-center mb-4">今月の試合一覧</h2>
+          <MatchList
+            matches={matches}
+            teamLeagueNames={teamLeagueNames}
+            onFetchLineups={async () => {}}
+            lineupUpdateResults={[]}
+          />
+        </div>
       )}
     </main>
   );
