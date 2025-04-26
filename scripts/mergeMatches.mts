@@ -11,6 +11,7 @@ const CELTIC_PATH = path.resolve("src/data/current_month_matches_celtic.json");
 const OVERSEA_PATH = path.resolve("src/data/current_month_matches_oversea.json");
 const TEAM_LEAGUE_NAMES_PATH = path.resolve("src/data/team_league_names.json");
 const OUTPUT_PATH = path.resolve("src/data/current_month_matches.json");
+const PUBLIC_OUTPUT_PATH = path.resolve("public/current_month_matches.json");
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
 const readJson = (filePath: string): any[] => {
@@ -110,6 +111,7 @@ const main = async () => {
     .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));  
   
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
+  fs.writeFileSync(PUBLIC_OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
   console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
   console.log(`📝 最終試合: ${normalized.at(-1)?.matchId} / ${normalized.at(-1)?.league?.jp}`);
   console.log(`🕓 ファイル更新時刻: ${fs.statSync(OUTPUT_PATH).mtime.toLocaleString()}`);  
