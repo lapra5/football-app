@@ -160,13 +160,13 @@ const MatchList = ({
     const starters = (match.startingMembers as any)?.[side] ?? [];
     const subs = (match.substitutes as any)?.[side] ?? [];
     const outs = (match.outOfSquad as any)?.[side] ?? [];
-  
+
     return jpPlayers.map((jpName: string, idx: number) => {
       const enName = enPlayers[idx];
       const inStarter = starters.includes(jpName) || starters.includes(enName);
       const inSub = subs.includes(jpName) || subs.includes(enName);
       const inOut = outs.includes(jpName) || outs.includes(enName);
-  
+
       const status = inStarter
         ? 'スタメン'
         : inSub
@@ -174,30 +174,36 @@ const MatchList = ({
         : inOut
         ? 'ベンチ外'
         : '';
-  
+
       return `🇯🇵 ${jpName}：${status}`;
     }).join(' / ');
-  };  
+  };
 
   return (
     <div className="w-full p-4">
-      <div className="flex gap-2 mb-4 items-center flex-wrap">
-        <span className="font-bold">表示設定:</span>
-        <button onClick={() => setShowPrevious(!showPrevious)} className={`w-24 text-center px-3 py-1 rounded border ${showPrevious ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>前節</button>
-        <button onClick={() => setShowCurrent(!showCurrent)} className={`w-24 text-center px-3 py-1 rounded border ${showCurrent ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>今節</button>
-        <button onClick={() => setShowNext(!showNext)} className={`w-24 text-center px-3 py-1 rounded border ${showNext ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>次節</button>
-        <button onClick={() => toggleAllLeagues(true)} className="w-24 text-center px-3 py-1 rounded border bg-green-100 text-green-800">すべてオン</button>
-        <button onClick={() => toggleAllLeagues(false)} className="w-24 text-center px-3 py-1 rounded border bg-red-100 text-red-800">すべてオフ</button>
+      {/* 表示設定エリア */}
+      <div className="flex flex-wrap justify-center gap-2 mb-6">
+        {/* 前節・今節・次節 */}
+        <div className="flex flex-wrap md:flex-nowrap justify-center gap-2">
+          <button onClick={() => setShowPrevious(!showPrevious)} className={`min-w-[80px] px-3 py-1 rounded border text-sm ${showPrevious ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>前節</button>
+          <button onClick={() => setShowCurrent(!showCurrent)} className={`min-w-[80px] px-3 py-1 rounded border text-sm ${showCurrent ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>今節</button>
+          <button onClick={() => setShowNext(!showNext)} className={`min-w-[80px] px-3 py-1 rounded border text-sm ${showNext ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}>次節</button>
+        </div>
+
+        {/* すべてオン・すべてオフ */}
+        <div className="flex flex-wrap md:flex-nowrap justify-center gap-2 mt-2 md:mt-0">
+          <button onClick={() => toggleAllLeagues(true)} className="min-w-[80px] px-3 py-1 rounded border bg-green-100 text-green-800 text-sm">すべてオン</button>
+          <button onClick={() => toggleAllLeagues(false)} className="min-w-[80px] px-3 py-1 rounded border bg-red-100 text-red-800 text-sm">すべてオフ</button>
+        </div>
+
+        {/* 日本人フィルター */}
         <label className="ml-2 flex items-center gap-1 text-sm">
-          <input
-            type="checkbox"
-            checked={onlyWithJapanese}
-            onChange={() => setOnlyWithJapanese(!onlyWithJapanese)}
-          />
+          <input type="checkbox" checked={onlyWithJapanese} onChange={() => setOnlyWithJapanese(!onlyWithJapanese)} />
           🇯🇵日本人選手のいる試合のみ
         </label>
       </div>
 
+      {/* リーグ選択ボタン */}
       <div className="flex gap-2 flex-wrap mb-4">
         {Array.from(new Set(matches.map((m) => m.league.jp))).map((league) => (
           <button
@@ -210,6 +216,7 @@ const MatchList = ({
         ))}
       </div>
 
+      {/* 試合リスト */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sortedMatches.map((match) => {
           const kickoff = new Date(match.kickoffTime);
@@ -236,18 +243,16 @@ const MatchList = ({
                 </div>
 
                 <div className="flex justify-between items-center text-center">
+                  {/* Home team */}
                   <div className="w-1/3 flex flex-col items-center">
                     <div className="flex items-center justify-center gap-2">
                       {match.homeTeam.logo && <img src={match.homeTeam.logo} alt="home" className="h-6 w-6" />}
-                      <div className="font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis">
-                        {match.homeTeam.name.jp || '未定'}
-                      </div>
+                      <div className="font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis">{match.homeTeam.name.jp || '未定'}</div>
                     </div>
-                    <div className="text-xs text-gray-600 text-center mt-1">
-                      {getJapanesePlayerStatusText(match.homeTeam, 'home', match)}
-                    </div>
+                    <div className="text-xs text-gray-600 text-center mt-1">{getJapanesePlayerStatusText(match.homeTeam, 'home', match)}</div>
                   </div>
 
+                  {/* Score */}
                   <div className="text-gray-500 w-1/3 text-sm text-center">
                     {isScored ? (
                       <>
@@ -257,16 +262,13 @@ const MatchList = ({
                     ) : "vs"}
                   </div>
 
+                  {/* Away team */}
                   <div className="w-1/3 flex flex-col items-center">
                     <div className="flex items-center justify-center gap-2">
                       {match.awayTeam.logo && <img src={match.awayTeam.logo} alt="away" className="h-6 w-6" />}
-                      <div className="font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis">
-                        {match.awayTeam.name.jp || '未定'}
-                      </div>
+                      <div className="font-bold text-lg whitespace-nowrap overflow-hidden text-ellipsis">{match.awayTeam.name.jp || '未定'}</div>
                     </div>
-                    <div className="text-xs text-gray-600 text-center mt-1">
-                      {getJapanesePlayerStatusText(match.awayTeam, 'away', match)}
-                    </div>
+                    <div className="text-xs text-gray-600 text-center mt-1">{getJapanesePlayerStatusText(match.awayTeam, 'away', match)}</div>
                   </div>
                 </div>
               </CardContent>
