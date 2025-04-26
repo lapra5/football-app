@@ -3,7 +3,7 @@ name: Fetch Lineups (Every 15 Minutes)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/15 * * * *' # UTC → JSTで毎時 0,15,30,45分
+    - cron: '' #
 
 jobs:
   fetch-lineups:
