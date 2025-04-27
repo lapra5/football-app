@@ -1,18 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 
 export const SignupForm: React.FC = () => {
   const [newUserId, setNewUserId] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const { signup, error, isProcessing } = useAuth();
-
-  // 新規登録フォームが表示された時に初期値を空にリセット
-  useEffect(() => {
-    setNewUserId('');
-    setNewPassword('');
-  }, []); // 初回レンダリング時にリセット
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,8 +19,8 @@ export const SignupForm: React.FC = () => {
 
     try {
       await signup(email, newPassword);
-      setNewUserId('');  // 登録後、再度リセット
-      setNewPassword(''); // 登録後、再度リセット
+      setNewUserId('');
+      setNewPassword('');
     } catch (error) {
       console.error('登録エラー:', error);
     }
@@ -58,13 +52,13 @@ export const SignupForm: React.FC = () => {
           />
         </div>
 
-        {/* パスワード */}
+        {/* 新規登録のパスワードではなく、見た目が「・・・・・・・・」になるフィールド */}
         <div className="mb-6">
           <label htmlFor="newPassword" className="block text-sm font-medium text-gray-700">
             パスワード
           </label>
           <input
-            type="password"
+            type="text"  // ここを 'text' にする
             id="newPassword"
             name="newPassword"
             placeholder="パスワードを設定"
@@ -72,9 +66,13 @@ export const SignupForm: React.FC = () => {
             onChange={(e) => setNewPassword(e.target.value)}
             autoComplete="off"
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            style={{
+              letterSpacing: '2px',  // 空白を詰める
+              wordBreak: 'break-word', // 単語の途中で改行しない
+            }}
           />
-          <small className="text-gray-500 block mt-1">
-            パスワードは6文字以上で設定してください。
+          <small className="text-gray-400 block mt-1">
+            ※現在、新規登録はできません
           </small>
         </div>
       </div>
@@ -94,4 +92,3 @@ export const SignupForm: React.FC = () => {
     </form>
   );
 };
-

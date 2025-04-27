@@ -33,6 +33,11 @@ jobs:
       - name: Run fetchScores script
         run: node --loader ts-node/esm scripts/fetchScores.mts
 
+      - name: Check public directory and file permissions (for debugging)
+        run: |
+          ls -l public
+          ls -l public/updated_log.json
+
       - name: Commit and push if changes
         run: |
           git config --global user.name "github-actions[bot]"
