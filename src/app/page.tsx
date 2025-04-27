@@ -1,20 +1,21 @@
-"use client";
+'use client';
 
 import { useAuth } from "@/hooks/useAuth";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; // ✅ 追加
-import { refreshUserClaims } from "@/hooks/useRefreshClaims"; // ✅ 追加
+import { useRouter } from "next/navigation";
+import { refreshUserClaims } from "@/hooks/useRefreshClaims";
 import { LoginForm } from "@/components/LoginForm";
-// import { SignupForm } from "@/components/SignupForm"; // ✅ 今は新規登録禁止なので不要
+import { SignupForm } from "@/components/SignupForm";
+import Link from "next/link";
 import MatchList from "@/components/MatchList";
 import { Match } from "@/types/match";
-import teamLeagueNames from "@/data/team_league_names.json"; // ✅ JSON直接OK
+import teamLeagueNames from "@/data/team_league_names.json";
 
 export default function HomePage() {
   const { user, logout, isInitialized } = useAuth();
   const [matches, setMatches] = useState<Match[]>([]);
   const [loadingMatches, setLoadingMatches] = useState(false);
-  const router = useRouter(); // ✅ 追加
+  const router = useRouter();
 
   useEffect(() => {
     const loadMatches = async () => {
@@ -29,13 +30,9 @@ export default function HomePage() {
         setLoadingMatches(false);
       }
     };
-
-    if (user) {
-      loadMatches();
-    }
+    if (user) loadMatches();
   }, [user]);
 
-  // ✅ 管理者なら自動で /admin にリダイレクト
   useEffect(() => {
     const redirectIfAdmin = async () => {
       if (user) {
@@ -46,10 +43,7 @@ export default function HomePage() {
         }
       }
     };
-
-    if (isInitialized) {
-      redirectIfAdmin();
-    }
+    if (isInitialized) redirectIfAdmin();
   }, [user, isInitialized, router]);
 
   if (!isInitialized) return <main className="text-center p-8">認証状態を確認中...</main>;
@@ -59,10 +53,23 @@ export default function HomePage() {
     <main className="container mx-auto px-4 py-8">
       {!user ? (
         <>
-          <h1 className="text-3xl font-bold mb-4 text-center">ログイン</h1>
-          <div className="flex flex-col md:flex-row gap-8 justify-center">
-            <LoginForm />
-            {/* SignupFormは削除済み */}
+          <h1 className="text-3xl font-bold mb-8 text-center">ログイン</h1>
+
+          {/* ✅ フォーム並びを中央揃え＋間を詰める */}
+          <div className="flex flex-col md:flex-row gap-2 justify-center items-start">
+            <div className="w-[300px]">
+              <LoginForm />
+            </div>
+            <div className="w-[300px]">
+              <SignupForm />
+            </div>
+          </div>
+
+          {/* ✅ フォームの下にパスワードリセットリンク */}
+          <div className="text-center mt-4">
+            <Link href="/password-reset" className="text-blue-600 hover:underline text-sm">
+              パスワードを忘れた方はこちら
+            </Link>
           </div>
         </>
       ) : (
@@ -80,8 +87,8 @@ export default function HomePage() {
               <MatchList
                 matches={matches}
                 teamLeagueNames={teamLeagueNames}
-                onFetchLineups={() => Promise.resolve()} // ✅ 今は使わないので空で
-                lineupUpdateResults={[]} // ✅ 今は使わないので空で
+                onFetchLineups={() => Promise.resolve()}
+                lineupUpdateResults={[]}
               />
             </>
           ) : (
