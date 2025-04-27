@@ -48,6 +48,8 @@ jobs:
                   src/data/current_month_matches_jleague.json \
                   src/data/current_month_matches_celtic.json \
                   src/data/current_month_matches_oversea.json \
-                  src/data/updated_log.json
+                  src/data/updated_log.json \
+                  public/current_month_matches.json \
+                  public/updated_log.json
           git commit -m "🗂️ Auto update & merge match data" || echo "No changes"
           git push origin master || echo "No changes to push"
