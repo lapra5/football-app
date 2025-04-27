@@ -111,6 +111,12 @@ const main = async () => {
     .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));  
   
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
+
+  // ✅ updated_log.json を public にコピー
+  const PUBLIC_OUTPUT_UPDATED_LOG = path.resolve("public/updated_log.json");
+  const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+  fs.writeFileSync(PUBLIC_OUTPUT_UPDATED_LOG, updatedLogData, "utf-8");
+
   fs.writeFileSync(PUBLIC_OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
   console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
   console.log(`📝 最終試合: ${normalized.at(-1)?.matchId} / ${normalized.at(-1)?.league?.jp}`);
