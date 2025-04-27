@@ -11,7 +11,8 @@ const CELTIC_PATH = path.resolve("src/data/current_month_matches_celtic.json");
 const OVERSEA_PATH = path.resolve("src/data/current_month_matches_oversea.json");
 const TEAM_LEAGUE_NAMES_PATH = path.resolve("src/data/team_league_names.json");
 const OUTPUT_PATH = path.resolve("src/data/current_month_matches.json");
-const PUBLIC_OUTPUT_PATH = path.resolve("public/current_month_matches.json");
+const PUBLIC_MATCHES_PATH = path.resolve("public/current_month_matches.json");
+const PUBLIC_UPDATED_LOG_PATH = path.resolve("public/updated_log.json");
 const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 
 const readJson = (filePath: string): any[] => {
@@ -30,7 +31,6 @@ const readLeagueMap = (): Record<string, string> => {
     const json = JSON.parse(raw);
     const leagues = json.leagues as { en: string; jp: string }[];
 
-    // 補助マッピング（例: Champions League → Champions-League）
     const alias: Record<string, string> = {
       "UEFA Champions League": "Champions-League",
     };
@@ -106,23 +106,27 @@ const main = async () => {
 
     const allMatches = [...jleagueMatches, ...celticMatches, ...overseaMatches];
     const normalized = allMatches
-    .map((match) => normalizeMatch(match, leagueMap))
-    .filter((m) => !!m.kickoffTime)
-    .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));  
-  
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
+      .map((match) => normalizeMatch(match, leagueMap))
+      .filter((m) => !!m.kickoffTime)
+      .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));
 
-  // ✅ updated_log.json を public にコピー
-  const PUBLIC_OUTPUT_UPDATED_LOG = path.resolve("public/updated_log.json");
-  const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
-  fs.writeFileSync(PUBLIC_OUTPUT_UPDATED_LOG, updatedLogData, "utf-8");
+    // ✅ まず src/data に保存
+    fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
 
-  fs.writeFileSync(PUBLIC_OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
-  console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
-  console.log(`📝 最終試合: ${normalized.at(-1)?.matchId} / ${normalized.at(-1)?.league?.jp}`);
-  console.log(`🕓 ファイル更新時刻: ${fs.statSync(OUTPUT_PATH).mtime.toLocaleString()}`);  
-
+    // ✅ updated_log.jsonを更新
     updateTimestamp("mergeMatches");
+
+    // ✅ ここで public/ に書き出し
+    fs.writeFileSync(PUBLIC_MATCHES_PATH, JSON.stringify(normalized, null, 2), "utf-8");
+
+    const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+    fs.writeFileSync(PUBLIC_UPDATED_LOG_PATH, updatedLogData, "utf-8");
+
+    // ログ出力
+    console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
+    console.log(`📝 最終試合: ${normalized.at(-1)?.matchId} / ${normalized.at(-1)?.league?.jp}`);
+    console.log(`🕓 ファイル更新時刻: ${fs.statSync(OUTPUT_PATH).mtime.toLocaleString()}`);
+
     await sendDiscordMessage(
       `✅ 日程マージ完了（全: ${normalized.length} 件, 国内: ${jleagueMatches.length} 件, 海外: ${celticMatches.length + overseaMatches.length} 件）`,
       DISCORD_WEBHOOK
