@@ -3,7 +3,7 @@ name: Fetch Lineups (Every 15 Minutes)
 on:
   workflow_dispatch:
   schedule:
-    - cron: '' #
+    - cron: '*/15 * * * *' #
 
 jobs:
   fetch-lineups:
