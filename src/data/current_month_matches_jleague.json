@@ -21780,8 +21780,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-04-27T04:00:00.000Z_八戸_vs_金沢",
-    "kickoffTime": "2025-04-27T04:00:00.000Z",
+    "matchId": "J3_2025-04-27T04:03:00.000Z_八戸_vs_金沢",
+    "kickoffTime": "2025-04-27T04:03:00.000Z",
     "homeTeam": {
       "name": "八戸",
       "id": null,
@@ -21799,14 +21799,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
