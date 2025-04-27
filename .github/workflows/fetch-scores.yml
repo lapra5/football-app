@@ -33,10 +33,14 @@ jobs:
       - name: Run fetchScores script
         run: node --loader ts-node/esm scripts/fetchScores.mts
 
-      - name: Check public directory and file permissions (for debugging)
-        run: |
-          ls -l public
-          ls -l public/updated_log.json
+      - name: Check if files exist
+        run: ls -l src/data/updated_log.json public/updated_log.json
+
+      - name: Check git status
+        run: git status
+
+      - name: Set directory permissions
+        run: chmod -R 777 src/data/ public/
 
       - name: Commit and push if changes
         run: |
