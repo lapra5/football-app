@@ -19,6 +19,8 @@ const db = getFirestore();
 
 const API_KEY = process.env.FOOTBALL_DATA_API_KEY!;
 const DISCORD_WEBHOOK_SEASON = process.env.DISCORD_WEBHOOK_SEASON!;
+const publicUpdatedLogPath = path.resolve("public/updated_log.json");
+
 const leagueIds = [
   2021, 2016, 2015, 2002, 2019,
   2014, 2003, 2017, 2013, 2001
@@ -59,11 +61,10 @@ const main = async () => {
         const matchId = match.id.toString();
         allMatches.push({
           matchId,
-          ...match // そのままのAPI形式
+          ...match
         });
       });
 
-      // Firestore 保存（merge: true）
       const ref = db
         .collection("leagues")
         .doc(leagueId.toString())
@@ -80,7 +81,11 @@ const main = async () => {
     }
 
     console.log(`✅ ${allMatches.length} 件のマッチデータを保存しました`);
+
+    // 🔥 updated_log.json 更新＋publicにもコピー
     updateTimestamp("updateSeason");
+    const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+    fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
     await sendDiscordMessage(
       `✅ updateSeasonData 完了: ${allMatches.length} 件保存しました`,

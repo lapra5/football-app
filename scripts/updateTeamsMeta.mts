@@ -88,6 +88,8 @@ const fetchJapaneseNameFromWikidata = async (englishName: string) => {
   }
 };
 
+// 省略：import部分と環境変数設定はそのまま
+
 const run = async () => {
   console.log("📥 Step1: チームデータ取得中...");
   const allTeams: {
@@ -166,17 +168,19 @@ ${teamLines.join("\n")}
 ${leaguesJson}
 }`;
 
-    // 🔁 強制上書き（中身が同じでも必ず更新される）
-    fs.writeFileSync(outputFile, finalJson, "utf-8");
-    console.log("✅ team_league_names.json を強制的に上書きしました");
+  // 🔁 強制上書き（必ず保存）
+  fs.writeFileSync(outputFile, finalJson, "utf-8");
+  console.log("✅ team_league_names.json を強制的に上書きしました");
 
-    // 🕒 更新後の更新日時を出力（デバッグ確認用）
-    const { mtime } = fs.statSync(outputFile);
-    console.log(`🕒 ファイルの更新日時: ${mtime.toISOString()}`);
+  // 🕒 更新後の更新日時を出力
+  const { mtime } = fs.statSync(outputFile);
+  console.log(`🕒 ファイルの更新日時: ${mtime.toISOString()}`);
 
-    // ✅ updated_log.json に更新記録
-    updateTimestamp("updateTeamsMeta");
-
+  // ✅ updated_log.json を更新＋public/にもコピー
+  updateTimestamp("updateTeamsMeta");
+  const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+  const publicUpdatedLogPath = path.resolve("public/updated_log.json");
+  fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
   // ✅ Discord 通知
   if (DISCORD_WEBHOOK_TEAMS) {

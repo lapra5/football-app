@@ -20,6 +20,7 @@ const DISCORD_WEBHOOK = process.env.DISCORD_WEBHOOK_MATCHES || "";
 // 保存先ファイル
 const targetPath = path.resolve("src/data/current_month_matches_oversea.json");
 const teamDataPath = path.resolve("src/data/team_league_names.json");
+const publicUpdatedLogPath = path.resolve("public/updated_log.json");
 
 // 対象リーグID
 const LEAGUE_IDS = [
@@ -66,7 +67,6 @@ const main = async () => {
       )
     );
 
-    // 正常に取得できた試合一覧
     const successful = results
       .filter((r): r is PromiseFulfilledResult<any> => r.status === "fulfilled")
       .flatMap((r) => r.value.matches);
@@ -122,7 +122,11 @@ const main = async () => {
     fs.writeFileSync(targetPath, JSON.stringify(enrichedMatches, null, 2), "utf-8");
 
     console.log(`✅ ${enrichedMatches.length}件の試合を ${targetPath} に保存しました`);
+
+    // 🔥 updated_log.json 更新＋publicにコピー
     updateTimestamp("updateCurrentMonthMatch");
+    const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+    fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
     await sendDiscordMessage(
       `✅ 海外リーグ試合データ取得完了: ${enrichedMatches.length} 件を current_month_matches_oversea.json に保存しました`,

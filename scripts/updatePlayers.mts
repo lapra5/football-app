@@ -136,6 +136,8 @@ async function fetchJapanesePlayers(): Promise<{ player: string; team: string }[
   return results;
 }
 
+const publicUpdatedLogPath = path.resolve("public/updated_log.json");
+
 const main = async () => {
   console.log("🚀 updatePlayers 開始");
   try {
@@ -201,7 +203,10 @@ const main = async () => {
       process.env.DISCORD_WEBHOOK_PLAYERS ?? ""
     );
 
+    // 🔥 updated_log.json 更新＋publicにコピー
     updateTimestamp("updatePlayers");
+    const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+    fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
   } catch (err) {
     console.error("❌ エラー発生:", err);

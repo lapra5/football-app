@@ -1,4 +1,6 @@
-// scripts/updateJleagueSchedule.mts
+// 🚀 開始ログ
+console.log("🚀 updateJleagueSchedule 開始");
+
 import axios from "axios";
 import * as cheerio from "cheerio";
 import path from "path";
@@ -22,7 +24,8 @@ const db = getFirestore();
 const currentYear = new Date().getFullYear();
 const webhookUrl = process.env.DISCORD_WEBHOOK_JLEAGUE;
 
-// 🔁 URL を動的に年差し替え
+const publicUpdatedLogPath = path.resolve("public/updated_log.json");
+
 const J_URLS = [
   {
     url: `https://data.j-league.or.jp/SFMS01/search?competition_years=${currentYear}&competition_frame_ids=1&competition_ids=651`,
@@ -98,7 +101,7 @@ const main = async () => {
           if (pkHome !== null && pkAway !== null) {
             winner = pkHome > pkAway ? "HOME_TEAM" : "AWAY_TEAM";
           } else if (fullTimeHome !== null && fullTimeAway !== null) {
-            winner = fullTimeHome > fullTimeAway ? "HOME_TEAM" : fullTimeHome < fullTimeAway ? "AWAY_TEAM" : null;
+            winner = fullTimeHome > fullTimeAway ? "HOME_TEAM" : fullTimeAway > fullTimeHome ? "AWAY_TEAM" : null;
           }
         }
 
@@ -147,7 +150,10 @@ const main = async () => {
     fs.writeFileSync(outputPath, JSON.stringify(allMatches.map(m => m.match), null, 2), "utf-8");
     console.log(`📝 ${outputPath} に ${allMatches.length} 件の試合を保存しました`);
 
+    // 🔥 updated_log.json を更新＋publicにコピー
     updateTimestamp("updateJleagueSchedule");
+    const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
+    fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
   } catch (err) {
     console.error("❌ エラー:", err);

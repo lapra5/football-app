@@ -19,7 +19,6 @@ const serviceAccount = JSON.parse(
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
-// 🚦 saison_id の自動判定（7月以前は前年のID）
 const today = new Date();
 const year = today.getMonth() + 1 <= 6 ? today.getFullYear() - 1 : today.getFullYear();
 const saisonId = year;
@@ -160,6 +159,7 @@ const main = async () => {
 
     await browser.close();
 
+    // Firestore保存
     const seasonLabel = getSeasonLabel();
     const ref = db.collection("leagues").doc("celtic").collection("seasons").doc(seasonLabel).collection("matches");
     const batch = db.batch();
@@ -168,11 +168,15 @@ const main = async () => {
     });
     await batch.commit();
 
+    // src/data に保存だけ（publicには保存しない）
     const outputPath = path.resolve(__dirname, "../src/data/current_month_matches_celtic.json");
     fs.writeFileSync(outputPath, JSON.stringify(matches, null, 2), "utf-8");
 
     console.log(`✅ ${matches.length} 件のセルティック試合を保存しました`);
     updateTimestamp("updateCelticSchedule");
+    // ✅ updated_log.json を public/ にもコピー
+    const updatedLogData = fs.readFileSync(path.resolve(__dirname, "../src/data/updated_log.json"), "utf-8");
+    fs.writeFileSync(path.resolve(__dirname, "../public/updated_log.json"), updatedLogData, "utf-8");
 
     await sendDiscordMessage(
       `✅ セルティック試合 ${matches.length} 件を Firestore に保存しました`,
