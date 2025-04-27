@@ -133,7 +133,7 @@ export default function AdminDashboard() {
 
   const fetchLastUpdated = async () => {
     try {
-      const res = await fetch("/api/admin/last-updated");
+      const res = await fetch("/updated_log.json");
       const data = await res.json();
       setLastUpdated(data);
     } catch (err) {
