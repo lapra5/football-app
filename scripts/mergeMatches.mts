@@ -110,18 +110,17 @@ const main = async () => {
       .filter((m) => !!m.kickoffTime)
       .sort((a, b) => a.kickoffTime.localeCompare(b.kickoffTime));
 
-    // ✅ まず src/data に保存
+    // src/data に current_month_matches.json 保存
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
 
-    // 🕓 updated_log.json 更新
+    // updated_log.json を更新
     updateTimestamp("mergeMatches");
-    
-    // ✅ updated_log.json を public にコピー
+
+    // public/ に最新ファイルをコピー
+    fs.writeFileSync(PUBLIC_MATCHES_PATH, JSON.stringify(normalized, null, 2), "utf-8");
     const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
     fs.writeFileSync(PUBLIC_UPDATED_LOG_PATH, updatedLogData, "utf-8");
-    
-    // ✅ current_month_matches.json を public にコピー
-    fs.writeFileSync(PUBLIC_MATCHES_PATH, JSON.stringify(normalized, null, 2), "utf-8");    
+
 
     // ログ出力
     console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
