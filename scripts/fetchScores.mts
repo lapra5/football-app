@@ -26,6 +26,7 @@ const serviceAccount = JSON.parse(Buffer.from(FIREBASE_KEY, "base64").toString()
 initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
+// パス
 const targetPath = path.resolve(__dirname, "../src/data/current_month_matches.json");
 const publicMatchesPath = path.resolve(__dirname, "../public/current_month_matches.json");
 const publicUpdatedLogPath = path.resolve(__dirname, "../public/updated_log.json");
@@ -72,9 +73,11 @@ const main = async () => {
 
           // Firestoreの保存先を leauges/{leagueId}/seasons/{seasonYear}/matches/{matchId} に変更
           const leagueId = match.matchId.split("_")[0];
+
+          // ここでFirestoreの保存パスを修正（leagues/{leagueId}/seasons/{seasonYear}/matches/{matchId}）
           const docRef = db
             .collection("leagues")
-            .doc(leagueId)
+            .doc(leagueId)  // リーグIDでドキュメントを識別
             .collection("seasons")
             .doc(seasonYear.toString())  // 年（シーズン）でドキュメントを識別
             .collection("matches")
