@@ -33,15 +33,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # 現在のタイムスタンプ（実行した時間）を updated_log.json に書き込む
-          echo "{\"updateTimestamp\": \"$(date --utc +%Y-%m-%dT%H:%M:%SZ)\"}" > src/data/updated_log.json
-
-          # 変更があった場合のみ commit と push を行う
-          git diff --exit-code || (
-            git add src/data/matchday_status.json src/data/updated_log.json public/updated_log.json
-            git commit -m "📅 Auto update matchday status" || echo "No changes"
-            git push origin master || echo "No changes to push"
-          )
-
-
+          git add src/data/updated_log.json public/updated_log.json
+          git commit -m "📅 Auto update matchday status" || echo "No changes"
+          git push origin master || echo "No changes to push"
