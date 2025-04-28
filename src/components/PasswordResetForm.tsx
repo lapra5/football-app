@@ -47,32 +47,41 @@ export const PasswordResetForm = ({ onBack }: PasswordResetFormProps) => {
         <label className="block mb-1 font-bold">ユーザーID</label>
         <input
           type="text"
+          id="newUserId"
+          name="newUserId"
           className="w-full border px-3 py-2 rounded"
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
           placeholder="ユーザーIDを入力"
+          autoComplete="off"
         />
       </div>
 
       <div>
         <label className="block mb-1 font-bold">現在のパスワード</label>
         <input
-          type="password"
+          type="text"
+          id="newUserId"
+          name="newUserId"
           className="w-full border px-3 py-2 rounded"
           value={currentPassword}
           onChange={(e) => setCurrentPassword(e.target.value)}
           placeholder="現在のパスワードを入力"
+          autoComplete="off"
         />
       </div>
 
       <div>
         <label className="block mb-1 font-bold">新しいパスワード</label>
         <input
-          type="password"
+          type="text"
+          id="newUserId"
+          name="newUserId"
           className="w-full border px-3 py-2 rounded"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
           placeholder="新しいパスワードを入力"
+          autoComplete="off"
         />
       </div>
 

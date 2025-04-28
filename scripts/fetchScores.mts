@@ -67,8 +67,20 @@ const main = async () => {
 
           const updated = { ...match, score };
 
+          // ここでシーズン（年）を設定
+          const matchDate = new Date(match.utcDate);
+          const seasonYear = matchDate.getFullYear();
+
+          // Firestoreの保存先を leauges/{leagueId}/seasons/{seasonYear}/matches/{matchId} に変更
           const leagueId = match.matchId.split("_")[0];
-          const docRef = db.collection("leagues").doc(leagueId).collection("matches").doc(match.matchId);
+          const docRef = db
+            .collection("leagues")
+            .doc(leagueId)
+            .collection("seasons")
+            .doc(seasonYear.toString())  // 年（シーズン）でドキュメントを識別
+            .collection("matches")
+            .doc(match.matchId);  // matchId でドキュメントを識別
+
           await docRef.set(updated, { merge: true });
 
           updatedCount++;
