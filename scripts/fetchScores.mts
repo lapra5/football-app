@@ -27,8 +27,6 @@ initializeApp({ credential: cert(serviceAccount) });
 const db = getFirestore();
 
 const targetPath = path.resolve(__dirname, "../src/data/current_month_matches.json");
-const publicMatchesPath = path.resolve(__dirname, "../public/current_month_matches.json");
-const publicUpdatedLogPath = path.resolve(__dirname, "../public/updated_log.json");
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -66,20 +64,8 @@ const main = async () => {
 
           const updated = { ...match, score };
 
-          // ここでシーズン（年）を設定
-          const matchDate = new Date(match.utcDate);
-          const seasonYear = matchDate.getFullYear();
-
-          // Firestoreの保存先を leauges/{leagueId}/seasons/{seasonYear}/matches/{matchId} に変更
-          const leagueId = match.matchId.split("_")[0];
-          const docRef = db
-            .collection("leagues")
-            .doc(leagueId.toString())  // リーグID
-            .collection("seasons")
-            .doc(seasonYear.toString())  // シーズン（年）
-            .collection("matches")
-            .doc(match.matchId.toString());  // 試合IDでドキュメントを識別
-
+          const leagueId = match.matchId.split("_")[0]; // "2001", "J1", etc
+          const docRef = db.collection("leagues").doc(leagueId).collection("matches").doc(match.matchId);
           await docRef.set(updated, { merge: true });
 
           updatedCount++;
@@ -89,15 +75,7 @@ const main = async () => {
       if (i + 10 < targets.length) await delay(2000);
     }
 
-    // 🔥 updated_log.json更新
     updateTimestamp("fetchScores");
-
-    // 🔥 src/data/current_month_matches.json を public にコピー
-    fs.copyFileSync(targetPath, publicMatchesPath);
-
-    // 🔥 src/data/updated_log.json を public にコピー
-    const updatedLogData = fs.readFileSync(path.resolve(__dirname, "../src/data/updated_log.json"), "utf-8");
-    fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
     await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました（Firestore書き込みのみ）`, DISCORD_WEBHOOK);
     console.log(`✅ Firestore に ${updatedCount} 件のスコア情報を書き込みました`);
