@@ -1718,20 +1718,20 @@
   {
     "matchId": "CELTIC_2025-04-26T11:30:00.000Z_vs_ダンディー・ユナイテッド",
     "utcDate": "2025-04-26T11:30:00.000Z",
-    "matchday": 34,
+    "matchday": 1,
     "league": "スコットランド",
     "season": {
       "startDate": "2024-07-01",
       "endDate": "2025-06-30",
-      "currentMatchday": 34
+      "currentMatchday": 1
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 5
       },
       "halfTime": {
         "home": null,
@@ -1770,12 +1770,12 @@
   {
     "matchId": "CELTIC_2025-05-04T11:00:00.000Z_vs_レンジャーズ",
     "utcDate": "2025-05-04T11:00:00.000Z",
-    "matchday": 35,
+    "matchday": 2,
     "league": "スコットランド",
     "season": {
       "startDate": "2024-07-01",
       "endDate": "2025-06-30",
-      "currentMatchday": 35
+      "currentMatchday": 2
     },
     "status": "SCHEDULED",
     "score": {
@@ -1822,12 +1822,12 @@
   {
     "matchId": "CELTIC_2025-05-10T14:00:00.000Z_vs_ハイバーニアン",
     "utcDate": "2025-05-10T14:00:00.000Z",
-    "matchday": 36,
+    "matchday": 3,
     "league": "スコットランド",
     "season": {
       "startDate": "2024-07-01",
       "endDate": "2025-06-30",
-      "currentMatchday": 36
+      "currentMatchday": 3
     },
     "status": "SCHEDULED",
     "score": {
@@ -1874,12 +1874,12 @@
   {
     "matchId": "CELTIC_2025-05-14T18:45:00.000Z_vs_アバディーン",
     "utcDate": "2025-05-14T18:45:00.000Z",
-    "matchday": 37,
+    "matchday": 4,
     "league": "スコットランド",
     "season": {
       "startDate": "2024-07-01",
       "endDate": "2025-06-30",
-      "currentMatchday": 37
+      "currentMatchday": 4
     },
     "status": "SCHEDULED",
     "score": {
@@ -1926,12 +1926,12 @@
   {
     "matchId": "CELTIC_2025-05-17T11:30:00.000Z_vs_セント・ミレン",
     "utcDate": "2025-05-17T11:30:00.000Z",
-    "matchday": 38,
+    "matchday": 5,
     "league": "スコットランド",
     "season": {
       "startDate": "2024-07-01",
       "endDate": "2025-06-30",
-      "currentMatchday": 38
+      "currentMatchday": 5
     },
     "status": "SCHEDULED",
     "score": {
@@ -2686,6 +2686,58 @@
       "name": "セント・ジョンストン",
       "crest": "",
       "shortName": "セント・ジョンストン",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-05-24T14:00:00.000Z_vs_アバディーン",
+    "utcDate": "2025-05-24T14:00:00.000Z",
+    "matchday": 0,
+    "league": "スコットランド",
+    "season": {
+      "startDate": "2024-07-01",
+      "endDate": "2025-06-30",
+      "currentMatchday": 0
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "アバディーン",
+      "crest": "",
+      "shortName": "アバディーン",
       "tla": ""
     },
     "area": {
