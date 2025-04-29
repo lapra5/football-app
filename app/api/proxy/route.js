@@ -1,4 +1,3 @@
-// app/api/proxy/route.js
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
@@ -6,6 +5,7 @@ const SECRET_KEY = process.env.SECRET_KEY;
 const targetUrl = 'https://novatrail.vercel.app';
 
 function encryptUrl(url) {
+  if (!SECRET_KEY) throw new Error('SECRET_KEY is not set');
   const cipher = crypto.createCipher('aes-256-cbc', SECRET_KEY);
   let encrypted = cipher.update(url, 'utf8', 'hex');
   encrypted += cipher.final('hex');
@@ -13,6 +13,7 @@ function encryptUrl(url) {
 }
 
 function decryptUrl(encryptedUrl) {
+  if (!SECRET_KEY) throw new Error('SECRET_KEY is not set');
   const decipher = crypto.createDecipher('aes-256-cbc', SECRET_KEY);
   let decrypted = decipher.update(encryptedUrl, 'hex', 'utf8');
   decrypted += decipher.final('utf8');
@@ -20,21 +21,23 @@ function decryptUrl(encryptedUrl) {
 }
 
 export async function GET(req) {
-  const { searchParams } = new URL(req.url);
-  const encryptedUrl = searchParams.get('encryptedUrl');
-
-  if (!encryptedUrl) {
-    const encrypted = encryptUrl(targetUrl);
-    return NextResponse.json({ encryptedUrl: encrypted });
-  }
-
-  const decodedUrl = decryptUrl(encryptedUrl);
-
   try {
+    const { searchParams } = new URL(req.url);
+    const encryptedUrl = searchParams.get('encryptedUrl');
+
+    if (!encryptedUrl) {
+      const encrypted = encryptUrl(targetUrl);
+      return NextResponse.json({ encryptedUrl: encrypted });
+    }
+
+    const decodedUrl = decryptUrl(encryptedUrl);
+
     const response = await fetch(decodedUrl);
     const text = await response.text();
     return new NextResponse(text);
+    
   } catch (error) {
-    return NextResponse.json({ error: 'Error fetching the web page' }, { status: 500 });
+    console.error('API Error:', error);  // エラー内容をログに出す
+    return NextResponse.json({ error: error.message || 'Error fetching the web page' }, { status: 500 });
   }
 }
