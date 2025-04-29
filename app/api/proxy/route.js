@@ -1,28 +1,40 @@
-// proxy.js (for Next.js API routes)
-import fetch from 'node-fetch';
+// app/api/proxy/route.js
+import { NextResponse } from 'next/server';
+import crypto from 'crypto';
 
-export default async function handler(req, res) {
+const SECRET_KEY = process.env.SECRET_KEY;
+const targetUrl = 'https://novatrail.vercel.app';
+
+function encryptUrl(url) {
+  const cipher = crypto.createCipher('aes-256-cbc', SECRET_KEY);
+  let encrypted = cipher.update(url, 'utf8', 'hex');
+  encrypted += cipher.final('hex');
+  return encrypted;
+}
+
+function decryptUrl(encryptedUrl) {
+  const decipher = crypto.createDecipher('aes-256-cbc', SECRET_KEY);
+  let decrypted = decipher.update(encryptedUrl, 'hex', 'utf8');
+  decrypted += decipher.final('utf8');
+  return decrypted;
+}
+
+export async function GET(req) {
+  const { searchParams } = new URL(req.url);
+  const encryptedUrl = searchParams.get('encryptedUrl');
+
+  if (!encryptedUrl) {
+    const encrypted = encryptUrl(targetUrl);
+    return NextResponse.json({ encryptedUrl: encrypted });
+  }
+
+  const decodedUrl = decryptUrl(encryptedUrl);
+
   try {
-    // 本物のURL（でも絶対にユーザーに見せない）
-    const REAL_URL = 'https://novatrail.vercel.app';
-
-    // 本物URLにリクエスト送る
-    const response = await fetch(REAL_URL, {
-      method: req.method,
-      headers: {
-        // 必要ならリクエストヘッダーも中継
-        ...req.headers,
-        host: undefined, // hostヘッダーだけは消す（重要）
-      },
-      body: req.method === 'GET' ? undefined : req.body,
-    });
-
-    // 本物サーバーからきたレスポンスをそのまま返す
-    const data = await response.text(); // ここを .json() にしてもよい
-    res.status(response.status).send(data);
-
+    const response = await fetch(decodedUrl);
+    const text = await response.text();
+    return new NextResponse(text);
   } catch (error) {
-    console.error('Proxy Error:', error);
-    res.status(500).json({ error: 'Proxy server error' });
+    return NextResponse.json({ error: 'Error fetching the web page' }, { status: 500 });
   }
 }
