@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
+export const runtime = 'nodejs'; // ← 追加！！！これだけでNode Runtimeになる
+
 const SECRET_KEY = process.env.SECRET_KEY;
 const targetUrl = 'https://novatrail.vercel.app';
 
@@ -37,7 +39,7 @@ export async function GET(req) {
     return new NextResponse(text);
     
   } catch (error) {
-    console.error('API Error:', error);  // エラー内容をログに出す
+    console.error('API Error:', error);
     return NextResponse.json({ error: error.message || 'Error fetching the web page' }, { status: 500 });
   }
 }
