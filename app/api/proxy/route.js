@@ -1,23 +1,25 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-export const runtime = 'nodejs'; // ★ここ追加するだけでOK！
+export const runtime = 'nodejs';
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const targetUrl = 'https://novatrail.vercel.app';
 
+// 32バイトキー + 16バイトIVが必要
+const key = crypto.createHash('sha256').update(String(SECRET_KEY)).digest('base64').substr(0, 32);
+const iv = Buffer.alloc(16, 0); // 固定IVでも今回は可（必要ならランダムにしてもよい）
+
 function encryptUrl(url) {
-  if (!SECRET_KEY) throw new Error('SECRET_KEY is not set');
-  const cipher = crypto.createCipher('aes-256-cbc', SECRET_KEY);
-  let encrypted = cipher.update(url, 'utf8', 'hex');
-  encrypted += cipher.final('hex');
+  const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
+  let encrypted = cipher.update(url, 'utf8', 'base64');
+  encrypted += cipher.final('base64');
   return encrypted;
 }
 
 function decryptUrl(encryptedUrl) {
-  if (!SECRET_KEY) throw new Error('SECRET_KEY is not set');
-  const decipher = crypto.createDecipher('aes-256-cbc', SECRET_KEY);
-  let decrypted = decipher.update(encryptedUrl, 'hex', 'utf8');
+  const decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
+  let decrypted = decipher.update(encryptedUrl, 'base64', 'utf8');
   decrypted += decipher.final('utf8');
   return decrypted;
 }
