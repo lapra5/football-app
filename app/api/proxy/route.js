@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 
-export const runtime = 'nodejs'; // ← 追加！！！これだけでNode Runtimeになる
+export const runtime = 'nodejs'; // ★ここ追加するだけでOK！
 
 const SECRET_KEY = process.env.SECRET_KEY;
 const targetUrl = 'https://novatrail.vercel.app';
