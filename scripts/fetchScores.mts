@@ -8,7 +8,7 @@ import { updateTimestamp } from "../src/utils/updateLog.ts";
 import { initializeApp, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
-// 🔧 初期化
+// 初期化
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
 
@@ -23,7 +23,7 @@ if (!DISCORD_WEBHOOK) throw new Error("❌ DISCORD_WEBHOOK_SCORES が設定さ�
 const FIREBASE_KEY = process.env.FIREBASE_PRIVATE_KEY_JSON_BASE64!;
 const serviceAccount = JSON.parse(Buffer.from(FIREBASE_KEY, "base64").toString());
 initializeApp({ credential: cert(serviceAccount) });
-const db = getFirestore(); // Firestoreインスタンスの取得
+const db = getFirestore();
 
 const targetPath = path.resolve(__dirname, "../src/data/current_month_matches.json");
 const publicMatchesPath = path.resolve(__dirname, "../public/current_month_matches.json");
@@ -57,7 +57,7 @@ const main = async () => {
     for (let i = 0; i < targets.length; i += 10) {
       const group = targets.slice(i, i + 10);
 
-      const results = await Promise.allSettled(
+      await Promise.allSettled(
         group.map(async (match) => {
           const detail = await fetchScore(match.matchId);
           const score = detail.score;
@@ -65,22 +65,23 @@ const main = async () => {
 
           const updated = { ...match, score };
 
-          // ここでシーズン（年）を設定
+          // ✅ JSONデータも更新
+          const index = matches.findIndex((m: any) => m.matchId === match.matchId);
+          if (index !== -1) matches[index] = updated;
+
+          // Firestore書き込み
           const matchDate = new Date(match.utcDate);
           const seasonYear = matchDate.getFullYear();
+          const leagueId = match.competition.id;
+          const matchId = match.id.toString();
 
-          // Firestoreの保存先を leauges/{leagueId}/seasons/{seasonYear}/matches/{matchId} に変更
-          const leagueId = match.competition.id; // competition.id をリーグIDとして使用
-          const matchId = match.id.toString(); // matchId は実際の試合IDを使用
-
-          // ここで保存先を「leagues/{leagueId}/seasons/{seasonYear}/matches/{matchId}」に変更
           const docRef = db
-            .collection("leagues")                    // leagues コレクション
-            .doc(leagueId.toString())                 // leagueId に基づくドキュメント
-            .collection("seasons")                    // seasons コレクション
-            .doc(seasonYear.toString())               // seasonYear に基づくドキュメント
-            .collection("matches")                    // matches コレクション
-            .doc(matchId);                            // matchId に基づくドキュメント
+            .collection("leagues")
+            .doc(leagueId.toString())
+            .collection("seasons")
+            .doc(seasonYear.toString())
+            .collection("matches")
+            .doc(matchId);
 
           await docRef.set(updated, { merge: true });
 
@@ -91,18 +92,17 @@ const main = async () => {
       if (i + 10 < targets.length) await delay(2000);
     }
 
-    // 🔥 updated_log.json更新
-    updateTimestamp("fetchScores");
-
-    // 🔥 src/data/current_month_matches.json を public にコピー
+    // ✅ JSON保存
+    fs.writeFileSync(targetPath, JSON.stringify(matches, null, 2), "utf-8");
     fs.copyFileSync(targetPath, publicMatchesPath);
 
-    // 🔥 src/data/updated_log.json を public にコピー
+    // ✅ updated_log.json のコピー
     const updatedLogData = fs.readFileSync(path.resolve(__dirname, "../src/data/updated_log.json"), "utf-8");
     fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
-    await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました（Firestore書き込みのみ）`, DISCORD_WEBHOOK);
-    console.log(`✅ Firestore に ${updatedCount} 件のスコア情報を書き込みました`);
+    // ✅ Discord通知
+    await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました（Firestore + JSON）`, DISCORD_WEBHOOK);
+    console.log(`✅ Firestore + JSON に ${updatedCount} 件のスコア情報を書き込みました`);
   } catch (err) {
     console.error("❌ エラー:", err);
     await sendDiscordMessage(
