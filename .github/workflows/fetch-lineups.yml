@@ -38,6 +38,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/current_month_matches.json src/data/updated_log.json
+          git add src/data/current_month_matches.json public/current_month_matches.json src/data/updated_log.json public/updated_log.json
           git commit -m "👥 Auto fetch lineups" || echo "No changes"
           git push origin master || echo "No changes to push"
