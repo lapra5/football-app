@@ -1,37 +1,36 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
-export default function Page() {
-  const [count, setCount] = useState(0);
-  const timeout = useRef<NodeJS.Timeout | null>(null);
+export default function HiddenTriggerPage() {
+  const router = useRouter();
+  const [clicks, setClicks] = useState(0);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleClick = () => {
-    setCount((prev) => {
+    setClicks((prev) => {
       const next = prev + 1;
       if (next >= 5) {
-        window.location.href = "/welcome.html"; // 静的HTMLに飛ばす
+        router.push('/login-view');
       }
       return next;
     });
 
-    if (timeout.current) clearTimeout(timeout.current);
-    timeout.current = setTimeout(() => setCount(0), 5000);
+    // 5秒以内にリセット
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => setClicks(0), 5000);
   };
 
   return (
-    <div
-      className="w-full h-screen"
+    <main
+      className="w-screen h-screen bg-gray-900 flex items-center justify-center text-white"
       onClick={handleClick}
-      style={{ background: "#fff", cursor: "pointer" }}
     >
-      {/* 一時的に枠をつけてわかりやすく */}
       <div
-        className="border border-dashed border-blue-400 rounded p-6"
-        style={{ width: "200px", margin: "auto", marginTop: "40vh", opacity: 0.05 }}
-      >
-        <p style={{ fontSize: "0.75rem" }}>5回クリックで初期画面へ</p>
-      </div>
-    </div>
+        className="w-12 h-12 rounded-full bg-transparent border border-white hover:bg-white/10 transition"
+        title="5回クリックでログインへ"
+      />
+    </main>
   );
 }
