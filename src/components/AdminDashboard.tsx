@@ -73,7 +73,7 @@ const buttonInfo = [
     className: "bg-gray-700 hover:bg-gray-800"
   },
   {
-    key: "updateSeasonData",
+    key: "updateSeason",
     label: "シーズンデータ更新",
     description: "FootballData APIから最新のシーズン試合日程を取得し、Firestoreに保存します（スコア・スタメンは含まれません）。",
     frequency: "毎日 5:00 に自動実行",
