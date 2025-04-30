@@ -1,12 +1,8 @@
-import { Analytics } from '@vercel/analytics/react';
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function Page() {
   return (
-    <html lang="ja">
-      <body>
-        {children}
-        <Analytics /> {/* これを body の中に入れる */}
-      </body>
-    </html>
+    <div className="p-8 text-center">
+      <h1>ようこそ NovaTrail へ</h1>
+      <p>こちらはサッカー試合情報の可視化アプリです。</p>
+    </div>
   );
 }
