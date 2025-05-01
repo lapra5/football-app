@@ -33,6 +33,9 @@ jobs:
       - name: Run fetchScores script
         run: node --loader ts-node/esm scripts/fetchScores.mts
 
+      - name: Run updateCurrentMonthMatch script
+        run: node --loader ts-node/esm scripts/updateCurrentMonthMatch.mts
+
       - name: Commit and push if changes
         run: |
           git config --global user.name "github-actions[bot]"
