@@ -92,13 +92,16 @@ const main = async () => {
       if (i + 10 < targets.length) await delay(2000);
     }
 
-    // ✅ JSON保存
-    fs.writeFileSync(targetPath, JSON.stringify(matches, null, 2), "utf-8");
-    fs.copyFileSync(targetPath, publicMatchesPath);
+// ✅ JSON保存
+fs.writeFileSync(targetPath, JSON.stringify(matches, null, 2), "utf-8");
+fs.copyFileSync(targetPath, publicMatchesPath);
 
-    // ✅ updated_log.json のコピー
-    const updatedLogData = fs.readFileSync(path.resolve(__dirname, "../src/data/updated_log.json"), "utf-8");
-    fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
+// ✅ updated_log.json に fetchScores のタイムスタンプを記録
+updateTimestamp("fetchScores");
+
+// ✅ public にコピー
+const updatedLogData = fs.readFileSync(path.resolve(__dirname, "../src/data/updated_log.json"), "utf-8");
+fs.writeFileSync(publicUpdatedLogPath, updatedLogData, "utf-8");
 
     // ✅ Discord通知
     await sendDiscordMessage(`✅ スコア情報を ${updatedCount} 件更新しました（Firestore + JSON）`, DISCORD_WEBHOOK);
