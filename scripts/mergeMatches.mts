@@ -114,13 +114,12 @@ const main = async () => {
     fs.writeFileSync(OUTPUT_PATH, JSON.stringify(normalized, null, 2), "utf-8");
 
     // updated_log.json を更新
-    updateTimestamp("mergeMatches");
+    await updateTimestamp("mergeMatches");
 
     // public/ に最新ファイルをコピー
     fs.writeFileSync(PUBLIC_MATCHES_PATH, JSON.stringify(normalized, null, 2), "utf-8");
     const updatedLogData = fs.readFileSync("src/data/updated_log.json", "utf-8");
     fs.writeFileSync(PUBLIC_UPDATED_LOG_PATH, updatedLogData, "utf-8");
-
 
     // ログ出力
     console.log(`✅ 全試合 ${normalized.length} 件を ${OUTPUT_PATH} に保存しました`);
