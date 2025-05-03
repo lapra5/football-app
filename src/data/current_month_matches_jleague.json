@@ -4455,8 +4455,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-03T10:00:00.000Z_京都_vs_Ｃ大阪",
-    "kickoffTime": "2025-05-03T10:00:00.000Z",
+    "matchId": "J1_2025-05-03T10:03:00.000Z_京都_vs_Ｃ大阪",
+    "kickoffTime": "2025-05-03T10:03:00.000Z",
     "homeTeam": {
       "name": "京都",
       "id": null,
@@ -4474,14 +4474,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 3
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
