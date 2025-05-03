@@ -2,7 +2,7 @@ name: Update All Matches
 
 on:
   schedule:
-    - cron: "0 22 * * *" # JST 7:00
+    - cron: "30 11 * * *" # JST 20:30 に実行
   workflow_dispatch:
 
 jobs:
@@ -51,5 +51,6 @@ jobs:
                   src/data/updated_log.json \
                   public/current_month_matches.json \
                   public/updated_log.json
-          git commit -m "🗂️ Auto update & merge match data" || echo "No changes"
+          git commit --allow-empty -m "🗂️ Auto update & merge match data"
           git push origin master || echo "No changes to push"
+
