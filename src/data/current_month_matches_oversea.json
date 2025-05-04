@@ -2885,14 +2885,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -2934,14 +2946,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -2985,14 +3009,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 4,
+        "home": 4
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -3030,14 +3066,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -3075,14 +3123,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 4
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5618,14 +5678,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5667,14 +5739,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 4,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5712,14 +5796,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 6
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5757,14 +5853,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 4
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -9977,14 +10085,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -10022,14 +10142,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -10067,14 +10199,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -10112,14 +10256,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -14542,14 +14698,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -14587,14 +14755,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 3
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 4
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -14632,14 +14812,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -14677,14 +14869,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -18921,14 +19125,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -18970,14 +19186,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -19019,14 +19247,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24299,14 +24539,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24344,14 +24596,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24393,14 +24657,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24442,14 +24718,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24487,14 +24775,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 3
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 4
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24536,14 +24836,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24581,14 +24893,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24630,14 +24954,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24679,14 +25015,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24724,14 +25072,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24773,14 +25133,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24822,14 +25194,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 3
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 5
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -26924,14 +27308,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -26969,14 +27365,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -27014,14 +27422,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -27059,14 +27479,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -30296,14 +30728,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -30345,14 +30789,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -30390,14 +30846,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -30435,14 +30903,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -30675,51 +31155,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "503398",
-    "kickoffTime": "2025-05-09T18:45:00Z",
-    "matchday": 36,
-    "league": {
-      "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
-    },
-    "homeTeam": {
-      "id": 98,
-      "name": {
-        "jp": "ACミラン",
-        "en": "AC Milan"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/98.svg"
-    },
-    "awayTeam": {
-      "id": 103,
-      "name": {
-        "jp": "ボローニャ",
-        "en": "Bologna FC 1909"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/103.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "503394",
     "kickoffTime": "2025-05-10T13:00:00Z",
     "matchday": 36,
@@ -30930,6 +31365,51 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/5890.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "503398",
+    "kickoffTime": "2025-05-11T13:00:00Z",
+    "matchday": 36,
+    "league": {
+      "en": "Serie A",
+      "jp": "セリエA（イタリア1部）"
+    },
+    "homeTeam": {
+      "id": 98,
+      "name": {
+        "jp": "ACミラン",
+        "en": "AC Milan"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/98.svg"
+    },
+    "awayTeam": {
+      "id": 103,
+      "name": {
+        "jp": "ボローニャ",
+        "en": "Bologna FC 1909"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/103.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -32030,51 +32510,6 @@
       "fullTime": {
         "away": null,
         "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "497705",
-    "kickoffTime": "2025-04-03T19:00:00Z",
-    "matchday": 30,
-    "league": {
-      "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
-    },
-    "homeTeam": {
-      "id": 61,
-      "name": {
-        "jp": "チェルシー",
-        "en": "Chelsea FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/61.svg"
-    },
-    "awayTeam": {
-      "id": 73,
-      "name": {
-        "jp": "トッテナム・ホットスパー",
-        "en": "Tottenham Hotspur FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/73.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": "HOME_TEAM",
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 1
       }
     },
     "startingMembers": [],
@@ -34505,14 +34940,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -34550,14 +34997,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -34601,14 +35060,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -34650,14 +35121,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
