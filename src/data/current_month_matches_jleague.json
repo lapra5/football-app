@@ -5082,8 +5082,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-14T10:00:00.000Z_川崎Ｆ_vs_横浜FC",
-    "kickoffTime": "2025-05-14T10:00:00.000Z",
+    "matchId": "J1_2025-05-14T10:03:00.000Z_川崎Ｆ_vs_横浜FC",
+    "kickoffTime": "2025-05-14T10:03:00.000Z",
     "homeTeam": {
       "name": "川崎Ｆ",
       "id": null,
@@ -5101,22 +5101,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-14T10:00:00.000Z_横浜FM_vs_柏",
-    "kickoffTime": "2025-05-14T10:00:00.000Z",
+    "matchId": "J1_2025-05-14T10:03:00.000Z_横浜FM_vs_柏",
+    "kickoffTime": "2025-05-14T10:03:00.000Z",
     "homeTeam": {
       "name": "横浜FM",
       "id": null,
@@ -5134,14 +5134,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 2
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
@@ -22473,8 +22473,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-05-14T10:00:00.000Z_松本_vs_長野",
-    "kickoffTime": "2025-05-14T10:00:00.000Z",
+    "matchId": "J3_2025-05-14T10:03:00.000Z_松本_vs_長野",
+    "kickoffTime": "2025-05-14T10:03:00.000Z",
     "homeTeam": {
       "name": "松本",
       "id": null,
@@ -22492,8 +22492,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
