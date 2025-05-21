@@ -5478,8 +5478,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-21T10:00:00.000Z_川崎Ｆ_vs_浦和",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "J1_2025-05-21T10:03:00.000Z_川崎Ｆ_vs_浦和",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
     "homeTeam": {
       "name": "川崎Ｆ",
       "id": null,
@@ -5497,8 +5497,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -5511,8 +5511,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-21T10:00:00.000Z_横浜FM_vs_神戸",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "J1_2025-05-21T10:03:00.000Z_横浜FM_vs_神戸",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
     "homeTeam": {
       "name": "横浜FM",
       "id": null,
@@ -5530,14 +5530,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
@@ -28149,8 +28149,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-05-21T09:30:00.000Z_横浜FC_vs_町田",
-    "kickoffTime": "2025-05-21T09:30:00.000Z",
+    "matchId": "Jリーグカップ_2025-05-21T09:33:00.000Z_横浜FC_vs_町田",
+    "kickoffTime": "2025-05-21T09:33:00.000Z",
     "homeTeam": {
       "name": "横浜FC",
       "id": null,
@@ -28168,29 +28168,29 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-05-21T10:00:00.000Z_湘南_vs_FC東京",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-05-21T10:03:00.000Z_磐田_vs_Ｇ大阪",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
     "homeTeam": {
-      "name": "湘南",
+      "name": "磐田",
       "id": null,
       "players": []
     },
     "awayTeam": {
-      "name": "FC東京",
+      "name": "Ｇ大阪",
       "id": null,
       "players": []
     },
@@ -28201,22 +28201,121 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-05-21T10:00:00.000Z_新潟_vs_東京Ｖ",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-05-21T10:03:00.000Z_富山_vs_福岡",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
+    "homeTeam": {
+      "name": "富山",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "福岡",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-05-21T10:03:00.000Z_京都_vs_Ｃ大阪",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
+    "homeTeam": {
+      "name": "京都",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "Ｃ大阪",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 4
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-05-21T10:03:00.000Z_山口_vs_柏",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
+    "homeTeam": {
+      "name": "山口",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "柏",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-05-21T10:03:00.000Z_新潟_vs_東京Ｖ",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
     "homeTeam": {
       "name": "新潟",
       "id": null,
@@ -28234,6 +28333,72 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
+        "home": 0,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-05-21T10:03:00.000Z_湘南_vs_FC東京",
+    "kickoffTime": "2025-05-21T10:03:00.000Z",
+    "homeTeam": {
+      "name": "湘南",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "FC東京",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_東京Ｖ_vs_柏",
+    "kickoffTime": "2025-06-04T10:00:00.000Z",
+    "homeTeam": {
+      "name": "東京Ｖ",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "柏",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
         "home": null,
         "away": null
       },
@@ -28248,10 +28413,142 @@
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-05-21T10:00:00.000Z_富山_vs_福岡",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_湘南_vs_磐田",
+    "kickoffTime": "2025-06-04T10:00:00.000Z",
     "homeTeam": {
-      "name": "富山",
+      "name": "湘南",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "磐田",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_Ｃ大阪_vs_横浜FC",
+    "kickoffTime": "2025-06-04T10:00:00.000Z",
+    "homeTeam": {
+      "name": "Ｃ大阪",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "横浜FC",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_福岡_vs_広島",
+    "kickoffTime": "2025-06-04T10:00:00.000Z",
+    "homeTeam": {
+      "name": "福岡",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "広島",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-08T05:00:00.000Z_磐田_vs_湘南",
+    "kickoffTime": "2025-06-08T05:00:00.000Z",
+    "homeTeam": {
+      "name": "磐田",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "湘南",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-08T06:00:00.000Z_広島_vs_福岡",
+    "kickoffTime": "2025-06-08T06:00:00.000Z",
+    "homeTeam": {
+      "name": "広島",
       "id": null,
       "players": []
     },
@@ -28281,43 +28578,10 @@
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-05-21T10:00:00.000Z_磐田_vs_Ｇ大阪",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-06-08T09:00:00.000Z_横浜FC_vs_Ｃ大阪",
+    "kickoffTime": "2025-06-08T09:00:00.000Z",
     "homeTeam": {
-      "name": "磐田",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "Ｇ大阪",
-      "id": null,
-      "players": []
-    },
-    "league": "Jリーグカップ",
-    "matchday": 0,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "Jリーグカップ_2025-05-21T10:00:00.000Z_京都_vs_Ｃ大阪",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
-    "homeTeam": {
-      "name": "京都",
+      "name": "横浜FC",
       "id": null,
       "players": []
     },
@@ -28347,15 +28611,15 @@
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-05-21T10:00:00.000Z_山口_vs_柏",
-    "kickoffTime": "2025-05-21T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-06-08T10:00:00.000Z_柏_vs_東京Ｖ",
+    "kickoffTime": "2025-06-08T10:00:00.000Z",
     "homeTeam": {
-      "name": "山口",
+      "name": "柏",
       "id": null,
       "players": []
     },
     "awayTeam": {
-      "name": "柏",
+      "name": "東京Ｖ",
       "id": null,
       "players": []
     },
