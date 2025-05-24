@@ -5544,8 +5544,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-24T06:00:00.000Z_Ｃ大阪_vs_福岡",
-    "kickoffTime": "2025-05-24T06:00:00.000Z",
+    "matchId": "J1_2025-05-24T06:03:00.000Z_Ｃ大阪_vs_福岡",
+    "kickoffTime": "2025-05-24T06:03:00.000Z",
     "homeTeam": {
       "name": "Ｃ大阪",
       "id": null,
@@ -5563,22 +5563,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-24T08:30:00.000Z_名古屋_vs_浦和",
-    "kickoffTime": "2025-05-24T08:30:00.000Z",
+    "matchId": "J1_2025-05-24T08:33:00.000Z_名古屋_vs_浦和",
+    "kickoffTime": "2025-05-24T08:33:00.000Z",
     "homeTeam": {
       "name": "名古屋",
       "id": null,
@@ -5596,14 +5596,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],

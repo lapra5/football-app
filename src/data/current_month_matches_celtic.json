@@ -2713,13 +2713,13 @@
       "endDate": "2025-06-30",
       "currentMatchday": 0
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 5,
+        "away": 4
       },
       "halfTime": {
         "home": null,
