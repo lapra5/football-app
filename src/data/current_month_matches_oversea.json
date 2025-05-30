@@ -1,54 +1,5 @@
 [
   {
-    "matchId": "524116",
-    "kickoffTime": "2025-04-29T19:00:00Z",
-    "matchday": 1,
-    "league": {
-      "en": "UEFA Champions League",
-      "jp": "UEFAチャンピオンズリーグ"
-    },
-    "homeTeam": {
-      "id": 57,
-      "name": {
-        "jp": "アーセナル",
-        "en": "Arsenal FC"
-      },
-      "players": [
-        "冨安 健洋"
-      ],
-      "englishplayers": [
-        "Takehiro Tomiyasu"
-      ],
-      "logo": "https://crests.football-data.org/57.svg"
-    },
-    "awayTeam": {
-      "id": 524,
-      "name": {
-        "jp": "パリ・サンジェルマン",
-        "en": "Paris Saint-Germain FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/524.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": "AWAY_TEAM",
-      "halfTime": {
-        "away": 1,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 1,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "524117",
     "kickoffTime": "2025-04-30T19:00:00Z",
     "matchday": 1,
@@ -9402,14 +9353,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -9463,14 +9414,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -9520,14 +9471,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 3
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 3
       }
     },
     "startingMembers": [],
@@ -9577,14 +9528,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -9634,14 +9585,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -9691,14 +9642,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -9752,14 +9703,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -9809,14 +9760,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 4,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -9866,14 +9817,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 3
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 4
       }
     },
     "startingMembers": [],
@@ -9923,14 +9874,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -12458,8 +12409,8 @@
   },
   {
     "matchId": "536449",
-    "kickoffTime": "2025-05-24T14:00:00Z",
-    "matchday": 0,
+    "kickoffTime": "2025-05-24T14:01:00Z",
+    "matchday": null,
     "league": {
       "en": "Championship",
       "jp": "EFLチャンピオンシップ（イングランド2部）"
@@ -12499,58 +12450,13 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "503755",
-    "kickoffTime": "2025-04-29T19:30:00Z",
-    "matchday": 31,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
-    },
-    "homeTeam": {
-      "id": 6618,
-      "name": {
-        "jp": "カーザ・ピア",
-        "en": "Casa Pia AC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 582,
-      "name": {
-        "jp": "エストリル・プライア",
-        "en": "GD Estoril Praia"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
       "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": 1,
+        "away": 0,
         "home": 1
       },
       "fullTime": {
-        "away": 3,
+        "away": 2,
         "home": 1
       }
     },
