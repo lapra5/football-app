@@ -5907,41 +5907,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-31T05:00:00.000Z_町田_vs_横浜FM",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "町田",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "横浜FM",
-      "id": null,
-      "players": []
-    },
-    "league": "J1",
-    "matchday": 19,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J1_2025-05-31T05:00:00.000Z_名古屋_vs_新潟",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J1_2025-05-31T05:03:00.000Z_名古屋_vs_新潟",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
       "name": "名古屋",
       "id": null,
@@ -5959,22 +5926,55 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-31T05:00:00.000Z_福岡_vs_東京Ｖ",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J1_2025-05-31T05:03:00.000Z_町田_vs_横浜FM",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "町田",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "横浜FM",
+      "id": null,
+      "players": []
+    },
+    "league": "J1",
+    "matchday": 19,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J1_2025-05-31T05:04:00.000Z_福岡_vs_東京Ｖ",
+    "kickoffTime": "2025-05-31T05:04:00.000Z",
     "homeTeam": {
       "name": "福岡",
       "id": null,
@@ -5992,8 +5992,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "halfTime": {
         "home": null,
@@ -6006,8 +6006,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-31T07:00:00.000Z_柏_vs_神戸",
-    "kickoffTime": "2025-05-31T07:00:00.000Z",
+    "matchId": "J1_2025-05-31T07:03:00.000Z_柏_vs_神戸",
+    "kickoffTime": "2025-05-31T07:03:00.000Z",
     "homeTeam": {
       "name": "柏",
       "id": null,
@@ -6025,22 +6025,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 3
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-31T08:30:00.000Z_広島_vs_川崎Ｆ",
-    "kickoffTime": "2025-05-31T08:30:00.000Z",
+    "matchId": "J1_2025-05-31T08:33:00.000Z_広島_vs_川崎Ｆ",
+    "kickoffTime": "2025-05-31T08:33:00.000Z",
     "homeTeam": {
       "name": "広島",
       "id": null,
@@ -6058,22 +6058,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-31T09:00:00.000Z_Ｇ大阪_vs_鹿島",
-    "kickoffTime": "2025-05-31T09:00:00.000Z",
+    "matchId": "J1_2025-05-31T09:03:00.000Z_Ｇ大阪_vs_鹿島",
+    "kickoffTime": "2025-05-31T09:03:00.000Z",
     "homeTeam": {
       "name": "Ｇ大阪",
       "id": null,
@@ -6091,22 +6091,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-05-31T10:00:00.000Z_京都_vs_FC東京",
-    "kickoffTime": "2025-05-31T10:00:00.000Z",
+    "matchId": "J1_2025-05-31T10:03:00.000Z_京都_vs_FC東京",
+    "kickoffTime": "2025-05-31T10:03:00.000Z",
     "homeTeam": {
       "name": "京都",
       "id": null,
@@ -6124,14 +6124,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
@@ -14817,107 +14817,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_仙台_vs_札幌",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "仙台",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "札幌",
-      "id": null,
-      "players": []
-    },
-    "league": "J2",
-    "matchday": 18,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_秋田_vs_富山",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "秋田",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "富山",
-      "id": null,
-      "players": []
-    },
-    "league": "J2",
-    "matchday": 18,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_水戸_vs_長崎",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "水戸",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "長崎",
-      "id": null,
-      "players": []
-    },
-    "league": "J2",
-    "matchday": 18,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_大宮_vs_磐田",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J2_2025-05-31T05:03:00.000Z_大宮_vs_磐田",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
       "name": "大宮",
       "id": null,
@@ -14935,8 +14836,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -14949,8 +14850,41 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_千葉_vs_山口",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J2_2025-05-31T05:03:00.000Z_仙台_vs_札幌",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "仙台",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "札幌",
+      "id": null,
+      "players": []
+    },
+    "league": "J2",
+    "matchday": 18,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J2_2025-05-31T05:03:00.000Z_千葉_vs_山口",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
       "name": "千葉",
       "id": null,
@@ -14968,8 +14902,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "halfTime": {
         "home": null,
@@ -14982,15 +14916,15 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_藤枝_vs_山形",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J2_2025-05-31T05:03:00.000Z_秋田_vs_富山",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
-      "name": "藤枝",
+      "name": "秋田",
       "id": null,
       "players": []
     },
     "awayTeam": {
-      "name": "山形",
+      "name": "富山",
       "id": null,
       "players": []
     },
@@ -15001,8 +14935,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -15015,8 +14949,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-05-31T05:00:00.000Z_鳥栖_vs_愛媛",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J2_2025-05-31T05:03:00.000Z_鳥栖_vs_愛媛",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
       "name": "鳥栖",
       "id": null,
@@ -15034,8 +14968,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -15048,8 +14982,74 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-05-31T09:05:00.000Z_今治_vs_徳島",
-    "kickoffTime": "2025-05-31T09:05:00.000Z",
+    "matchId": "J2_2025-05-31T05:03:00.000Z_水戸_vs_長崎",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "水戸",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "長崎",
+      "id": null,
+      "players": []
+    },
+    "league": "J2",
+    "matchday": 18,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J2_2025-05-31T05:03:00.000Z_藤枝_vs_山形",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "藤枝",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "山形",
+      "id": null,
+      "players": []
+    },
+    "league": "J2",
+    "matchday": 18,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J2_2025-05-31T09:10:00.000Z_今治_vs_徳島",
+    "kickoffTime": "2025-05-31T09:10:00.000Z",
     "homeTeam": {
       "name": "今治",
       "id": null,
@@ -15067,22 +15067,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-05-31T10:00:00.000Z_大分_vs_甲府",
-    "kickoffTime": "2025-05-31T10:00:00.000Z",
+    "matchId": "J2_2025-05-31T10:03:00.000Z_大分_vs_甲府",
+    "kickoffTime": "2025-05-31T10:03:00.000Z",
     "homeTeam": {
       "name": "大分",
       "id": null,
@@ -15100,14 +15100,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
@@ -22836,107 +22836,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-05-31T05:00:00.000Z_群馬_vs_沼津",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "群馬",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "沼津",
-      "id": null,
-      "players": []
-    },
-    "league": "J3",
-    "matchday": 14,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J3_2025-05-31T05:00:00.000Z_長野_vs_奈良",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "長野",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "奈良",
-      "id": null,
-      "players": []
-    },
-    "league": "J3",
-    "matchday": 14,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J3_2025-05-31T05:00:00.000Z_FC大阪_vs_鹿児島",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
-    "homeTeam": {
-      "name": "FC大阪",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "鹿児島",
-      "id": null,
-      "players": []
-    },
-    "league": "J3",
-    "matchday": 14,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J3_2025-05-31T05:00:00.000Z_鳥取_vs_栃木Ｃ",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J3_2025-05-31T05:03:00.000Z_鳥取_vs_栃木Ｃ",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
       "name": "鳥取",
       "id": null,
@@ -22954,22 +22855,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-05-31T05:00:00.000Z_北九州_vs_宮崎",
-    "kickoffTime": "2025-05-31T05:00:00.000Z",
+    "matchId": "J3_2025-05-31T05:03:00.000Z_北九州_vs_宮崎",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
     "homeTeam": {
       "name": "北九州",
       "id": null,
@@ -22987,8 +22888,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,
@@ -23001,8 +22902,107 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-05-31T10:00:00.000Z_栃木SC_vs_讃岐",
-    "kickoffTime": "2025-05-31T10:00:00.000Z",
+    "matchId": "J3_2025-05-31T05:03:00.000Z_群馬_vs_沼津",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "群馬",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "沼津",
+      "id": null,
+      "players": []
+    },
+    "league": "J3",
+    "matchday": 14,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J3_2025-05-31T05:03:00.000Z_長野_vs_奈良",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "長野",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "奈良",
+      "id": null,
+      "players": []
+    },
+    "league": "J3",
+    "matchday": 14,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J3_2025-05-31T05:03:00.000Z_FC大阪_vs_鹿児島",
+    "kickoffTime": "2025-05-31T05:03:00.000Z",
+    "homeTeam": {
+      "name": "FC大阪",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "鹿児島",
+      "id": null,
+      "players": []
+    },
+    "league": "J3",
+    "matchday": 14,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 3,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J3_2025-05-31T10:03:00.000Z_栃木SC_vs_讃岐",
+    "kickoffTime": "2025-05-31T10:03:00.000Z",
     "homeTeam": {
       "name": "栃木SC",
       "id": null,
@@ -23020,14 +23020,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
