@@ -185,20 +185,19 @@
     { "teamId": 6684, "team": "SCインテルナシオナル", "englishName": "SC Internacional", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/6684.svg" },
     { "teamId": 6685, "team": "サントスFC", "englishName": "Santos FC", "players": [], "englishplayers": [], "logo": "https://crests.football-data.org/6685.svg" }
   ],
-  "leagues": [
-    { "en": "Premier League", "jp": "プレミアリーグ（イングランド1部）", "leaguesId": 2021 },
-    { "en": "Championship", "jp": "EFLチャンピオンシップ（イングランド2部）", "leaguesId": 2018 },
-    { "en": "League One", "jp": "EFLリーグ1（イングランド3部）", "leaguesId": 0 },
-    { "en": "Bundesliga", "jp": "ブンデスリーガ（ドイツ1部）", "leaguesId": 2002 },
-    { "en": "Serie A", "jp": "セリエA（イタリア1部）", "leaguesId": 2019 },
-    { "en": "La Liga", "jp": "ラ・リーガ（スペイン1部）", "leaguesId": 2014 },
-    { "en": "Primera Division", "jp": "ラ・リーガ（スペイン1部）", "leaguesId": 2014 },
-    { "en": "Ligue 1", "jp": "リーグ・アン（フランス1部）", "leaguesId": 2015 },
-    { "en": "Eredivisie", "jp": "エールディヴィジ（オランダ1部）", "leaguesId": 2003 },
-    { "en": "Primeira Liga", "jp": "プリメイラ・リーガ（ポルトガル1部）", "leaguesId": 2017 },
-    { "en": "Champions-League", "jp": "UEFAチャンピオンズリーグ", "leaguesId": 2001 },
-    { "en": "UEFA Champions League", "jp": "UEFAチャンピオンズリーグ", "leaguesId": 2001 },
-    { "en": "Campeonato Brasileiro Série A", "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）", "leaguesId": 2013 }
-
-  ]
+  "leagues": {
+    "0": "[object Object]",
+    "1": "[object Object]",
+    "2": "[object Object]",
+    "3": "[object Object]",
+    "4": "[object Object]",
+    "5": "[object Object]",
+    "6": "[object Object]",
+    "7": "[object Object]",
+    "8": "[object Object]",
+    "9": "[object Object]",
+    "10": "[object Object]",
+    "11": "[object Object]",
+    "12": "[object Object]"
+  }
 }
