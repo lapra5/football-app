@@ -28380,74 +28380,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_東京Ｖ_vs_柏",
-    "kickoffTime": "2025-06-04T10:00:00.000Z",
-    "homeTeam": {
-      "name": "東京Ｖ",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "柏",
-      "id": null,
-      "players": []
-    },
-    "league": "Jリーグカップ",
-    "matchday": 0,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_湘南_vs_磐田",
-    "kickoffTime": "2025-06-04T10:00:00.000Z",
-    "homeTeam": {
-      "name": "湘南",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "磐田",
-      "id": null,
-      "players": []
-    },
-    "league": "Jリーグカップ",
-    "matchday": 0,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_Ｃ大阪_vs_横浜FC",
-    "kickoffTime": "2025-06-04T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-06-04T10:03:00.000Z_Ｃ大阪_vs_横浜FC",
+    "kickoffTime": "2025-06-04T10:03:00.000Z",
     "homeTeam": {
       "name": "Ｃ大阪",
       "id": null,
@@ -28465,22 +28399,55 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "Jリーグカップ_2025-06-04T10:00:00.000Z_福岡_vs_広島",
-    "kickoffTime": "2025-06-04T10:00:00.000Z",
+    "matchId": "Jリーグカップ_2025-06-04T10:03:00.000Z_東京Ｖ_vs_柏",
+    "kickoffTime": "2025-06-04T10:03:00.000Z",
+    "homeTeam": {
+      "name": "東京Ｖ",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "柏",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-04T10:03:00.000Z_福岡_vs_広島",
+    "kickoffTime": "2025-06-04T10:03:00.000Z",
     "homeTeam": {
       "name": "福岡",
       "id": null,
@@ -28498,14 +28465,47 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "Jリーグカップ_2025-06-04T10:03:00.000Z_湘南_vs_磐田",
+    "kickoffTime": "2025-06-04T10:03:00.000Z",
+    "homeTeam": {
+      "name": "湘南",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "磐田",
+      "id": null,
+      "players": []
+    },
+    "league": "Jリーグカップ",
+    "matchday": 0,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
