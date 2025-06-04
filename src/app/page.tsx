@@ -9,7 +9,12 @@ import { SignupForm } from "@/components/SignupForm";
 import Link from "next/link";
 import MatchList from "@/components/MatchList";
 import { Match } from "@/types/match";
-import teamLeagueNames from "@/data/team_league_names.json";
+import rawTeamLeagueNames from "@/data/team_league_names.json" assert { type: "json" };
+
+const teamLeagueNames = {
+  ...rawTeamLeagueNames,
+  leagues: Object.values(rawTeamLeagueNames.leagues),
+};
 
 export default function HomePage() {
   const { user, logout, isInitialized } = useAuth();
@@ -55,7 +60,6 @@ export default function HomePage() {
         <>
           <h1 className="text-3xl font-bold mb-8 text-center">ログイン</h1>
 
-          {/* ✅ フォーム並びを中央揃え＋間を詰める */}
           <div className="flex flex-col md:flex-row gap-2 justify-center items-start">
             <div className="w-[300px]">
               <LoginForm />
@@ -65,7 +69,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* ✅ フォームの下にパスワードリセットリンク */}
           <div className="text-center mt-4">
             <Link href="/password-reset" className="text-blue-600 hover:underline text-sm">
               パスワードを忘れた方はこちら

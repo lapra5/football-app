@@ -1,6 +1,10 @@
 const nextConfig = {
   reactStrictMode: true,
 
+  experimental: {
+    jsonModules: true, // ← これを追加！
+  },
+
   async headers() {
     return [
       {
@@ -26,4 +30,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-
