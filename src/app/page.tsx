@@ -12,14 +12,8 @@ import { Match } from "@/types/match";
 import rawTeamLeagueNames from "@/data/team_league_names.json" assert { type: "json" };
 import type { TeamLeagueNames } from "@/components/MatchList";
 
-// leagues: { "0": "J1リーグ", ... } → [{ jp: "J1リーグ", en: "J1リーグ" }, ...] に変換
-const teamLeagueNames: TeamLeagueNames = {
-  ...rawTeamLeagueNames,
-  leagues: Object.values(rawTeamLeagueNames.leagues).map((name) => ({
-    jp: name,
-    en: name,
-  })),
-};
+const teamLeagueNames = rawTeamLeagueNames as TeamLeagueNames;
+
 
 export default function HomePage() {
   const { user, logout, isInitialized } = useAuth();
