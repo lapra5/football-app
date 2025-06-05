@@ -12,7 +12,7 @@ interface TeamInfo {
   logo: string;
 }
 
-interface TeamLeagueNames {
+export interface TeamLeagueNames {
   teams: TeamInfo[];
   leagues: { en: string; jp: string; leaguesId?: number }[];
 }

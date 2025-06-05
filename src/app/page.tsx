@@ -10,10 +10,15 @@ import Link from "next/link";
 import MatchList from "@/components/MatchList";
 import { Match } from "@/types/match";
 import rawTeamLeagueNames from "@/data/team_league_names.json" assert { type: "json" };
+import type { TeamLeagueNames } from "@/components/MatchList";
 
-const teamLeagueNames = {
+// leagues: { "0": "J1リーグ", ... } → [{ jp: "J1リーグ", en: "J1リーグ" }, ...] に変換
+const teamLeagueNames: TeamLeagueNames = {
   ...rawTeamLeagueNames,
-  leagues: Object.values(rawTeamLeagueNames.leagues),
+  leagues: Object.values(rawTeamLeagueNames.leagues).map((name) => ({
+    jp: name,
+    en: name,
+  })),
 };
 
 export default function HomePage() {
@@ -59,7 +64,6 @@ export default function HomePage() {
       {!user ? (
         <>
           <h1 className="text-3xl font-bold mb-8 text-center">ログイン</h1>
-
           <div className="flex flex-col md:flex-row gap-2 justify-center items-start">
             <div className="w-[300px]">
               <LoginForm />
@@ -68,7 +72,6 @@ export default function HomePage() {
               <SignupForm />
             </div>
           </div>
-
           <div className="text-center mt-4">
             <Link href="/password-reset" className="text-blue-600 hover:underline text-sm">
               パスワードを忘れた方はこちら
