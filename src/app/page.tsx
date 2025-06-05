@@ -12,8 +12,8 @@ import { Match } from "@/types/match";
 import rawTeamLeagueNames from "@/data/team_league_names.json" assert { type: "json" };
 import type { TeamLeagueNames } from "@/components/MatchList";
 
+// ✅ 型の変換不要！そのまま型アサーションするだけでOK
 const teamLeagueNames = rawTeamLeagueNames as TeamLeagueNames;
-
 
 export default function HomePage() {
   const { user, logout, isInitialized } = useAuth();
