@@ -19845,63 +19845,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "524119",
-    "kickoffTime": "2025-05-06T19:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "UEFA Champions League",
-      "jp": "UEFAチャンピオンズリーグ"
-    },
-    "homeTeam": {
-      "id": 108,
-      "name": {
-        "jp": "インテル",
-        "en": "FC Internazionale Milano"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/108.svg"
-    },
-    "awayTeam": {
-      "id": 81,
-      "name": {
-        "jp": "バルセロナ",
-        "en": "FC Barcelona"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/81.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 3,
-        "home": 3
-      },
-      "winner": "HOME_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 2
-      },
-      "fullTime": {
-        "away": 3,
-        "home": 4
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "J1_2025-05-07T10:03:00.000Z_湘南_vs_広島",
     "kickoffTime": "2025-05-07T10:03:00.000Z",
     "matchday": 15,
@@ -20042,7 +19985,7 @@
     "matchday": 2,
     "league": {
       "en": "UEFA Champions League",
-      "jp": "UEFAチャンピオンズリーグ"
+      "jp": "UEFA Champions League"
     },
     "homeTeam": {
       "id": 524,
@@ -20103,7 +20046,7 @@
     "matchday": 1,
     "league": {
       "en": "Championship",
-      "jp": "EFLチャンピオンシップ（イングランド2部）"
+      "jp": "Championship"
     },
     "homeTeam": {
       "id": 387,
@@ -20131,15 +20074,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 3
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -20152,7 +20095,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 672,
@@ -20209,7 +20152,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 11,
@@ -20266,7 +20209,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 98,
@@ -20323,7 +20266,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 275,
@@ -20347,15 +20290,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -20368,7 +20323,7 @@
     "matchday": 1,
     "league": {
       "en": "Championship",
-      "jp": "EFLチャンピオンシップ（イングランド2部）"
+      "jp": "Championship"
     },
     "homeTeam": {
       "id": 1076,
@@ -20597,7 +20552,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 95,
@@ -20654,7 +20609,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 7397,
@@ -20711,7 +20666,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 12,
@@ -20735,15 +20690,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -20756,7 +20723,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 28,
@@ -20780,15 +20747,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 3
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -20801,7 +20780,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 720,
@@ -20866,7 +20845,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 36,
@@ -20931,7 +20910,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 63,
@@ -20988,7 +20967,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 349,
@@ -21012,15 +20991,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -21033,7 +21024,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 340,
@@ -21063,15 +21054,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -21084,7 +21087,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 76,
@@ -21112,15 +21115,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -21133,7 +21148,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 558,
@@ -21190,7 +21205,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 683,
@@ -21247,7 +21262,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5530,
@@ -21304,7 +21319,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5529,
@@ -21365,7 +21380,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 110,
@@ -21422,7 +21437,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 5,
@@ -21489,7 +21504,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 298,
@@ -21513,15 +21528,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -21534,7 +21561,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 89,
@@ -21595,7 +21622,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 1044,
@@ -21619,15 +21646,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -21640,7 +21679,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 1920,
@@ -21697,7 +21736,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 1903,
@@ -21758,7 +21797,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 445,
@@ -21819,7 +21858,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 1911,
@@ -21847,15 +21886,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 3
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -21868,7 +21919,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 3984,
@@ -21925,7 +21976,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 78,
@@ -21986,7 +22037,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 547,
@@ -22018,15 +22069,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -22039,7 +22102,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 519,
@@ -22100,7 +22163,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 532,
@@ -22157,7 +22220,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 533,
@@ -22214,7 +22277,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 529,
@@ -22275,7 +22338,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 518,
@@ -22332,7 +22395,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 511,
@@ -22389,7 +22452,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 512,
@@ -22446,7 +22509,7 @@
     "matchday": 33,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 548,
@@ -22507,7 +22570,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 6618,
@@ -22564,7 +22627,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5533,
@@ -22629,7 +22692,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4364,
@@ -22686,7 +22749,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1767,
@@ -22743,7 +22806,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1782,
@@ -22800,7 +22863,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1783,
@@ -23577,7 +23640,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 684,
@@ -23634,7 +23697,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 115,
@@ -23691,7 +23754,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 67,
@@ -23748,7 +23811,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 745,
@@ -23805,7 +23868,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 675,
@@ -23866,7 +23929,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 666,
@@ -23923,7 +23986,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 450,
@@ -23980,7 +24043,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 66,
@@ -24004,15 +24067,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24025,7 +24100,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 351,
@@ -24082,7 +24157,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 73,
@@ -24110,15 +24185,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -24131,7 +24218,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 3,
@@ -24188,7 +24275,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 81,
@@ -24245,7 +24332,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 9136,
@@ -24302,7 +24389,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 678,
@@ -24367,7 +24454,7 @@
     "matchday": 32,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 682,
@@ -24428,7 +24515,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 19,
@@ -24485,7 +24572,7 @@
     "matchday": 36,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 64,
@@ -24550,7 +24637,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 586,
@@ -24607,7 +24694,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 77,
@@ -24664,7 +24751,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 583,
@@ -24721,7 +24808,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5543,
@@ -24778,7 +24865,7 @@
     "matchday": 33,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 10,
@@ -24839,7 +24926,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 113,
@@ -24896,7 +24983,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1778,
@@ -24953,7 +25040,7 @@
     "matchday": 35,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 90,
@@ -25010,7 +25097,7 @@
     "matchday": 33,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 810,
@@ -25067,7 +25154,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1769,
@@ -25124,7 +25211,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1766,
@@ -25181,7 +25268,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1770,
@@ -25238,7 +25325,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 454,
@@ -25295,7 +25382,7 @@
     "matchday": 36,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 102,
@@ -25352,7 +25439,7 @@
     "matchday": 2,
     "league": {
       "en": "Championship",
-      "jp": "EFLチャンピオンシップ（イングランド2部）"
+      "jp": "Championship"
     },
     "homeTeam": {
       "id": 356,
@@ -25401,7 +25488,7 @@
     "matchday": 8,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 6685,
@@ -25458,7 +25545,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 250,
@@ -25515,7 +25602,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 92,
@@ -25576,7 +25663,7 @@
     "matchday": 2,
     "league": {
       "en": "Championship",
-      "jp": "EFLチャンピオンシップ（イングランド2部）"
+      "jp": "Championship"
     },
     "homeTeam": {
       "id": 71,
@@ -25633,7 +25720,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 559,
@@ -25825,7 +25912,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 263,
@@ -25882,7 +25969,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 94,
@@ -25939,7 +26026,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 1911,
@@ -25996,7 +26083,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 677,
@@ -26053,7 +26140,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 676,
@@ -26114,7 +26201,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 675,
@@ -26175,7 +26262,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 718,
@@ -26232,7 +26319,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 1915,
@@ -26297,7 +26384,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 674,
@@ -26354,7 +26441,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 666,
@@ -26415,7 +26502,7 @@
     "matchday": 33,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 672,
@@ -26472,7 +26559,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 86,
@@ -26533,7 +26620,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 79,
@@ -26590,7 +26677,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 87,
@@ -26647,7 +26734,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 82,
@@ -26704,7 +26791,7 @@
     "matchday": 36,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 80,
@@ -26761,7 +26848,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 496,
@@ -26822,7 +26909,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5531,
@@ -26879,7 +26966,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 58,
@@ -26936,7 +27023,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 61,
@@ -27938,7 +28025,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 15,
@@ -27999,7 +28086,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 721,
@@ -28060,7 +28147,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 2,
@@ -28121,7 +28208,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 17,
@@ -28182,7 +28269,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 44,
@@ -28239,7 +28326,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 18,
@@ -28302,7 +28389,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 16,
@@ -28359,7 +28446,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 20,
@@ -28420,7 +28507,7 @@
     "matchday": 34,
     "league": {
       "en": "Bundesliga",
-      "jp": "ブンデスリーガ（ドイツ1部）"
+      "jp": "Bundesliga"
     },
     "homeTeam": {
       "id": 4,
@@ -28481,7 +28568,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 582,
@@ -28538,7 +28625,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 498,
@@ -28599,7 +28686,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5613,
@@ -28656,7 +28743,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 503,
@@ -28717,7 +28804,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 10340,
@@ -28774,7 +28861,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 712,
@@ -28835,7 +28922,7 @@
     "matchday": 34,
     "league": {
       "en": "Primeira Liga",
-      "jp": "プリメイラ・リーガ（ポルトガル1部）"
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
       "id": 5602,
@@ -28892,7 +28979,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 107,
@@ -28949,7 +29036,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1837,
@@ -29006,7 +29093,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 516,
@@ -29067,7 +29154,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 523,
@@ -29124,7 +29211,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 522,
@@ -29181,7 +29268,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 527,
@@ -29238,7 +29325,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 521,
@@ -29303,7 +29390,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 576,
@@ -29360,7 +29447,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 543,
@@ -29417,7 +29504,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 546,
@@ -29478,7 +29565,7 @@
     "matchday": 34,
     "league": {
       "en": "Ligue 1",
-      "jp": "リーグ・アン（フランス1部）"
+      "jp": "Ligue 1"
     },
     "homeTeam": {
       "id": 524,
@@ -29539,7 +29626,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1780,
@@ -29596,7 +29683,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1776,
@@ -30058,7 +30145,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 62,
@@ -30121,7 +30208,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 678,
@@ -30178,7 +30265,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 682,
@@ -30239,7 +30326,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 1920,
@@ -30296,7 +30383,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 671,
@@ -30361,7 +30448,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 681,
@@ -30418,7 +30505,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 684,
@@ -30475,7 +30562,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 683,
@@ -30532,7 +30619,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 673,
@@ -30593,7 +30680,7 @@
     "matchday": 34,
     "league": {
       "en": "Eredivisie",
-      "jp": "エールディヴィジ（オランダ1部）"
+      "jp": "Eredivisie"
     },
     "homeTeam": {
       "id": 6806,
@@ -30654,7 +30741,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 563,
@@ -30711,7 +30798,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 402,
@@ -30768,7 +30855,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 338,
@@ -30825,7 +30912,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 57,
@@ -30886,7 +30973,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 78,
@@ -30943,7 +31030,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 558,
@@ -31000,7 +31087,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 81,
@@ -31057,7 +31144,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 559,
@@ -31114,7 +31201,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 95,
@@ -31171,7 +31258,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 89,
@@ -31232,7 +31319,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 92,
@@ -31293,7 +31380,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 250,
@@ -31350,7 +31437,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 275,
@@ -31407,7 +31494,7 @@
     "matchday": 37,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 79,
@@ -31464,7 +31551,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 104,
@@ -31521,7 +31608,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 99,
@@ -31578,7 +31665,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 450,
@@ -31635,7 +31722,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 108,
@@ -31692,7 +31779,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 109,
@@ -31749,7 +31836,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 5890,
@@ -31806,7 +31893,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 5911,
@@ -31863,7 +31950,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 112,
@@ -31924,7 +32011,7 @@
     "matchday": 37,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 100,
@@ -31981,7 +32068,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1779,
@@ -32038,7 +32125,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1777,
@@ -32095,7 +32182,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4245,
@@ -32152,7 +32239,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1783,
@@ -32209,7 +32296,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4286,
@@ -32266,7 +32353,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1771,
@@ -32323,7 +32410,7 @@
     "matchday": 9,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 6684,
@@ -32380,7 +32467,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 397,
@@ -32433,7 +32520,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 354,
@@ -32482,7 +32569,7 @@
     "matchday": 37,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 65,
@@ -32932,7 +33019,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 7397,
@@ -32969,14 +33056,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -32989,7 +33076,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 113,
@@ -33026,14 +33113,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -33046,7 +33133,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 90,
@@ -33083,14 +33170,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 1,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33189,11 +33276,11 @@
   },
   {
     "matchId": "536449",
-    "kickoffTime": "2025-05-24T14:00:00Z",
-    "matchday": 0,
+    "kickoffTime": "2025-05-24T14:01:00Z",
+    "matchday": null,
     "league": {
       "en": "Championship",
-      "jp": "EFLチャンピオンシップ（イングランド2部）"
+      "jp": "Championship"
     },
     "homeTeam": {
       "id": 356,
@@ -33230,14 +33317,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -33250,7 +33337,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 86,
@@ -33291,14 +33378,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 2
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33311,7 +33398,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 103,
@@ -33348,14 +33435,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -33368,7 +33455,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 745,
@@ -33405,14 +33492,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 3
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 3
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33425,7 +33512,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 80,
@@ -33462,14 +33549,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 2
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33482,7 +33569,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 98,
@@ -33519,14 +33606,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -33539,7 +33626,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 263,
@@ -33576,14 +33663,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 1,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33596,7 +33683,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 82,
@@ -33633,14 +33720,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 1,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 2,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33653,7 +33740,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 87,
@@ -33694,14 +33781,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33714,7 +33801,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1765,
@@ -33751,14 +33838,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 1,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 1,
-        "home": 2
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33771,7 +33858,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1776,
@@ -33808,14 +33895,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 2,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -33828,7 +33915,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1766,
@@ -33853,14 +33940,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": "DRAW",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34548,7 +34635,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 298,
@@ -34585,14 +34672,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 4,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34605,7 +34692,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1767,
@@ -34642,14 +34729,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34662,7 +34749,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 94,
@@ -34699,14 +34786,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 1,
-        "home": 3
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 2,
-        "home": 4
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34719,7 +34806,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 1044,
@@ -34776,7 +34863,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 63,
@@ -34833,7 +34920,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 349,
@@ -34890,7 +34977,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 64,
@@ -34955,7 +35042,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 66,
@@ -35012,7 +35099,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 67,
@@ -35069,7 +35156,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 351,
@@ -35126,7 +35213,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 340,
@@ -35193,7 +35280,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 73,
@@ -35254,7 +35341,7 @@
     "matchday": 38,
     "league": {
       "en": "Premier League",
-      "jp": "プレミアリーグ（イングランド1部）"
+      "jp": "Premier League"
     },
     "homeTeam": {
       "id": 76,
@@ -35311,7 +35398,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 102,
@@ -35352,14 +35439,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -35372,7 +35459,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 445,
@@ -35409,14 +35496,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -35429,7 +35516,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 110,
@@ -35466,14 +35553,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -35486,7 +35573,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 586,
@@ -35523,14 +35610,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -35543,7 +35630,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 115,
@@ -35580,14 +35667,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -35600,7 +35687,7 @@
     "matchday": 38,
     "league": {
       "en": "Serie A",
-      "jp": "セリエA（イタリア1部）"
+      "jp": "Serie A"
     },
     "homeTeam": {
       "id": 454,
@@ -35637,14 +35724,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -35657,7 +35744,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1769,
@@ -35694,14 +35781,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 2,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -35714,7 +35801,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1778,
@@ -35751,14 +35838,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 1,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -35771,7 +35858,7 @@
     "matchday": 38,
     "league": {
       "en": "Primera Division",
-      "jp": "ラ・リーガ（スペイン1部）"
+      "jp": "Primera Division"
     },
     "homeTeam": {
       "id": 77,
@@ -35808,14 +35895,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 2,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 3,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -35828,7 +35915,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1782,
@@ -35865,14 +35952,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 1,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 1,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -35885,7 +35972,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 3984,
@@ -35910,14 +35997,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 2,
-        "home": 0
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 2,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -35930,7 +36017,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4286,
@@ -35955,14 +36042,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": "HOME_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -37010,7 +37097,7 @@
     "matchday": 0,
     "league": {
       "en": "UEFA Champions League",
-      "jp": "UEFAチャンピオンズリーグ"
+      "jp": "UEFA Champions League"
     },
     "homeTeam": {
       "id": 524,
@@ -37067,7 +37154,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1777,
@@ -37124,7 +37211,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1780,
@@ -37156,6 +37243,18 @@
       },
       "fullTime": {
         "away": 2,
+        "home": 0
+      },
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
         "home": 0
       }
     },
@@ -37529,7 +37628,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4364,
@@ -37586,7 +37685,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 6685,
@@ -37643,7 +37742,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4245,
@@ -37700,7 +37799,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1783,
@@ -37757,7 +37856,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1779,
@@ -37814,7 +37913,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1837,
@@ -37871,7 +37970,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1771,
@@ -37904,6 +38003,18 @@
       "fullTime": {
         "away": 1,
         "home": 2
+      },
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -37916,7 +38027,7 @@
     "matchday": 11,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 6684,
@@ -38153,7 +38264,7 @@
     "matchday": 10,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1770,
@@ -38178,14 +38289,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -38963,7 +39086,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1765,
@@ -39008,7 +39131,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1770,
@@ -39053,7 +39176,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1769,
@@ -39098,7 +39221,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1778,
@@ -39143,7 +39266,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 4286,
@@ -39188,7 +39311,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1782,
@@ -39233,7 +39356,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 3984,
@@ -39278,7 +39401,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1767,
@@ -39323,7 +39446,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1776,
@@ -39368,7 +39491,7 @@
     "matchday": 12,
     "league": {
       "en": "Campeonato Brasileiro Série A",
-      "jp": "カンピオナート・ブラジレイロ・セリエA（ブラジル1部）"
+      "jp": "Campeonato Brasileiro Série A"
     },
     "homeTeam": {
       "id": 1766,
