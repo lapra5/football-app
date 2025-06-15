@@ -21015,210 +21015,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "498963",
-    "kickoffTime": "2025-05-15T17:00:00Z",
-    "matchday": 36,
-    "league": {
-      "en": "Primera Division",
-      "jp": "Primera Division"
-    },
-    "homeTeam": {
-      "id": 79,
-      "name": {
-        "jp": "オサスナ",
-        "en": "CA Osasuna"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/79.svg"
-    },
-    "awayTeam": {
-      "id": 78,
-      "name": {
-        "jp": "アトレティコ・マドリード",
-        "en": "Club Atlético de Madrid"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/78.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "HOME_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 1
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 2
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "498968",
-    "kickoffTime": "2025-05-15T17:00:00Z",
-    "matchday": 36,
-    "league": {
-      "en": "Primera Division",
-      "jp": "Primera Division"
-    },
-    "homeTeam": {
-      "id": 87,
-      "name": {
-        "jp": "ラーヨ・バジェカーノ",
-        "en": "Rayo Vallecano de Madrid"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/87.svg"
-    },
-    "awayTeam": {
-      "id": 90,
-      "name": {
-        "jp": "ベティス",
-        "en": "Real Betis Balompié"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/90.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "DRAW",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 2
-      },
-      "fullTime": {
-        "away": 2,
-        "home": 2
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "498965",
-    "kickoffTime": "2025-05-15T19:30:00Z",
-    "matchday": 36,
-    "league": {
-      "en": "Primera Division",
-      "jp": "Primera Division"
-    },
-    "homeTeam": {
-      "id": 82,
-      "name": {
-        "jp": "ヘタフェ",
-        "en": "Getafe CF"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/82.svg"
-    },
-    "awayTeam": {
-      "id": 77,
-      "name": {
-        "jp": "アスレティック・ビルバオ",
-        "en": "Athletic Club"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/77.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "winner": "AWAY_TEAM",
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
-      "halfTime": {
-        "home": 0,
-        "away": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "498972",
-    "kickoffTime": "2025-05-15T19:30:00Z",
-    "matchday": 36,
-    "league": {
-      "en": "Primera Division",
-      "jp": "Primera Division"
-    },
-    "homeTeam": {
-      "id": 80,
-      "name": {
-        "jp": "エスパニョール",
-        "en": "RCD Espanyol de Barcelona"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/80.svg"
-    },
-    "awayTeam": {
-      "id": 81,
-      "name": {
-        "jp": "バルセロナ",
-        "en": "FC Barcelona"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/81.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "winner": "AWAY_TEAM",
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
-      "halfTime": {
-        "home": 0,
-        "away": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "503721",
     "kickoffTime": "2025-05-16T18:00:00Z",
     "matchday": 34,
@@ -22551,15 +22347,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 4
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 4,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -22720,15 +22528,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -22826,15 +22646,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -23168,15 +23000,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "halfTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      },
       "fullTime": {
         "home": 0,
         "away": 3
-      },
-      "halfTime": {
-        "home": 0,
-        "away": 2
       }
     },
     "startingMembers": [],
@@ -24678,15 +24522,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -25484,15 +25340,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -25529,15 +25397,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -25696,15 +25576,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -25741,15 +25633,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -26246,15 +26150,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -26519,15 +26435,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -26621,15 +26549,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -27508,8 +27448,8 @@
   },
   {
     "matchId": "536449",
-    "kickoffTime": "2025-05-24T14:01:00Z",
-    "matchday": null,
+    "kickoffTime": "2025-05-24T14:00:00Z",
+    "matchday": 0,
     "league": {
       "en": "Championship",
       "jp": "Championship"
@@ -27549,14 +27489,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 2,
-        "home": 1
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -29075,14 +29015,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -29132,14 +29072,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -29189,14 +29129,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -29254,14 +29194,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -29311,14 +29251,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -29368,14 +29308,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -29425,14 +29365,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -29492,14 +29432,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -29553,14 +29493,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 4,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -29610,14 +29550,14 @@
         "away": 0,
         "home": 0
       },
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -33703,14 +33643,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
       "winner": "AWAY_TEAM",
-      "fullTime": {
-        "away": 1,
+      "halfTime": {
+        "away": 2,
         "home": 0
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -33748,14 +33688,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
-      "winner": "DRAW",
       "fullTime": {
         "away": 0,
-        "home": 0
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -34348,8 +34288,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-15T05:00:00.000Z_新潟_vs_横浜FM",
-    "kickoffTime": "2025-06-15T05:00:00.000Z",
+    "matchId": "J1_2025-06-15T05:03:00.000Z_新潟_vs_横浜FM",
+    "kickoffTime": "2025-06-15T05:03:00.000Z",
     "matchday": 20,
     "league": {
       "en": "J1",
@@ -34379,112 +34319,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-06-15T05:00:00.000Z_札幌_vs_今治",
-    "kickoffTime": "2025-06-15T05:00:00.000Z",
-    "matchday": 19,
-    "league": {
-      "en": "J2",
-      "jp": "J2"
-    },
-    "homeTeam": {
-      "id": null,
-      "name": {
-        "jp": "札幌",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": null,
-      "name": {
-        "jp": "今治",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-06-15T05:00:00.000Z_富山_vs_藤枝",
-    "kickoffTime": "2025-06-15T05:00:00.000Z",
-    "matchday": 19,
-    "league": {
-      "en": "J2",
-      "jp": "J2"
-    },
-    "homeTeam": {
-      "id": null,
-      "name": {
-        "jp": "富山",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": null,
-      "name": {
-        "jp": "藤枝",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-06-15T05:00:00.000Z_山口_vs_いわき",
-    "kickoffTime": "2025-06-15T05:00:00.000Z",
+    "matchId": "J2_2025-06-15T05:03:00.000Z_山口_vs_いわき",
+    "kickoffTime": "2025-06-15T05:03:00.000Z",
     "matchday": 19,
     "league": {
       "en": "J2",
@@ -34514,8 +34364,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -34528,8 +34378,98 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-06-15T07:00:00.000Z_山形_vs_仙台",
-    "kickoffTime": "2025-06-15T07:00:00.000Z",
+    "matchId": "J2_2025-06-15T05:03:00.000Z_富山_vs_藤枝",
+    "kickoffTime": "2025-06-15T05:03:00.000Z",
+    "matchday": 19,
+    "league": {
+      "en": "J2",
+      "jp": "J2"
+    },
+    "homeTeam": {
+      "id": null,
+      "name": {
+        "jp": "富山",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": null,
+      "name": {
+        "jp": "藤枝",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J2_2025-06-15T05:03:00.000Z_札幌_vs_今治",
+    "kickoffTime": "2025-06-15T05:03:00.000Z",
+    "matchday": 19,
+    "league": {
+      "en": "J2",
+      "jp": "J2"
+    },
+    "homeTeam": {
+      "id": null,
+      "name": {
+        "jp": "札幌",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": null,
+      "name": {
+        "jp": "今治",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 2,
+        "away": 2
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": null
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J2_2025-06-15T07:01:00.000Z_山形_vs_仙台",
+    "kickoffTime": "2025-06-15T07:01:00.000Z",
     "matchday": 19,
     "league": {
       "en": "J2",
@@ -34559,22 +34499,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 4
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-06-15T07:00:00.000Z_福島_vs_栃木SC",
-    "kickoffTime": "2025-06-15T07:00:00.000Z",
+    "matchId": "J3_2025-06-15T07:03:00.000Z_福島_vs_栃木SC",
+    "kickoffTime": "2025-06-15T07:03:00.000Z",
     "matchday": 16,
     "league": {
       "en": "J3",
@@ -34604,8 +34544,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -34618,53 +34558,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-06-15T08:00:00.000Z_磐田_vs_愛媛",
-    "kickoffTime": "2025-06-15T08:00:00.000Z",
-    "matchday": 19,
-    "league": {
-      "en": "J2",
-      "jp": "J2"
-    },
-    "homeTeam": {
-      "id": null,
-      "name": {
-        "jp": "磐田",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": null,
-      "name": {
-        "jp": "愛媛",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-06-15T08:00:00.000Z_長崎_vs_大宮",
-    "kickoffTime": "2025-06-15T08:00:00.000Z",
+    "matchId": "J2_2025-06-15T08:03:00.000Z_長崎_vs_大宮",
+    "kickoffTime": "2025-06-15T08:03:00.000Z",
     "matchday": 19,
     "league": {
       "en": "J2",
@@ -34694,8 +34589,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 3
       },
       "halfTime": {
         "home": null,
@@ -34708,17 +34603,17 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-15T09:00:00.000Z_東京Ｖ_vs_柏",
-    "kickoffTime": "2025-06-15T09:00:00.000Z",
-    "matchday": 20,
+    "matchId": "J2_2025-06-15T08:03:00.000Z_磐田_vs_愛媛",
+    "kickoffTime": "2025-06-15T08:03:00.000Z",
+    "matchday": 19,
     "league": {
-      "en": "J1",
-      "jp": "J1"
+      "en": "J2",
+      "jp": "J2"
     },
     "homeTeam": {
       "id": null,
       "name": {
-        "jp": "東京Ｖ",
+        "jp": "磐田",
         "en": ""
       },
       "players": [],
@@ -34728,7 +34623,7 @@
     "awayTeam": {
       "id": null,
       "name": {
-        "jp": "柏",
+        "jp": "愛媛",
         "en": ""
       },
       "players": [],
@@ -34739,22 +34634,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-15T09:00:00.000Z_神戸_vs_名古屋",
-    "kickoffTime": "2025-06-15T09:00:00.000Z",
+    "matchId": "J1_2025-06-15T09:03:00.000Z_神戸_vs_名古屋",
+    "kickoffTime": "2025-06-15T09:03:00.000Z",
     "matchday": 20,
     "league": {
       "en": "J1",
@@ -34784,67 +34679,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-15T09:00:00.000Z_岡山_vs_福岡",
-    "kickoffTime": "2025-06-15T09:00:00.000Z",
-    "matchday": 20,
-    "league": {
-      "en": "J1",
-      "jp": "J1"
-    },
-    "homeTeam": {
-      "id": null,
-      "name": {
-        "jp": "岡山",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": null,
-      "name": {
-        "jp": "福岡",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J2_2025-06-15T09:00:00.000Z_大分_vs_秋田",
-    "kickoffTime": "2025-06-15T09:00:00.000Z",
+    "matchId": "J2_2025-06-15T09:03:00.000Z_大分_vs_秋田",
+    "kickoffTime": "2025-06-15T09:03:00.000Z",
     "matchday": 19,
     "league": {
       "en": "J2",
@@ -34874,22 +34724,112 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-15T09:30:00.000Z_清水_vs_Ｇ大阪",
-    "kickoffTime": "2025-06-15T09:30:00.000Z",
+    "matchId": "J1_2025-06-15T09:04:00.000Z_東京Ｖ_vs_柏",
+    "kickoffTime": "2025-06-15T09:04:00.000Z",
+    "matchday": 20,
+    "league": {
+      "en": "J1",
+      "jp": "J1"
+    },
+    "homeTeam": {
+      "id": null,
+      "name": {
+        "jp": "東京Ｖ",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": null,
+      "name": {
+        "jp": "柏",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J1_2025-06-15T09:04:00.000Z_岡山_vs_福岡",
+    "kickoffTime": "2025-06-15T09:04:00.000Z",
+    "matchday": 20,
+    "league": {
+      "en": "J1",
+      "jp": "J1"
+    },
+    "homeTeam": {
+      "id": null,
+      "name": {
+        "jp": "岡山",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": null,
+      "name": {
+        "jp": "福岡",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 0,
+        "away": 1
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J1_2025-06-15T09:33:00.000Z_清水_vs_Ｇ大阪",
+    "kickoffTime": "2025-06-15T09:33:00.000Z",
     "matchday": 20,
     "league": {
       "en": "J1",
@@ -34919,8 +34859,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "halfTime": {
         "home": null,
@@ -34933,8 +34873,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-06-15T09:30:00.000Z_甲府_vs_熊本",
-    "kickoffTime": "2025-06-15T09:30:00.000Z",
+    "matchId": "J2_2025-06-15T09:33:00.000Z_甲府_vs_熊本",
+    "kickoffTime": "2025-06-15T09:33:00.000Z",
     "matchday": 19,
     "league": {
       "en": "J2",
@@ -34964,8 +34904,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,
@@ -34978,8 +34918,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-06-15T10:00:00.000Z_徳島_vs_千葉",
-    "kickoffTime": "2025-06-15T10:00:00.000Z",
+    "matchId": "J2_2025-06-15T10:03:00.000Z_徳島_vs_千葉",
+    "kickoffTime": "2025-06-15T10:03:00.000Z",
     "matchday": 19,
     "league": {
       "en": "J2",
@@ -35009,8 +34949,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 3
       },
       "halfTime": {
         "home": null,
@@ -35023,8 +34963,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-06-15T10:00:00.000Z_群馬_vs_讃岐",
-    "kickoffTime": "2025-06-15T10:00:00.000Z",
+    "matchId": "J3_2025-06-15T10:03:00.000Z_群馬_vs_讃岐",
+    "kickoffTime": "2025-06-15T10:03:00.000Z",
     "matchday": 16,
     "league": {
       "en": "J3",
@@ -35054,8 +34994,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 3
       },
       "halfTime": {
         "home": null,
