@@ -26786,15 +26786,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
+      "winner": "DRAW",
       "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
       "fullTime": {
-        "away": null,
-        "home": null
+        "home": 0,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 0
       }
     },
     "startingMembers": [],
@@ -26831,15 +26831,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 3
       },
       "halfTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 2
       }
     },
     "startingMembers": [],
