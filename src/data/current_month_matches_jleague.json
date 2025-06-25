@@ -6831,8 +6831,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-25T10:00:00.000Z_川崎Ｆ_vs_新潟",
-    "kickoffTime": "2025-06-25T10:00:00.000Z",
+    "matchId": "J1_2025-06-25T10:03:00.000Z_川崎Ｆ_vs_新潟",
+    "kickoffTime": "2025-06-25T10:03:00.000Z",
     "homeTeam": {
       "name": "川崎Ｆ",
       "id": null,
@@ -6850,22 +6850,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-06-25T10:30:00.000Z_横浜FM_vs_FC東京",
-    "kickoffTime": "2025-06-25T10:30:00.000Z",
+    "matchId": "J1_2025-06-25T10:33:00.000Z_横浜FM_vs_FC東京",
+    "kickoffTime": "2025-06-25T10:33:00.000Z",
     "homeTeam": {
       "name": "横浜FM",
       "id": null,
@@ -6883,14 +6883,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 3
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
