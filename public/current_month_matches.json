@@ -25229,6 +25229,18 @@
       "halfTime": {
         "home": 0,
         "away": 0
+      },
+      "regularTime": {
+        "home": 0,
+        "away": 0
+      },
+      "extraTime": {
+        "home": 0,
+        "away": 0
+      },
+      "penalties": {
+        "home": 0,
+        "away": 0
       }
     },
     "startingMembers": [],
@@ -25523,6 +25535,18 @@
       "halfTime": {
         "home": 0,
         "away": 1
+      },
+      "regularTime": {
+        "home": 0,
+        "away": 0
+      },
+      "extraTime": {
+        "home": 0,
+        "away": 0
+      },
+      "penalties": {
+        "home": 0,
+        "away": 0
       }
     },
     "startingMembers": [],
@@ -26741,15 +26765,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "duration": "REGULAR",
       "fullTime": {
-        "home": 0,
-        "away": 3
+        "home": null,
+        "away": null
       },
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "home": null,
+        "away": null
       }
     },
     "startingMembers": [],
