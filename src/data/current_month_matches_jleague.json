@@ -24156,8 +24156,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-06-27T04:00:00.000Z_福島_vs_八戸",
-    "kickoffTime": "2025-06-27T04:00:00.000Z",
+    "matchId": "J3_2025-06-27T04:03:00.000Z_福島_vs_八戸",
+    "kickoffTime": "2025-06-27T04:03:00.000Z",
     "homeTeam": {
       "name": "福島",
       "id": null,
@@ -24175,14 +24175,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
