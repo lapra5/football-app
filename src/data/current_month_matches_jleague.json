@@ -7194,8 +7194,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-07-02T10:00:00.000Z_神戸_vs_広島",
-    "kickoffTime": "2025-07-02T10:00:00.000Z",
+    "matchId": "J1_2025-07-02T10:03:00.000Z_神戸_vs_広島",
+    "kickoffTime": "2025-07-02T10:03:00.000Z",
     "homeTeam": {
       "name": "神戸",
       "id": null,
@@ -7213,14 +7213,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
