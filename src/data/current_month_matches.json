@@ -25949,15 +25949,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -25994,15 +25994,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -26039,15 +26039,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -26084,15 +26084,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -26129,15 +26129,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 3
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -26174,15 +26174,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
-      },
+      "winner": "DRAW",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -34470,51 +34470,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "535081",
-    "kickoffTime": "2025-07-20T14:00:00Z",
-    "matchday": 15,
-    "league": {
-      "en": "Campeonato Brasileiro Série A",
-      "jp": "Campeonato Brasileiro Série A"
-    },
-    "homeTeam": {
-      "id": 6684,
-      "name": {
-        "jp": "SCインテルナシオナル",
-        "en": "SC Internacional"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/6684.svg"
-    },
-    "awayTeam": {
-      "id": 1837,
-      "name": {
-        "jp": "セアラーSC",
-        "en": "Ceará SC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1837.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "535080",
     "kickoffTime": "2025-07-20T19:00:00Z",
     "matchday": 15,
@@ -34541,6 +34496,51 @@
       "players": [],
       "englishplayers": [],
       "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "535081",
+    "kickoffTime": "2025-07-20T20:00:00Z",
+    "matchday": 15,
+    "league": {
+      "en": "Campeonato Brasileiro Série A",
+      "jp": "Campeonato Brasileiro Série A"
+    },
+    "homeTeam": {
+      "id": 6684,
+      "name": {
+        "jp": "SCインテルナシオナル",
+        "en": "SC Internacional"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/6684.svg"
+    },
+    "awayTeam": {
+      "id": 1837,
+      "name": {
+        "jp": "セアラーSC",
+        "en": "Ceará SC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1837.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -35056,7 +35056,7 @@
   },
   {
     "matchId": "535088",
-    "kickoffTime": "2025-07-24T00:30:00Z",
+    "kickoffTime": "2025-07-23T22:30:00Z",
     "matchday": 16,
     "league": {
       "en": "Campeonato Brasileiro Série A",
