@@ -16500,8 +16500,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-07-06T09:00:00.000Z_熊本_vs_磐田",
-    "kickoffTime": "2025-07-06T09:00:00.000Z",
+    "matchId": "J2_2025-07-06T09:03:00.000Z_熊本_vs_磐田",
+    "kickoffTime": "2025-07-06T09:03:00.000Z",
     "homeTeam": {
       "name": "熊本",
       "id": null,
@@ -16519,22 +16519,22 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-07-06T10:00:00.000Z_愛媛_vs_山形",
-    "kickoffTime": "2025-07-06T10:00:00.000Z",
+    "matchId": "J2_2025-07-06T10:03:00.000Z_愛媛_vs_山形",
+    "kickoffTime": "2025-07-06T10:03:00.000Z",
     "homeTeam": {
       "name": "愛媛",
       "id": null,
@@ -16552,14 +16552,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 3
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "AWAY_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
@@ -24750,8 +24750,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-07-06T09:00:00.000Z_長野_vs_FC大阪",
-    "kickoffTime": "2025-07-06T09:00:00.000Z",
+    "matchId": "J3_2025-07-06T09:03:00.000Z_長野_vs_FC大阪",
+    "kickoffTime": "2025-07-06T09:03:00.000Z",
     "homeTeam": {
       "name": "長野",
       "id": null,
@@ -24769,8 +24769,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       },
       "halfTime": {
         "home": null,
@@ -24783,8 +24783,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-07-06T10:00:00.000Z_岐阜_vs_相模原",
-    "kickoffTime": "2025-07-06T10:00:00.000Z",
+    "matchId": "J3_2025-07-06T10:03:00.000Z_岐阜_vs_相模原",
+    "kickoffTime": "2025-07-06T10:03:00.000Z",
     "homeTeam": {
       "name": "岐阜",
       "id": null,
@@ -24802,8 +24802,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,
