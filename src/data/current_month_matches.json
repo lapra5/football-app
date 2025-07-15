@@ -32486,15 +32486,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 1
       },
       "halfTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       }
     },
     "startingMembers": [],
@@ -32576,15 +32576,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
       "fullTime": {
-        "away": null,
-        "home": null
+        "home": 2,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 0
       }
     },
     "startingMembers": [],
