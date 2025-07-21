@@ -7821,8 +7821,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-07-21T09:00:00.000Z_福岡_vs_京都",
-    "kickoffTime": "2025-07-21T09:00:00.000Z",
+    "matchId": "J1_2025-07-21T09:03:00.000Z_福岡_vs_京都",
+    "kickoffTime": "2025-07-21T09:03:00.000Z",
     "homeTeam": {
       "name": "福岡",
       "id": null,
@@ -7840,8 +7840,8 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -31680,74 +31680,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J3_2025-07-21T10:00:00.000Z_岐阜_vs_奈良",
-    "kickoffTime": "2025-07-21T10:00:00.000Z",
-    "homeTeam": {
-      "name": "岐阜",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "奈良",
-      "id": null,
-      "players": []
-    },
-    "league": "J3",
-    "matchday": 21,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J3_2025-07-21T10:00:00.000Z_宮崎_vs_北九州",
-    "kickoffTime": "2025-07-21T10:00:00.000Z",
-    "homeTeam": {
-      "name": "宮崎",
-      "id": null,
-      "players": []
-    },
-    "awayTeam": {
-      "name": "北九州",
-      "id": null,
-      "players": []
-    },
-    "league": "J3",
-    "matchday": 21,
-    "status": "SCHEDULED",
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
-      "halfTime": {
-        "home": null,
-        "away": null
-      },
-      "winner": null
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "J3_2025-07-21T10:00:00.000Z_鹿児島_vs_FC大阪",
-    "kickoffTime": "2025-07-21T10:00:00.000Z",
+    "matchId": "J3_2025-07-21T10:03:00.000Z_鹿児島_vs_FC大阪",
+    "kickoffTime": "2025-07-21T10:03:00.000Z",
     "homeTeam": {
       "name": "鹿児島",
       "id": null,
@@ -31765,8 +31699,74 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
+        "home": 2,
+        "away": 1
+      },
+      "halfTime": {
         "home": null,
         "away": null
+      },
+      "winner": "HOME_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J3_2025-07-21T10:03:00.000Z_宮崎_vs_北九州",
+    "kickoffTime": "2025-07-21T10:03:00.000Z",
+    "homeTeam": {
+      "name": "宮崎",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "北九州",
+      "id": null,
+      "players": []
+    },
+    "league": "J3",
+    "matchday": 21,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 3
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      },
+      "winner": "AWAY_TEAM"
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "J3_2025-07-21T10:03:00.000Z_岐阜_vs_奈良",
+    "kickoffTime": "2025-07-21T10:03:00.000Z",
+    "homeTeam": {
+      "name": "岐阜",
+      "id": null,
+      "players": []
+    },
+    "awayTeam": {
+      "name": "奈良",
+      "id": null,
+      "players": []
+    },
+    "league": "J3",
+    "matchday": 21,
+    "status": "SCHEDULED",
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,
