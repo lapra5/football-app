@@ -7854,8 +7854,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J1_2025-07-23T10:30:00.000Z_浦和_vs_湘南",
-    "kickoffTime": "2025-07-23T10:30:00.000Z",
+    "matchId": "J1_2025-07-23T10:33:00.000Z_浦和_vs_湘南",
+    "kickoffTime": "2025-07-23T10:33:00.000Z",
     "homeTeam": {
       "name": "浦和",
       "id": null,
@@ -7873,14 +7873,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
