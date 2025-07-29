@@ -744,12 +744,8 @@
         "jp": "アヤックス",
         "en": "AFC Ajax"
       },
-      "players": [
-        "名和田 我空"
-      ],
-      "englishplayers": [
-        "Gaku Nawata"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/678.svg"
     },
     "awayTeam": {
@@ -1091,12 +1087,8 @@
         "jp": "アヤックス",
         "en": "AFC Ajax"
       },
-      "players": [
-        "名和田 我空"
-      ],
-      "englishplayers": [
-        "Gaku Nawata"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/678.svg"
     },
     "lineupStatus": "未発表",
@@ -1649,12 +1641,8 @@
         "jp": "アヤックス",
         "en": "AFC Ajax"
       },
-      "players": [
-        "名和田 我空"
-      ],
-      "englishplayers": [
-        "Gaku Nawata"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/678.svg"
     },
     "awayTeam": {
@@ -3981,22 +3969,22 @@
         "away": 0,
         "home": 0
       },
-      "winner": "AWAY_TEAM",
       "penalties": {
         "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 1,
         "home": 0
       },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "winner": "DRAW",
+      "halfTime": {
+        "home": 0,
+        "away": 1
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -4043,17 +4031,17 @@
         "away": 0,
         "home": 0
       },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 1
-      },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "halfTime": {
+        "away": 0,
+        "home": 1
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 3
       }
     },
     "startingMembers": [],
@@ -4091,14 +4079,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -8239,12 +8227,8 @@
         "jp": "シェフィールド・ウェンズデイ",
         "en": "Sheffield Wednesday FC"
       },
-      "players": [
-        "初瀬 亮"
-      ],
-      "englishplayers": [
-        "Ryo Hatsuse"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/345.svg"
     },
     "lineupStatus": "未発表",
@@ -8605,12 +8589,8 @@
         "jp": "シェフィールド・ウェンズデイ",
         "en": "Sheffield Wednesday FC"
       },
-      "players": [
-        "初瀬 亮"
-      ],
-      "englishplayers": [
-        "Ryo Hatsuse"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/345.svg"
     },
     "awayTeam": {
@@ -9375,12 +9355,8 @@
         "jp": "シェフィールド・ウェンズデイ",
         "en": "Sheffield Wednesday FC"
       },
-      "players": [
-        "初瀬 亮"
-      ],
-      "englishplayers": [
-        "Ryo Hatsuse"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/345.svg"
     },
     "lineupStatus": "未発表",
@@ -9508,8 +9484,12 @@
         "jp": "アロウカ",
         "en": "FC Arouca"
       },
-      "players": [],
-      "englishplayers": [],
+      "players": [
+        "福井 太智"
+      ],
+      "englishplayers": [
+        "Taichi Fukui"
+      ],
       "logo": ""
     },
     "awayTeam": {
@@ -10107,8 +10087,12 @@
         "jp": "アロウカ",
         "en": "FC Arouca"
       },
-      "players": [],
-      "englishplayers": [],
+      "players": [
+        "福井 太智"
+      ],
+      "englishplayers": [
+        "Taichi Fukui"
+      ],
       "logo": ""
     },
     "lineupStatus": "未発表",
@@ -10281,8 +10265,12 @@
         "jp": "アロウカ",
         "en": "FC Arouca"
       },
-      "players": [],
-      "englishplayers": [],
+      "players": [
+        "福井 太智"
+      ],
+      "englishplayers": [
+        "Taichi Fukui"
+      ],
       "logo": ""
     },
     "awayTeam": {
