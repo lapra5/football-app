@@ -32249,15 +32249,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -32294,15 +32294,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -32339,15 +32339,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -32543,15 +32543,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -32633,15 +32633,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -32678,15 +32678,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -32768,15 +32768,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -32858,15 +32858,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
       },
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -32960,15 +32972,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -34133,15 +34145,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
       },
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -34403,15 +34427,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34448,15 +34472,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34493,15 +34517,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -34640,15 +34664,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -36980,12 +37004,8 @@
         "jp": "スポルティング",
         "en": "Sporting Clube de Portugal"
       },
-      "players": [
-        "守田 英正"
-      ],
-      "englishplayers": [
-        "Hidemasa Morita"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/498.svg"
     },
     "lineupStatus": "未発表",
@@ -37424,12 +37444,8 @@
         "jp": "コベントリー・シティFC",
         "en": "Coventry City FC"
       },
-      "players": [
-        "坂元 達裕"
-      ],
-      "englishplayers": [
-        "Tatsuhiro Sakamoto"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/1076.svg"
     },
     "awayTeam": {
@@ -37473,14 +37489,8 @@
         "jp": "サウサンプトン",
         "en": "Southampton FC"
       },
-      "players": [
-        "菅原 由勢",
-        "松木 玖生"
-      ],
-      "englishplayers": [
-        "Yukinari Sugawara",
-        "Kuryu Matsuki"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/340.svg"
     },
     "awayTeam": {
@@ -37704,12 +37714,8 @@
         "jp": "ストーク・シティ",
         "en": "Stoke City FC"
       },
-      "players": [
-        "瀬古 樹"
-      ],
-      "englishplayers": [
-        "Tatsuki Seko"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/70.svg"
     },
     "awayTeam": {
@@ -37763,12 +37769,8 @@
         "jp": "ブラックバーン・ローバーズ",
         "en": "Blackburn Rovers FC"
       },
-      "players": [
-        "大橋 祐紀"
-      ],
-      "englishplayers": [
-        "Yūki Ohashi"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/59.svg"
     },
     "lineupStatus": "未発表",
@@ -37802,16 +37804,8 @@
         "jp": "NECナイメヘン",
         "en": "NEC"
       },
-      "players": [
-        "小川 航基",
-        "佐野 航大",
-        "塩貝 健人"
-      ],
-      "englishplayers": [
-        "Kōki Ogawa (footballer)",
-        "Kodai Sano (footballer)",
-        "Kento Shiogai"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/1915.svg"
     },
     "awayTeam": {
@@ -37910,12 +37904,8 @@
         "jp": "ブリストル・シティFC",
         "en": "Bristol City FC"
       },
-      "players": [
-        "平河 悠"
-      ],
-      "englishplayers": [
-        "Yū Hirakawa"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/387.svg"
     },
     "lineupStatus": "未発表",
@@ -37949,14 +37939,8 @@
         "jp": "フェイエノールト",
         "en": "Feyenoord Rotterdam"
       },
-      "players": [
-        "上田 綺世",
-        "渡辺 剛"
-      ],
-      "englishplayers": [
-        "Ayase Ueda",
-        "undefined"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/675.svg"
     },
     "awayTeam": {
@@ -38000,12 +37984,8 @@
         "jp": "アロウカ",
         "en": "FC Arouca"
       },
-      "players": [
-        "福井 太智"
-      ],
-      "englishplayers": [
-        "Taichi Fukui"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": ""
     },
     "awayTeam": {
@@ -38104,12 +38084,8 @@
         "jp": "スパルタ・ロッテルダム",
         "en": "Sparta Rotterdam"
       },
-      "players": [
-        "三戸 舜介"
-      ],
-      "englishplayers": [
-        "Shunsuke Mito"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/6806.svg"
     },
     "lineupStatus": "未発表",
@@ -38998,12 +38974,8 @@
         "jp": "AZアルクマール",
         "en": "AZ"
       },
-      "players": [
-        "毎熊 晟矢"
-      ],
-      "englishplayers": [
-        "Seiya Maikuma"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/682.svg"
     },
     "awayTeam": {
@@ -39767,12 +39739,8 @@
         "jp": "リヴァプール",
         "en": "Liverpool FC"
       },
-      "players": [
-        "遠藤 航"
-      ],
-      "englishplayers": [
-        "Wataru Endō"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/64.svg"
     },
     "awayTeam": {
@@ -41041,12 +41009,8 @@
         "jp": "コベントリー・シティFC",
         "en": "Coventry City FC"
       },
-      "players": [
-        "坂元 達裕"
-      ],
-      "englishplayers": [
-        "Tatsuhiro Sakamoto"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/1076.svg"
     },
     "lineupStatus": "未発表",
@@ -41215,12 +41179,8 @@
         "jp": "ブラックバーン・ローバーズ",
         "en": "Blackburn Rovers FC"
       },
-      "players": [
-        "大橋 祐紀"
-      ],
-      "englishplayers": [
-        "Yūki Ohashi"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/59.svg"
     },
     "awayTeam": {
@@ -41264,12 +41224,8 @@
         "jp": "ブリストル・シティFC",
         "en": "Bristol City FC"
       },
-      "players": [
-        "平河 悠"
-      ],
-      "englishplayers": [
-        "Yū Hirakawa"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/387.svg"
     },
     "awayTeam": {
@@ -41413,12 +41369,8 @@
         "jp": "ストーク・シティ",
         "en": "Stoke City FC"
       },
-      "players": [
-        "瀬古 樹"
-      ],
-      "englishplayers": [
-        "Tatsuki Seko"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/70.svg"
     },
     "lineupStatus": "未発表",
@@ -41542,12 +41494,8 @@
         "jp": "ブライトン・アンド・ホーヴ・アルビオン",
         "en": "Brighton & Hove Albion FC"
       },
-      "players": [
-        "三笘 薫"
-      ],
-      "englishplayers": [
-        "Kaoru Mitoma"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/397.svg"
     },
     "awayTeam": {
@@ -41636,12 +41584,8 @@
         "jp": "トッテナム・ホットスパー",
         "en": "Tottenham Hotspur FC"
       },
-      "players": [
-        "高井 幸大"
-      ],
-      "englishplayers": [
-        "Kōta Takai"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/73.svg"
     },
     "awayTeam": {
@@ -41830,14 +41774,8 @@
         "jp": "フェイエノールト",
         "en": "Feyenoord Rotterdam"
       },
-      "players": [
-        "上田 綺世",
-        "渡辺 剛"
-      ],
-      "englishplayers": [
-        "Ayase Ueda",
-        "undefined"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/675.svg"
     },
     "lineupStatus": "未発表",
@@ -41871,12 +41809,8 @@
         "jp": "ASモナコ",
         "en": "AS Monaco FC"
       },
-      "players": [
-        "南野 拓実"
-      ],
-      "englishplayers": [
-        "Takumi Minamino"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/548.svg"
     },
     "awayTeam": {
@@ -41920,12 +41854,8 @@
         "jp": "マジョルカ",
         "en": "RCD Mallorca"
       },
-      "players": [
-        "浅野 拓磨"
-      ],
-      "englishplayers": [
-        "Takuma Asano"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/89.svg"
     },
     "awayTeam": {
@@ -41979,16 +41909,8 @@
         "jp": "NECナイメヘン",
         "en": "NEC"
       },
-      "players": [
-        "小川 航基",
-        "佐野 航大",
-        "塩貝 健人"
-      ],
-      "englishplayers": [
-        "Kōki Ogawa (footballer)",
-        "Kodai Sano (footballer)",
-        "Kento Shiogai"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/1915.svg"
     },
     "lineupStatus": "未発表",
@@ -42212,14 +42134,8 @@
         "jp": "レアル・ソシエダ",
         "en": "Real Sociedad de Fútbol"
       },
-      "players": [
-        "久保 建英",
-        "喜多 壱也"
-      ],
-      "englishplayers": [
-        "Takefusa Kubo",
-        "undefined"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/92.svg"
     },
     "lineupStatus": "未発表",
@@ -42658,12 +42574,8 @@
         "jp": "スポルティング",
         "en": "Sporting Clube de Portugal"
       },
-      "players": [
-        "守田 英正"
-      ],
-      "englishplayers": [
-        "Hidemasa Morita"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/498.svg"
     },
     "awayTeam": {
@@ -42672,12 +42584,8 @@
         "jp": "アロウカ",
         "en": "FC Arouca"
       },
-      "players": [
-        "福井 太智"
-      ],
-      "englishplayers": [
-        "Taichi Fukui"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": ""
     },
     "lineupStatus": "未発表",
@@ -43036,14 +42944,8 @@
         "jp": "サウサンプトン",
         "en": "Southampton FC"
       },
-      "players": [
-        "菅原 由勢",
-        "松木 玖生"
-      ],
-      "englishplayers": [
-        "Yukinari Sugawara",
-        "Kuryu Matsuki"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/340.svg"
     },
     "lineupStatus": "未発表",
@@ -43077,12 +42979,8 @@
         "jp": "スパルタ・ロッテルダム",
         "en": "Sparta Rotterdam"
       },
-      "players": [
-        "三戸 舜介"
-      ],
-      "englishplayers": [
-        "Shunsuke Mito"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/6806.svg"
     },
     "awayTeam": {
@@ -43271,12 +43169,8 @@
         "jp": "クリスタル・パレス",
         "en": "Crystal Palace FC"
       },
-      "players": [
-        "鎌田 大地"
-      ],
-      "englishplayers": [
-        "Daichi Kamada"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/354.svg"
     },
     "lineupStatus": "未発表",
@@ -43365,12 +43259,8 @@
         "jp": "AZアルクマール",
         "en": "AZ"
       },
-      "players": [
-        "毎熊 晟矢"
-      ],
-      "englishplayers": [
-        "Seiya Maikuma"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/682.svg"
     },
     "lineupStatus": "未発表",
@@ -43449,12 +43339,8 @@
         "jp": "AJオセール",
         "en": "AJ Auxerre"
       },
-      "players": [
-        "オナイウ 阿道"
-      ],
-      "englishplayers": [
-        "Ado Onaiwu"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/519.svg"
     },
     "awayTeam": {
@@ -44038,12 +43924,8 @@
         "jp": "リーズ・ユナイテッド",
         "en": "Leeds United FC"
       },
-      "players": [
-        "田中 碧"
-      ],
-      "englishplayers": [
-        "Ao Tanaka"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/341.svg"
     },
     "awayTeam": {
@@ -44357,14 +44239,8 @@
         "jp": "バイエルン・ミュンヘン",
         "en": "FC Bayern München"
       },
-      "players": [
-        "伊藤 洋輝",
-        "福井 太智"
-      ],
-      "englishplayers": [
-        "Hiroki Itō (footballer, born 1999)",
-        "Taichi Fukui"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/5.svg"
     },
     "awayTeam": {
@@ -44463,12 +44339,8 @@
         "jp": "ブリストル・シティFC",
         "en": "Bristol City FC"
       },
-      "players": [
-        "平河 悠"
-      ],
-      "englishplayers": [
-        "Yū Hirakawa"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/387.svg"
     },
     "lineupStatus": "未発表",
@@ -45682,12 +45554,8 @@
         "jp": "ブラックバーン・ローバーズ",
         "en": "Blackburn Rovers FC"
       },
-      "players": [
-        "大橋 祐紀"
-      ],
-      "englishplayers": [
-        "Yūki Ohashi"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/59.svg"
     },
     "lineupStatus": "未発表",
@@ -45776,12 +45644,8 @@
         "jp": "トッテナム・ホットスパー",
         "en": "Tottenham Hotspur FC"
       },
-      "players": [
-        "高井 幸大"
-      ],
-      "englishplayers": [
-        "Kōta Takai"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/73.svg"
     },
     "lineupStatus": "未発表",
@@ -45870,12 +45734,8 @@
         "jp": "ホッフェンハイム",
         "en": "TSG 1899 Hoffenheim"
       },
-      "players": [
-        "町田 浩樹"
-      ],
-      "englishplayers": [
-        "Kōki Machida"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/2.svg"
     },
     "lineupStatus": "未発表",
@@ -45909,14 +45769,8 @@
         "jp": "フライブルク",
         "en": "SC Freiburg"
       },
-      "players": [
-        "堂安 律",
-        "鈴木 唯人"
-      ],
-      "englishplayers": [
-        "Ritsu Dōan",
-        "Yuito Suzuki"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/17.svg"
     },
     "awayTeam": {
@@ -45970,12 +45824,8 @@
         "jp": "シュトゥットガルト",
         "en": "VfB Stuttgart"
       },
-      "players": [
-        "チェイス・アンリ"
-      ],
-      "englishplayers": [
-        "Anrie Chase"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/10.svg"
     },
     "lineupStatus": "未発表",
@@ -46144,12 +45994,8 @@
         "jp": "コベントリー・シティFC",
         "en": "Coventry City FC"
       },
-      "players": [
-        "坂元 達裕"
-      ],
-      "englishplayers": [
-        "Tatsuhiro Sakamoto"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/1076.svg"
     },
     "awayTeam": {
@@ -46328,14 +46174,8 @@
         "jp": "サウサンプトン",
         "en": "Southampton FC"
       },
-      "players": [
-        "菅原 由勢",
-        "松木 玖生"
-      ],
-      "englishplayers": [
-        "Yukinari Sugawara",
-        "Kuryu Matsuki"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/340.svg"
     },
     "awayTeam": {
@@ -46344,12 +46184,8 @@
         "jp": "ストーク・シティ",
         "en": "Stoke City FC"
       },
-      "players": [
-        "瀬古 樹"
-      ],
-      "englishplayers": [
-        "Tatsuki Seko"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/70.svg"
     },
     "lineupStatus": "未発表",
@@ -46618,12 +46454,8 @@
         "jp": "スパルタ・ロッテルダム",
         "en": "Sparta Rotterdam"
       },
-      "players": [
-        "三戸 舜介"
-      ],
-      "englishplayers": [
-        "Shunsuke Mito"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/6806.svg"
     },
     "lineupStatus": "未発表",
@@ -46657,12 +46489,8 @@
         "jp": "マジョルカ",
         "en": "RCD Mallorca"
       },
-      "players": [
-        "浅野 拓磨"
-      ],
-      "englishplayers": [
-        "Takuma Asano"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/89.svg"
     },
     "awayTeam": {
@@ -46751,12 +46579,8 @@
         "jp": "ザンクト・パウリ",
         "en": "FC St. Pauli 1910"
       },
-      "players": [
-        "藤田 譲瑠チマ"
-      ],
-      "englishplayers": [
-        "Joel Chima Fujita"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/20.svg"
     },
     "awayTeam": {
@@ -46900,12 +46724,8 @@
         "jp": "リーズ・ユナイテッド",
         "en": "Leeds United FC"
       },
-      "players": [
-        "田中 碧"
-      ],
-      "englishplayers": [
-        "Ao Tanaka"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/341.svg"
     },
     "lineupStatus": "未発表",
@@ -46994,12 +46814,8 @@
         "jp": "AJオセール",
         "en": "AJ Auxerre"
       },
-      "players": [
-        "オナイウ 阿道"
-      ],
-      "englishplayers": [
-        "Ado Onaiwu"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/519.svg"
     },
     "lineupStatus": "未発表",
@@ -47448,12 +47264,8 @@
         "jp": "スポルティング",
         "en": "Sporting Clube de Portugal"
       },
-      "players": [
-        "守田 英正"
-      ],
-      "englishplayers": [
-        "Hidemasa Morita"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/498.svg"
     },
     "lineupStatus": "未発表",
@@ -47487,12 +47299,8 @@
         "jp": "アロウカ",
         "en": "FC Arouca"
       },
-      "players": [
-        "福井 太智"
-      ],
-      "englishplayers": [
-        "Taichi Fukui"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": ""
     },
     "awayTeam": {
@@ -48076,12 +47884,8 @@
         "jp": "AZアルクマール",
         "en": "AZ"
       },
-      "players": [
-        "毎熊 晟矢"
-      ],
-      "englishplayers": [
-        "Seiya Maikuma"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/682.svg"
     },
     "awayTeam": {
@@ -48215,16 +48019,8 @@
         "jp": "NECナイメヘン",
         "en": "NEC"
       },
-      "players": [
-        "小川 航基",
-        "佐野 航大",
-        "塩貝 健人"
-      ],
-      "englishplayers": [
-        "Kōki Ogawa (footballer)",
-        "Kodai Sano (footballer)",
-        "Kento Shiogai"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/1915.svg"
     },
     "awayTeam": {
@@ -48313,12 +48109,8 @@
         "jp": "クリスタル・パレス",
         "en": "Crystal Palace FC"
       },
-      "players": [
-        "鎌田 大地"
-      ],
-      "englishplayers": [
-        "Daichi Kamada"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/354.svg"
     },
     "awayTeam": {
@@ -48372,12 +48164,8 @@
         "jp": "ブライトン・アンド・ホーヴ・アルビオン",
         "en": "Brighton & Hove Albion FC"
       },
-      "players": [
-        "三笘 薫"
-      ],
-      "englishplayers": [
-        "Kaoru Mitoma"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/397.svg"
     },
     "lineupStatus": "未発表",
@@ -48411,14 +48199,8 @@
         "jp": "1.FSVマインツ05",
         "en": "1. FSV Mainz 05"
       },
-      "players": [
-        "佐野 海舟",
-        "川崎 颯太"
-      ],
-      "englishplayers": [
-        "Kaishū Sano",
-        "undefined"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/15.svg"
     },
     "awayTeam": {
@@ -48607,12 +48389,8 @@
         "jp": "ASモナコ",
         "en": "AS Monaco FC"
       },
-      "players": [
-        "南野 拓実"
-      ],
-      "englishplayers": [
-        "Takumi Minamino"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/548.svg"
     },
     "lineupStatus": "未発表",
@@ -48781,16 +48559,8 @@
         "jp": "ボルシア",
         "en": "Borussia Mönchengladbach"
       },
-      "players": [
-        "板倉 滉",
-        "福田 師王",
-        "町野 修斗"
-      ],
-      "englishplayers": [
-        "Kō Itakura",
-        "Shio Fukuda",
-        "Shūto Machino"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/18.svg"
     },
     "awayTeam": {
@@ -48969,14 +48739,8 @@
         "jp": "レアル・ソシエダ",
         "en": "Real Sociedad de Fútbol"
       },
-      "players": [
-        "久保 建英",
-        "喜多 壱也"
-      ],
-      "englishplayers": [
-        "Takefusa Kubo",
-        "undefined"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/92.svg"
     },
     "awayTeam": {
@@ -49120,12 +48884,8 @@
         "jp": "パルマ",
         "en": "Parma Calcio 1913"
       },
-      "players": [
-        "鈴木 彩艶"
-      ],
-      "englishplayers": [
-        "Zion Suzuki"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/112.svg"
     },
     "lineupStatus": "未発表",
@@ -49529,12 +49289,8 @@
         "jp": "リヴァプール",
         "en": "Liverpool FC"
       },
-      "players": [
-        "遠藤 航"
-      ],
-      "englishplayers": [
-        "Wataru Endō"
-      ],
+      "players": [],
+      "englishplayers": [],
       "logo": "https://crests.football-data.org/64.svg"
     },
     "lineupStatus": "未発表",
@@ -49716,6 +49472,411 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/90.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536833",
+    "kickoffTime": "2025-08-29T16:30:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 457,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 471,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544233",
+    "kickoffTime": "2025-08-29T17:30:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 285,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 88,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537468",
+    "kickoffTime": "2025-08-29T18:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Eredivisie",
+      "jp": "Eredivisie"
+    },
+    "homeTeam": {
+      "id": 677,
+      "name": {
+        "jp": "FCフローニンゲン",
+        "en": "FC Groningen"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/677.svg"
+    },
+    "awayTeam": {
+      "id": 671,
+      "name": {
+        "jp": "ヘラクレス・アルメロ",
+        "en": "Heracles Almelo"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/671.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540423",
+    "kickoffTime": "2025-08-29T18:30:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Bundesliga",
+      "jp": "Bundesliga"
+    },
+    "homeTeam": {
+      "id": 7,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 20,
+      "name": {
+        "jp": "ザンクト・パウリ",
+        "en": "FC St. Pauli 1910"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/20.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542431",
+    "kickoffTime": "2025-08-29T18:45:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 546,
+      "name": {
+        "jp": "RCランス",
+        "en": "Racing Club de Lens"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/546.svg"
+    },
+    "awayTeam": {
+      "id": 512,
+      "name": {
+        "jp": "スタッド・ブレスト",
+        "en": "Stade Brestois 29"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/512.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536834",
+    "kickoffTime": "2025-08-29T18:45:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 5890,
+      "name": {
+        "jp": "レッチェ",
+        "en": "US Lecce"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5890.svg"
+    },
+    "awayTeam": {
+      "id": 98,
+      "name": {
+        "jp": "ACミラン",
+        "en": "AC Milan"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/98.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540751",
+    "kickoffTime": "2025-08-29T19:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Championship",
+      "jp": "Championship"
+    },
+    "homeTeam": {
+      "id": 338,
+      "name": {
+        "jp": "レスター・シティ",
+        "en": "Leicester City FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/338.svg"
+    },
+    "awayTeam": {
+      "id": 332,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537806",
+    "kickoffTime": "2025-08-29T19:00:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Premier League",
+      "jp": "Premier League"
+    },
+    "homeTeam": {
+      "id": 58,
+      "name": {
+        "jp": "アストン・ヴィラ",
+        "en": "Aston Villa FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/58.svg"
+    },
+    "awayTeam": {
+      "id": 354,
+      "name": {
+        "jp": "クリスタル・パレス",
+        "en": "Crystal Palace FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/354.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544239",
+    "kickoffTime": "2025-08-29T19:30:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 95,
+      "name": {
+        "jp": "バレンシア",
+        "en": "Valencia CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/95.svg"
+    },
+    "awayTeam": {
+      "id": 82,
+      "name": {
+        "jp": "ヘタフェ",
+        "en": "Getafe CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/82.svg"
     },
     "lineupStatus": "未発表",
     "score": {
