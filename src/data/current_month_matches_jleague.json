@@ -20196,8 +20196,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "J2_2025-08-03T10:00:00.000Z_熊本_vs_水戸",
-    "kickoffTime": "2025-08-03T10:00:00.000Z",
+    "matchId": "J2_2025-08-03T10:03:00.000Z_熊本_vs_水戸",
+    "kickoffTime": "2025-08-03T10:03:00.000Z",
     "homeTeam": {
       "name": "熊本",
       "id": null,
@@ -20215,14 +20215,14 @@
     "score": {
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
         "away": null
       },
-      "winner": null
+      "winner": "HOME_TEAM"
     },
     "startingMembers": [],
     "substitutes": [],
