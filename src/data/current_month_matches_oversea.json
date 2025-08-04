@@ -5043,7 +5043,6 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
       "penalties": {
         "away": 0,
         "home": 0
@@ -5052,13 +5051,14 @@
         "away": 0,
         "home": 0
       },
-      "fullTime": {
-        "away": 0,
-        "home": 0
-      },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "fullTime": {
+        "away": 2,
+        "home": 3
       }
     },
     "startingMembers": [],
@@ -5096,14 +5096,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -7484,7 +7484,7 @@
       ],
       "englishplayers": [
         "Takefusa Kubo",
-        "undefined"
+        "Kazunari Kita"
       ],
       "logo": "https://crests.football-data.org/92.svg"
     },
@@ -7979,7 +7979,7 @@
       ],
       "englishplayers": [
         "Takefusa Kubo",
-        "undefined"
+        "Kazunari Kita"
       ],
       "logo": "https://crests.football-data.org/92.svg"
     },
@@ -8400,7 +8400,7 @@
       ],
       "englishplayers": [
         "Takefusa Kubo",
-        "undefined"
+        "Kazunari Kita"
       ],
       "logo": "https://crests.football-data.org/92.svg"
     },
