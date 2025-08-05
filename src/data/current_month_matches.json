@@ -1826,27 +1826,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      },
       "winner": "AWAY_TEAM",
+      "duration": "REGULAR",
       "fullTime": {
         "home": 0,
         "away": 1
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 0
       }
     },
     "startingMembers": [],
