@@ -1463,15 +1463,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "duration": "REGULAR",
       "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
+      "duration": "REGULAR",
       "fullTime": {
-        "away": null,
-        "home": null
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
       }
     },
     "startingMembers": [],
