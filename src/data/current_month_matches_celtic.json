@@ -1,5 +1,57 @@
 [
   {
+    "matchId": "CELTIC_1999-12-31T15:00:00.000Z_vs_H",
+    "utcDate": "1999-12-31T15:00:00.000Z",
+    "matchday": 0,
+    "league": "スコットランド",
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "H",
+      "crest": "",
+      "shortName": "H",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
+  },
+  {
     "matchId": "CELTIC_2025-08-03T15:30:00.000Z_vs_セント・ミレン",
     "utcDate": "2025-08-03T15:30:00.000Z",
     "matchday": 1,
@@ -61,13 +113,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 2
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 2
       },
       "halfTime": {
         "home": null,
