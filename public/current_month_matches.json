@@ -1,152 +1,5 @@
 [
   {
-    "matchId": "535066",
-    "kickoffTime": "2025-07-17T00:30:00Z",
-    "matchday": 14,
-    "league": {
-      "en": "Campeonato Brasileiro Série A",
-      "jp": "Campeonato Brasileiro Série A"
-    },
-    "homeTeam": {
-      "id": 1770,
-      "name": {
-        "jp": "ボタフォゴFR",
-        "en": "Botafogo FR"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1770.svg"
-    },
-    "awayTeam": {
-      "id": 1782,
-      "name": {
-        "jp": "ECヴィトーリア",
-        "en": "EC Vitória"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "winner": "DRAW",
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
-      },
-      "halfTime": {
-        "home": 0,
-        "away": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "535069",
-    "kickoffTime": "2025-07-17T00:30:00Z",
-    "matchday": 14,
-    "league": {
-      "en": "Campeonato Brasileiro Série A",
-      "jp": "Campeonato Brasileiro Série A"
-    },
-    "homeTeam": {
-      "id": 4286,
-      "name": {
-        "jp": "RBブラガンチーノ",
-        "en": "RB Bragantino"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/4286.svg"
-    },
-    "awayTeam": {
-      "id": 1776,
-      "name": {
-        "jp": "サンパウロFC",
-        "en": "São Paulo FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1776.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "DRAW",
-      "halfTime": {
-        "away": 1,
-        "home": 1
-      },
-      "fullTime": {
-        "away": 2,
-        "home": 2
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "535065",
-    "kickoffTime": "2025-07-17T22:30:00Z",
-    "matchday": 14,
-    "league": {
-      "en": "Campeonato Brasileiro Série A",
-      "jp": "Campeonato Brasileiro Série A"
-    },
-    "homeTeam": {
-      "id": 1765,
-      "name": {
-        "jp": "フルミネンセFC",
-        "en": "Fluminense FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1765.svg"
-    },
-    "awayTeam": {
-      "id": 1771,
-      "name": {
-        "jp": "クルゼイロEC",
-        "en": "Cruzeiro EC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "winner": "AWAY_TEAM",
-      "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
-      "halfTime": {
-        "home": 0,
-        "away": 2
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "535083",
     "kickoffTime": "2025-07-19T19:00:00Z",
     "matchday": 15,
@@ -584,15 +437,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
       },
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -674,15 +539,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -719,15 +584,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -764,15 +629,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -866,15 +731,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -911,15 +776,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
-      },
+      "winner": "DRAW",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -1127,15 +992,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "halfTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
       "fullTime": {
         "home": 0,
         "away": 1
-      },
-      "halfTime": {
-        "home": 0,
-        "away": 0
       }
     },
     "startingMembers": [],
@@ -1715,15 +1592,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -1862,15 +1751,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -2295,15 +2184,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -2401,15 +2302,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -2623,15 +2536,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -2900,15 +2825,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -3371,15 +3296,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 5
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 5,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -3473,15 +3410,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": null,
       "duration": "REGULAR",
-      "fullTime": {
-        "home": null,
-        "away": null
-      },
+      "winner": null,
       "halfTime": {
-        "home": null,
-        "away": null
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -4105,15 +4042,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 1
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4280,6 +4217,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "545709",
+    "kickoffTime": "2025-08-15T14:30:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 10340,
+      "name": {
+        "jp": "AVSフトゥボルSAD",
+        "en": "AVS"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 6618,
+      "name": {
+        "jp": "カーザ・ピア",
+        "en": "Casa Pia AC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": "AWAY_TEAM",
+      "halfTime": {
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "544214",
     "kickoffTime": "2025-08-15T17:00:00Z",
     "matchday": 1,
@@ -4309,15 +4291,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 1,
-        "away": 3
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 3
+        "away": 3,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -4354,15 +4336,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 2
-      },
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "home": 0,
-        "away": 1
+        "away": 1,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4517,15 +4499,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "HOME_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 2,
-        "away": 0
-      },
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "home": 2,
-        "away": 0
+        "away": 0,
+        "home": 2
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -4566,15 +4548,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 3,
-        "away": 5
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 2,
-        "away": 2
+        "away": 2,
+        "home": 2
+      },
+      "fullTime": {
+        "away": 5,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4611,15 +4605,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 1,
-        "away": 2
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 0,
-        "away": 2
+        "away": 2,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4656,15 +4662,27 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 2,
-        "away": 3
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
       },
       "halfTime": {
-        "home": 1,
-        "away": 1
+        "away": 1,
+        "home": 1
+      },
+      "fullTime": {
+        "away": 3,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4701,15 +4719,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "winner": "DRAW",
       "duration": "REGULAR",
-      "fullTime": {
-        "home": 0,
-        "away": 0
-      },
+      "winner": null,
       "halfTime": {
-        "home": 0,
-        "away": 0
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -4751,14 +4769,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4800,14 +4830,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4845,14 +4887,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4890,14 +4944,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4939,14 +5005,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4984,14 +5062,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5029,14 +5119,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5187,25 +5289,15 @@
     "outOfSquad": []
   },
   {
-    "matchId": "544211",
-    "kickoffTime": "2025-08-16T15:00:00Z",
-    "matchday": 1,
+    "matchId": "545716",
+    "kickoffTime": "2025-08-16T14:30:00Z",
+    "matchday": 2,
     "league": {
-      "en": "Primera Division",
-      "jp": "Primera Division"
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
     },
     "homeTeam": {
-      "id": 263,
-      "name": {
-        "jp": "アラベス",
-        "en": "Deportivo Alavés"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/263.svg"
-    },
-    "awayTeam": {
-      "id": 88,
+      "id": 1049,
       "name": {
         "jp": "",
         "en": ""
@@ -5214,17 +5306,39 @@
       "englishplayers": [],
       "logo": ""
     },
+    "awayTeam": {
+      "id": 5531,
+      "name": {
+        "jp": "ファマリカン",
+        "en": "FC Famalicão"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5531.svg"
+    },
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5262,14 +5376,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5358,14 +5484,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5407,14 +5545,83 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545714",
+    "kickoffTime": "2025-08-16T17:00:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 5543,
+      "name": {
+        "jp": "ヴィトーリア・ギマランイス",
+        "en": "Vitória SC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5543.svg"
+    },
+    "awayTeam": {
+      "id": 582,
+      "name": {
+        "jp": "エストリル・プライア",
+        "en": "GD Estoril Praia"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "halfTime": {
+        "away": 1,
+        "home": 1
+      },
+      "fullTime": {
+        "away": 2,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5456,14 +5663,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5509,14 +5728,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 4,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5554,14 +5785,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5599,14 +5842,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5644,14 +5899,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5689,14 +5956,83 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544211",
+    "kickoffTime": "2025-08-16T19:30:00Z",
+    "matchday": 1,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 263,
+      "name": {
+        "jp": "アラベス",
+        "en": "Deportivo Alavés"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/263.svg"
+    },
+    "awayTeam": {
+      "id": 88,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "halfTime": {
+        "away": 0,
+        "home": 1
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5740,14 +6076,83 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545717",
+    "kickoffTime": "2025-08-16T19:30:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 9136,
+      "name": {
+        "jp": "エストレラ・アマドーラ",
+        "en": "CF Estrela da Amadora"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 1903,
+      "name": {
+        "jp": "ベンフィカ",
+        "en": "Sport Lisboa e Benfica"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1903.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
+      "halfTime": {
+        "away": 0,
+        "home": 0
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5785,14 +6190,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5830,14 +6247,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -5871,419 +6300,6 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/1777.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545709",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 10340,
-      "name": {
-        "jp": "AVSフトゥボルSAD",
-        "en": "AVS"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 6618,
-      "name": {
-        "jp": "カーザ・ピア",
-        "en": "Casa Pia AC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545710",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 7822,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 5613,
-      "name": {
-        "jp": "ブラガ",
-        "en": "Sporting Clube de Braga"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5613.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545711",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 5533,
-      "name": {
-        "jp": "ジル・ビセンテ",
-        "en": "Gil Vicente FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5533.svg"
-    },
-    "awayTeam": {
-      "id": 503,
-      "name": {
-        "jp": "FCポルト",
-        "en": "FC Porto"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/503.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545712",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 5530,
-      "name": {
-        "jp": "サンタ・クララ",
-        "en": "CD Santa Clara"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5530.svg"
-    },
-    "awayTeam": {
-      "id": 583,
-      "name": {
-        "jp": "モレイレンセ",
-        "en": "Moreirense FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/583.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545713",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 496,
-      "name": {
-        "jp": "リオ・アヴェ",
-        "en": "Rio Ave FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/496.svg"
-    },
-    "awayTeam": {
-      "id": 5529,
-      "name": {
-        "jp": "ナシオナル",
-        "en": "CD Nacional"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5529.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545714",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 5543,
-      "name": {
-        "jp": "ヴィトーリア・ギマランイス",
-        "en": "Vitória SC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5543.svg"
-    },
-    "awayTeam": {
-      "id": 582,
-      "name": {
-        "jp": "エストリル・プライア",
-        "en": "GD Estoril Praia"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545715",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 498,
-      "name": {
-        "jp": "スポルティング",
-        "en": "Sporting Clube de Portugal"
-      },
-      "players": [
-        "守田 英正"
-      ],
-      "englishplayers": [
-        "Hidemasa Morita"
-      ],
-      "logo": "https://crests.football-data.org/498.svg"
-    },
-    "awayTeam": {
-      "id": 712,
-      "name": {
-        "jp": "アロウカ",
-        "en": "FC Arouca"
-      },
-      "players": [
-        "福井 太智"
-      ],
-      "englishplayers": [
-        "Taichi Fukui"
-      ],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545716",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 1049,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 5531,
-      "name": {
-        "jp": "ファマリカン",
-        "en": "FC Famalicão"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5531.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545717",
-    "kickoffTime": "2025-08-17T00:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": "Primeira Liga"
-    },
-    "homeTeam": {
-      "id": 9136,
-      "name": {
-        "jp": "エストレラ・アマドーラ",
-        "en": "CF Estrela da Amadora"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 1903,
-      "name": {
-        "jp": "ベンフィカ",
-        "en": "Sport Lisboa e Benfica"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1903.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -6681,6 +6697,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "545713",
+    "kickoffTime": "2025-08-17T14:30:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 496,
+      "name": {
+        "jp": "リオ・アヴェ",
+        "en": "Rio Ave FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/496.svg"
+    },
+    "awayTeam": {
+      "id": 5529,
+      "name": {
+        "jp": "ナシオナル",
+        "en": "CD Nacional"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5529.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "537457",
     "kickoffTime": "2025-08-17T14:45:00Z",
     "matchday": 2,
@@ -6940,6 +7001,96 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/57.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545710",
+    "kickoffTime": "2025-08-17T17:00:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 7822,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 5613,
+      "name": {
+        "jp": "ブラガ",
+        "en": "Sporting Clube de Braga"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5613.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545712",
+    "kickoffTime": "2025-08-17T17:00:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 5530,
+      "name": {
+        "jp": "サンタ・クララ",
+        "en": "CD Santa Clara"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5530.svg"
+    },
+    "awayTeam": {
+      "id": 583,
+      "name": {
+        "jp": "モレイレンセ",
+        "en": "Moreirense FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/583.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -7229,6 +7380,59 @@
     "outOfSquad": []
   },
   {
+    "matchId": "545715",
+    "kickoffTime": "2025-08-17T19:30:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 498,
+      "name": {
+        "jp": "スポルティング",
+        "en": "Sporting Clube de Portugal"
+      },
+      "players": [
+        "守田 英正"
+      ],
+      "englishplayers": [
+        "Hidemasa Morita"
+      ],
+      "logo": "https://crests.football-data.org/498.svg"
+    },
+    "awayTeam": {
+      "id": 712,
+      "name": {
+        "jp": "アロウカ",
+        "en": "FC Arouca"
+      },
+      "players": [
+        "福井 太智"
+      ],
+      "englishplayers": [
+        "Taichi Fukui"
+      ],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "535131",
     "kickoffTime": "2025-08-17T21:30:00Z",
     "matchday": 20,
@@ -7394,6 +7598,51 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/62.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545711",
+    "kickoffTime": "2025-08-18T19:15:00Z",
+    "matchday": 2,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 5533,
+      "name": {
+        "jp": "ジル・ビセンテ",
+        "en": "Gil Vicente FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5533.svg"
+    },
+    "awayTeam": {
+      "id": 503,
+      "name": {
+        "jp": "FCポルト",
+        "en": "FC Porto"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/503.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -16499,6 +16748,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "544245",
+    "kickoffTime": "2025-09-13T12:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 82,
+      "name": {
+        "jp": "ヘタフェ",
+        "en": "Getafe CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/82.svg"
+    },
+    "awayTeam": {
+      "id": 1048,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "536839",
     "kickoffTime": "2025-09-13T13:00:00Z",
     "matchday": 3,
@@ -17357,6 +17651,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "544248",
+    "kickoffTime": "2025-09-13T14:15:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 88,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 90,
+      "name": {
+        "jp": "ベティス",
+        "en": "Real Betis Balompié"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/90.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "537477",
     "kickoffTime": "2025-09-13T14:30:00Z",
     "matchday": 5,
@@ -17814,6 +18153,1768 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/61.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542433",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 519,
+      "name": {
+        "jp": "AJオセール",
+        "en": "AJ Auxerre"
+      },
+      "players": [
+        "オナイウ 阿道"
+      ],
+      "englishplayers": [
+        "Ado Onaiwu"
+      ],
+      "logo": "https://crests.football-data.org/519.svg"
+    },
+    "awayTeam": {
+      "id": 548,
+      "name": {
+        "jp": "ASモナコ",
+        "en": "AS Monaco FC"
+      },
+      "players": [
+        "南野 拓実"
+      ],
+      "englishplayers": [
+        "Takumi Minamino"
+      ],
+      "logo": "https://crests.football-data.org/548.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542434",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 545,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 532,
+      "name": {
+        "jp": "アンジェSCO",
+        "en": "Angers SCO"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/532.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542435",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 522,
+      "name": {
+        "jp": "OGCニース",
+        "en": "OGC Nice"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/522.svg"
+    },
+    "awayTeam": {
+      "id": 543,
+      "name": {
+        "jp": "FCナント",
+        "en": "FC Nantes"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/543.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542436",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 516,
+      "name": {
+        "jp": "オリンピック・マルセイユ",
+        "en": "Olympique de Marseille"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/516.svg"
+    },
+    "awayTeam": {
+      "id": 525,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542437",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 521,
+      "name": {
+        "jp": "LOSCリール",
+        "en": "Lille OSC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/521.svg"
+    },
+    "awayTeam": {
+      "id": 511,
+      "name": {
+        "jp": "トゥールーズFC",
+        "en": "Toulouse FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/511.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542438",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 524,
+      "name": {
+        "jp": "パリ・サンジェルマン",
+        "en": "Paris Saint-Germain FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/524.svg"
+    },
+    "awayTeam": {
+      "id": 546,
+      "name": {
+        "jp": "RCランス",
+        "en": "Racing Club de Lens"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/546.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542439",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 576,
+      "name": {
+        "jp": "RCストラスブール",
+        "en": "RC Strasbourg Alsace"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/576.svg"
+    },
+    "awayTeam": {
+      "id": 533,
+      "name": {
+        "jp": "ル・アーブル",
+        "en": "Le Havre AC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/533.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542440",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 512,
+      "name": {
+        "jp": "スタッド・ブレスト",
+        "en": "Stade Brestois 29"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/512.svg"
+    },
+    "awayTeam": {
+      "id": 1045,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "542441",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Ligue 1",
+      "jp": "Ligue 1"
+    },
+    "homeTeam": {
+      "id": 529,
+      "name": {
+        "jp": "スタッド・レンヌ",
+        "en": "Stade Rennais FC 1901"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/529.svg"
+    },
+    "awayTeam": {
+      "id": 523,
+      "name": {
+        "jp": "オリンピック・リヨン",
+        "en": "Olympique Lyonnais"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/523.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545736",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 9136,
+      "name": {
+        "jp": "エストレラ・アマドーラ",
+        "en": "CF Estrela da Amadora"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 5543,
+      "name": {
+        "jp": "ヴィトーリア・ギマランイス",
+        "en": "Vitória SC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5543.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545737",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 7822,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 1049,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545738",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 712,
+      "name": {
+        "jp": "アロウカ",
+        "en": "FC Arouca"
+      },
+      "players": [
+        "福井 太智"
+      ],
+      "englishplayers": [
+        "Taichi Fukui"
+      ],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 6618,
+      "name": {
+        "jp": "カーザ・ピア",
+        "en": "Casa Pia AC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545739",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 5531,
+      "name": {
+        "jp": "ファマリカン",
+        "en": "FC Famalicão"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5531.svg"
+    },
+    "awayTeam": {
+      "id": 498,
+      "name": {
+        "jp": "スポルティング",
+        "en": "Sporting Clube de Portugal"
+      },
+      "players": [
+        "守田 英正"
+      ],
+      "englishplayers": [
+        "Hidemasa Morita"
+      ],
+      "logo": "https://crests.football-data.org/498.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545740",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 583,
+      "name": {
+        "jp": "モレイレンセ",
+        "en": "Moreirense FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/583.svg"
+    },
+    "awayTeam": {
+      "id": 496,
+      "name": {
+        "jp": "リオ・アヴェ",
+        "en": "Rio Ave FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/496.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545741",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 5613,
+      "name": {
+        "jp": "ブラガ",
+        "en": "Sporting Clube de Braga"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5613.svg"
+    },
+    "awayTeam": {
+      "id": 5533,
+      "name": {
+        "jp": "ジル・ビセンテ",
+        "en": "Gil Vicente FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5533.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545742",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 1903,
+      "name": {
+        "jp": "ベンフィカ",
+        "en": "Sport Lisboa e Benfica"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1903.svg"
+    },
+    "awayTeam": {
+      "id": 5530,
+      "name": {
+        "jp": "サンタ・クララ",
+        "en": "CD Santa Clara"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5530.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545743",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 582,
+      "name": {
+        "jp": "エストリル・プライア",
+        "en": "GD Estoril Praia"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 10340,
+      "name": {
+        "jp": "AVSフトゥボルSAD",
+        "en": "AVS"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545744",
+    "kickoffTime": "2025-09-14T00:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": "Primeira Liga"
+    },
+    "homeTeam": {
+      "id": 503,
+      "name": {
+        "jp": "FCポルト",
+        "en": "FC Porto"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/503.svg"
+    },
+    "awayTeam": {
+      "id": 5529,
+      "name": {
+        "jp": "ナシオナル",
+        "en": "CD Nacional"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5529.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537482",
+    "kickoffTime": "2025-09-14T10:15:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Eredivisie",
+      "jp": "Eredivisie"
+    },
+    "homeTeam": {
+      "id": 670,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 6806,
+      "name": {
+        "jp": "スパルタ・ロッテルダム",
+        "en": "Sparta Rotterdam"
+      },
+      "players": [
+        "三戸 舜介"
+      ],
+      "englishplayers": [
+        "Shunsuke Mito"
+      ],
+      "logo": "https://crests.football-data.org/6806.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536837",
+    "kickoffTime": "2025-09-14T10:30:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 100,
+      "name": {
+        "jp": "ローマ",
+        "en": "AS Roma"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/100.svg"
+    },
+    "awayTeam": {
+      "id": 586,
+      "name": {
+        "jp": "トリノ",
+        "en": "Torino FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/586.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540766",
+    "kickoffTime": "2025-09-14T11:00:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Championship",
+      "jp": "Championship"
+    },
+    "homeTeam": {
+      "id": 340,
+      "name": {
+        "jp": "サウサンプトン",
+        "en": "Southampton FC"
+      },
+      "players": [
+        "菅原 由勢",
+        "松木 玖生"
+      ],
+      "englishplayers": [
+        "Yukinari Sugawara",
+        "Kuryu Matsuki"
+      ],
+      "logo": "https://crests.football-data.org/340.svg"
+    },
+    "awayTeam": {
+      "id": 325,
+      "name": {
+        "jp": "ポーツマスFC",
+        "en": "Portsmouth FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544243",
+    "kickoffTime": "2025-09-14T12:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 558,
+      "name": {
+        "jp": "セルタ・デ・ビーゴ",
+        "en": "RC Celta de Vigo"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/558.svg"
+    },
+    "awayTeam": {
+      "id": 298,
+      "name": {
+        "jp": "ジローナ",
+        "en": "Girona FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/298.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537483",
+    "kickoffTime": "2025-09-14T12:30:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Eredivisie",
+      "jp": "Eredivisie"
+    },
+    "homeTeam": {
+      "id": 676,
+      "name": {
+        "jp": "FCユトレヒト",
+        "en": "FC Utrecht"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/676.svg"
+    },
+    "awayTeam": {
+      "id": 677,
+      "name": {
+        "jp": "FCフローニンゲン",
+        "en": "FC Groningen"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/677.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537484",
+    "kickoffTime": "2025-09-14T12:30:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Eredivisie",
+      "jp": "Eredivisie"
+    },
+    "homeTeam": {
+      "id": 671,
+      "name": {
+        "jp": "ヘラクレス・アルメロ",
+        "en": "Heracles Almelo"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/671.svg"
+    },
+    "awayTeam": {
+      "id": 682,
+      "name": {
+        "jp": "AZアルクマール",
+        "en": "AZ"
+      },
+      "players": [
+        "毎熊 晟矢"
+      ],
+      "englishplayers": [
+        "Seiya Maikuma"
+      ],
+      "logo": "https://crests.football-data.org/682.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536838",
+    "kickoffTime": "2025-09-14T13:00:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 102,
+      "name": {
+        "jp": "アタランタ",
+        "en": "Atalanta BC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/102.svg"
+    },
+    "awayTeam": {
+      "id": 5890,
+      "name": {
+        "jp": "レッチェ",
+        "en": "US Lecce"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5890.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536843",
+    "kickoffTime": "2025-09-14T13:00:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 487,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 115,
+      "name": {
+        "jp": "ウディネーゼ",
+        "en": "Udinese Calcio"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/115.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537819",
+    "kickoffTime": "2025-09-14T13:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Premier League",
+      "jp": "Premier League"
+    },
+    "homeTeam": {
+      "id": 328,
+      "name": {
+        "jp": "バーンリーFC",
+        "en": "Burnley FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/328.svg"
+    },
+    "awayTeam": {
+      "id": 64,
+      "name": {
+        "jp": "リヴァプール",
+        "en": "Liverpool FC"
+      },
+      "players": [
+        "遠藤 航"
+      ],
+      "englishplayers": [
+        "Wataru Endo"
+      ],
+      "logo": "https://crests.football-data.org/64.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540431",
+    "kickoffTime": "2025-09-14T13:30:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Bundesliga",
+      "jp": "Bundesliga"
+    },
+    "homeTeam": {
+      "id": 20,
+      "name": {
+        "jp": "ザンクト・パウリ",
+        "en": "FC St. Pauli 1910"
+      },
+      "players": [
+        "藤田 譲瑠チマ"
+      ],
+      "englishplayers": [
+        "Joel Chima Fujita"
+      ],
+      "logo": "https://crests.football-data.org/20.svg"
+    },
+    "awayTeam": {
+      "id": 16,
+      "name": {
+        "jp": "アウクスブルク",
+        "en": "FC Augsburg"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/16.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537485",
+    "kickoffTime": "2025-09-14T14:45:00Z",
+    "matchday": 5,
+    "league": {
+      "en": "Eredivisie",
+      "jp": "Eredivisie"
+    },
+    "homeTeam": {
+      "id": 1912,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 1920,
+      "name": {
+        "jp": "フォルトゥナ・シッタルト",
+        "en": "Fortuna Sittard"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1920.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540428",
+    "kickoffTime": "2025-09-14T15:30:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Bundesliga",
+      "jp": "Bundesliga"
+    },
+    "homeTeam": {
+      "id": 18,
+      "name": {
+        "jp": "ボルシア",
+        "en": "Borussia Mönchengladbach"
+      },
+      "players": [
+        "板倉 滉",
+        "福田 師王",
+        "町野 修斗"
+      ],
+      "englishplayers": [
+        "Ko Itakura",
+        "Shiō Fukuda",
+        "Shūto Machino"
+      ],
+      "logo": "https://crests.football-data.org/18.svg"
+    },
+    "awayTeam": {
+      "id": 12,
+      "name": {
+        "jp": "ヴェルダー・ブレーメン",
+        "en": "SV Werder Bremen"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/12.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537822",
+    "kickoffTime": "2025-09-14T15:30:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Premier League",
+      "jp": "Premier League"
+    },
+    "homeTeam": {
+      "id": 65,
+      "name": {
+        "jp": "マンチェスター・シティ",
+        "en": "Manchester City FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/65.svg"
+    },
+    "awayTeam": {
+      "id": 66,
+      "name": {
+        "jp": "マンチェスター・ユナイテッド",
+        "en": "Manchester United FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/66.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544241",
+    "kickoffTime": "2025-09-14T16:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 78,
+      "name": {
+        "jp": "アトレティコ・マドリード",
+        "en": "Club Atlético de Madrid"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/78.svg"
+    },
+    "awayTeam": {
+      "id": 94,
+      "name": {
+        "jp": "ビジャレアル",
+        "en": "Villarreal CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/94.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544242",
+    "kickoffTime": "2025-09-14T16:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 81,
+      "name": {
+        "jp": "バルセロナ",
+        "en": "FC Barcelona"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/81.svg"
+    },
+    "awayTeam": {
+      "id": 95,
+      "name": {
+        "jp": "バレンシア",
+        "en": "Valencia CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/95.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544247",
+    "kickoffTime": "2025-09-14T16:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 77,
+      "name": {
+        "jp": "アスレティック・ビルバオ",
+        "en": "Athletic Club"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/77.svg"
+    },
+    "awayTeam": {
+      "id": 263,
+      "name": {
+        "jp": "アラベス",
+        "en": "Deportivo Alavés"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/263.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544250",
+    "kickoffTime": "2025-09-14T16:00:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 92,
+      "name": {
+        "jp": "レアル・ソシエダ",
+        "en": "Real Sociedad de Fútbol"
+      },
+      "players": [
+        "久保 建英",
+        "喜多 壱也"
+      ],
+      "englishplayers": [
+        "Takefusa Kubo",
+        "Kazunari Kita"
+      ],
+      "logo": "https://crests.football-data.org/92.svg"
+    },
+    "awayTeam": {
+      "id": 86,
+      "name": {
+        "jp": "レアル・マドリード",
+        "en": "Real Madrid CF"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/86.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536844",
+    "kickoffTime": "2025-09-14T16:00:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 471,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 110,
+      "name": {
+        "jp": "ラツィオ",
+        "en": "SS Lazio"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/110.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544246",
+    "kickoffTime": "2025-09-14T16:30:00Z",
+    "matchday": 4,
+    "league": {
+      "en": "Primera Division",
+      "jp": "Primera Division"
+    },
+    "homeTeam": {
+      "id": 79,
+      "name": {
+        "jp": "オサスナ",
+        "en": "CA Osasuna"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/79.svg"
+    },
+    "awayTeam": {
+      "id": 87,
+      "name": {
+        "jp": "ラーヨ・バジェカーノ",
+        "en": "Rayo Vallecano de Madrid"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/87.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "536836",
+    "kickoffTime": "2025-09-14T18:45:00Z",
+    "matchday": 3,
+    "league": {
+      "en": "Serie A",
+      "jp": "Serie A"
+    },
+    "homeTeam": {
+      "id": 98,
+      "name": {
+        "jp": "ACミラン",
+        "en": "AC Milan"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/98.svg"
+    },
+    "awayTeam": {
+      "id": 103,
+      "name": {
+        "jp": "ボローニャ",
+        "en": "Bologna FC 1909"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/103.svg"
     },
     "lineupStatus": "未発表",
     "score": {
