@@ -4656,15 +4656,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
       "fullTime": {
-        "away": null,
-        "home": null
+        "home": 2,
+        "away": 3
+      },
+      "halfTime": {
+        "home": 1,
+        "away": 1
       }
     },
     "startingMembers": [],
