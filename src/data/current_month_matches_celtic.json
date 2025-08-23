@@ -113,13 +113,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 3
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 0
       },
       "halfTime": {
         "home": null,
@@ -208,8 +208,8 @@
     "lineupStatus": "未発表"
   },
   {
-    "matchId": "CELTIC_2025-09-13T14:00:00.000Z_vs_キルマーノック",
-    "utcDate": "2025-09-13T14:00:00.000Z",
+    "matchId": "CELTIC_2025-09-12T22:00:00.000Z_vs_キルマーノック",
+    "utcDate": "2025-09-12T22:00:00.000Z",
     "matchday": 5,
     "league": "スコットランド",
     "season": {
