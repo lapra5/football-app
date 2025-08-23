@@ -3855,15 +3855,15 @@
     },
     "lineupStatus": "未発表",
     "score": {
-      "duration": "REGULAR",
       "winner": "DRAW",
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
+      "duration": "REGULAR",
       "fullTime": {
-        "away": 0,
-        "home": 0
+        "home": 0,
+        "away": 0
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 0
       }
     },
     "startingMembers": [],
