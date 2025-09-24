@@ -1725,13 +1725,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 0
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "DRAW",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       },
       "halfTime": {
         "home": null,
