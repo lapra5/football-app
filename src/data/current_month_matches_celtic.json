@@ -2338,5 +2338,57 @@
       "emblem": ""
     },
     "lineupStatus": "未発表"
+  },
+  {
+    "matchId": "CELTIC_2025-11-02T14:00:00.000Z_vs_レンジャーズ",
+    "utcDate": "2025-11-02T14:00:00.000Z",
+    "matchday": 0,
+    "league": "スコットランド",
+    "season": {
+      "startDate": "2025-07-01",
+      "endDate": "2026-06-30",
+      "currentMatchday": 0
+    },
+    "status": "SCHEDULED",
+    "score": {
+      "winner": null,
+      "duration": "REGULAR",
+      "fullTime": {
+        "home": null,
+        "away": null
+      },
+      "halfTime": {
+        "home": null,
+        "away": null
+      }
+    },
+    "homeTeam": {
+      "id": null,
+      "name": "セルティックFC",
+      "crest": "",
+      "shortName": "セルティック",
+      "tla": "CEL"
+    },
+    "awayTeam": {
+      "id": null,
+      "name": "レンジャーズ",
+      "crest": "",
+      "shortName": "レンジャーズ",
+      "tla": ""
+    },
+    "area": {
+      "id": 2072,
+      "name": "Scotland",
+      "code": "SCO",
+      "flag": ""
+    },
+    "competition": {
+      "id": 9000,
+      "name": "スコティッシュ・プレミアシップ",
+      "code": "SPL",
+      "type": "LEAGUE",
+      "emblem": ""
+    },
+    "lineupStatus": "未発表"
   }
 ]
