@@ -3784,55 +3784,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "540465",
-    "kickoffTime": "2025-10-17T18:30:00Z",
-    "matchday": 7,
-    "league": {
-      "en": "Bundesliga",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 28,
-      "name": {
-        "jp": "1.FCウニオン・ベルリン",
-        "en": "1. FC Union Berlin"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/28.svg"
-    },
-    "awayTeam": {
-      "id": 18,
-      "name": {
-        "jp": "ボルシア",
-        "en": "Borussia Mönchengladbach"
-      },
-      "players": [
-        "町野 修斗"
-      ],
-      "englishplayers": [
-        "Shūto Machino"
-      ],
-      "logo": "https://crests.football-data.org/18.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": "HOME_TEAM",
-      "halfTime": {
-        "away": 1,
-        "home": 2
-      },
-      "fullTime": {
-        "away": 1,
-        "home": 3
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "540462",
     "kickoffTime": "2025-10-18T13:30:00Z",
     "matchday": 7,
@@ -11612,96 +11563,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "535205",
-    "kickoffTime": "2025-10-17T00:30:00Z",
-    "matchday": 28,
-    "league": {
-      "en": "Campeonato Brasileiro Série A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 1765,
-      "name": {
-        "jp": "フルミネンセFC",
-        "en": "Fluminense FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1765.svg"
-    },
-    "awayTeam": {
-      "id": 4245,
-      "name": {
-        "jp": "ECジュベントゥージ",
-        "en": "EC Juventude"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": "HOME_TEAM",
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 1
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "535212",
-    "kickoffTime": "2025-10-17T00:30:00Z",
-    "matchday": 28,
-    "league": {
-      "en": "Campeonato Brasileiro Série A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 1782,
-      "name": {
-        "jp": "ECヴィトーリア",
-        "en": "EC Vitória"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 1777,
-      "name": {
-        "jp": "ECバイーア",
-        "en": "EC Bahia"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1777.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": "HOME_TEAM",
-      "halfTime": {
-        "away": 1,
-        "home": 1
-      },
-      "fullTime": {
-        "away": 1,
-        "home": 2
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "535217",
     "kickoffTime": "2025-10-18T21:30:00Z",
     "matchday": 29,
@@ -14553,22 +14414,22 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
       "penalties": {
         "away": 0,
         "home": 0
       },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 1,
-        "home": 1
-      },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "halfTime": {
+        "away": 1,
+        "home": 1
+      },
+      "fullTime": {
+        "home": 1,
+        "away": 5
       }
     },
     "startingMembers": [],
@@ -14606,14 +14467,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -14651,14 +14512,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -16864,51 +16737,6 @@
       "fullTime": {
         "away": null,
         "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "544299",
-    "kickoffTime": "2025-10-17T19:00:00Z",
-    "matchday": 9,
-    "league": {
-      "en": "Primera Division",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 1048,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 80,
-      "name": {
-        "jp": "エスパニョール",
-        "en": "RCD Espanyol de Barcelona"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/80.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": "AWAY_TEAM",
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 2,
-        "home": 0
       }
     },
     "startingMembers": [],
@@ -21016,56 +20844,44 @@
     "outOfSquad": []
   },
   {
-    "matchId": "542474",
-    "kickoffTime": "2025-10-17T18:45:00Z",
-    "matchday": 8,
+    "matchId": "544366",
+    "kickoffTime": "2025-12-15T20:00:00Z",
+    "matchday": 16,
     "league": {
-      "en": "Ligue 1",
+      "en": "Primera Division",
       "jp": ""
     },
     "homeTeam": {
-      "id": 524,
+      "id": 87,
       "name": {
-        "jp": "パリ・サンジェルマン",
-        "en": "Paris Saint-Germain FC"
+        "jp": "ラーヨ・バジェカーノ",
+        "en": "Rayo Vallecano de Madrid"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/524.svg"
+      "logo": "https://crests.football-data.org/87.svg"
     },
     "awayTeam": {
-      "id": 576,
+      "id": 90,
       "name": {
-        "jp": "RCストラスブール",
-        "en": "RC Strasbourg Alsace"
+        "jp": "ベティス",
+        "en": "Real Betis Balompié"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/576.svg"
+      "logo": "https://crests.football-data.org/90.svg"
     },
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "DRAW",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
+      "winner": null,
       "halfTime": {
-        "away": 2,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 3,
-        "home": 3
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -25218,63 +25034,6 @@
       "fullTime": {
         "away": null,
         "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "540824",
-    "kickoffTime": "2025-10-17T19:00:00Z",
-    "matchday": 10,
-    "league": {
-      "en": "Championship",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 343,
-      "name": {
-        "jp": "ミドルズブラFC",
-        "en": "Middlesbrough FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/343.svg"
-    },
-    "awayTeam": {
-      "id": 349,
-      "name": {
-        "jp": "イプスウィッチ・タウン",
-        "en": "Ipswich Town FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/349.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "HOME_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 1
-      },
-      "fullTime": {
-        "away": 1,
-        "home": 2
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
       }
     },
     "startingMembers": [],
@@ -32704,6 +32463,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "540960",
+    "kickoffTime": "2025-12-15T20:00:00Z",
+    "matchday": 21,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 345,
+      "name": {
+        "jp": "シェフィールド・ウェンズデイ",
+        "en": "Sheffield Wednesday FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/345.svg"
+    },
+    "awayTeam": {
+      "id": 342,
+      "name": {
+        "jp": "ダービー・カウンティFC",
+        "en": "Derby County FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/342.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "545774",
     "kickoffTime": "2025-10-24T19:15:00Z",
     "matchday": 9,
@@ -40111,6 +39915,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "536957",
+    "kickoffTime": "2025-12-15T19:45:00Z",
+    "matchday": 15,
+    "league": {
+      "en": "Serie A",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 100,
+      "name": {
+        "jp": "ローマ",
+        "en": "AS Roma"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/100.svg"
+    },
+    "awayTeam": {
+      "id": 7397,
+      "name": {
+        "jp": "コモ",
+        "en": "Como 1907"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/7397.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "537862",
     "kickoffTime": "2025-10-18T11:30:00Z",
     "matchday": 8,
@@ -44745,6 +44594,51 @@
         "undefined"
       ],
       "logo": "https://crests.football-data.org/341.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537942",
+    "kickoffTime": "2025-12-15T20:00:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 66,
+      "name": {
+        "jp": "マンチェスター・ユナイテッド",
+        "en": "Manchester United FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/66.svg"
+    },
+    "awayTeam": {
+      "id": 1044,
+      "name": {
+        "jp": "AFCボーンマス",
+        "en": "AFC Bournemouth"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1044.svg"
     },
     "lineupStatus": "未発表",
     "score": {
