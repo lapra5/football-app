@@ -7519,13 +7519,13 @@
         "home": 0
       },
       "winner": "HOME_TEAM",
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
       "fullTime": {
         "away": 0,
         "home": 2
+      },
+      "halfTime": {
+        "away": 0,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -11593,7 +11593,6 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
       "penalties": {
         "away": 0,
         "home": 0
@@ -11602,13 +11601,14 @@
         "away": 0,
         "home": 0
       },
-      "fullTime": {
-        "away": 0,
-        "home": 0
-      },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "fullTime": {
+        "home": 0,
+        "away": 2
       }
     },
     "startingMembers": [],
@@ -11646,14 +11646,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -11691,14 +11691,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -11736,14 +11748,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -12464,63 +12488,6 @@
       "fullTime": {
         "away": null,
         "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "544319",
-    "kickoffTime": "2025-11-03T20:00:00Z",
-    "matchday": 11,
-    "league": {
-      "en": "Primera Division",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 1048,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 79,
-      "name": {
-        "jp": "オサスナ",
-        "en": "CA Osasuna"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/79.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "DRAW",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
       }
     },
     "startingMembers": [],
@@ -14355,14 +14322,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -25065,56 +25044,565 @@
     "outOfSquad": []
   },
   {
-    "matchId": "545787",
-    "kickoffTime": "2025-11-03T20:45:00Z",
-    "matchday": 10,
+    "matchId": "541000",
+    "kickoffTime": "2026-01-01T12:30:00Z",
+    "matchday": 25,
     "league": {
-      "en": "Primeira Liga",
+      "en": "Championship",
       "jp": ""
     },
     "homeTeam": {
-      "id": 5533,
+      "id": 59,
       "name": {
-        "jp": "ジル・ビセンテ",
-        "en": "Gil Vicente FC"
+        "jp": "ブラックバーン・ローバーズ",
+        "en": "Blackburn Rovers FC"
       },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5533.svg"
+      "players": [
+        "大橋 祐紀",
+        "森下 龍矢"
+      ],
+      "englishplayers": [
+        "Yūki Ōhashi",
+        "Ryōya Morishita"
+      ],
+      "logo": "https://crests.football-data.org/59.svg"
     },
     "awayTeam": {
-      "id": 5530,
+      "id": 404,
       "name": {
-        "jp": "サンタ・クララ",
-        "en": "CD Santa Clara"
+        "jp": "",
+        "en": ""
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/5530.svg"
+      "logo": ""
     },
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "HOME_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 0,
-        "home": 1
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541001",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 387,
+      "name": {
+        "jp": "ブリストル・シティFC",
+        "en": "Bristol City FC"
       },
-      "extraTime": {
-        "away": 0,
-        "home": 0
+      "players": [
+        "平河 悠"
+      ],
+      "englishplayers": [
+        "Yū Hirakawa"
+      ],
+      "logo": "https://crests.football-data.org/387.svg"
+    },
+    "awayTeam": {
+      "id": 325,
+      "name": {
+        "jp": "ポーツマスFC",
+        "en": "Portsmouth FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541002",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 348,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "awayTeam": {
+      "id": 1076,
+      "name": {
+        "jp": "コベントリー・シティFC",
+        "en": "Coventry City FC"
+      },
+      "players": [
+        "坂元 達裕"
+      ],
+      "englishplayers": [
+        "Tatsuhiro Sakamoto"
+      ],
+      "logo": "https://crests.football-data.org/1076.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541003",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 342,
+      "name": {
+        "jp": "ダービー・カウンティFC",
+        "en": "Derby County FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/342.svg"
+    },
+    "awayTeam": {
+      "id": 343,
+      "name": {
+        "jp": "ミドルズブラFC",
+        "en": "Middlesbrough FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/343.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541004",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 322,
+      "name": {
+        "jp": "ハル・シティAFC",
+        "en": "Hull City AFC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/322.svg"
+    },
+    "awayTeam": {
+      "id": 70,
+      "name": {
+        "jp": "ストーク・シティ",
+        "en": "Stoke City FC"
+      },
+      "players": [
+        "瀬古 樹"
+      ],
+      "englishplayers": [
+        "Tatsuki Seko"
+      ],
+      "logo": "https://crests.football-data.org/70.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541005",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 349,
+      "name": {
+        "jp": "イプスウィッチ・タウン",
+        "en": "Ipswich Town FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/349.svg"
+    },
+    "awayTeam": {
+      "id": 1082,
+      "name": {
+        "jp": "オックスフォード・ユナイテッドFC",
+        "en": "Oxford United FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1082.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541006",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 1081,
+      "name": {
+        "jp": "プレストン・ノース・エンドFC",
+        "en": "Preston North End FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1081.svg"
+    },
+    "awayTeam": {
+      "id": 345,
+      "name": {
+        "jp": "シェフィールド・ウェンズデイ",
+        "en": "Sheffield Wednesday FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/345.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541007",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 69,
+      "name": {
+        "jp": "クイーンズパーク・レンジャーズ",
+        "en": "Queens Park Rangers FC"
+      },
+      "players": [
+        "斉藤 光毅"
+      ],
+      "englishplayers": [
+        "Kōki Saitō (footballer)"
+      ],
+      "logo": "https://crests.football-data.org/69.svg"
+    },
+    "awayTeam": {
+      "id": 68,
+      "name": {
+        "jp": "ノリッジ・シティ",
+        "en": "Norwich City FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/68.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541009",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 340,
+      "name": {
+        "jp": "サウサンプトン",
+        "en": "Southampton FC"
+      },
+      "players": [
+        "松木 玖生"
+      ],
+      "englishplayers": [
+        "Kuryu Matsuki"
+      ],
+      "logo": "https://crests.football-data.org/340.svg"
+    },
+    "awayTeam": {
+      "id": 384,
+      "name": {
+        "jp": "ミルウォールFC",
+        "en": "Millwall FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/384.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541010",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 72,
+      "name": {
+        "jp": "スウォンジー・シティAFC",
+        "en": "Swansea City AFC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/72.svg"
+    },
+    "awayTeam": {
+      "id": 74,
+      "name": {
+        "jp": "ウェスト・ブロムウィッチ・アルビオン",
+        "en": "West Bromwich Albion FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/74.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541011",
+    "kickoffTime": "2026-01-01T15:00:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 346,
+      "name": {
+        "jp": "ワトフォードFC",
+        "en": "Watford FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/346.svg"
+    },
+    "awayTeam": {
+      "id": 332,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "541008",
+    "kickoffTime": "2026-01-01T17:30:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Championship",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 356,
+      "name": {
+        "jp": "シェフィールド・ユナイテッドFC",
+        "en": "Sheffield United FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/356.svg"
+    },
+    "awayTeam": {
+      "id": 338,
+      "name": {
+        "jp": "レスター・シティ",
+        "en": "Leicester City FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/338.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -27809,120 +28297,6 @@
       "fullTime": {
         "away": null,
         "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "536911",
-    "kickoffTime": "2025-11-03T17:30:00Z",
-    "matchday": 10,
-    "league": {
-      "en": "Serie A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 471,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 107,
-      "name": {
-        "jp": "ジェノア",
-        "en": "Genoa CFC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/107.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "AWAY_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 1,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 2,
-        "home": 1
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "536909",
-    "kickoffTime": "2025-11-03T19:45:00Z",
-    "matchday": 10,
-    "league": {
-      "en": "Serie A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 110,
-      "name": {
-        "jp": "ラツィオ",
-        "en": "SS Lazio"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/110.svg"
-    },
-    "awayTeam": {
-      "id": 104,
-      "name": {
-        "jp": "カリアリ",
-        "en": "Cagliari Calcio"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/104.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "HOME_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 2
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
       }
     },
     "startingMembers": [],
@@ -31284,63 +31658,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "537875",
-    "kickoffTime": "2025-11-03T20:00:00Z",
-    "matchday": 10,
-    "league": {
-      "en": "Premier League",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 71,
-      "name": {
-        "jp": "サンダーランドAFC",
-        "en": "Sunderland AFC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/71.svg"
-    },
-    "awayTeam": {
-      "id": 62,
-      "name": {
-        "jp": "エヴァートン",
-        "en": "Everton FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/62.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "DRAW",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 1,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 1,
-        "home": 1
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "537893",
     "kickoffTime": "2025-11-08T12:30:00Z",
     "matchday": 11,
@@ -33320,14 +33637,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 4,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -33365,14 +33694,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -33414,14 +33755,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -33459,14 +33812,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -33508,14 +33873,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -33557,14 +33934,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -35752,6 +36141,202 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/76.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537966",
+    "kickoffTime": "2026-01-01T17:30:00Z",
+    "matchday": 19,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 354,
+      "name": {
+        "jp": "クリスタル・パレス",
+        "en": "Crystal Palace FC"
+      },
+      "players": [
+        "鎌田 大地"
+      ],
+      "englishplayers": [
+        "Daichi Kamada"
+      ],
+      "logo": "https://crests.football-data.org/354.svg"
+    },
+    "awayTeam": {
+      "id": 63,
+      "name": {
+        "jp": "フラム",
+        "en": "Fulham FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/63.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537971",
+    "kickoffTime": "2026-01-01T17:30:00Z",
+    "matchday": 19,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 64,
+      "name": {
+        "jp": "リヴァプール",
+        "en": "Liverpool FC"
+      },
+      "players": [
+        "遠藤 航"
+      ],
+      "englishplayers": [
+        "Wataru Endo"
+      ],
+      "logo": "https://crests.football-data.org/64.svg"
+    },
+    "awayTeam": {
+      "id": 341,
+      "name": {
+        "jp": "リーズ・ユナイテッド",
+        "en": "Leeds United FC"
+      },
+      "players": [
+        "田中 碧"
+      ],
+      "englishplayers": [
+        "undefined"
+      ],
+      "logo": "https://crests.football-data.org/341.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537965",
+    "kickoffTime": "2026-01-01T20:00:00Z",
+    "matchday": 19,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 71,
+      "name": {
+        "jp": "サンダーランドAFC",
+        "en": "Sunderland AFC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/71.svg"
+    },
+    "awayTeam": {
+      "id": 65,
+      "name": {
+        "jp": "マンチェスター・シティ",
+        "en": "Manchester City FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/65.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537968",
+    "kickoffTime": "2026-01-01T20:00:00Z",
+    "matchday": 19,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 402,
+      "name": {
+        "jp": "ブレントフォード",
+        "en": "Brentford FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/402.svg"
+    },
+    "awayTeam": {
+      "id": 73,
+      "name": {
+        "jp": "トッテナム・ホットスパー",
+        "en": "Tottenham Hotspur FC"
+      },
+      "players": [
+        "高井 幸大"
+      ],
+      "englishplayers": [
+        "Kōta Takai"
+      ],
+      "logo": "https://crests.football-data.org/73.svg"
     },
     "lineupStatus": "未発表",
     "score": {
