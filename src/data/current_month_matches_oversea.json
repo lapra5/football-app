@@ -3785,14 +3785,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 3
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -4667,6 +4679,300 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/4.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540544",
+    "kickoffTime": "2026-01-10T14:30:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 17,
+      "name": {
+        "jp": "フライブルク",
+        "en": "SC Freiburg"
+      },
+      "players": [
+        "鈴木 唯人"
+      ],
+      "englishplayers": [
+        "Yuito Suzuki"
+      ],
+      "logo": "https://crests.football-data.org/17.svg"
+    },
+    "awayTeam": {
+      "id": 7,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540545",
+    "kickoffTime": "2026-01-10T14:30:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 12,
+      "name": {
+        "jp": "ヴェルダー・ブレーメン",
+        "en": "SV Werder Bremen"
+      },
+      "players": [
+        "菅原 由勢"
+      ],
+      "englishplayers": [
+        "Yukinari Sugawara"
+      ],
+      "logo": "https://crests.football-data.org/12.svg"
+    },
+    "awayTeam": {
+      "id": 2,
+      "name": {
+        "jp": "ホッフェンハイム",
+        "en": "TSG 1899 Hoffenheim"
+      },
+      "players": [
+        "町田 浩樹"
+      ],
+      "englishplayers": [
+        "Kōki Machida"
+      ],
+      "logo": "https://crests.football-data.org/2.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540547",
+    "kickoffTime": "2026-01-10T14:30:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 28,
+      "name": {
+        "jp": "1.FCウニオン・ベルリン",
+        "en": "1. FC Union Berlin"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/28.svg"
+    },
+    "awayTeam": {
+      "id": 15,
+      "name": {
+        "jp": "1.FSVマインツ05",
+        "en": "1. FSV Mainz 05"
+      },
+      "players": [
+        "川崎 颯太",
+        "佐野 海舟"
+      ],
+      "englishplayers": [
+        "undefined",
+        "Kaishu Sano"
+      ],
+      "logo": "https://crests.football-data.org/15.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540548",
+    "kickoffTime": "2026-01-10T14:30:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 20,
+      "name": {
+        "jp": "ザンクト・パウリ",
+        "en": "FC St. Pauli 1910"
+      },
+      "players": [
+        "ニック・シュミット",
+        "藤田 譲瑠チマ"
+      ],
+      "englishplayers": [
+        "undefined",
+        "Joel Chima Fujita"
+      ],
+      "logo": "https://crests.football-data.org/20.svg"
+    },
+    "awayTeam": {
+      "id": 721,
+      "name": {
+        "jp": "RBライプツィヒ",
+        "en": "RB Leipzig"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/721.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540549",
+    "kickoffTime": "2026-01-10T14:30:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 44,
+      "name": {
+        "jp": "ハイデンハイム",
+        "en": "1. FC Heidenheim 1846"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/44.svg"
+    },
+    "awayTeam": {
+      "id": 1,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "540542",
+    "kickoffTime": "2026-01-10T17:30:00Z",
+    "matchday": 16,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 3,
+      "name": {
+        "jp": "バイエル・レバークーゼン",
+        "en": "Bayer 04 Leverkusen"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/3.svg"
+    },
+    "awayTeam": {
+      "id": 10,
+      "name": {
+        "jp": "シュトゥットガルト",
+        "en": "VfB Stuttgart"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/10.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -7218,44 +7524,183 @@
     "outOfSquad": []
   },
   {
-    "matchId": "535090",
-    "kickoffTime": "2025-11-12T23:30:00Z",
-    "matchday": 16,
+    "matchId": "537594",
+    "kickoffTime": "2026-01-10T15:30:00Z",
+    "matchday": 18,
     "league": {
-      "en": "Campeonato Brasileiro Série A",
+      "en": "Eredivisie",
       "jp": ""
     },
     "homeTeam": {
-      "id": 1766,
+      "id": 682,
       "name": {
-        "jp": "CAミネイロ",
-        "en": "CA Mineiro"
+        "jp": "AZアルクマール",
+        "en": "AZ"
       },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1766.svg"
+      "players": [
+        "毎熊 晟矢"
+      ],
+      "englishplayers": [
+        "Seiya Maikuma"
+      ],
+      "logo": "https://crests.football-data.org/682.svg"
     },
     "awayTeam": {
-      "id": 3984,
+      "id": 1919,
       "name": {
-        "jp": "フォルタレーザEC",
-        "en": "Fortaleza EC"
+        "jp": "",
+        "en": ""
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/3984.svg"
+      "logo": ""
     },
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": "DRAW",
+      "winner": null,
       "halfTime": {
-        "away": 0,
-        "home": 2
+        "away": null,
+        "home": null
       },
       "fullTime": {
-        "away": 3,
-        "home": 3
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537602",
+    "kickoffTime": "2026-01-10T17:45:00Z",
+    "matchday": 18,
+    "league": {
+      "en": "Eredivisie",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 666,
+      "name": {
+        "jp": "FCトゥエンテ",
+        "en": "FC Twente '65"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/666.svg"
+    },
+    "awayTeam": {
+      "id": 684,
+      "name": {
+        "jp": "ズウォレ",
+        "en": "PEC Zwolle"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/684.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537598",
+    "kickoffTime": "2026-01-10T19:00:00Z",
+    "matchday": 18,
+    "league": {
+      "en": "Eredivisie",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 674,
+      "name": {
+        "jp": "PSVアイントホーフェン",
+        "en": "PSV"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/674.svg"
+    },
+    "awayTeam": {
+      "id": 670,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537595",
+    "kickoffTime": "2026-01-10T20:00:00Z",
+    "matchday": 18,
+    "league": {
+      "en": "Eredivisie",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 677,
+      "name": {
+        "jp": "FCフローニンゲン",
+        "en": "FC Groningen"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/677.svg"
+    },
+    "awayTeam": {
+      "id": 681,
+      "name": {
+        "jp": "NACブレダ",
+        "en": "NAC Breda"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/681.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
       }
     },
     "startingMembers": [],
@@ -11877,14 +12322,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -14802,14 +15259,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 4
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -19233,14 +19702,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -23641,6 +24122,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "545818",
+    "kickoffTime": "2025-12-13T00:00:00Z",
+    "matchday": 14,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 5529,
+      "name": {
+        "jp": "ナシオナル",
+        "en": "CD Nacional"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5529.svg"
+    },
+    "awayTeam": {
+      "id": 1049,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "545817",
     "kickoffTime": "2025-12-13T15:30:00Z",
     "matchday": 14,
@@ -23667,51 +24193,6 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/5533.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545818",
-    "kickoffTime": "2025-12-13T15:30:00Z",
-    "matchday": 14,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 5529,
-      "name": {
-        "jp": "ナシオナル",
-        "en": "CD Nacional"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5529.svg"
-    },
-    "awayTeam": {
-      "id": 1049,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
     },
     "lineupStatus": "未発表",
     "score": {
@@ -24512,7 +24993,7 @@
     "outOfSquad": []
   },
   {
-    "matchId": "545838",
+    "matchId": "545840",
     "kickoffTime": "2025-12-27T20:30:00Z",
     "matchday": 16,
     "league": {
@@ -24520,20 +25001,20 @@
       "jp": ""
     },
     "homeTeam": {
-      "id": 503,
+      "id": 582,
       "name": {
-        "jp": "FCポルト",
-        "en": "FC Porto"
+        "jp": "エストリル・プライア",
+        "en": "GD Estoril Praia"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/503.svg"
+      "logo": ""
     },
     "awayTeam": {
-      "id": 10340,
+      "id": 7822,
       "name": {
-        "jp": "AVSフトゥボルSAD",
-        "en": "AVS"
+        "jp": "",
+        "en": ""
       },
       "players": [],
       "englishplayers": [],
@@ -24835,7 +25316,7 @@
     "outOfSquad": []
   },
   {
-    "matchId": "545840",
+    "matchId": "545838",
     "kickoffTime": "2025-12-29T20:15:00Z",
     "matchday": 16,
     "league": {
@@ -24843,61 +25324,6 @@
       "jp": ""
     },
     "homeTeam": {
-      "id": 582,
-      "name": {
-        "jp": "エストリル・プライア",
-        "en": "GD Estoril Praia"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 7822,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545847",
-    "kickoffTime": "2026-01-02T18:00:00Z",
-    "matchday": 17,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 5530,
-      "name": {
-        "jp": "サンタ・クララ",
-        "en": "CD Santa Clara"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5530.svg"
-    },
-    "awayTeam": {
       "id": 503,
       "name": {
         "jp": "FCポルト",
@@ -24907,50 +25333,15 @@
       "englishplayers": [],
       "logo": "https://crests.football-data.org/503.svg"
     },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "545849",
-    "kickoffTime": "2026-01-02T18:00:00Z",
-    "matchday": 17,
-    "league": {
-      "en": "Primeira Liga",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 5543,
-      "name": {
-        "jp": "ヴィトーリア・ギマランイス",
-        "en": "Vitória SC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5543.svg"
-    },
     "awayTeam": {
-      "id": 5529,
+      "id": 10340,
       "name": {
-        "jp": "ナシオナル",
-        "en": "CD Nacional"
+        "jp": "AVSフトゥボルSAD",
+        "en": "AVS"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/5529.svg"
+      "logo": ""
     },
     "lineupStatus": "未発表",
     "score": {
@@ -24971,7 +25362,7 @@
   },
   {
     "matchId": "545846",
-    "kickoffTime": "2026-01-02T20:45:00Z",
+    "kickoffTime": "2026-01-02T18:45:00Z",
     "matchday": 17,
     "league": {
       "en": "Primeira Liga",
@@ -25019,7 +25410,52 @@
     "outOfSquad": []
   },
   {
-    "matchId": "545850",
+    "matchId": "545849",
+    "kickoffTime": "2026-01-02T20:45:00Z",
+    "matchday": 17,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 5543,
+      "name": {
+        "jp": "ヴィトーリア・ギマランイス",
+        "en": "Vitória SC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5543.svg"
+    },
+    "awayTeam": {
+      "id": 5529,
+      "name": {
+        "jp": "ナシオナル",
+        "en": "CD Nacional"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5529.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545851",
     "kickoffTime": "2026-01-03T15:30:00Z",
     "matchday": 17,
     "league": {
@@ -25027,23 +25463,27 @@
       "jp": ""
     },
     "homeTeam": {
-      "id": 496,
+      "id": 1049,
       "name": {
-        "jp": "リオ・アヴェ",
-        "en": "Rio Ave FC"
+        "jp": "",
+        "en": ""
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/496.svg"
+      "logo": ""
     },
     "awayTeam": {
-      "id": 6618,
+      "id": 712,
       "name": {
-        "jp": "カーザ・ピア",
-        "en": "Casa Pia AC"
+        "jp": "アロウカ",
+        "en": "FC Arouca"
       },
-      "players": [],
-      "englishplayers": [],
+      "players": [
+        "福井 太智"
+      ],
+      "englishplayers": [
+        "Taichi Fukui"
+      ],
       "logo": ""
     },
     "lineupStatus": "未発表",
@@ -25199,7 +25639,52 @@
     "outOfSquad": []
   },
   {
-    "matchId": "545851",
+    "matchId": "545850",
+    "kickoffTime": "2026-01-04T15:30:00Z",
+    "matchday": 17,
+    "league": {
+      "en": "Primeira Liga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 496,
+      "name": {
+        "jp": "リオ・アヴェ",
+        "en": "Rio Ave FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/496.svg"
+    },
+    "awayTeam": {
+      "id": 6618,
+      "name": {
+        "jp": "カーザ・ピア",
+        "en": "Casa Pia AC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "545847",
     "kickoffTime": "2026-01-04T18:00:00Z",
     "matchday": 17,
     "league": {
@@ -25207,28 +25692,24 @@
       "jp": ""
     },
     "homeTeam": {
-      "id": 1049,
+      "id": 5530,
       "name": {
-        "jp": "",
-        "en": ""
+        "jp": "サンタ・クララ",
+        "en": "CD Santa Clara"
       },
       "players": [],
       "englishplayers": [],
-      "logo": ""
+      "logo": "https://crests.football-data.org/5530.svg"
     },
     "awayTeam": {
-      "id": 712,
+      "id": 503,
       "name": {
-        "jp": "アロウカ",
-        "en": "FC Arouca"
+        "jp": "FCポルト",
+        "en": "FC Porto"
       },
-      "players": [
-        "福井 太智"
-      ],
-      "englishplayers": [
-        "Taichi Fukui"
-      ],
-      "logo": ""
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/503.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -27045,14 +27526,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -29082,6 +29575,186 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/107.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537009",
+    "kickoffTime": "2026-01-10T14:00:00Z",
+    "matchday": 20,
+    "league": {
+      "en": "Serie A",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 7397,
+      "name": {
+        "jp": "コモ",
+        "en": "Como 1907"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/7397.svg"
+    },
+    "awayTeam": {
+      "id": 103,
+      "name": {
+        "jp": "ボローニャ",
+        "en": "Bologna FC 1909"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/103.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537013",
+    "kickoffTime": "2026-01-10T14:00:00Z",
+    "matchday": 20,
+    "league": {
+      "en": "Serie A",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 115,
+      "name": {
+        "jp": "ウディネーゼ",
+        "en": "Udinese Calcio"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/115.svg"
+    },
+    "awayTeam": {
+      "id": 487,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537006",
+    "kickoffTime": "2026-01-10T17:00:00Z",
+    "matchday": 20,
+    "league": {
+      "en": "Serie A",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 100,
+      "name": {
+        "jp": "ローマ",
+        "en": "AS Roma"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/100.svg"
+    },
+    "awayTeam": {
+      "id": 471,
+      "name": {
+        "jp": "",
+        "en": ""
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": ""
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "537007",
+    "kickoffTime": "2026-01-10T19:45:00Z",
+    "matchday": 20,
+    "league": {
+      "en": "Serie A",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 102,
+      "name": {
+        "jp": "アタランタ",
+        "en": "Atalanta BC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/102.svg"
+    },
+    "awayTeam": {
+      "id": 586,
+      "name": {
+        "jp": "トリノ",
+        "en": "Torino FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/586.svg"
     },
     "lineupStatus": "未発表",
     "score": {
