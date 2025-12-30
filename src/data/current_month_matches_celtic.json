@@ -945,13 +945,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 19
     },
-    "status": "FINISHED",
+    "status": "SCHEDULED",
     "score": {
-      "winner": "AWAY_TEAM",
+      "winner": null,
       "duration": "REGULAR",
       "fullTime": {
-        "home": 2,
-        "away": 4
+        "home": null,
+        "away": null
       },
       "halfTime": {
         "home": null,
