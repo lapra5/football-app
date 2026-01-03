@@ -945,13 +945,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 19
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 4
       },
       "halfTime": {
         "home": null,
@@ -997,13 +997,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 20
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       },
       "halfTime": {
         "home": null,
@@ -1049,13 +1049,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 21
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "AWAY_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 3
       },
       "halfTime": {
         "home": null,
