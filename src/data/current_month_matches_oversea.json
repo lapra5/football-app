@@ -6945,6 +6945,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "540627",
+    "kickoffTime": "2026-03-06T19:30:00Z",
+    "matchday": 25,
+    "league": {
+      "en": "Bundesliga",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 5,
+      "name": {
+        "jp": "バイエルン・ミュンヘン",
+        "en": "FC Bayern München"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/5.svg"
+    },
+    "awayTeam": {
+      "id": 18,
+      "name": {
+        "jp": "ボルシア",
+        "en": "Borussia Mönchengladbach"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/18.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "537594",
     "kickoffTime": "2026-01-10T15:30:00Z",
     "matchday": 18,
@@ -10650,6 +10695,51 @@
     "outOfSquad": []
   },
   {
+    "matchId": "537670",
+    "kickoffTime": "2026-03-06T19:00:00Z",
+    "matchday": 26,
+    "league": {
+      "en": "Eredivisie",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 671,
+      "name": {
+        "jp": "ヘラクレス・アルメロ",
+        "en": "Heracles Almelo"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/671.svg"
+    },
+    "awayTeam": {
+      "id": 676,
+      "name": {
+        "jp": "FCユトレヒト",
+        "en": "FC Utrecht"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/676.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
     "matchId": "554740",
     "kickoffTime": "2026-01-28T22:00:00Z",
     "matchday": 1,
@@ -11206,22 +11296,22 @@
         "away": 0,
         "home": 0
       },
-      "winner": "DRAW",
       "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
         "away": 0,
         "home": 0
       },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "halfTime": {
+        "away": 0,
+        "home": 1
+      },
+      "fullTime": {
+        "away": 0,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -11268,17 +11358,17 @@
         "away": 0,
         "home": 0
       },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 0
-      },
       "extraTime": {
         "away": 0,
         "home": 0
+      },
+      "halfTime": {
+        "home": 0,
+        "away": 1
+      },
+      "fullTime": {
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -11316,14 +11406,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 2
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 2
       }
     },
     "startingMembers": [],
@@ -11361,14 +11451,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "DRAW",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -11406,14 +11496,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 3,
+        "home": 5
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -11451,14 +11553,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "HOME_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 3
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 5
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -11496,14 +11610,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "AWAY_TEAM",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -28605,177 +28731,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "537000",
-    "kickoffTime": "2026-01-06T14:00:00Z",
-    "matchday": 19,
-    "league": {
-      "en": "Serie A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 487,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 7397,
-      "name": {
-        "jp": "コモ",
-        "en": "Como 1907"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/7397.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "AWAY_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 3,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "537004",
-    "kickoffTime": "2026-01-06T17:00:00Z",
-    "matchday": 19,
-    "league": {
-      "en": "Serie A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 5890,
-      "name": {
-        "jp": "レッチェ",
-        "en": "US Lecce"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5890.svg"
-    },
-    "awayTeam": {
-      "id": 100,
-      "name": {
-        "jp": "ローマ",
-        "en": "AS Roma"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/100.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "AWAY_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 1,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 2,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "537001",
-    "kickoffTime": "2026-01-06T19:45:00Z",
-    "matchday": 19,
-    "league": {
-      "en": "Serie A",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 471,
-      "name": {
-        "jp": "",
-        "en": ""
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": ""
-    },
-    "awayTeam": {
-      "id": 109,
-      "name": {
-        "jp": "ユヴェントス",
-        "en": "Juventus FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/109.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "AWAY_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 1,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 3,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "536996",
     "kickoffTime": "2026-01-07T17:30:00Z",
     "matchday": 19,
@@ -33464,63 +33419,6 @@
       "fullTime": {
         "away": null,
         "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "537994",
-    "kickoffTime": "2026-01-06T20:00:00Z",
-    "matchday": 21,
-    "league": {
-      "en": "Premier League",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 563,
-      "name": {
-        "jp": "ウェストハム・ユナイテッド",
-        "en": "West Ham United FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/563.svg"
-    },
-    "awayTeam": {
-      "id": 351,
-      "name": {
-        "jp": "ノッティンガム・フォレスト",
-        "en": "Nottingham Forest FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/351.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "AWAY_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 1
-      },
-      "fullTime": {
-        "away": 2,
-        "home": 1
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
       }
     },
     "startingMembers": [],
