@@ -1,6 +1,6 @@
 [
   {
-    "matchId": "CELTIC_1999-12-31T15:00:00.000Z_vs_A",
+    "matchId": "CELTIC_1999-12-31T15:00:00.000Z_vs_H",
     "utcDate": "1999-12-31T15:00:00.000Z",
     "matchday": 0,
     "league": "スコットランド",
@@ -31,9 +31,9 @@
     },
     "awayTeam": {
       "id": null,
-      "name": "A",
+      "name": "H",
       "crest": "",
-      "shortName": "A",
+      "shortName": "H",
       "tla": ""
     },
     "area": {
@@ -1361,13 +1361,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 26
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "HOME_TEAM",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "halfTime": {
         "home": null,
@@ -1612,8 +1612,8 @@
     "lineupStatus": "未発表"
   },
   {
-    "matchId": "CELTIC_2026-03-22T12:00:00.000Z_vs_ダンディー・ユナイテッド",
-    "utcDate": "2026-03-22T12:00:00.000Z",
+    "matchId": "CELTIC_2026-03-22T12:30:00.000Z_vs_ダンディー・ユナイテッド",
+    "utcDate": "2026-03-22T12:30:00.000Z",
     "matchday": 31,
     "league": "スコットランド",
     "season": {
