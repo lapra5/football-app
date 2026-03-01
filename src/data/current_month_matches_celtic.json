@@ -1465,13 +1465,13 @@
       "endDate": "2026-06-30",
       "currentMatchday": 29
     },
-    "status": "SCHEDULED",
+    "status": "FINISHED",
     "score": {
-      "winner": null,
+      "winner": "DRAW",
       "duration": "REGULAR",
       "fullTime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 2
       },
       "halfTime": {
         "home": null,
@@ -2444,8 +2444,8 @@
     "lineupStatus": "未発表"
   },
   {
-    "matchId": "CELTIC_1999-12-31T15:00:00.000Z_vs_レンジャーズ",
-    "utcDate": "1999-12-31T15:00:00.000Z",
+    "matchId": "CELTIC_2026-03-08T13:00:00.000Z_vs_レンジャーズ",
+    "utcDate": "2026-03-08T13:00:00.000Z",
     "matchday": 0,
     "league": "スコットランド",
     "season": {
