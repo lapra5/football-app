@@ -543,14 +543,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -12274,7 +12286,7 @@
       },
       "fullTime": {
         "home": 1,
-        "away": 2
+        "away": 3
       }
     },
     "startingMembers": [],
@@ -25869,14 +25881,26 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
+      "winner": "DRAW",
+      "penalties": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 2
+      },
+      "extraTime": {
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -33834,98 +33858,8 @@
     "outOfSquad": []
   },
   {
-    "matchId": "538145",
-    "kickoffTime": "2026-05-17T00:00:00Z",
-    "matchday": 37,
-    "league": {
-      "en": "Premier League",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 1044,
-      "name": {
-        "jp": "AFCボーンマス",
-        "en": "AFC Bournemouth"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/1044.svg"
-    },
-    "awayTeam": {
-      "id": 65,
-      "name": {
-        "jp": "マンチェスター・シティ",
-        "en": "Manchester City FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/65.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "538149",
-    "kickoffTime": "2026-05-17T00:00:00Z",
-    "matchday": 37,
-    "league": {
-      "en": "Premier League",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 61,
-      "name": {
-        "jp": "チェルシー",
-        "en": "Chelsea FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/61.svg"
-    },
-    "awayTeam": {
-      "id": 73,
-      "name": {
-        "jp": "トッテナム・ホットスパー",
-        "en": "Tottenham Hotspur FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/73.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "538146",
-    "kickoffTime": "2026-05-17T14:00:00Z",
+    "kickoffTime": "2026-05-17T11:30:00Z",
     "matchday": 37,
     "league": {
       "en": "Premier League",
@@ -33969,32 +33903,32 @@
     "outOfSquad": []
   },
   {
-    "matchId": "538147",
-    "kickoffTime": "2026-05-17T14:00:00Z",
+    "matchId": "538152",
+    "kickoffTime": "2026-05-17T11:30:00Z",
     "matchday": 37,
     "league": {
       "en": "Premier League",
       "jp": ""
     },
     "homeTeam": {
-      "id": 57,
+      "id": 66,
       "name": {
-        "jp": "アーセナル",
-        "en": "Arsenal FC"
+        "jp": "マンチェスター・ユナイテッド",
+        "en": "Manchester United FC"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/57.svg"
+      "logo": "https://crests.football-data.org/66.svg"
     },
     "awayTeam": {
-      "id": 328,
+      "id": 351,
       "name": {
-        "jp": "バーンリーFC",
-        "en": "Burnley FC"
+        "jp": "ノッティンガム・フォレスト",
+        "en": "Nottingham Forest FC"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/328.svg"
+      "logo": "https://crests.football-data.org/351.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -34149,7 +34083,7 @@
     "outOfSquad": []
   },
   {
-    "matchId": "538152",
+    "matchId": "538154",
     "kickoffTime": "2026-05-17T14:00:00Z",
     "matchday": 37,
     "league": {
@@ -34157,24 +34091,24 @@
       "jp": ""
     },
     "homeTeam": {
-      "id": 66,
+      "id": 76,
       "name": {
-        "jp": "マンチェスター・ユナイテッド",
-        "en": "Manchester United FC"
+        "jp": "ウルヴァーハンプトン・ワンダラーズ",
+        "en": "Wolverhampton Wanderers FC"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/66.svg"
+      "logo": "https://crests.football-data.org/76.svg"
     },
     "awayTeam": {
-      "id": 351,
+      "id": 63,
       "name": {
-        "jp": "ノッティンガム・フォレスト",
-        "en": "Nottingham Forest FC"
+        "jp": "フラム",
+        "en": "Fulham FC"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/351.svg"
+      "logo": "https://crests.football-data.org/63.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -34195,7 +34129,7 @@
   },
   {
     "matchId": "538153",
-    "kickoffTime": "2026-05-17T14:00:00Z",
+    "kickoffTime": "2026-05-17T16:30:00Z",
     "matchday": 37,
     "league": {
       "en": "Premier League",
@@ -34239,32 +34173,122 @@
     "outOfSquad": []
   },
   {
-    "matchId": "538154",
-    "kickoffTime": "2026-05-17T14:00:00Z",
+    "matchId": "538147",
+    "kickoffTime": "2026-05-18T19:00:00Z",
     "matchday": 37,
     "league": {
       "en": "Premier League",
       "jp": ""
     },
     "homeTeam": {
-      "id": 76,
+      "id": 57,
       "name": {
-        "jp": "ウルヴァーハンプトン・ワンダラーズ",
-        "en": "Wolverhampton Wanderers FC"
+        "jp": "アーセナル",
+        "en": "Arsenal FC"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/76.svg"
+      "logo": "https://crests.football-data.org/57.svg"
     },
     "awayTeam": {
-      "id": 63,
+      "id": 328,
       "name": {
-        "jp": "フラム",
-        "en": "Fulham FC"
+        "jp": "バーンリーFC",
+        "en": "Burnley FC"
       },
       "players": [],
       "englishplayers": [],
-      "logo": "https://crests.football-data.org/63.svg"
+      "logo": "https://crests.football-data.org/328.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "538145",
+    "kickoffTime": "2026-05-19T18:30:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 1044,
+      "name": {
+        "jp": "AFCボーンマス",
+        "en": "AFC Bournemouth"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/1044.svg"
+    },
+    "awayTeam": {
+      "id": 65,
+      "name": {
+        "jp": "マンチェスター・シティ",
+        "en": "Manchester City FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/65.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "538149",
+    "kickoffTime": "2026-05-19T19:15:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Premier League",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 61,
+      "name": {
+        "jp": "チェルシー",
+        "en": "Chelsea FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/61.svg"
+    },
+    "awayTeam": {
+      "id": 73,
+      "name": {
+        "jp": "トッテナム・ホットスパー",
+        "en": "Tottenham Hotspur FC"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/73.svg"
     },
     "lineupStatus": "未発表",
     "score": {
