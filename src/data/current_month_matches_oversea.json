@@ -1,119 +1,5 @@
 [
   {
-    "matchId": "556723",
-    "kickoffTime": "2026-04-15T19:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "UEFA Champions League",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 5,
-      "name": {
-        "jp": "バイエルン・ミュンヘン",
-        "en": "FC Bayern München"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/5.svg"
-    },
-    "awayTeam": {
-      "id": 86,
-      "name": {
-        "jp": "レアル・マドリード",
-        "en": "Real Madrid CF"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/86.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "HOME_TEAM",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 3,
-        "home": 2
-      },
-      "fullTime": {
-        "away": 3,
-        "home": 4
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
-    "matchId": "556725",
-    "kickoffTime": "2026-04-15T19:00:00Z",
-    "matchday": 2,
-    "league": {
-      "en": "UEFA Champions League",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 57,
-      "name": {
-        "jp": "アーセナル",
-        "en": "Arsenal FC"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/57.svg"
-    },
-    "awayTeam": {
-      "id": 498,
-      "name": {
-        "jp": "スポルティング",
-        "en": "Sporting Clube de Portugal"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/498.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "regularTime": {
-        "away": 0,
-        "home": 0
-      },
-      "winner": "DRAW",
-      "penalties": {
-        "away": 0,
-        "home": 0
-      },
-      "halfTime": {
-        "away": 0,
-        "home": 0
-      },
-      "fullTime": {
-        "away": 0,
-        "home": 0
-      },
-      "extraTime": {
-        "away": 0,
-        "home": 0
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "552092",
     "kickoffTime": "2026-04-28T19:00:00Z",
     "matchday": 1,
@@ -10878,51 +10764,6 @@
     "outOfSquad": []
   },
   {
-    "matchId": "544573",
-    "kickoffTime": "2026-05-17T17:00:00Z",
-    "matchday": 37,
-    "league": {
-      "en": "Primera Division",
-      "jp": ""
-    },
-    "homeTeam": {
-      "id": 81,
-      "name": {
-        "jp": "バルセロナ",
-        "en": "FC Barcelona"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/81.svg"
-    },
-    "awayTeam": {
-      "id": 90,
-      "name": {
-        "jp": "ベティス",
-        "en": "Real Betis Balompié"
-      },
-      "players": [],
-      "englishplayers": [],
-      "logo": "https://crests.football-data.org/90.svg"
-    },
-    "lineupStatus": "未発表",
-    "score": {
-      "duration": "REGULAR",
-      "winner": null,
-      "halfTime": {
-        "away": null,
-        "home": null
-      },
-      "fullTime": {
-        "away": null,
-        "home": null
-      }
-    },
-    "startingMembers": [],
-    "substitutes": [],
-    "outOfSquad": []
-  },
-  {
     "matchId": "544574",
     "kickoffTime": "2026-05-17T17:00:00Z",
     "matchday": 37,
@@ -11219,6 +11060,51 @@
       "players": [],
       "englishplayers": [],
       "logo": "https://crests.football-data.org/86.svg"
+    },
+    "lineupStatus": "未発表",
+    "score": {
+      "duration": "REGULAR",
+      "winner": null,
+      "halfTime": {
+        "away": null,
+        "home": null
+      },
+      "fullTime": {
+        "away": null,
+        "home": null
+      }
+    },
+    "startingMembers": [],
+    "substitutes": [],
+    "outOfSquad": []
+  },
+  {
+    "matchId": "544573",
+    "kickoffTime": "2026-05-17T19:15:00Z",
+    "matchday": 37,
+    "league": {
+      "en": "Primera Division",
+      "jp": ""
+    },
+    "homeTeam": {
+      "id": 81,
+      "name": {
+        "jp": "バルセロナ",
+        "en": "FC Barcelona"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/81.svg"
+    },
+    "awayTeam": {
+      "id": 90,
+      "name": {
+        "jp": "ベティス",
+        "en": "Real Betis Balompié"
+      },
+      "players": [],
+      "englishplayers": [],
+      "logo": "https://crests.football-data.org/90.svg"
     },
     "lineupStatus": "未発表",
     "score": {
@@ -17058,8 +16944,8 @@
         "home": 0
       },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 0
       }
     },
     "startingMembers": [],
@@ -17097,10 +16983,6 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "EXTRA_TIME",
-      "regularTime": {
-        "away": null,
-        "home": null
-      },
       "winner": "HOME_TEAM",
       "fullTime": {
         "away": 1,
@@ -17110,9 +16992,13 @@
         "away": 0,
         "home": 1
       },
+      "regularTime": {
+        "away": 0,
+        "home": 0
+      },
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 1,
+        "home": 1
       }
     },
     "startingMembers": [],
@@ -21804,7 +21690,7 @@
   },
   {
     "matchId": "537175",
-    "kickoffTime": "2026-05-17T10:30:00Z",
+    "kickoffTime": "2026-05-17T10:00:00Z",
     "matchday": 37,
     "league": {
       "en": "Serie A",
@@ -21849,7 +21735,7 @@
   },
   {
     "matchId": "537178",
-    "kickoffTime": "2026-05-17T10:30:00Z",
+    "kickoffTime": "2026-05-17T10:00:00Z",
     "matchday": 37,
     "league": {
       "en": "Serie A",
@@ -21894,7 +21780,7 @@
   },
   {
     "matchId": "537179",
-    "kickoffTime": "2026-05-17T10:30:00Z",
+    "kickoffTime": "2026-05-17T10:00:00Z",
     "matchday": 37,
     "league": {
       "en": "Serie A",
@@ -21939,7 +21825,7 @@
   },
   {
     "matchId": "537181",
-    "kickoffTime": "2026-05-17T10:30:00Z",
+    "kickoffTime": "2026-05-17T10:00:00Z",
     "matchday": 37,
     "league": {
       "en": "Serie A",
@@ -21984,7 +21870,7 @@
   },
   {
     "matchId": "537182",
-    "kickoffTime": "2026-05-17T10:30:00Z",
+    "kickoffTime": "2026-05-17T10:00:00Z",
     "matchday": 37,
     "league": {
       "en": "Serie A",
@@ -24998,14 +24884,14 @@
     "lineupStatus": "未発表",
     "score": {
       "duration": "REGULAR",
-      "winner": null,
+      "winner": "HOME_TEAM",
       "halfTime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "fullTime": {
-        "away": null,
-        "home": null
+        "away": 2,
+        "home": 4
       }
     },
     "startingMembers": [],
